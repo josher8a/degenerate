@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final bankTransactionId$ = bankTransactionId;
 if (bankTransactionId$ != null) {
-  if (bankTransactionId$.length > 5000) errors.add('bankTransactionId: length must be <= 5000');
+  if (bankTransactionId$.length > 5000) { errors.add('bankTransactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsPix copyWith({String? Function()? bankTransactionId}) { return PaymentMethodDetailsPix(

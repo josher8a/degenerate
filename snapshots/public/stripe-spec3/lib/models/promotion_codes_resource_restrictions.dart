@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('first
 List<String> validate() { final errors = <String>[];
 final minimumAmountCurrency$ = minimumAmountCurrency;
 if (minimumAmountCurrency$ != null) {
-  if (minimumAmountCurrency$.length > 5000) errors.add('minimumAmountCurrency: length must be <= 5000');
+  if (minimumAmountCurrency$.length > 5000) { errors.add('minimumAmountCurrency: length must be <= 5000'); }
 }
 return errors; } 
 PromotionCodesResourceRestrictions copyWith({Map<String, PromotionCodeCurrencyOption>? Function()? currencyOptions, bool? firstTimeTransaction, int? Function()? minimumAmount, String? Function()? minimumAmountCurrency, }) { return PromotionCodesResourceRestrictions(

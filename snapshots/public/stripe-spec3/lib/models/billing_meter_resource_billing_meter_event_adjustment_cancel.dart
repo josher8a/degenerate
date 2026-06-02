@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final identifier$ = identifier;
 if (identifier$ != null) {
-  if (identifier$.length > 100) errors.add('identifier: length must be <= 100');
+  if (identifier$.length > 100) { errors.add('identifier: length must be <= 100'); }
 }
 return errors; } 
 BillingMeterResourceBillingMeterEventAdjustmentCancel copyWith({String? Function()? identifier}) { return BillingMeterResourceBillingMeterEventAdjustmentCancel(

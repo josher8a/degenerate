@@ -41,19 +41,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
-  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+  if (statementDescriptorSuffix$.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
 final transferGroup$ = transferGroup;
 if (transferGroup$ != null) {
-  if (transferGroup$.length > 5000) errors.add('transferGroup: length must be <= 5000');
+  if (transferGroup$.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentLinksRequestPaymentIntentData copyWith({PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? description, Map<String, String>? Function()? metadata, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, String? Function()? transferGroup, }) { return PostPaymentLinksRequestPaymentIntentData(

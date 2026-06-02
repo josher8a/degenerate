@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('regex
 List<String> validate() { final errors = <String>[];
 final maxMatchBytes$ = maxMatchBytes;
 if (maxMatchBytes$ != null) {
-  if (maxMatchBytes$ < 0) errors.add('maxMatchBytes: must be >= 0');
+  if (maxMatchBytes$ < 0) { errors.add('maxMatchBytes: must be >= 0'); }
 }
 return errors; } 
 DlpRegexValidationQuery copyWith({int? Function()? maxMatchBytes, String? regex, }) { return DlpRegexValidationQuery(

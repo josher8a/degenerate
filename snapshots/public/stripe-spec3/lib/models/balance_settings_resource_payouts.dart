@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 return errors; } 
 BalanceSettingsResourcePayouts copyWith({Map<String, int>? Function()? minimumBalanceByCurrency, BalanceSettingsResourcePayoutSchedule? Function()? schedule, String? Function()? statementDescriptor, BalanceSettingsResourcePayoutsStatus? status, }) { return BalanceSettingsResourcePayouts(

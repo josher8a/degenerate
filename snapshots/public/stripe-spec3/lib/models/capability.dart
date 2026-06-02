@@ -114,7 +114,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 Capability copyWith({ApplicationFeeAccount? account, AccountCapabilityFutureRequirements? Function()? futureRequirements, String? id, CapabilityObject? object, bool? requested, int? Function()? requestedAt, AccountCapabilityRequirements? Function()? requirements, CapabilityStatus? status, }) { return Capability(
   account: account ?? this.account,

@@ -27,8 +27,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final nsSet$ = nsSet;
 if (nsSet$ != null) {
-  if (nsSet$ < 1) errors.add('nsSet: must be >= 1');
-  if (nsSet$ > 5) errors.add('nsSet: must be <= 5');
+  if (nsSet$ < 1) { errors.add('nsSet: must be >= 1'); }
+  if (nsSet$ > 5) { errors.add('nsSet: must be <= 5'); }
 }
 return errors; } 
 DnsSettingsDnsSettingsZoneResponseNameservers copyWith({int? Function()? nsSet, DnsSettingsDnsSettingsZonePatchNameserversType? type, }) { return DnsSettingsDnsSettingsZoneResponseNameservers(

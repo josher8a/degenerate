@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('end_o
       json.containsKey('total_count') && json['total_count'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (totalCount < 0) errors.add('totalCount: must be >= 0');
+if (totalCount < 0) { errors.add('totalCount: must be >= 0'); }
 return errors; } 
 RealtimekitPagingResponsePaging copyWith({double? endOffset, double? startOffset, double? totalCount, }) { return RealtimekitPagingResponsePaging(
   endOffset: endOffset ?? this.endOffset,

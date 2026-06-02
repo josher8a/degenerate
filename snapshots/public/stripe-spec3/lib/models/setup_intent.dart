@@ -282,18 +282,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
-  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+  if (clientSecret$.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (usage.length > 5000) errors.add('usage: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (usage.length > 5000) { errors.add('usage: length must be <= 5000'); }
 return errors; } 
 SetupIntent copyWith({ApplicationFeeApplication? Function()? application, bool? Function()? attachToSelf, PaymentFlowsAutomaticPaymentMethodsSetupIntent? Function()? automaticPaymentMethods, SetupIntentCancellationReason? Function()? cancellationReason, String? Function()? clientSecret, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<FlowDirections>? Function()? flowDirections, String? id, Errors? Function()? lastSetupError, LatestAttempt? Function()? latestAttempt, bool? livemode, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, Map<String, String>? Function()? metadata, SetupIntentNextAction? Function()? nextAction, SetupIntentObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? Function()? paymentMethod, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, SetupIntentPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, SingleUseMandate? Function()? singleUseMandate, SetupIntentStatus? status, String? usage, }) { return SetupIntent(
   application: application != null ? application() : this.application,

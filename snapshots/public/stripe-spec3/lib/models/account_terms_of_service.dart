@@ -28,11 +28,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ip$ = ip;
 if (ip$ != null) {
-  if (ip$.length > 5000) errors.add('ip: length must be <= 5000');
+  if (ip$.length > 5000) { errors.add('ip: length must be <= 5000'); }
 }
 final userAgent$ = userAgent;
 if (userAgent$ != null) {
-  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+  if (userAgent$.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
 return errors; } 
 AccountTermsOfService copyWith({int? Function()? date, String? Function()? ip, String? Function()? userAgent, }) { return AccountTermsOfService(

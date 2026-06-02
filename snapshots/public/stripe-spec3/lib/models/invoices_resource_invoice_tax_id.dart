@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
-  if (value$.length > 5000) errors.add('value: length must be <= 5000');
+  if (value$.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
 return errors; } 
 InvoicesResourceInvoiceTaxId copyWith({InvoicesResourceInvoiceTaxIdType? type, String? Function()? value, }) { return InvoicesResourceInvoiceTaxId(

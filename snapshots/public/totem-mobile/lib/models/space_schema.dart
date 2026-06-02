@@ -63,8 +63,12 @@ final class SpaceSchema {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    if (title.length > 255) errors.add('title: length must be <= 255');
-    if (subtitle.length > 2000) errors.add('subtitle: length must be <= 2000');
+    if (title.length > 255) {
+      errors.add('title: length must be <= 255');
+    }
+    if (subtitle.length > 2000) {
+      errors.add('subtitle: length must be <= 2000');
+    }
     return errors;
   }
 

@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customMessage$ = customMessage;
 if (customMessage$ != null) {
-  if (customMessage$.length > 500) errors.add('customMessage: length must be <= 500');
+  if (customMessage$.length > 500) { errors.add('customMessage: length must be <= 500'); }
 }
 return errors; } 
 HostedConfirmation copyWith({String? Function()? customMessage}) { return HostedConfirmation(

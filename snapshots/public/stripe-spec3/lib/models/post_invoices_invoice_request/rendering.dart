@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final template$ = template;
 if (template$ != null) {
-  if (template$.length > 5000) errors.add('template: length must be <= 5000');
+  if (template$.length > 5000) { errors.add('template: length must be <= 5000'); }
 }
 return errors; } 
 Rendering copyWith({AmountTaxDisplay? Function()? amountTaxDisplay, Pdf? Function()? pdf, String? Function()? template, TemplateVersion? Function()? templateVersion, }) { return Rendering(

@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final personalizationDesign$ = personalizationDesign;
 if (personalizationDesign$ != null) {
-  if (personalizationDesign$.length > 5000) errors.add('personalizationDesign: length must be <= 5000');
+  if (personalizationDesign$.length > 5000) { errors.add('personalizationDesign: length must be <= 5000'); }
 }
 return errors; } 
 PostIssuingCardsCardRequest copyWith({PostIssuingCardsCardRequestCancellationReason? Function()? cancellationReason, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? personalizationDesign, Pin? Function()? pin, PostIssuingCardsCardRequestShipping? Function()? shipping, PostIssuingCardsCardRequestSpendingControls? Function()? spendingControls, IssuingCardStatus? Function()? status, }) { return PostIssuingCardsCardRequest(

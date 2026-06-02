@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('initi
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentRecordsIdReportPaymentAttemptRequest copyWith({String? Function()? description, List<String>? Function()? expand, Failed? Function()? failed, Guaranteed? Function()? guaranteed, int? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? Function()? paymentMethodDetails, ShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsIdReportPaymentAttemptRequest(

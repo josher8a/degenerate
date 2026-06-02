@@ -69,11 +69,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final createdAfter$ = createdAfter;
 if (createdAfter$ != null) {
-  if (createdAfter$ < 0) errors.add('createdAfter: must be >= 0');
+  if (createdAfter$ < 0) { errors.add('createdAfter: must be >= 0'); }
 }
 final createdBefore$ = createdBefore;
 if (createdBefore$ != null) {
-  if (createdBefore$ < 0) errors.add('createdBefore: must be >= 0');
+  if (createdBefore$ < 0) { errors.add('createdBefore: must be >= 0'); }
 }
 return errors; } 
 EvalResponsesSource copyWith({CreateEvalResponsesRunDataSourceType? type, Map<String, dynamic>? Function()? metadata, String? Function()? model, String? Function()? instructionsSearch, int? Function()? createdAfter, int? Function()? createdBefore, ReasoningEffort? Function()? reasoningEffort, double? Function()? temperature, double? Function()? topP, List<String>? Function()? users, List<String>? Function()? tools, }) { return EvalResponsesSource(

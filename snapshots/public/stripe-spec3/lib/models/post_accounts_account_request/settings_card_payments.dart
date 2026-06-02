@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptorPrefix$ = statementDescriptorPrefix;
 if (statementDescriptorPrefix$ != null) {
-  if (statementDescriptorPrefix$.length > 10) errors.add('statementDescriptorPrefix: length must be <= 10');
+  if (statementDescriptorPrefix$.length > 10) { errors.add('statementDescriptorPrefix: length must be <= 10'); }
 }
 return errors; } 
 SettingsCardPayments copyWith({DeclineOn? Function()? declineOn, String? Function()? statementDescriptorPrefix, StatementDescriptorPrefixKana? Function()? statementDescriptorPrefixKana, StatementDescriptorPrefixKanji? Function()? statementDescriptorPrefixKanji, }) { return SettingsCardPayments(

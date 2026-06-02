@@ -19,8 +19,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('bsb_number') && json['bsb_number'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (accountNumber.length > 5000) errors.add('accountNumber: length must be <= 5000');
-if (bsbNumber.length > 5000) errors.add('bsbNumber: length must be <= 5000');
+if (accountNumber.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
+if (bsbNumber.length > 5000) { errors.add('bsbNumber: length must be <= 5000'); }
 return errors; } 
 PostPaymentMethodsRequestAuBecsDebit copyWith({String? accountNumber, String? bsbNumber, }) { return PostPaymentMethodsRequestAuBecsDebit(
   accountNumber: accountNumber ?? this.accountNumber,

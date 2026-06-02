@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final charge$ = charge;
 if (charge$ != null) {
-  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+  if (charge$.length > 5000) { errors.add('charge: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodCardGeneratedCard copyWith({String? Function()? charge, CardGeneratedFromPaymentMethodDetails? Function()? paymentMethodDetails, PaymentMethodCardGeneratedCardSetupAttempt? Function()? setupAttempt, }) { return PaymentMethodCardGeneratedCard(

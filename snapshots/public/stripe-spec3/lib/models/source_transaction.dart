@@ -182,9 +182,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (source.length > 5000) errors.add('source: length must be <= 5000');
-if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (source.length > 5000) { errors.add('source: length must be <= 5000'); }
+if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
 return errors; } 
 SourceTransaction copyWith({SourceTransactionAchCreditTransferData? Function()? achCreditTransfer, int? amount, SourceTransactionChfCreditTransferData? Function()? chfCreditTransfer, int? created, String? currency, SourceTransactionGbpCreditTransferData? Function()? gbpCreditTransfer, String? id, bool? livemode, SourceTransactionObject? object, SourceTransactionPaperCheckData? Function()? paperCheck, SourceTransactionSepaCreditTransferData? Function()? sepaCreditTransfer, String? source, String? status, SourceTransactionType? type, }) { return SourceTransaction(
   achCreditTransfer: achCreditTransfer != null ? achCreditTransfer() : this.achCreditTransfer,

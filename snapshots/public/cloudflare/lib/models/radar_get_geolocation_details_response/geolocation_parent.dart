@@ -53,8 +53,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('geoId
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(latitude)) errors.add(r'latitude: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(longitude)) errors.add(r'longitude: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(latitude)) { errors.add(r'latitude: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(longitude)) { errors.add(r'longitude: must match pattern ^\d+$'); }
 return errors; } 
 GeolocationParent copyWith({String? Function()? code, String? geoId, String? latitude, String? longitude, String? name, ParentParent? parent, GeolocationType? type, }) { return GeolocationParent(
   code: code != null ? code() : this.code,

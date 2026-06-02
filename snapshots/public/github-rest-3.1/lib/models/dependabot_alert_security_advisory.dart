@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ghsa_
       json.containsKey('withdrawn_at') && json['withdrawn_at'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (summary.length > 1024) errors.add('summary: length must be <= 1024');
+if (summary.length > 1024) { errors.add('summary: length must be <= 1024'); }
 return errors; } 
 DependabotAlertSecurityAdvisory copyWith({String? ghsaId, String? Function()? cveId, String? summary, String? description, List<DependabotAlertSecurityVulnerability>? vulnerabilities, DependabotAlertSecurityAdvisorySeverity? severity, DependabotAlertSecurityAdvisoryCvss? cvss, CvssSeverities? Function()? cvssSeverities, SecurityAdvisoryEpss? Function()? epss, List<Cwes>? cwes, List<DependabotAlertSecurityAdvisoryIdentifiers>? identifiers, List<References>? references, DateTime? publishedAt, DateTime? updatedAt, DateTime? Function()? withdrawnAt, }) { return DependabotAlertSecurityAdvisory(
   ghsaId: ghsaId ?? this.ghsaId,

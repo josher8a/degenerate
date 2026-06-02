@@ -29,19 +29,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final imageUrl$ = imageUrl;
 if (imageUrl$ != null) {
-  if (imageUrl$.length > 2048) errors.add('imageUrl: length must be <= 2048');
+  if (imageUrl$.length > 2048) { errors.add('imageUrl: length must be <= 2048'); }
 }
 final productUrl$ = productUrl;
 if (productUrl$ != null) {
-  if (productUrl$.length > 2048) errors.add('productUrl: length must be <= 2048');
+  if (productUrl$.length > 2048) { errors.add('productUrl: length must be <= 2048'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 255) errors.add('reference: length must be <= 255');
+  if (reference$.length > 255) { errors.add('reference: length must be <= 255'); }
 }
 final subscriptionReference$ = subscriptionReference;
 if (subscriptionReference$ != null) {
-  if (subscriptionReference$.length > 2048) errors.add('subscriptionReference: length must be <= 2048');
+  if (subscriptionReference$.length > 2048) { errors.add('subscriptionReference: length must be <= 2048'); }
 }
 return errors; } 
 PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions copyWith({String? Function()? imageUrl, String? Function()? productUrl, String? Function()? reference, String? Function()? subscriptionReference, }) { return PaymentFlowsPrivatePaymentMethodsKlarnaPaymentIntentAmountDetailsLineItemPaymentMethodOptions(

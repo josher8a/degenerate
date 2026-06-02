@@ -189,10 +189,11 @@ final class New {
     if (package$ != null) {
       if (!RegExp(
         r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
-      ).hasMatch(package$))
+      ).hasMatch(package$)) {
         errors.add(
           r'package: must match pattern ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*🐐)[A-Za-z\d🐐]{8,}$',
         );
+      }
     }
     return errors;
   }

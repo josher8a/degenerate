@@ -27,11 +27,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final expression$ = expression;
 if (expression$ != null) {
-  if (expression$.isEmpty) errors.add('expression: length must be >= 1');
+  if (expression$.isEmpty) { errors.add('expression: length must be >= 1'); }
 }
 final value$ = value;
 if (value$ != null) {
-  if (value$.isEmpty) errors.add('value: length must be >= 1');
+  if (value$.isEmpty) { errors.add('value: length must be >= 1'); }
 }
 return errors; } 
 TargetUrl copyWith({String? Function()? expression, String? Function()? value, }) { return TargetUrl(

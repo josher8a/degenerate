@@ -35,8 +35,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('success') && json['success'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors$ = <String>[];
-if (errors.toSet().length != errors.length) errors$.add('errors: items must be unique');
-if (messages.toSet().length != messages.length) errors$.add('messages: items must be unique');
+if (errors.toSet().length != errors.length) { errors$.add('errors: items must be unique'); }
+if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
 return errors$; } 
 WorkersKvNamespaceListANamespaceSKeysResponse copyWith({List<WorkersKvMessages2>? errors, List<WorkersKvMessages2>? messages, bool? success, List<WorkersKvKey>? Function()? result, WorkersKvCursorResultInfo? Function()? resultInfo, }) { return WorkersKvNamespaceListANamespaceSKeysResponse(
   errors: errors ?? this.errors,

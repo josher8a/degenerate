@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final explanation$ = explanation;
 if (explanation$ != null) {
-  if (explanation$.length > 5000) errors.add('explanation: length must be <= 5000');
+  if (explanation$.length > 5000) { errors.add('explanation: length must be <= 5000'); }
 }
 return errors; } 
 IssuingDisputeFraudulentEvidence copyWith({IssuingDisputeCanceledEvidenceAdditionalDocumentation? Function()? additionalDocumentation, String? Function()? explanation, }) { return IssuingDisputeFraudulentEvidence(

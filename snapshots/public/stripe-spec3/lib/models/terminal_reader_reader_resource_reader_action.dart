@@ -136,11 +136,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final failureCode$ = failureCode;
 if (failureCode$ != null) {
-  if (failureCode$.length > 5000) errors.add('failureCode: length must be <= 5000');
+  if (failureCode$.length > 5000) { errors.add('failureCode: length must be <= 5000'); }
 }
 final failureMessage$ = failureMessage;
 if (failureMessage$ != null) {
-  if (failureMessage$.length > 5000) errors.add('failureMessage: length must be <= 5000');
+  if (failureMessage$.length > 5000) { errors.add('failureMessage: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceReaderAction copyWith({TerminalReaderReaderResourceCollectInputsAction? Function()? collectInputs, TerminalReaderReaderResourceCollectPaymentMethodAction? Function()? collectPaymentMethod, TerminalReaderReaderResourceConfirmPaymentIntentAction? Function()? confirmPaymentIntent, String? Function()? failureCode, String? Function()? failureMessage, TerminalReaderReaderResourceProcessPaymentIntentAction? Function()? processPaymentIntent, TerminalReaderReaderResourceProcessSetupIntentAction? Function()? processSetupIntent, TerminalReaderReaderResourceRefundPaymentAction? Function()? refundPayment, TerminalReaderReaderResourceSetReaderDisplayAction? Function()? setReaderDisplay, TerminalReaderReaderResourceReaderActionStatus? status, TerminalReaderReaderResourceReaderActionType? type, }) { return TerminalReaderReaderResourceReaderAction(

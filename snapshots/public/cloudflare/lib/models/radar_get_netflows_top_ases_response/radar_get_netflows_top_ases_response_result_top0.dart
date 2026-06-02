@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(value)) errors.add(r'value: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(value)) { errors.add(r'value: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetNetflowsTopAsesResponseResultTop0 copyWith({double? clientAsn, String? clientAsName, String? value, }) { return RadarGetNetflowsTopAsesResponseResultTop0(
   clientAsn: clientAsn ?? this.clientAsn,

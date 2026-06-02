@@ -125,7 +125,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 100) errors.add('name: length must be <= 100');
+  if (name$.length > 100) { errors.add('name: length must be <= 100'); }
 }
 return errors; } 
 DevicesUpdateDeviceSettingsPolicyRequest copyWith({TeamsDevicesAllowModeSwitch? Function()? allowModeSwitch, TeamsDevicesAllowUpdates? Function()? allowUpdates, TeamsDevicesAllowedToLeave? Function()? allowedToLeave, TeamsDevicesAutoConnect? Function()? autoConnect, TeamsDevicesCaptivePortal? Function()? captivePortal, TeamsDevicesSchemasDescription? Function()? description, TeamsDevicesDisableAutoFallback? Function()? disableAutoFallback, bool? Function()? enabled, List<TeamsDevicesSplitTunnel>? Function()? exclude, TeamsDevicesExcludeOfficeIps? Function()? excludeOfficeIps, List<TeamsDevicesSplitTunnelInclude>? Function()? include, TeamsDevicesLanAllowMinutes? Function()? lanAllowMinutes, TeamsDevicesLanAllowSubnetSize? Function()? lanAllowSubnetSize, TeamsDevicesSchemasMatch? Function()? match, String? Function()? name, TeamsDevicesPrecedence? Function()? precedence, TeamsDevicesRegisterInterfaceIpWithDns? Function()? registerInterfaceIpWithDns, TeamsDevicesSccmVpnBoundarySupport? Function()? sccmVpnBoundarySupport, TeamsDevicesServiceMode? Function()? serviceModeV2, TeamsDevicesSupportUrl? Function()? supportUrl, TeamsDevicesSwitchLocked? Function()? switchLocked, TeamsDevicesTunnelProtocol? Function()? tunnelProtocol, }) { return DevicesUpdateDeviceSettingsPolicyRequest(

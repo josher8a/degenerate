@@ -39,18 +39,18 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final algorithm$ = algorithm;
 if (algorithm$ != null) {
-  if (algorithm$ < 0) errors.add('algorithm: must be >= 0');
-  if (algorithm$ > 255) errors.add('algorithm: must be <= 255');
+  if (algorithm$ < 0) { errors.add('algorithm: must be >= 0'); }
+  if (algorithm$ > 255) { errors.add('algorithm: must be <= 255'); }
 }
 final flags$ = flags;
 if (flags$ != null) {
-  if (flags$ < 0) errors.add('flags: must be >= 0');
-  if (flags$ > 65535) errors.add('flags: must be <= 65535');
+  if (flags$ < 0) { errors.add('flags: must be >= 0'); }
+  if (flags$ > 65535) { errors.add('flags: must be <= 65535'); }
 }
 final protocol$ = protocol;
 if (protocol$ != null) {
-  if (protocol$ < 0) errors.add('protocol: must be >= 0');
-  if (protocol$ > 255) errors.add('protocol: must be <= 255');
+  if (protocol$ < 0) { errors.add('protocol: must be >= 0'); }
+  if (protocol$ > 255) { errors.add('protocol: must be <= 255'); }
 }
 return errors; } 
 DnsRecordsDnskeyRecordData copyWith({double? Function()? algorithm, double? Function()? flags, double? Function()? protocol, String? Function()? publicKey, }) { return DnsRecordsDnskeyRecordData(

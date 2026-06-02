@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('expir
 List<String> validate() { final errors = <String>[];
 final hostedVoucherUrl$ = hostedVoucherUrl;
 if (hostedVoucherUrl$ != null) {
-  if (hostedVoucherUrl$.length > 5000) errors.add('hostedVoucherUrl: length must be <= 5000');
+  if (hostedVoucherUrl$.length > 5000) { errors.add('hostedVoucherUrl: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentNextActionKonbini copyWith({int? expiresAt, String? Function()? hostedVoucherUrl, PaymentIntentNextActionKonbiniStores? stores, }) { return PaymentIntentNextActionKonbini(

@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fiscalYearEnd$ = fiscalYearEnd;
 if (fiscalYearEnd$ != null) {
-  if (fiscalYearEnd$.length > 5000) errors.add('fiscalYearEnd: length must be <= 5000');
+  if (fiscalYearEnd$.length > 5000) { errors.add('fiscalYearEnd: length must be <= 5000'); }
 }
 return errors; } 
 AccountAnnualRevenue copyWith({int? Function()? amount, String? Function()? currency, String? Function()? fiscalYearEnd, }) { return AccountAnnualRevenue(

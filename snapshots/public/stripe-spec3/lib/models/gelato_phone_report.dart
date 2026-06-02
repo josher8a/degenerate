@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 return errors; } 
 GelatoPhoneReport copyWith({GelatoPhoneReportError? Function()? error, String? Function()? phone, GelatoDocumentReportStatus? status, }) { return GelatoPhoneReport(

@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_S
       json.containsKey('SPAM') && json['SPAM'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(notSpam)) errors.add(r'notSpam: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(spam)) errors.add(r'spam: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(notSpam)) { errors.add(r'notSpam: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(spam)) { errors.add(r'spam: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetEmailSecuritySummaryBySpamResponseResultSummary0 copyWith({String? notSpam, String? spam, }) { return RadarGetEmailSecuritySummaryBySpamResponseResultSummary0(
   notSpam: notSpam ?? this.notSpam,

@@ -24,8 +24,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'enabled', 'ns_set'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (nsSet < 1) errors.add('nsSet: must be >= 1');
-if (nsSet > 5) errors.add('nsSet: must be <= 5');
+if (nsSet < 1) { errors.add('nsSet: must be >= 1'); }
+if (nsSet > 5) { errors.add('nsSet: must be <= 5'); }
 return errors; } 
 DnsCustomNameserversZoneMetadata copyWith({bool? Function()? enabled, double Function()? nsSet, }) { return DnsCustomNameserversZoneMetadata(
   enabled: enabled != null ? enabled() : this.enabled,

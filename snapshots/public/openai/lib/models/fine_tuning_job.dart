@@ -186,7 +186,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 final integrations$ = integrations;
 if (integrations$ != null) {
-  if (integrations$.length > 5) errors.add('integrations: must have <= 5 items');
+  if (integrations$.length > 5) { errors.add('integrations: must have <= 5 items'); }
 }
 return errors; } 
 FineTuningJob copyWith({String? id, int? createdAt, FineTuningJobError? Function()? error, String? Function()? fineTunedModel, int? Function()? finishedAt, FineTuningJobHyperparameters? hyperparameters, String? model, FineTuningJobObject? object, String? organizationId, List<String>? resultFiles, FineTuningJobStatus? status, int? Function()? trainedTokens, String? trainingFile, String? Function()? validationFile, List<FineTuningIntegration>? Function()? integrations, int? seed, int? Function()? estimatedFinish, FineTuneMethod? Function()? method, Map<String, String>? Function()? metadata, }) { return FineTuningJob(

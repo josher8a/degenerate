@@ -76,37 +76,37 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 List<String> validate() { final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
-  if (frequencyPenalty$ < 0) errors.add('frequencyPenalty: must be >= 0');
-  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+  if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
+  if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
 }
 final presencePenalty$ = presencePenalty;
 if (presencePenalty$ != null) {
-  if (presencePenalty$ < 0) errors.add('presencePenalty: must be >= 0');
-  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+  if (presencePenalty$ < 0) { errors.add('presencePenalty: must be >= 0'); }
+  if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
-if (prompt.length > 131072) errors.add('prompt: length must be <= 131072');
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
+if (prompt.length > 131072) { errors.add('prompt: length must be <= 131072'); }
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
-  if (repetitionPenalty$ < 0) errors.add('repetitionPenalty: must be >= 0');
-  if (repetitionPenalty$ > 2) errors.add('repetitionPenalty: must be <= 2');
+  if (repetitionPenalty$ < 0) { errors.add('repetitionPenalty: must be >= 0'); }
+  if (repetitionPenalty$ > 2) { errors.add('repetitionPenalty: must be <= 2'); }
 }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < 1) errors.add('seed: must be >= 1');
-  if (seed$ > 9999999999.0) errors.add('seed: must be <= 9999999999.0');
+  if (seed$ < 1) { errors.add('seed: must be >= 1'); }
+  if (seed$ > 9999999999.0) { errors.add('seed: must be <= 9999999999.0'); }
 }
-if (temperature < 0) errors.add('temperature: must be >= 0');
-if (temperature > 5) errors.add('temperature: must be <= 5');
+if (temperature < 0) { errors.add('temperature: must be >= 0'); }
+if (temperature > 5) { errors.add('temperature: must be <= 5'); }
 final topK$ = topK;
 if (topK$ != null) {
-  if (topK$ < 1) errors.add('topK: must be >= 1');
-  if (topK$ > 50) errors.add('topK: must be <= 50');
+  if (topK$ < 1) { errors.add('topK: must be >= 1'); }
+  if (topK$ > 50) { errors.add('topK: must be <= 50'); }
 }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0) errors.add('topP: must be >= 0');
-  if (topP$ > 2) errors.add('topP: must be <= 2');
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
 return errors; } 
 Prompt22 copyWith({double? Function()? frequencyPenalty, MessagesImage? Function()? image, String? Function()? lora, int Function()? maxTokens, double? Function()? presencePenalty, String? prompt, bool Function()? raw, double? Function()? repetitionPenalty, int? Function()? seed, bool Function()? stream, double Function()? temperature, int? Function()? topK, double? Function()? topP, }) { return Prompt22(

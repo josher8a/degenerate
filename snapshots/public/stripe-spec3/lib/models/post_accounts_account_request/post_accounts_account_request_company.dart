@@ -105,43 +105,43 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final exportLicenseId$ = exportLicenseId;
 if (exportLicenseId$ != null) {
-  if (exportLicenseId$.length > 5000) errors.add('exportLicenseId: length must be <= 5000');
+  if (exportLicenseId$.length > 5000) { errors.add('exportLicenseId: length must be <= 5000'); }
 }
 final exportPurposeCode$ = exportPurposeCode;
 if (exportPurposeCode$ != null) {
-  if (exportPurposeCode$.length > 5000) errors.add('exportPurposeCode: length must be <= 5000');
+  if (exportPurposeCode$.length > 5000) { errors.add('exportPurposeCode: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 100) errors.add('name: length must be <= 100');
+  if (name$.length > 100) { errors.add('name: length must be <= 100'); }
 }
 final nameKana$ = nameKana;
 if (nameKana$ != null) {
-  if (nameKana$.length > 100) errors.add('nameKana: length must be <= 100');
+  if (nameKana$.length > 100) { errors.add('nameKana: length must be <= 100'); }
 }
 final nameKanji$ = nameKanji;
 if (nameKanji$ != null) {
-  if (nameKanji$.length > 100) errors.add('nameKanji: length must be <= 100');
+  if (nameKanji$.length > 100) { errors.add('nameKanji: length must be <= 100'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 final registrationNumber$ = registrationNumber;
 if (registrationNumber$ != null) {
-  if (registrationNumber$.length > 5000) errors.add('registrationNumber: length must be <= 5000');
+  if (registrationNumber$.length > 5000) { errors.add('registrationNumber: length must be <= 5000'); }
 }
 final taxId$ = taxId;
 if (taxId$ != null) {
-  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+  if (taxId$.length > 5000) { errors.add('taxId: length must be <= 5000'); }
 }
 final taxIdRegistrar$ = taxIdRegistrar;
 if (taxIdRegistrar$ != null) {
-  if (taxIdRegistrar$.length > 5000) errors.add('taxIdRegistrar: length must be <= 5000');
+  if (taxIdRegistrar$.length > 5000) { errors.add('taxIdRegistrar: length must be <= 5000'); }
 }
 final vatId$ = vatId;
 if (vatId$ != null) {
-  if (vatId$.length > 5000) errors.add('vatId: length must be <= 5000');
+  if (vatId$.length > 5000) { errors.add('vatId: length must be <= 5000'); }
 }
 return errors; } 
 PostAccountsAccountRequestCompany copyWith({PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, bool? Function()? directorsProvided, DirectorshipDeclaration? Function()? directorshipDeclaration, bool? Function()? executivesProvided, String? Function()? exportLicenseId, String? Function()? exportPurposeCode, String? Function()? name, String? Function()? nameKana, String? Function()? nameKanji, bool? Function()? ownersProvided, OwnershipDeclaration? Function()? ownershipDeclaration, CompanyOwnershipExemptionReason? Function()? ownershipExemptionReason, String? Function()? phone, RegistrationDate? Function()? registrationDate, String? Function()? registrationNumber, RepresentativeDeclaration? Function()? representativeDeclaration, CompanyStructure? Function()? structure, String? Function()? taxId, String? Function()? taxIdRegistrar, String? Function()? vatId, CompanyVerification? Function()? verification, }) { return PostAccountsAccountRequestCompany(

@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 return errors; } 
 PaymentsPrimitivesPaymentRecordsResourceCustomerDetails copyWith({String? Function()? customer, String? Function()? email, String? Function()? name, String? Function()? phone, }) { return PaymentsPrimitivesPaymentRecordsResourceCustomerDetails(

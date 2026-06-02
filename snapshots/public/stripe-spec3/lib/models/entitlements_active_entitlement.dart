@@ -65,8 +65,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('featu
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (lookupKey.length > 5000) errors.add('lookupKey: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (lookupKey.length > 5000) { errors.add('lookupKey: length must be <= 5000'); }
 return errors; } 
 EntitlementsActiveEntitlement copyWith({Feature? feature, String? id, bool? livemode, String? lookupKey, EntitlementsActiveEntitlementObject? object, }) { return EntitlementsActiveEntitlement(
   feature: feature ?? this.feature,

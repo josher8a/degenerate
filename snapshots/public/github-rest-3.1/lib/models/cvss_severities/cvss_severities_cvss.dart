@@ -23,8 +23,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('vecto
 List<String> validate() { final errors = <String>[];
 final score$ = score;
 if (score$ != null) {
-  if (score$ < 0) errors.add('score: must be >= 0');
-  if (score$ > 10) errors.add('score: must be <= 10');
+  if (score$ < 0) { errors.add('score: must be >= 0'); }
+  if (score$ > 10) { errors.add('score: must be <= 10'); }
 }
 return errors; } 
 CvssSeveritiesCvss copyWith({String? Function()? vectorString, double? Function()? score, }) { return CvssSeveritiesCvss(

@@ -33,9 +33,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('deskt
       json.containsKey('other') && json['other'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(desktop)) errors.add(r'desktop: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(mobile)) errors.add(r'mobile: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(other)) errors.add(r'other: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(desktop)) { errors.add(r'desktop: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(mobile)) { errors.add(r'mobile: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(other)) { errors.add(r'other: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetHttpSummaryByDeviceTypeResponseResultSummary0 copyWith({String? desktop, String? mobile, String? other, }) { return RadarGetHttpSummaryByDeviceTypeResponseResultSummary0(
   desktop: desktop ?? this.desktop,

@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^[a-z0-9][a-z0-9-]*[a-z0-9]$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-z0-9][a-z0-9-]*[a-z0-9]$');
+if (!RegExp(r'^[a-z0-9][a-z0-9-]*[a-z0-9]$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z0-9][a-z0-9-]*[a-z0-9]$'); }
 return errors; } 
 DestinationCreateRequest copyWith({DestinationCreateRequestConfiguration? configuration, bool? enabled, String? name, bool? Function()? skipPreflightCheck, }) { return DestinationCreateRequest(
   configuration: configuration ?? this.configuration,

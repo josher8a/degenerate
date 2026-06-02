@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('suffi
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 100) errors.add('description: length must be <= 100');
+  if (description$.length > 100) { errors.add('description: length must be <= 100'); }
 }
 return errors; } 
 TeamsDevicesFallbackDomain copyWith({String? Function()? description, List<TeamsDevicesIp>? Function()? dnsServer, String? suffix, }) { return TeamsDevicesFallbackDomain(

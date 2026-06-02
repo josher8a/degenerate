@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('currency') && json['currency'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 return errors; } 
 TaxRateFlatAmount copyWith({int? amount, String? currency, }) { return TaxRateFlatAmount(
   amount: amount ?? this.amount,

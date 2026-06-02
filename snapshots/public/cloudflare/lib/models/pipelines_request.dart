@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('sql') && json['sql'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.isEmpty) errors.add('name: length must be >= 1');
-if (name.length > 128) errors.add('name: length must be <= 128');
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
+if (name.length > 128) { errors.add('name: length must be <= 128'); }
 return errors; } 
 PipelinesRequest copyWith({String? name, String? sql, }) { return PipelinesRequest(
   name: name ?? this.name,

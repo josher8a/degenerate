@@ -17,7 +17,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final session$ = session;
 if (session$ != null) {
-  if (session$.length > 5000) errors.add('session: length must be <= 5000');
+  if (session$.length > 5000) { errors.add('session: length must be <= 5000'); }
 }
 return errors; } 
 RadarOptions copyWith({String? Function()? session}) { return RadarOptions(

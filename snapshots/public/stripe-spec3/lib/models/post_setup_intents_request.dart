@@ -163,27 +163,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final confirmationToken$ = confirmationToken;
 if (confirmationToken$ != null) {
-  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+  if (confirmationToken$.length > 5000) { errors.add('confirmationToken: length must be <= 5000'); }
 }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
-  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+  if (paymentMethodConfiguration$.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
 return errors; } 
 PostSetupIntentsRequest copyWith({bool? Function()? attachToSelf, AutomaticPaymentMethods? Function()? automaticPaymentMethods, bool? Function()? confirm, String? Function()? confirmationToken, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, List<FlowDirections>? Function()? flowDirections, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, String? Function()? returnUrl, SingleUse? Function()? singleUse, PostSetupIntentsRequestUsage? Function()? usage, bool? Function()? useStripeSdk, }) { return PostSetupIntentsRequest(

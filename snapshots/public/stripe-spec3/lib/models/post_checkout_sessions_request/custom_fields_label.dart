@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (custom.length > 50) errors.add('custom: length must be <= 50');
+if (custom.length > 50) { errors.add('custom: length must be <= 50'); }
 return errors; } 
 CustomFieldsLabel copyWith({String? custom, PaymentLinksResourceCustomFieldsLabelType? type, }) { return CustomFieldsLabel(
   custom: custom ?? this.custom,

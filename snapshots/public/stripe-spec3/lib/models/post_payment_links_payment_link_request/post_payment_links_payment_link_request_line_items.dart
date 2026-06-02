@@ -22,7 +22,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 PostPaymentLinksPaymentLinkRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, String? id, int? Function()? quantity, }) { return PostPaymentLinksPaymentLinkRequestLineItems(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,

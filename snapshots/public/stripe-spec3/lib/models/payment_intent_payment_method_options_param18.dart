@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final code$ = code;
 if (code$ != null) {
-  if (code$.length > 5000) errors.add('code: length must be <= 5000');
+  if (code$.length > 5000) { errors.add('code: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentPaymentMethodOptionsParam18 copyWith({String? Function()? code, PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentIntentPaymentMethodOptionsParam18(

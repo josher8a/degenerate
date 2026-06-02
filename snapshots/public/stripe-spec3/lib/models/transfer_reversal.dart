@@ -103,7 +103,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('transfer'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 TransferReversal copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, DestinationPaymentRefund? Function()? destinationPaymentRefund, String? id, Map<String, String>? Function()? metadata, TransferReversalObject? object, SourceRefund? Function()? sourceRefund, ChargeTransfer? transfer, }) { return TransferReversal(
   amount: amount ?? this.amount,

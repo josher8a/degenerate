@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customMessage$ = customMessage;
 if (customMessage$ != null) {
-  if (customMessage$.length > 5000) errors.add('customMessage: length must be <= 5000');
+  if (customMessage$.length > 5000) { errors.add('customMessage: length must be <= 5000'); }
 }
 return errors; } 
 PaymentLinksResourceCompletionBehaviorConfirmationPage copyWith({String? Function()? customMessage}) { return PaymentLinksResourceCompletionBehaviorConfirmationPage(

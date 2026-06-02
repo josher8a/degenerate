@@ -35,8 +35,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
-if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
+if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
+if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
 return errors; } 
 VectorStoreSearchRequest copyWith({Query? query, bool Function()? rewriteQuery, int Function()? maxNumResults, VectorStoreSearchRequestFilters? Function()? filters, VectorStoreSearchRequestRankingOptions? Function()? rankingOptions, }) { return VectorStoreSearchRequest(
   query: query ?? this.query,

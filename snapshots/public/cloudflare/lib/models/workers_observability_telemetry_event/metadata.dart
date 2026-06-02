@@ -136,31 +136,31 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
 List<String> validate() { final errors = <String>[];
 final coldStart$ = coldStart;
 if (coldStart$ != null) {
-  if (coldStart$ < 0) errors.add('coldStart: must be >= 0');
+  if (coldStart$ < 0) { errors.add('coldStart: must be >= 0'); }
 }
 final cost$ = cost;
 if (cost$ != null) {
-  if (cost$ < 0) errors.add('cost: must be >= 0');
+  if (cost$ < 0) { errors.add('cost: must be >= 0'); }
 }
 final duration$ = duration;
 if (duration$ != null) {
-  if (duration$ < 0) errors.add('duration: must be >= 0');
+  if (duration$ < 0) { errors.add('duration: must be >= 0'); }
 }
 final endTime$ = endTime;
 if (endTime$ != null) {
-  if (endTime$ < 0) errors.add('endTime: must be >= 0');
+  if (endTime$ < 0) { errors.add('endTime: must be >= 0'); }
 }
 final startTime$ = startTime;
 if (startTime$ != null) {
-  if (startTime$ < 0) errors.add('startTime: must be >= 0');
+  if (startTime$ < 0) { errors.add('startTime: must be >= 0'); }
 }
 final statusCode$ = statusCode;
 if (statusCode$ != null) {
-  if (statusCode$ < 0) errors.add('statusCode: must be >= 0');
+  if (statusCode$ < 0) { errors.add('statusCode: must be >= 0'); }
 }
 final traceDuration$ = traceDuration;
 if (traceDuration$ != null) {
-  if (traceDuration$ < 0) errors.add('traceDuration: must be >= 0');
+  if (traceDuration$ < 0) { errors.add('traceDuration: must be >= 0'); }
 }
 return errors; } 
 Metadata copyWith({String? Function()? account, String? Function()? cloudService, int? Function()? coldStart, int? Function()? cost, int? Function()? duration, int? Function()? endTime, String? Function()? error, String? Function()? errorTemplate, String? Function()? fingerprint, String? id, String? Function()? level, String? Function()? message, String? Function()? messageTemplate, String? Function()? metricName, String? Function()? origin, String? Function()? parentSpanId, String? Function()? provider, String? Function()? region, String? Function()? requestId, String? Function()? service, String? Function()? spanId, String? Function()? spanName, String? Function()? stackId, int? Function()? startTime, int? Function()? statusCode, int? Function()? traceDuration, String? Function()? traceId, String? Function()? transactionName, String? Function()? trigger, String? Function()? type, String? Function()? url, }) { return Metadata(

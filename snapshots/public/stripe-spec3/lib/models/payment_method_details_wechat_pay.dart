@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final location$ = location;
 if (location$ != null) {
-  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+  if (location$.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
 final reader$ = reader;
 if (reader$ != null) {
-  if (reader$.length > 5000) errors.add('reader: length must be <= 5000');
+  if (reader$.length > 5000) { errors.add('reader: length must be <= 5000'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsWechatPay copyWith({String? Function()? fingerprint, String? Function()? location, String? Function()? reader, String? Function()? transactionId, }) { return PaymentMethodDetailsWechatPay(

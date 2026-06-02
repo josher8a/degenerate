@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 return errors; } 
 SourceMandateNotificationAcssDebitData copyWith({String? Function()? statementDescriptor}) { return SourceMandateNotificationAcssDebitData(

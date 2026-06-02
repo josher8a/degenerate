@@ -166,7 +166,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ciphers$ = ciphers;
 if (ciphers$ != null) {
-  if (ciphers$.toSet().length != ciphers$.length) errors.add('ciphers: items must be unique');
+  if (ciphers$.toSet().length != ciphers$.length) { errors.add('ciphers: items must be unique'); }
 }
 return errors; } 
 TlsCertificatesAndHostnamesSslsettings copyWith({List<String>? Function()? ciphers, EarlyHints? Function()? earlyHints, Http2? Function()? http2, MinTlsVersion? Function()? minTlsVersion, Tls13? Function()? tls13, }) { return TlsCertificatesAndHostnamesSslsettings(

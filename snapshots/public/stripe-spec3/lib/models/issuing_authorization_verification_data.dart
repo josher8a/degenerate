@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
 List<String> validate() { final errors = <String>[];
 final postalCode$ = postalCode;
 if (postalCode$ != null) {
-  if (postalCode$.length > 5000) errors.add('postalCode: length must be <= 5000');
+  if (postalCode$.length > 5000) { errors.add('postalCode: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorizationVerificationData copyWith({IssuingAuthorizationVerificationDataAddressLine1Check? addressLine1Check, IssuingAuthorizationVerificationDataAddressPostalCodeCheck? addressPostalCodeCheck, IssuingAuthorizationAuthenticationExemption? Function()? authenticationExemption, IssuingAuthorizationVerificationDataCvcCheck? cvcCheck, ExpiryCheck? expiryCheck, String? Function()? postalCode, IssuingAuthorizationThreeDSecure? Function()? threeDSecure, }) { return IssuingAuthorizationVerificationData(

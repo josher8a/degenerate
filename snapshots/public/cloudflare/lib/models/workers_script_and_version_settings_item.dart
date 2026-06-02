@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final tags$ = tags;
 if (tags$ != null) {
-  if (tags$.length > 10) errors.add('tags: must have <= 10 items');
+  if (tags$.length > 10) { errors.add('tags: must have <= 10 items'); }
 }
 return errors; } 
 WorkersScriptAndVersionSettingsItem copyWith({WorkersScriptAndVersionSettingsItemAnnotations? Function()? annotations, List<WorkersBindingItem>? Function()? bindings, WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersLimits? Function()? limits, WorkersLogpush? Function()? logpush, Migrations? Function()? migrations, WorkersObservability? Function()? observability, WorkersPlacementInfoNoStatus? Function()? placement, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel? Function()? usageModel, }) { return WorkersScriptAndVersionSettingsItem(

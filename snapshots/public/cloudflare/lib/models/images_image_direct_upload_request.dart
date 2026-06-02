@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 1024) errors.add('id: length must be <= 1024');
+  if (id$.length > 1024) { errors.add('id: length must be <= 1024'); }
 }
 return errors; } 
 ImagesImageDirectUploadRequest copyWith({String? Function()? creator, DateTime? Function()? expiry, String? Function()? id, Map<String, dynamic>? Function()? metadata, bool Function()? requireSignedUrLs, }) { return ImagesImageDirectUploadRequest(

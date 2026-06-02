@@ -89,11 +89,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 5000) errors.add('title: length must be <= 5000');
+  if (title$.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceToggle copyWith({TerminalReaderReaderResourceToggleDefaultValue? Function()? defaultValue, String? Function()? description, String? Function()? title, TerminalReaderReaderResourceToggleValue? Function()? value, }) { return TerminalReaderReaderResourceToggle(

@@ -16,8 +16,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.isEmpty) errors.add('name: length must be >= 1');
-if (name.length > 255) errors.add('name: length must be <= 255');
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
+if (name.length > 255) { errors.add('name: length must be <= 255'); }
 return errors; } 
 UpdateGroupBody copyWith({String? name}) { return UpdateGroupBody(
   name: name ?? this.name,

@@ -39,7 +39,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer copyWith({CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceEuBankTransfer? Function()? euBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceGbBankTransfer? Function()? gbBankTransfer, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceJpBankTransfer? Function()? jpBankTransfer, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferResourceUsBankTransfer? Function()? usBankTransfer, }) { return CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer(

@@ -176,7 +176,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
 return errors; } 
 BrandingSettings copyWith({BackgroundColor? Function()? backgroundColor, BrandingSettingsBorderStyle? Function()? borderStyle, ButtonColor? Function()? buttonColor, String? Function()? displayName, FontFamily? Function()? fontFamily, BrandingSettingsIcon? Function()? icon, BrandingSettingsLogo? Function()? logo, }) { return BrandingSettings(

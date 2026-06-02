@@ -63,7 +63,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('cb_av
 List<String> validate() { final errors = <String>[];
 final cbExemption$ = cbExemption;
 if (cbExemption$ != null) {
-  if (cbExemption$.length > 4) errors.add('cbExemption: length must be <= 4');
+  if (cbExemption$.length > 4) { errors.add('cbExemption: length must be <= 4'); }
 }
 return errors; } 
 NetworkOptionsCartesBancaires copyWith({CbAvalgo? cbAvalgo, String? Function()? cbExemption, int? Function()? cbScore, }) { return NetworkOptionsCartesBancaires(

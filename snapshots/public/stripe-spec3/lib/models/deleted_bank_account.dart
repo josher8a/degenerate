@@ -35,9 +35,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('delet
 List<String> validate() { final errors = <String>[];
 final currency$ = currency;
 if (currency$ != null) {
-  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+  if (currency$.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 DeletedBankAccount copyWith({String? Function()? currency, bool? deleted, String? id, BankAccountObject? object, }) { return DeletedBankAccount(
   currency: currency != null ? currency() : this.currency,

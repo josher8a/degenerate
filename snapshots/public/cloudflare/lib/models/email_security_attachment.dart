@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('size') && json['size'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (size < 0) errors.add('size: must be >= 0');
+if (size < 0) { errors.add('size: must be >= 0'); }
 return errors; } 
 EmailSecurityAttachment copyWith({String? Function()? contentType, EmailSecurityDispositionLabel? Function()? detection, bool? Function()? encrypted, String? Function()? name, int? size, }) { return EmailSecurityAttachment(
   contentType: contentType != null ? contentType() : this.contentType,

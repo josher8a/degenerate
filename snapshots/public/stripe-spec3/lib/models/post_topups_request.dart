@@ -53,15 +53,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final source$ = source;
 if (source$ != null) {
-  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+  if (source$.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 15) errors.add('statementDescriptor: length must be <= 15');
+  if (statementDescriptor$.length > 15) { errors.add('statementDescriptor: length must be <= 15'); }
 }
 return errors; } 
 PostTopupsRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? source, String? Function()? statementDescriptor, String? Function()? transferGroup, }) { return PostTopupsRequest(

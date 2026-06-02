@@ -96,7 +96,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('items
 List<String> validate() { final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 return errors; } 
 PostSubscriptionSchedulesRequestPhases copyWith({List<PhasesAddInvoiceItems>? Function()? addInvoiceItems, double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? currency, String? Function()? defaultPaymentMethod, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, PhasesDuration? Function()? duration, int? Function()? endDate, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? items, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, bool? Function()? trial, int? Function()? trialEnd, }) { return PostSubscriptionSchedulesRequestPhases(

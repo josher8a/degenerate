@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('index') && json['index'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (index < 1) errors.add('index: must be >= 1');
+if (index < 1) { errors.add('index: must be >= 1'); }
 return errors; } 
 ShieldIndex copyWith({int? index}) { return ShieldIndex(
   index: index ?? this.index,

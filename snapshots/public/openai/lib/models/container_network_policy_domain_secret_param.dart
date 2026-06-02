@@ -27,10 +27,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('domai
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (domain.isEmpty) errors.add('domain: length must be >= 1');
-if (name.isEmpty) errors.add('name: length must be >= 1');
-if (value.isEmpty) errors.add('value: length must be >= 1');
-if (value.length > 10485760) errors.add('value: length must be <= 10485760');
+if (domain.isEmpty) { errors.add('domain: length must be >= 1'); }
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
+if (value.isEmpty) { errors.add('value: length must be >= 1'); }
+if (value.length > 10485760) { errors.add('value: length must be <= 10485760'); }
 return errors; } 
 ContainerNetworkPolicyDomainSecretParam copyWith({String? domain, String? name, String? value, }) { return ContainerNetworkPolicyDomainSecretParam(
   domain: domain ?? this.domain,

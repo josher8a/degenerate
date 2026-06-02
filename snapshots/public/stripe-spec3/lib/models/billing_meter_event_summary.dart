@@ -80,8 +80,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('aggre
       json.containsKey('start_time') && json['start_time'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (meter.length > 5000) errors.add('meter: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (meter.length > 5000) { errors.add('meter: length must be <= 5000'); }
 return errors; } 
 BillingMeterEventSummary copyWith({double? aggregatedValue, int? endTime, String? id, bool? livemode, String? meter, BillingMeterEventSummaryObject? object, int? startTime, }) { return BillingMeterEventSummary(
   aggregatedValue: aggregatedValue ?? this.aggregatedValue,

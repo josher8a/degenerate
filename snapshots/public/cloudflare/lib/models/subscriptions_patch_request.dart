@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final events$ = events;
 if (events$ != null) {
-  if (events$.isEmpty) errors.add('events: must have >= 1 items');
+  if (events$.isEmpty) { errors.add('events: must have >= 1 items'); }
 }
 return errors; } 
 SubscriptionsPatchRequest copyWith({MqEventDestination? Function()? destination, bool? Function()? enabled, List<String>? Function()? events, String? Function()? name, }) { return SubscriptionsPatchRequest(

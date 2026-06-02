@@ -72,11 +72,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('reque
 List<String> validate() { final errors = <String>[];
 final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
 if (statementDescriptorSuffixKana$ != null) {
-  if (statementDescriptorSuffixKana$.length > 5000) errors.add('statementDescriptorSuffixKana: length must be <= 5000');
+  if (statementDescriptorSuffixKana$.length > 5000) { errors.add('statementDescriptorSuffixKana: length must be <= 5000'); }
 }
 final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
 if (statementDescriptorSuffixKanji$ != null) {
-  if (statementDescriptorSuffixKanji$.length > 5000) errors.add('statementDescriptorSuffixKanji: length must be <= 5000');
+  if (statementDescriptorSuffixKanji$.length > 5000) { errors.add('statementDescriptorSuffixKanji: length must be <= 5000'); }
 }
 return errors; } 
 CheckoutCardPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, CheckoutCardInstallmentsOptions? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? requestThreeDSecure, PaymentPagesPrivateCardPaymentMethodOptionsResourceRestrictions? Function()? restrictions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return CheckoutCardPaymentMethodOptions(

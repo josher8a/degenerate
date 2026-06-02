@@ -40,11 +40,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1500) errors.add('description: length must be <= 1500');
+  if (description$.length > 1500) { errors.add('description: length must be <= 1500'); }
 }
 final footer$ = footer;
 if (footer$ != null) {
-  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+  if (footer$.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? description, String? Function()? footer, Issuer? Function()? issuer, Metadata? Function()? metadata, InvoiceDataRenderingOptions? Function()? renderingOptions, }) { return PostPaymentLinksPaymentLinkRequestInvoiceCreationInvoiceData(

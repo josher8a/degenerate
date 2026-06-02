@@ -28,19 +28,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final imageUrl$ = imageUrl;
 if (imageUrl$ != null) {
-  if (imageUrl$.length > 4096) errors.add('imageUrl: length must be <= 4096');
+  if (imageUrl$.length > 4096) { errors.add('imageUrl: length must be <= 4096'); }
 }
 final productUrl$ = productUrl;
 if (productUrl$ != null) {
-  if (productUrl$.length > 4096) errors.add('productUrl: length must be <= 4096');
+  if (productUrl$.length > 4096) { errors.add('productUrl: length must be <= 4096'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 255) errors.add('reference: length must be <= 255');
+  if (reference$.length > 255) { errors.add('reference: length must be <= 255'); }
 }
 final subscriptionReference$ = subscriptionReference;
 if (subscriptionReference$ != null) {
-  if (subscriptionReference$.length > 255) errors.add('subscriptionReference: length must be <= 255');
+  if (subscriptionReference$.length > 255) { errors.add('subscriptionReference: length must be <= 255'); }
 }
 return errors; } 
 Variant1PaymentMethodOptionsKlarna copyWith({String? Function()? imageUrl, String? Function()? productUrl, String? Function()? reference, String? Function()? subscriptionReference, }) { return Variant1PaymentMethodOptionsKlarna(

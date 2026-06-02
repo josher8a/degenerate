@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('trace_id') && json['trace_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (traceId.length > 5000) errors.add('traceId: length must be <= 5000');
+if (traceId.length > 5000) { errors.add('traceId: length must be <= 5000'); }
 return errors; } 
 TrackingDetailsAch copyWith({String? traceId}) { return TrackingDetailsAch(
   traceId: traceId ?? this.traceId,

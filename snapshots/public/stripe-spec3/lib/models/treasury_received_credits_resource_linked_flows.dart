@@ -43,23 +43,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final creditReversal$ = creditReversal;
 if (creditReversal$ != null) {
-  if (creditReversal$.length > 5000) errors.add('creditReversal: length must be <= 5000');
+  if (creditReversal$.length > 5000) { errors.add('creditReversal: length must be <= 5000'); }
 }
 final issuingAuthorization$ = issuingAuthorization;
 if (issuingAuthorization$ != null) {
-  if (issuingAuthorization$.length > 5000) errors.add('issuingAuthorization: length must be <= 5000');
+  if (issuingAuthorization$.length > 5000) { errors.add('issuingAuthorization: length must be <= 5000'); }
 }
 final issuingTransaction$ = issuingTransaction;
 if (issuingTransaction$ != null) {
-  if (issuingTransaction$.length > 5000) errors.add('issuingTransaction: length must be <= 5000');
+  if (issuingTransaction$.length > 5000) { errors.add('issuingTransaction: length must be <= 5000'); }
 }
 final sourceFlow$ = sourceFlow;
 if (sourceFlow$ != null) {
-  if (sourceFlow$.length > 5000) errors.add('sourceFlow: length must be <= 5000');
+  if (sourceFlow$.length > 5000) { errors.add('sourceFlow: length must be <= 5000'); }
 }
 final sourceFlowType$ = sourceFlowType;
 if (sourceFlowType$ != null) {
-  if (sourceFlowType$.length > 5000) errors.add('sourceFlowType: length must be <= 5000');
+  if (sourceFlowType$.length > 5000) { errors.add('sourceFlowType: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryReceivedCreditsResourceLinkedFlows copyWith({String? Function()? creditReversal, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? sourceFlow, TreasuryReceivedCreditsResourceSourceFlowsDetails? Function()? sourceFlowDetails, String? Function()? sourceFlowType, }) { return TreasuryReceivedCreditsResourceLinkedFlows(

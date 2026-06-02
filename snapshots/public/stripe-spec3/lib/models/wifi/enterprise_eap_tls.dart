@@ -34,9 +34,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
 List<String> validate() { final errors = <String>[];
 final privateKeyFilePassword$ = privateKeyFilePassword;
 if (privateKeyFilePassword$ != null) {
-  if (privateKeyFilePassword$.length > 5000) errors.add('privateKeyFilePassword: length must be <= 5000');
+  if (privateKeyFilePassword$.length > 5000) { errors.add('privateKeyFilePassword: length must be <= 5000'); }
 }
-if (ssid.length > 5000) errors.add('ssid: length must be <= 5000');
+if (ssid.length > 5000) { errors.add('ssid: length must be <= 5000'); }
 return errors; } 
 EnterpriseEapTls copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) { return EnterpriseEapTls(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,

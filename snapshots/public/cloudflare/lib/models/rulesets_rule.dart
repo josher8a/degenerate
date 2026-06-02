@@ -79,18 +79,18 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('last_
 List<String> validate() { final errors = <String>[];
 final categories$ = categories;
 if (categories$ != null) {
-  if (categories$.isEmpty) errors.add('categories: must have >= 1 items');
-  if (categories$.toSet().length != categories$.length) errors.add('categories: items must be unique');
+  if (categories$.isEmpty) { errors.add('categories: must have >= 1 items'); }
+  if (categories$.toSet().length != categories$.length) { errors.add('categories: items must be unique'); }
 }
 final expression$ = expression;
 if (expression$ != null) {
-  if (expression$.isEmpty) errors.add('expression: length must be >= 1');
+  if (expression$.isEmpty) { errors.add('expression: length must be >= 1'); }
 }
 final ref$ = ref;
 if (ref$ != null) {
-  if (ref$.isEmpty) errors.add('ref: length must be >= 1');
+  if (ref$.isEmpty) { errors.add('ref: length must be >= 1'); }
 }
-if (!RegExp(r'^[0-9]+$').hasMatch(version)) errors.add(r'version: must match pattern ^[0-9]+$');
+if (!RegExp(r'^[0-9]+$').hasMatch(version)) { errors.add(r'version: must match pattern ^[0-9]+$'); }
 return errors; } 
 RulesetsRule copyWith({RulesetsRuleAction? Function()? action, Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRule(
   action: action != null ? action() : this.action,

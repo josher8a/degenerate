@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('reason') && json['reason'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (reason.length > 5000) errors.add('reason: length must be <= 5000');
+if (reason.length > 5000) { errors.add('reason: length must be <= 5000'); }
 return errors; } 
 PostAccountsAccountRejectRequest copyWith({List<String>? Function()? expand, String? reason, }) { return PostAccountsAccountRejectRequest(
   expand: expand != null ? expand() : this.expand,

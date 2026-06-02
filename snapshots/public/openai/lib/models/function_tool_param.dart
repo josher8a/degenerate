@@ -31,9 +31,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.isEmpty) errors.add('name: length must be >= 1');
-if (name.length > 128) errors.add('name: length must be <= 128');
-if (!RegExp(r'^[a-zA-Z0-9_-]+$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-zA-Z0-9_-]+$');
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
+if (name.length > 128) { errors.add('name: length must be <= 128'); }
+if (!RegExp(r'^[a-zA-Z0-9_-]+$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-zA-Z0-9_-]+$'); }
 return errors; } 
 FunctionToolParam copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, AssistantToolsFunctionType? type, }) { return FunctionToolParam(
   name: name ?? this.name,

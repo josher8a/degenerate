@@ -79,10 +79,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 TerminalConfiguration copyWith({TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWisepad3, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? bbposWiseposE, TerminalConfigurationConfigurationResourceCellularConfig? Function()? cellular, String? id, bool? Function()? isAccountDefault, bool? livemode, String? Function()? name, DeletedTerminalConfigurationObject? object, TerminalConfigurationConfigurationResourceOfflineConfig? Function()? offline, TerminalConfigurationConfigurationResourceRebootWindow? Function()? rebootWindow, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS700, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? stripeS710, TerminalConfigurationConfigurationResourceTipping? Function()? tipping, TerminalConfigurationConfigurationResourceDeviceTypeSpecificConfig? Function()? verifoneP400, TerminalConfigurationConfigurationResourceWifiConfig? Function()? wifi, }) { return TerminalConfiguration(

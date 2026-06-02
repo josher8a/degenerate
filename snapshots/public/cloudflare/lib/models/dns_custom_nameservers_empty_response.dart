@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final result$ = result;
 if (result$ != null) {
-  if (result$.isNotEmpty) errors.add('result: must have <= 0 items');
+  if (result$.isNotEmpty) { errors.add('result: must have <= 0 items'); }
 }
 return errors; } 
 DnsCustomNameserversEmptyResponse copyWith({List<String>? Function()? result}) { return DnsCustomNameserversEmptyResponse(

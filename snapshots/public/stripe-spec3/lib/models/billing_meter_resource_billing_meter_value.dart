@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_payload_key') && json['event_payload_key'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (eventPayloadKey.length > 5000) errors.add('eventPayloadKey: length must be <= 5000');
+if (eventPayloadKey.length > 5000) { errors.add('eventPayloadKey: length must be <= 5000'); }
 return errors; } 
 BillingMeterResourceBillingMeterValue copyWith({String? eventPayloadKey}) { return BillingMeterResourceBillingMeterValue(
   eventPayloadKey: eventPayloadKey ?? this.eventPayloadKey,

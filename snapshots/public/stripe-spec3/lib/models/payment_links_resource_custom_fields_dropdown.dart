@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('optio
 List<String> validate() { final errors = <String>[];
 final defaultValue$ = defaultValue;
 if (defaultValue$ != null) {
-  if (defaultValue$.length > 5000) errors.add('defaultValue: length must be <= 5000');
+  if (defaultValue$.length > 5000) { errors.add('defaultValue: length must be <= 5000'); }
 }
 return errors; } 
 PaymentLinksResourceCustomFieldsDropdown copyWith({String? Function()? defaultValue, List<PaymentLinksResourceCustomFieldsDropdownOption>? options, }) { return PaymentLinksResourceCustomFieldsDropdown(

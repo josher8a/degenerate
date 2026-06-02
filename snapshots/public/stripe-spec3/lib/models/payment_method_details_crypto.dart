@@ -98,11 +98,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final buyerAddress$ = buyerAddress;
 if (buyerAddress$ != null) {
-  if (buyerAddress$.length > 5000) errors.add('buyerAddress: length must be <= 5000');
+  if (buyerAddress$.length > 5000) { errors.add('buyerAddress: length must be <= 5000'); }
 }
 final transactionHash$ = transactionHash;
 if (transactionHash$ != null) {
-  if (transactionHash$.length > 5000) errors.add('transactionHash: length must be <= 5000');
+  if (transactionHash$.length > 5000) { errors.add('transactionHash: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsCrypto copyWith({String? Function()? buyerAddress, PaymentMethodDetailsCryptoNetwork? Function()? network, TokenCurrency? Function()? tokenCurrency, String? Function()? transactionHash, }) { return PaymentMethodDetailsCrypto(

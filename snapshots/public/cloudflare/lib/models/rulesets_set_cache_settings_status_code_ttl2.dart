@@ -31,8 +31,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('value
 List<String> validate() { final errors = <String>[];
 final statusCode$ = statusCode;
 if (statusCode$ != null) {
-  if (statusCode$ < 100) errors.add('statusCode: must be >= 100');
-  if (statusCode$ > 999) errors.add('statusCode: must be <= 999');
+  if (statusCode$ < 100) { errors.add('statusCode: must be >= 100'); }
+  if (statusCode$ > 999) { errors.add('statusCode: must be <= 999'); }
 }
 return errors; } 
 RulesetsSetCacheSettingsStatusCodeTtl2 copyWith({int? Function()? statusCode, StatusCodeRange? Function()? statusCodeRange, int? value, }) { return RulesetsSetCacheSettingsStatusCodeTtl2(

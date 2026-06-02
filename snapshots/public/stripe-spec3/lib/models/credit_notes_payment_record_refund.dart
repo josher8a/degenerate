@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('payme
       json.containsKey('refund_group') && json['refund_group'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (paymentRecord.length > 5000) errors.add('paymentRecord: length must be <= 5000');
-if (refundGroup.length > 5000) errors.add('refundGroup: length must be <= 5000');
+if (paymentRecord.length > 5000) { errors.add('paymentRecord: length must be <= 5000'); }
+if (refundGroup.length > 5000) { errors.add('refundGroup: length must be <= 5000'); }
 return errors; } 
 CreditNotesPaymentRecordRefund copyWith({String? paymentRecord, String? refundGroup, }) { return CreditNotesPaymentRecordRefund(
   paymentRecord: paymentRecord ?? this.paymentRecord,

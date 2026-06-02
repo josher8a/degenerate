@@ -152,75 +152,75 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enhan
 List<String> validate() { final errors = <String>[];
 final accessActivityLog$ = accessActivityLog;
 if (accessActivityLog$ != null) {
-  if (accessActivityLog$.length > 150000) errors.add('accessActivityLog: length must be <= 150000');
+  if (accessActivityLog$.length > 150000) { errors.add('accessActivityLog: length must be <= 150000'); }
 }
 final billingAddress$ = billingAddress;
 if (billingAddress$ != null) {
-  if (billingAddress$.length > 5000) errors.add('billingAddress: length must be <= 5000');
+  if (billingAddress$.length > 5000) { errors.add('billingAddress: length must be <= 5000'); }
 }
 final cancellationPolicyDisclosure$ = cancellationPolicyDisclosure;
 if (cancellationPolicyDisclosure$ != null) {
-  if (cancellationPolicyDisclosure$.length > 150000) errors.add('cancellationPolicyDisclosure: length must be <= 150000');
+  if (cancellationPolicyDisclosure$.length > 150000) { errors.add('cancellationPolicyDisclosure: length must be <= 150000'); }
 }
 final cancellationRebuttal$ = cancellationRebuttal;
 if (cancellationRebuttal$ != null) {
-  if (cancellationRebuttal$.length > 150000) errors.add('cancellationRebuttal: length must be <= 150000');
+  if (cancellationRebuttal$.length > 150000) { errors.add('cancellationRebuttal: length must be <= 150000'); }
 }
 final customerEmailAddress$ = customerEmailAddress;
 if (customerEmailAddress$ != null) {
-  if (customerEmailAddress$.length > 5000) errors.add('customerEmailAddress: length must be <= 5000');
+  if (customerEmailAddress$.length > 5000) { errors.add('customerEmailAddress: length must be <= 5000'); }
 }
 final customerName$ = customerName;
 if (customerName$ != null) {
-  if (customerName$.length > 5000) errors.add('customerName: length must be <= 5000');
+  if (customerName$.length > 5000) { errors.add('customerName: length must be <= 5000'); }
 }
 final customerPurchaseIp$ = customerPurchaseIp;
 if (customerPurchaseIp$ != null) {
-  if (customerPurchaseIp$.length > 5000) errors.add('customerPurchaseIp: length must be <= 5000');
+  if (customerPurchaseIp$.length > 5000) { errors.add('customerPurchaseIp: length must be <= 5000'); }
 }
 final duplicateChargeExplanation$ = duplicateChargeExplanation;
 if (duplicateChargeExplanation$ != null) {
-  if (duplicateChargeExplanation$.length > 150000) errors.add('duplicateChargeExplanation: length must be <= 150000');
+  if (duplicateChargeExplanation$.length > 150000) { errors.add('duplicateChargeExplanation: length must be <= 150000'); }
 }
 final duplicateChargeId$ = duplicateChargeId;
 if (duplicateChargeId$ != null) {
-  if (duplicateChargeId$.length > 5000) errors.add('duplicateChargeId: length must be <= 5000');
+  if (duplicateChargeId$.length > 5000) { errors.add('duplicateChargeId: length must be <= 5000'); }
 }
 final productDescription$ = productDescription;
 if (productDescription$ != null) {
-  if (productDescription$.length > 150000) errors.add('productDescription: length must be <= 150000');
+  if (productDescription$.length > 150000) { errors.add('productDescription: length must be <= 150000'); }
 }
 final refundPolicyDisclosure$ = refundPolicyDisclosure;
 if (refundPolicyDisclosure$ != null) {
-  if (refundPolicyDisclosure$.length > 150000) errors.add('refundPolicyDisclosure: length must be <= 150000');
+  if (refundPolicyDisclosure$.length > 150000) { errors.add('refundPolicyDisclosure: length must be <= 150000'); }
 }
 final refundRefusalExplanation$ = refundRefusalExplanation;
 if (refundRefusalExplanation$ != null) {
-  if (refundRefusalExplanation$.length > 150000) errors.add('refundRefusalExplanation: length must be <= 150000');
+  if (refundRefusalExplanation$.length > 150000) { errors.add('refundRefusalExplanation: length must be <= 150000'); }
 }
 final serviceDate$ = serviceDate;
 if (serviceDate$ != null) {
-  if (serviceDate$.length > 5000) errors.add('serviceDate: length must be <= 5000');
+  if (serviceDate$.length > 5000) { errors.add('serviceDate: length must be <= 5000'); }
 }
 final shippingAddress$ = shippingAddress;
 if (shippingAddress$ != null) {
-  if (shippingAddress$.length > 5000) errors.add('shippingAddress: length must be <= 5000');
+  if (shippingAddress$.length > 5000) { errors.add('shippingAddress: length must be <= 5000'); }
 }
 final shippingCarrier$ = shippingCarrier;
 if (shippingCarrier$ != null) {
-  if (shippingCarrier$.length > 5000) errors.add('shippingCarrier: length must be <= 5000');
+  if (shippingCarrier$.length > 5000) { errors.add('shippingCarrier: length must be <= 5000'); }
 }
 final shippingDate$ = shippingDate;
 if (shippingDate$ != null) {
-  if (shippingDate$.length > 5000) errors.add('shippingDate: length must be <= 5000');
+  if (shippingDate$.length > 5000) { errors.add('shippingDate: length must be <= 5000'); }
 }
 final shippingTrackingNumber$ = shippingTrackingNumber;
 if (shippingTrackingNumber$ != null) {
-  if (shippingTrackingNumber$.length > 5000) errors.add('shippingTrackingNumber: length must be <= 5000');
+  if (shippingTrackingNumber$.length > 5000) { errors.add('shippingTrackingNumber: length must be <= 5000'); }
 }
 final uncategorizedText$ = uncategorizedText;
 if (uncategorizedText$ != null) {
-  if (uncategorizedText$.length > 150000) errors.add('uncategorizedText: length must be <= 150000');
+  if (uncategorizedText$.length > 150000) { errors.add('uncategorizedText: length must be <= 150000'); }
 }
 return errors; } 
 DisputeEvidence copyWith({String? Function()? accessActivityLog, String? Function()? billingAddress, CancellationPolicy? Function()? cancellationPolicy, String? Function()? cancellationPolicyDisclosure, String? Function()? cancellationRebuttal, CustomerCommunication? Function()? customerCommunication, String? Function()? customerEmailAddress, String? Function()? customerName, String? Function()? customerPurchaseIp, CustomerSignature? Function()? customerSignature, DuplicateChargeDocumentation? Function()? duplicateChargeDocumentation, String? Function()? duplicateChargeExplanation, String? Function()? duplicateChargeId, DisputeEnhancedEvidence? enhancedEvidence, String? Function()? productDescription, DisputeEvidenceReceipt? Function()? receipt, RefundPolicy? Function()? refundPolicy, String? Function()? refundPolicyDisclosure, String? Function()? refundRefusalExplanation, String? Function()? serviceDate, ServiceDocumentation? Function()? serviceDocumentation, String? Function()? shippingAddress, String? Function()? shippingCarrier, String? Function()? shippingDate, ShippingDocumentation? Function()? shippingDocumentation, String? Function()? shippingTrackingNumber, UncategorizedFile? Function()? uncategorizedFile, String? Function()? uncategorizedText, }) { return DisputeEvidence(

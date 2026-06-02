@@ -49,11 +49,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_GB
       json.containsKey('UNDER_500_MBPS') && json['UNDER_500_MBPS'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch($1GbpsTo10Gbps)) errors.add(r'$1GbpsTo10Gbps: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch($10GbpsTo100Gbps)) errors.add(r'$10GbpsTo100Gbps: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch($500MbpsTo1Gbps)) errors.add(r'$500MbpsTo1Gbps: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(over100Gbps)) errors.add(r'over100Gbps: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(under500Mbps)) errors.add(r'under500Mbps: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch($1GbpsTo10Gbps)) { errors.add(r'$1GbpsTo10Gbps: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch($10GbpsTo100Gbps)) { errors.add(r'$10GbpsTo100Gbps: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch($500MbpsTo1Gbps)) { errors.add(r'$500MbpsTo1Gbps: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(over100Gbps)) { errors.add(r'over100Gbps: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(under500Mbps)) { errors.add(r'under500Mbps: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0 copyWith({String? $1GbpsTo10Gbps, String? $10GbpsTo100Gbps, String? $500MbpsTo1Gbps, String? over100Gbps, String? under500Mbps, }) { return RadarGetAttacksLayer3SummaryByBitrateResponseResultSummary0(
   $1GbpsTo10Gbps: $1GbpsTo10Gbps ?? this.$1GbpsTo10Gbps,

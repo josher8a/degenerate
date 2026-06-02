@@ -40,18 +40,18 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
-  if (checkPresence$.isEmpty) errors.add('checkPresence: must have >= 1 items');
-  if (checkPresence$.length > 50) errors.add('checkPresence: must have <= 50 items');
+  if (checkPresence$.isEmpty) { errors.add('checkPresence: must have >= 1 items'); }
+  if (checkPresence$.length > 50) { errors.add('checkPresence: must have <= 50 items'); }
 }
 final exclude$ = exclude;
 if (exclude$ != null) {
-  if (exclude$.isEmpty) errors.add('exclude: must have >= 1 items');
-  if (exclude$.length > 50) errors.add('exclude: must have <= 50 items');
+  if (exclude$.isEmpty) { errors.add('exclude: must have >= 1 items'); }
+  if (exclude$.length > 50) { errors.add('exclude: must have <= 50 items'); }
 }
 final include$ = include;
 if (include$ != null) {
-  if (include$.isEmpty) errors.add('include: must have >= 1 items');
-  if (include$.length > 50) errors.add('include: must have <= 50 items');
+  if (include$.isEmpty) { errors.add('include: must have >= 1 items'); }
+  if (include$.length > 50) { errors.add('include: must have <= 50 items'); }
 }
 return errors; } 
 Header copyWith({List<String>? Function()? checkPresence, List<String>? Function()? exclude, List<String>? Function()? include, }) { return Header(

@@ -188,11 +188,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file'
 List<String> validate() { final errors = <String>[];
 final knownSpeakerNames$ = knownSpeakerNames;
 if (knownSpeakerNames$ != null) {
-  if (knownSpeakerNames$.length > 4) errors.add('knownSpeakerNames: must have <= 4 items');
+  if (knownSpeakerNames$.length > 4) { errors.add('knownSpeakerNames: must have <= 4 items'); }
 }
 final knownSpeakerReferences$ = knownSpeakerReferences;
 if (knownSpeakerReferences$ != null) {
-  if (knownSpeakerReferences$.length > 4) errors.add('knownSpeakerReferences: must have <= 4 items');
+  if (knownSpeakerReferences$.length > 4) { errors.add('knownSpeakerReferences: must have <= 4 items'); }
 }
 return errors; } 
 CreateTranscriptionRequest copyWith({Uint8List? file, AudioTranscriptionModel? model, String? Function()? language, String? Function()? prompt, AudioResponseFormat? Function()? responseFormat, double Function()? temperature, List<TranscriptionInclude>? Function()? include, List<TimestampGranularities>? Function()? timestampGranularities, bool? Function()? stream, CreateTranscriptionRequestChunkingStrategy? Function()? chunkingStrategy, List<String>? Function()? knownSpeakerNames, List<String>? Function()? knownSpeakerReferences, }) { return CreateTranscriptionRequest(

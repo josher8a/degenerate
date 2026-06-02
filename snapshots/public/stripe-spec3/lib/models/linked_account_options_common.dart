@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 return errors; } 
 LinkedAccountOptionsCommon copyWith({PaymentFlowsPrivatePaymentMethodsFinancialConnectionsCommonLinkedAccountOptionsFilters? Function()? filters, List<FinancialConnectionsAccountPermissions>? Function()? permissions, List<Prefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return LinkedAccountOptionsCommon(

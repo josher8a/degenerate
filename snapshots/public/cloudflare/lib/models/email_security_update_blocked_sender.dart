@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final pattern$ = pattern;
 if (pattern$ != null) {
-  if (pattern$.isEmpty) errors.add('pattern: length must be >= 1');
+  if (pattern$.isEmpty) { errors.add('pattern: length must be >= 1'); }
 }
 return errors; } 
 EmailSecurityUpdateBlockedSender copyWith({String? Function()? comments, bool? Function()? isRegex, String? Function()? pattern, EmailSecurityPatternType? Function()? patternType, }) { return EmailSecurityUpdateBlockedSender(

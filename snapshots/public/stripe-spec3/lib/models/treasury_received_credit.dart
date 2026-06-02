@@ -192,16 +192,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (description.length > 5000) errors.add('description: length must be <= 5000');
+if (description.length > 5000) { errors.add('description: length must be <= 5000'); }
 final financialAccount$ = financialAccount;
 if (financialAccount$ != null) {
-  if (financialAccount$.length > 5000) errors.add('financialAccount: length must be <= 5000');
+  if (financialAccount$.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 }
 final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
 if (hostedRegulatoryReceiptUrl$ != null) {
-  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+  if (hostedRegulatoryReceiptUrl$.length > 5000) { errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 TreasuryReceivedCredit copyWith({int? amount, int? created, String? currency, String? description, TreasuryReceivedCreditFailureCode? Function()? failureCode, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails? initiatingPaymentMethodDetails, TreasuryReceivedCreditsResourceLinkedFlows? linkedFlows, bool? livemode, TreasuryReceivedCreditNetwork? network, TreasuryReceivedCreditObject? object, TreasuryReceivedCreditsResourceReversalDetails? Function()? reversalDetails, TreasuryReceivedCreditStatus? status, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryReceivedCredit(
   amount: amount ?? this.amount,

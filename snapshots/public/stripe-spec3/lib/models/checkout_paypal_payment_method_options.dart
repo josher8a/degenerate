@@ -39,11 +39,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
-  if (preferredLocale$.length > 5000) errors.add('preferredLocale: length must be <= 5000');
+  if (preferredLocale$.length > 5000) { errors.add('preferredLocale: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 CheckoutPaypalPaymentMethodOptions copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, String? Function()? reference, CheckoutAmazonPayPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return CheckoutPaypalPaymentMethodOptions(

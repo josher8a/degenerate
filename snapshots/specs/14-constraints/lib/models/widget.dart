@@ -31,22 +31,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('score') && json['score'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length < 3) errors.add('name: length must be >= 3');
-if (name.length > 10) errors.add('name: length must be <= 10');
-if (!RegExp(r'^[a-z]+$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-z]+$');
-if (score < 0) errors.add('score: must be >= 0');
-if (score > 100) errors.add('score: must be <= 100');
-if (score % 5 != 0) errors.add('score: must be a multiple of 5');
+if (name.length < 3) { errors.add('name: length must be >= 3'); }
+if (name.length > 10) { errors.add('name: length must be <= 10'); }
+if (!RegExp(r'^[a-z]+$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z]+$'); }
+if (score < 0) { errors.add('score: must be >= 0'); }
+if (score > 100) { errors.add('score: must be <= 100'); }
+if (score % 5 != 0) { errors.add('score: must be a multiple of 5'); }
 final ratio$ = ratio;
 if (ratio$ != null) {
-  if (ratio$ <= 0) errors.add('ratio: must be > 0');
-  if (ratio$ >= 1) errors.add('ratio: must be < 1');
+  if (ratio$ <= 0) { errors.add('ratio: must be > 0'); }
+  if (ratio$ >= 1) { errors.add('ratio: must be < 1'); }
 }
 final tags$ = tags;
 if (tags$ != null) {
-  if (tags$.isEmpty) errors.add('tags: must have >= 1 items');
-  if (tags$.length > 3) errors.add('tags: must have <= 3 items');
-  if (tags$.toSet().length != tags$.length) errors.add('tags: items must be unique');
+  if (tags$.isEmpty) { errors.add('tags: must have >= 1 items'); }
+  if (tags$.length > 3) { errors.add('tags: must have <= 3 items'); }
+  if (tags$.toSet().length != tags$.length) { errors.add('tags: items must be unique'); }
 }
 return errors; } 
 Widget copyWith({String? name, int? score, double? Function()? ratio, List<String>? Function()? tags, String? Function()? note, }) { return Widget(

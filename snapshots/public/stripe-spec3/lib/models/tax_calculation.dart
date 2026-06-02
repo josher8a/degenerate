@@ -120,14 +120,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_date') && json['tax_date'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
 return errors; } 
 TaxCalculation copyWith({int? amountTotal, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, int? Function()? expiresAt, String? Function()? id, TaxCalculationLineItems? Function()? lineItems, bool? livemode, TaxCalculationObject? object, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxCalculationShippingCost? Function()? shippingCost, int? taxAmountExclusive, int? taxAmountInclusive, List<TaxProductResourceTaxBreakdown>? taxBreakdown, int? taxDate, }) { return TaxCalculation(

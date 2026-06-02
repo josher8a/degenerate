@@ -35,8 +35,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'format', 'voice', 'speed'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (speed < 0.25) errors.add('speed: must be >= 0.25');
-if (speed > 1.5) errors.add('speed: must be <= 1.5');
+if (speed < 0.25) { errors.add('speed: must be >= 0.25'); }
+if (speed > 1.5) { errors.add('speed: must be <= 1.5'); }
 return errors; } 
 RealtimeSessionCreateResponseGaAudioOutput copyWith({RealtimeAudioFormats? Function()? format, VoiceIdsShared? Function()? voice, double Function()? speed, }) { return RealtimeSessionCreateResponseGaAudioOutput(
   format: format != null ? format() : this.format,

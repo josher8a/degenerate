@@ -24,15 +24,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final statementDescriptorKana$ = statementDescriptorKana;
 if (statementDescriptorKana$ != null) {
-  if (statementDescriptorKana$.length > 22) errors.add('statementDescriptorKana: length must be <= 22');
+  if (statementDescriptorKana$.length > 22) { errors.add('statementDescriptorKana: length must be <= 22'); }
 }
 final statementDescriptorKanji$ = statementDescriptorKanji;
 if (statementDescriptorKanji$ != null) {
-  if (statementDescriptorKanji$.length > 22) errors.add('statementDescriptorKanji: length must be <= 22');
+  if (statementDescriptorKanji$.length > 22) { errors.add('statementDescriptorKanji: length must be <= 22'); }
 }
 return errors; } 
 SettingsPayments copyWith({String? Function()? statementDescriptor, String? Function()? statementDescriptorKana, String? Function()? statementDescriptorKanji, }) { return SettingsPayments(

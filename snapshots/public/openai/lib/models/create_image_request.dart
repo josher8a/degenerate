@@ -244,8 +244,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 List<String> validate() { final errors = <String>[];
 final n$ = n;
 if (n$ != null) {
-  if (n$ < 1) errors.add('n: must be >= 1');
-  if (n$ > 10) errors.add('n: must be <= 10');
+  if (n$ < 1) { errors.add('n: must be >= 1'); }
+  if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
 return errors; } 
 CreateImageRequest copyWith({String? prompt, CreateImageRequestModel? Function()? model, int? Function()? n, CreateImageRequestQuality? Function()? quality, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageEditRequestOutputFormat? Function()? outputFormat, int? Function()? outputCompression, bool? Function()? stream, PartialImages? Function()? partialImages, CreateImageRequestSize? Function()? size, CreateImageRequestModeration? Function()? moderation, CreateImageEditRequestBackground? Function()? background, Style? Function()? style, String? Function()? user, }) { return CreateImageRequest(

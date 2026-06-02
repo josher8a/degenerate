@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final physicalBundle$ = physicalBundle;
 if (physicalBundle$ != null) {
-  if (physicalBundle$.length > 5000) errors.add('physicalBundle: length must be <= 5000');
+  if (physicalBundle$.length > 5000) { errors.add('physicalBundle: length must be <= 5000'); }
 }
 return errors; } 
 PostIssuingPersonalizationDesignsPersonalizationDesignRequest copyWith({PostIssuingPersonalizationDesignsPersonalizationDesignRequestCardLogo? Function()? cardLogo, PostIssuingPersonalizationDesignsPersonalizationDesignRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, LookupKey? Function()? lookupKey, Map<String, String>? Function()? metadata, PostIssuingPersonalizationDesignsPersonalizationDesignRequestName? Function()? name, String? Function()? physicalBundle, Preferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsPersonalizationDesignRequest(

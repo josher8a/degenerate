@@ -176,40 +176,40 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final businessName$ = businessName;
 if (businessName$ != null) {
-  if (businessName$.length > 150) errors.add('businessName: length must be <= 150');
+  if (businessName$.length > 150) { errors.add('businessName: length must be <= 150'); }
 }
 final currency$ = currency;
 if (currency$ != null) {
-  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+  if (currency$.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final individualName$ = individualName;
 if (individualName$ != null) {
-  if (individualName$.length > 150) errors.add('individualName: length must be <= 150');
+  if (individualName$.length > 150) { errors.add('individualName: length must be <= 150'); }
 }
 final invoicePrefix$ = invoicePrefix;
 if (invoicePrefix$ != null) {
-  if (invoicePrefix$.length > 5000) errors.add('invoicePrefix: length must be <= 5000');
+  if (invoicePrefix$.length > 5000) { errors.add('invoicePrefix: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 return errors; } 
 Customer copyWith({Address? Function()? address, int? Function()? balance, String? Function()? businessName, CashBalance? Function()? cashBalance, int? created, String? Function()? currency, String? Function()? customerAccount, CustomerDefaultSource? Function()? defaultSource, bool? Function()? delinquent, String? Function()? description, Discount? Function()? discount, String? Function()? email, String? id, String? Function()? individualName, Map<String, int>? Function()? invoiceCreditBalance, String? Function()? invoicePrefix, InvoiceSettingCustomerSetting? Function()? invoiceSettings, bool? livemode, Map<String, String>? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, CustomerObject? object, String? Function()? phone, List<String>? Function()? preferredLocales, Shipping? Function()? shipping, Sources? Function()? sources, CustomerSubscriptions? Function()? subscriptions, CustomerTax? Function()? tax, CustomerTaxExempt? Function()? taxExempt, CustomerTaxIds? Function()? taxIds, TestClock? Function()? testClock, }) { return Customer(

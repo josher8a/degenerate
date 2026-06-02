@@ -25,7 +25,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final directive$ = directive;
 if (directive$ != null) {
-  if (directive$.length > 5000) errors.add('directive: length must be <= 5000');
+  if (directive$.length > 5000) { errors.add('directive: length must be <= 5000'); }
 }
 return errors; } 
 PostApplicationFeesIdRefundRequest copyWith({int? Function()? amount, String? Function()? directive, List<String>? Function()? expand, }) { return PostApplicationFeesIdRefundRequest(

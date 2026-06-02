@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 36) errors.add('id: length must be <= 36');
+if (id.length > 36) { errors.add('id: length must be <= 36'); }
 return errors; } 
 TokenValidationRulesBulkEditRequest copyWith({String? id}) { return TokenValidationRulesBulkEditRequest(
   id: id ?? this.id,

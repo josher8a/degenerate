@@ -38,19 +38,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final driverId$ = driverId;
 if (driverId$ != null) {
-  if (driverId$.length > 5000) errors.add('driverId: length must be <= 5000');
+  if (driverId$.length > 5000) { errors.add('driverId: length must be <= 5000'); }
 }
 final unspecifiedId$ = unspecifiedId;
 if (unspecifiedId$ != null) {
-  if (unspecifiedId$.length > 5000) errors.add('unspecifiedId: length must be <= 5000');
+  if (unspecifiedId$.length > 5000) { errors.add('unspecifiedId: length must be <= 5000'); }
 }
 final userId$ = userId;
 if (userId$ != null) {
-  if (userId$.length > 5000) errors.add('userId: length must be <= 5000');
+  if (userId$.length > 5000) { errors.add('userId: length must be <= 5000'); }
 }
 final vehicleNumber$ = vehicleNumber;
 if (vehicleNumber$ != null) {
-  if (vehicleNumber$.length > 5000) errors.add('vehicleNumber: length must be <= 5000');
+  if (vehicleNumber$.length > 5000) { errors.add('vehicleNumber: length must be <= 5000'); }
 }
 return errors; } 
 IssuingTransactionFleetCardholderPromptData copyWith({String? Function()? driverId, int? Function()? odometer, String? Function()? unspecifiedId, String? Function()? userId, String? Function()? vehicleNumber, }) { return IssuingTransactionFleetCardholderPromptData(

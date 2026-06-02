@@ -32,13 +32,13 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final algorithm$ = algorithm;
 if (algorithm$ != null) {
-  if (algorithm$ < 0) errors.add('algorithm: must be >= 0');
-  if (algorithm$ > 255) errors.add('algorithm: must be <= 255');
+  if (algorithm$ < 0) { errors.add('algorithm: must be >= 0'); }
+  if (algorithm$ > 255) { errors.add('algorithm: must be <= 255'); }
 }
 final type$ = type;
 if (type$ != null) {
-  if (type$ < 0) errors.add('type: must be >= 0');
-  if (type$ > 255) errors.add('type: must be <= 255');
+  if (type$ < 0) { errors.add('type: must be >= 0'); }
+  if (type$ > 255) { errors.add('type: must be <= 255'); }
 }
 return errors; } 
 DnsRecordsSshfpRecordData copyWith({double? Function()? algorithm, String? Function()? fingerprint, double? Function()? type, }) { return DnsRecordsSshfpRecordData(

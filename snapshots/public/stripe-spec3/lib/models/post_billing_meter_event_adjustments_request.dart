@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (eventName.length > 100) errors.add('eventName: length must be <= 100');
+if (eventName.length > 100) { errors.add('eventName: length must be <= 100'); }
 return errors; } 
 PostBillingMeterEventAdjustmentsRequest copyWith({Cancel? Function()? cancel, String? eventName, List<String>? Function()? expand, BillingMeterEventAdjustmentType? type, }) { return PostBillingMeterEventAdjustmentsRequest(
   cancel: cancel != null ? cancel() : this.cancel,

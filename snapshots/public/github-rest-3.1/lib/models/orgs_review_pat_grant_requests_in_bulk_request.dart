@@ -27,12 +27,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 final patRequestIds$ = patRequestIds;
 if (patRequestIds$ != null) {
-  if (patRequestIds$.isEmpty) errors.add('patRequestIds: must have >= 1 items');
-  if (patRequestIds$.length > 100) errors.add('patRequestIds: must have <= 100 items');
+  if (patRequestIds$.isEmpty) { errors.add('patRequestIds: must have >= 1 items'); }
+  if (patRequestIds$.length > 100) { errors.add('patRequestIds: must have <= 100 items'); }
 }
 final reason$ = reason;
 if (reason$ != null) {
-  if (reason$.length > 1024) errors.add('reason: length must be <= 1024');
+  if (reason$.length > 1024) { errors.add('reason: length must be <= 1024'); }
 }
 return errors; } 
 OrgsReviewPatGrantRequestsInBulkRequest copyWith({List<int>? Function()? patRequestIds, OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestsInBulkRequest(

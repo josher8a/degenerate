@@ -442,14 +442,14 @@ void main() {
 
       expect(source, contains('List<String> validate()'));
       // String checks gated to the string field; required → no null guard.
-      expect(source, contains('if (name.length < 3)'));
+      expect(source, contains('if (name.length < 3) {'));
       expect(source, contains('RegExp(r\'^[a-z]+\$\').hasMatch(name)'));
       // Numeric checks (not `.length`) on the int field.
-      expect(source, contains('if (score < 0)'));
-      expect(source, contains('if (score > 100)'));
+      expect(source, contains('if (score < 0) {'));
+      expect(source, contains('if (score > 100) {'));
       // List field is optional → null-guarded via a captured local.
       expect(source, contains(r'final tags$ = tags;'));
-      expect(source, contains(r'if (tags$.isEmpty)'));
+      expect(source, contains(r'if (tags$.isEmpty) {'));
       expect(source, contains(r'tags$.toSet().length != tags$.length'));
       expect(() => _formatOrFail(source), returnsNormally);
     });

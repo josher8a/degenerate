@@ -17,7 +17,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final encryptedNumber$ = encryptedNumber;
 if (encryptedNumber$ != null) {
-  if (encryptedNumber$.length > 5000) errors.add('encryptedNumber: length must be <= 5000');
+  if (encryptedNumber$.length > 5000) { errors.add('encryptedNumber: length must be <= 5000'); }
 }
 return errors; } 
 Pin copyWith({String? Function()? encryptedNumber}) { return Pin(

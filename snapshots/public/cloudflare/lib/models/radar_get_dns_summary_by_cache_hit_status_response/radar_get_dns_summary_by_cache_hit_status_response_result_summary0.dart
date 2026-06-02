@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('NEGAT
       json.containsKey('POSITIVE') && json['POSITIVE'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(negative)) errors.add(r'negative: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(positive)) errors.add(r'positive: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(negative)) { errors.add(r'negative: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(positive)) { errors.add(r'positive: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetDnsSummaryByCacheHitStatusResponseResultSummary0 copyWith({String? negative, String? positive, }) { return RadarGetDnsSummaryByCacheHitStatusResponseResultSummary0(
   negative: negative ?? this.negative,

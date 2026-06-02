@@ -21,7 +21,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final body$ = body;
 if (body$ != null) {
-  if (body$.length > 5000) errors.add('body: length must be <= 5000');
+  if (body$.length > 5000) { errors.add('body: length must be <= 5000'); }
 }
 return errors; } 
 Request copyWith({String? Function()? body, List<Headers>? Function()? headers, }) { return Request(

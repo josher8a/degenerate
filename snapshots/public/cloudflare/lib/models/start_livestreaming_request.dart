@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (!RegExp(r'^[a-zA-Z0-9-_]*$').hasMatch(name$)) errors.add(r'name: must match pattern ^[a-zA-Z0-9-_]*$');
+  if (!RegExp(r'^[a-zA-Z0-9-_]*$').hasMatch(name$)) { errors.add(r'name: must match pattern ^[a-zA-Z0-9-_]*$'); }
 }
 return errors; } 
 StartLivestreamingRequest copyWith({String? Function()? name, VideoConfig? Function()? videoConfig, }) { return StartLivestreamingRequest(

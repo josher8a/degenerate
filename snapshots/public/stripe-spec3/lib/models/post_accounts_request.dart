@@ -145,15 +145,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final accountToken$ = accountToken;
 if (accountToken$ != null) {
-  if (accountToken$.length > 5000) errors.add('accountToken: length must be <= 5000');
+  if (accountToken$.length > 5000) { errors.add('accountToken: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final externalAccount$ = externalAccount;
 if (externalAccount$ != null) {
-  if (externalAccount$.length > 5000) errors.add('externalAccount: length must be <= 5000');
+  if (externalAccount$.length > 5000) { errors.add('externalAccount: length must be <= 5000'); }
 }
 return errors; } 
 PostAccountsRequest copyWith({String? Function()? accountToken, PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, Capabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, Controller? Function()? controller, String? Function()? country, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, Groups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, Metadata? Function()? metadata, PostAccountsRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, PostAccountsRequestType? Function()? type, }) { return PostAccountsRequest(

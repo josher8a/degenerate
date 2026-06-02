@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 return errors; } 
 DefaultSettings copyWith({double? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, SubscriptionSchedulesResourceDefaultSettingsBillingCycleAnchor? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? defaultPaymentMethod, PostQuotesQuoteRequestDescription? Function()? description, DefaultSettingsInvoiceSettings? Function()? invoiceSettings, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostCustomersCustomerSubscriptionsSubscriptionExposedIdRequestTransferData? Function()? transferData, }) { return DefaultSettings(

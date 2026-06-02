@@ -52,11 +52,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final charge$ = charge;
 if (charge$ != null) {
-  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+  if (charge$.length > 5000) { errors.add('charge: length must be <= 5000'); }
 }
 final paymentIntent$ = paymentIntent;
 if (paymentIntent$ != null) {
-  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+  if (paymentIntent$.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
 }
 return errors; } 
 PostTerminalRefundsRequest copyWith({int? Function()? amount, String? Function()? charge, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? paymentIntent, PostChargesChargeRefundRequestReason? Function()? reason, bool? Function()? refundApplicationFee, bool? Function()? reverseTransfer, }) { return PostTerminalRefundsRequest(

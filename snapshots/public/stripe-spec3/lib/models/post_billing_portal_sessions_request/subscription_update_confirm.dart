@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('items
       json.containsKey('subscription') && json['subscription'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (subscription.length > 5000) errors.add('subscription: length must be <= 5000');
+if (subscription.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 return errors; } 
 SubscriptionUpdateConfirm copyWith({List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<SubscriptionUpdateConfirmItems>? items, String? subscription, }) { return SubscriptionUpdateConfirm(
   discounts: discounts != null ? discounts() : this.discounts,

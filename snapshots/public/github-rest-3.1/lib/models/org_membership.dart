@@ -90,7 +90,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 List<String> validate() { final errors = <String>[];
 final enterpriseTeamsProvidingIndirectMembership$ = enterpriseTeamsProvidingIndirectMembership;
 if (enterpriseTeamsProvidingIndirectMembership$ != null) {
-  if (enterpriseTeamsProvidingIndirectMembership$.length > 100) errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items');
+  if (enterpriseTeamsProvidingIndirectMembership$.length > 100) { errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items'); }
 }
 return errors; } 
 OrgMembership copyWith({Uri? url, OrgMembershipState? state, OrgMembershipRole? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, Uri? organizationUrl, OrganizationSimple? organization, SimpleUser? Function()? user, OrgMembershipPermissions? Function()? permissions, }) { return OrgMembership(

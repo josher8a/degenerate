@@ -113,9 +113,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 Item copyWith({LineItemsAdjustableQuantity? Function()? adjustableQuantity, int? amountDiscount, int? amountSubtotal, int? amountTax, int? amountTotal, String? currency, String? Function()? description, List<LineItemsDiscountAmount>? Function()? discounts, String? id, Map<String, String>? Function()? metadata, ItemObject? object, Price? Function()? price, int? Function()? quantity, List<LineItemsTaxAmount>? Function()? taxes, }) { return Item(
   adjustableQuantity: adjustableQuantity != null ? adjustableQuantity() : this.adjustableQuantity,

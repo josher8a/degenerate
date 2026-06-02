@@ -91,8 +91,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (allowedMatchCount < 0) errors.add('allowedMatchCount: must be >= 0');
-if (allowedMatchCount > 1000) errors.add('allowedMatchCount: must be <= 1000');
+if (allowedMatchCount < 0) { errors.add('allowedMatchCount: must be >= 0'); }
+if (allowedMatchCount > 1000) { errors.add('allowedMatchCount: must be <= 1000'); }
 return errors; } 
 CustomProfile copyWith({bool Function()? aiContextEnabled, int? allowedMatchCount, DlpConfidence Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, DateTime? createdAt, List<String>? Function()? dataClasses, List<String>? Function()? dataTags, String? Function()? description, List<DlpEntry>? Function()? entries, String? id, String? name, bool? ocrEnabled, List<List<String>>? Function()? sensitivityLevels, List<DlpEntry>? Function()? sharedEntries, DateTime? updatedAt, CustomEntryType? type, }) { return CustomProfile(
   aiContextEnabled: aiContextEnabled != null ? aiContextEnabled() : this.aiContextEnabled,

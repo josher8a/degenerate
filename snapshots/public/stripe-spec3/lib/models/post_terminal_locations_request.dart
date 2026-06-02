@@ -62,19 +62,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final configurationOverrides$ = configurationOverrides;
 if (configurationOverrides$ != null) {
-  if (configurationOverrides$.length > 500) errors.add('configurationOverrides: length must be <= 500');
+  if (configurationOverrides$.length > 500) { errors.add('configurationOverrides: length must be <= 500'); }
 }
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 1000) errors.add('displayName: length must be <= 1000');
+  if (displayName$.length > 1000) { errors.add('displayName: length must be <= 1000'); }
 }
 final displayNameKana$ = displayNameKana;
 if (displayNameKana$ != null) {
-  if (displayNameKana$.length > 1000) errors.add('displayNameKana: length must be <= 1000');
+  if (displayNameKana$.length > 1000) { errors.add('displayNameKana: length must be <= 1000'); }
 }
 final displayNameKanji$ = displayNameKanji;
 if (displayNameKanji$ != null) {
-  if (displayNameKanji$.length > 1000) errors.add('displayNameKanji: length must be <= 1000');
+  if (displayNameKanji$.length > 1000) { errors.add('displayNameKanji: length must be <= 1000'); }
 }
 return errors; } 
 PostTerminalLocationsRequest copyWith({PostTerminalLocationsRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, String? Function()? configurationOverrides, String? Function()? displayName, String? Function()? displayNameKana, String? Function()? displayNameKanji, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? phone, }) { return PostTerminalLocationsRequest(

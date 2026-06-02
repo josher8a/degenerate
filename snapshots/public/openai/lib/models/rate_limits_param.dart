@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxRequestsPer1Minute$ = maxRequestsPer1Minute;
 if (maxRequestsPer1Minute$ != null) {
-  if (maxRequestsPer1Minute$ < 1) errors.add('maxRequestsPer1Minute: must be >= 1');
+  if (maxRequestsPer1Minute$ < 1) { errors.add('maxRequestsPer1Minute: must be >= 1'); }
 }
 return errors; } 
 RateLimitsParam copyWith({int? Function()? maxRequestsPer1Minute}) { return RateLimitsParam(

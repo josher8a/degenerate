@@ -53,8 +53,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
-  if (value$ < 0) errors.add('value: must be >= 0');
-  if (value$ > 31536000.0) errors.add('value: must be <= 31536000.0');
+  if (value$ < 0) { errors.add('value: must be >= 0'); }
+  if (value$ > 31536000.0) { errors.add('value: must be <= 31536000.0'); }
 }
 return errors; } 
 ZonesBrowserCacheTtl copyWith({ZonesBrowserCacheTtlId? Function()? id, int? Function()? value, }) { return ZonesBrowserCacheTtl(

@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('CLEAN
       json.containsKey('COMPROMISED') && json['COMPROMISED'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(clean)) errors.add(r'clean: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(compromised)) errors.add(r'compromised: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(clean)) { errors.add(r'clean: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(compromised)) { errors.add(r'compromised: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0 copyWith({String? clean, String? compromised, }) { return RadarGetLeakedCredentialChecksSummaryByCompromisedResponseResultSummary0(
   clean: clean ?? this.clean,

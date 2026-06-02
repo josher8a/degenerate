@@ -55,12 +55,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (originPaymentMethod.length > 5000) errors.add('originPaymentMethod: length must be <= 5000');
+if (originPaymentMethod.length > 5000) { errors.add('originPaymentMethod: length must be <= 5000'); }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 10) errors.add('statementDescriptor: length must be <= 10');
+  if (statementDescriptor$.length > 10) { errors.add('statementDescriptor: length must be <= 10'); }
 }
 return errors; } 
 PostTreasuryInboundTransfersRequest copyWith({int? amount, String? currency, String? Function()? description, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? originPaymentMethod, String? Function()? statementDescriptor, }) { return PostTreasuryInboundTransfersRequest(

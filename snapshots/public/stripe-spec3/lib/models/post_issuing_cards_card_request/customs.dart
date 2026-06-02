@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final eoriNumber$ = eoriNumber;
 if (eoriNumber$ != null) {
-  if (eoriNumber$.length > 5000) errors.add('eoriNumber: length must be <= 5000');
+  if (eoriNumber$.length > 5000) { errors.add('eoriNumber: length must be <= 5000'); }
 }
 return errors; } 
 Customs copyWith({String? Function()? eoriNumber}) { return Customs(

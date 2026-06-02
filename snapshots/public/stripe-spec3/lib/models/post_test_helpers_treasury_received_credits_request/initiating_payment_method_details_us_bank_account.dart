@@ -24,15 +24,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
-  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+  if (accountHolderName$.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 }
 final accountNumber$ = accountNumber;
 if (accountNumber$ != null) {
-  if (accountNumber$.length > 5000) errors.add('accountNumber: length must be <= 5000');
+  if (accountNumber$.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
 }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 return errors; } 
 InitiatingPaymentMethodDetailsUsBankAccount copyWith({String? Function()? accountHolderName, String? Function()? accountNumber, String? Function()? routingNumber, }) { return InitiatingPaymentMethodDetailsUsBankAccount(

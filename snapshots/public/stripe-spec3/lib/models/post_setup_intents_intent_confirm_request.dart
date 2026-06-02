@@ -61,15 +61,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
-  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+  if (clientSecret$.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 }
 final confirmationToken$ = confirmationToken;
 if (confirmationToken$ != null) {
-  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+  if (confirmationToken$.length > 5000) { errors.add('confirmationToken: length must be <= 5000'); }
 }
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 return errors; } 
 PostSetupIntentsIntentConfirmRequest copyWith({String? Function()? clientSecret, String? Function()? confirmationToken, List<String>? Function()? expand, PostPaymentIntentsIntentConfirmRequestMandateData? Function()? mandateData, String? Function()? paymentMethod, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostSetupIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? returnUrl, bool? Function()? useStripeSdk, }) { return PostSetupIntentsIntentConfirmRequest(

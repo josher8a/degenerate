@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('frame
       json.containsKey('quality'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (frameRate > 30) errors.add('frameRate: must be <= 30');
+if (frameRate > 30) { errors.add('frameRate: must be <= 30'); }
 return errors; } 
 RealtimekitPresetConfigMediaVideo copyWith({int? frameRate, ScreenshareQuality? quality, }) { return RealtimekitPresetConfigMediaVideo(
   frameRate: frameRate ?? this.frameRate,

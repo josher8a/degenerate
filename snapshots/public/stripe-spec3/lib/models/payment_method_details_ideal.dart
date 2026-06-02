@@ -49,15 +49,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ibanLast4$ = ibanLast4;
 if (ibanLast4$ != null) {
-  if (ibanLast4$.length > 5000) errors.add('ibanLast4: length must be <= 5000');
+  if (ibanLast4$.length > 5000) { errors.add('ibanLast4: length must be <= 5000'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 final verifiedName$ = verifiedName;
 if (verifiedName$ != null) {
-  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+  if (verifiedName$.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsIdeal copyWith({PaymentMethodDetailsIdealBank? Function()? bank, Bic? Function()? bic, GeneratedSepaDebit? Function()? generatedSepaDebit, GeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, String? Function()? transactionId, String? Function()? verifiedName, }) { return PaymentMethodDetailsIdeal(

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('calculation') && json['calculation'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (calculation.length > 5000) errors.add('calculation: length must be <= 5000');
+if (calculation.length > 5000) { errors.add('calculation: length must be <= 5000'); }
 return errors; } 
 PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax copyWith({String? calculation}) { return PaymentFlowsPaymentIntentAsyncWorkflowsResourceInputsResourceTax(
   calculation: calculation ?? this.calculation,

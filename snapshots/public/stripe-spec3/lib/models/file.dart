@@ -188,20 +188,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final filename$ = filename;
 if (filename$ != null) {
-  if (filename$.length > 5000) errors.add('filename: length must be <= 5000');
+  if (filename$.length > 5000) { errors.add('filename: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 5000) errors.add('title: length must be <= 5000');
+  if (title$.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
 final type$ = type;
 if (type$ != null) {
-  if (type$.length > 5000) errors.add('type: length must be <= 5000');
+  if (type$.length > 5000) { errors.add('type: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 File copyWith({int? created, int? Function()? expiresAt, String? Function()? filename, String? id, Links? Function()? links, FileObject? object, FilePurpose? purpose, int? size, String? Function()? title, String? Function()? type, String? Function()? url, }) { return File(

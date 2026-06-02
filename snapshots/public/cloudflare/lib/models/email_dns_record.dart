@@ -124,12 +124,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 255) errors.add('name: length must be <= 255');
+  if (name$.length > 255) { errors.add('name: length must be <= 255'); }
 }
 final priority$ = priority;
 if (priority$ != null) {
-  if (priority$ < 0) errors.add('priority: must be >= 0');
-  if (priority$ > 65535) errors.add('priority: must be <= 65535');
+  if (priority$ < 0) { errors.add('priority: must be >= 0'); }
+  if (priority$ > 65535) { errors.add('priority: must be <= 65535'); }
 }
 return errors; } 
 EmailDnsRecord copyWith({String? Function()? content, String? Function()? name, double? Function()? priority, Ttl? Function()? ttl, EmailDnsRecordType? Function()? type, }) { return EmailDnsRecord(

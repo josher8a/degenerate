@@ -28,9 +28,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('passw
       json.containsKey('username') && json['username'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (password.length > 5000) errors.add('password: length must be <= 5000');
-if (ssid.length > 5000) errors.add('ssid: length must be <= 5000');
-if (username.length > 5000) errors.add('username: length must be <= 5000');
+if (password.length > 5000) { errors.add('password: length must be <= 5000'); }
+if (ssid.length > 5000) { errors.add('ssid: length must be <= 5000'); }
+if (username.length > 5000) { errors.add('username: length must be <= 5000'); }
 return errors; } 
 EnterpriseEapPeap copyWith({String? Function()? caCertificateFile, String? password, String? ssid, String? username, }) { return EnterpriseEapPeap(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,

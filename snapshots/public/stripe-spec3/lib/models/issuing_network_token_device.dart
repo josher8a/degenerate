@@ -74,23 +74,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final deviceFingerprint$ = deviceFingerprint;
 if (deviceFingerprint$ != null) {
-  if (deviceFingerprint$.length > 5000) errors.add('deviceFingerprint: length must be <= 5000');
+  if (deviceFingerprint$.length > 5000) { errors.add('deviceFingerprint: length must be <= 5000'); }
 }
 final ipAddress$ = ipAddress;
 if (ipAddress$ != null) {
-  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+  if (ipAddress$.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
 final location$ = location;
 if (location$ != null) {
-  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+  if (location$.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final phoneNumber$ = phoneNumber;
 if (phoneNumber$ != null) {
-  if (phoneNumber$.length > 5000) errors.add('phoneNumber: length must be <= 5000');
+  if (phoneNumber$.length > 5000) { errors.add('phoneNumber: length must be <= 5000'); }
 }
 return errors; } 
 IssuingNetworkTokenDevice copyWith({String? Function()? deviceFingerprint, String? Function()? ipAddress, String? Function()? location, String? Function()? name, String? Function()? phoneNumber, IssuingNetworkTokenDeviceType? Function()? type, }) { return IssuingNetworkTokenDevice(

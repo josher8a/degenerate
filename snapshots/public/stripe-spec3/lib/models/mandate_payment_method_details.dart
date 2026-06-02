@@ -84,7 +84,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('type') && json['type'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (type.length > 5000) errors.add('type: length must be <= 5000');
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
 return errors; } 
 MandatePaymentMethodDetails copyWith({MandateAcssDebit? Function()? acssDebit, MandateAmazonPay? Function()? amazonPay, MandateAuBecsDebit? Function()? auBecsDebit, MandateBacsDebit? Function()? bacsDebit, CardMandatePaymentMethodDetails? Function()? card, MandateCashapp? Function()? cashapp, MandateKakaoPay? Function()? kakaoPay, MandateKlarna? Function()? klarna, MandateKrCard? Function()? krCard, MandateLink? Function()? link, MandateNaverPay? Function()? naverPay, MandateNzBankAccount? Function()? nzBankAccount, MandatePaypal? Function()? paypal, MandatePayto? Function()? payto, MandateRevolutPay? Function()? revolutPay, MandateSepaDebit? Function()? sepaDebit, String? type, MandateUsBankAccount? Function()? usBankAccount, }) { return MandatePaymentMethodDetails(
   acssDebit: acssDebit != null ? acssDebit() : this.acssDebit,

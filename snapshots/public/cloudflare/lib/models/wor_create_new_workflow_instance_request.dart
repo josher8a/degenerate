@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final instanceId$ = instanceId;
 if (instanceId$ != null) {
-  if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(instanceId$)) errors.add(r'instanceId: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$');
+  if (!RegExp(r'^[a-zA-Z0-9_][a-zA-Z0-9-_]*$').hasMatch(instanceId$)) { errors.add(r'instanceId: must match pattern ^[a-zA-Z0-9_][a-zA-Z0-9-_]*$'); }
 }
 return errors; } 
 WorCreateNewWorkflowInstanceRequest copyWith({String? Function()? instanceId, InstanceRetention? Function()? instanceRetention, Map<String, dynamic>? Function()? params, }) { return WorCreateNewWorkflowInstanceRequest(

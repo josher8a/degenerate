@@ -23,9 +23,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('payme
 List<String> validate() { final errors = <String>[];
 final confirmationNumber$ = confirmationNumber;
 if (confirmationNumber$ != null) {
-  if (confirmationNumber$.length > 5000) errors.add('confirmationNumber: length must be <= 5000');
+  if (confirmationNumber$.length > 5000) { errors.add('confirmationNumber: length must be <= 5000'); }
 }
-if (paymentCode.length > 5000) errors.add('paymentCode: length must be <= 5000');
+if (paymentCode.length > 5000) { errors.add('paymentCode: length must be <= 5000'); }
 return errors; } 
 PaymentIntentNextActionKonbiniFamilymart copyWith({String? Function()? confirmationNumber, String? paymentCode, }) { return PaymentIntentNextActionKonbiniFamilymart(
   confirmationNumber: confirmationNumber != null ? confirmationNumber() : this.confirmationNumber,

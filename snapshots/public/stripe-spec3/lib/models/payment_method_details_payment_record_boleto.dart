@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final taxId$ = taxId;
 if (taxId$ != null) {
-  if (taxId$.length > 5000) errors.add('taxId: length must be <= 5000');
+  if (taxId$.length > 5000) { errors.add('taxId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsPaymentRecordBoleto copyWith({String? Function()? taxId}) { return PaymentMethodDetailsPaymentRecordBoleto(

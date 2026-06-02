@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 return errors; } 
 GelatoProvidedDetails copyWith({String? Function()? email, String? Function()? phone, }) { return GelatoProvidedDetails(

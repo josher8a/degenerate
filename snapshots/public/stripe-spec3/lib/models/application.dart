@@ -27,10 +27,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 Application copyWith({String? id, String? Function()? name, ApplicationObject? object, }) { return Application(

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('body') && json['body'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (body.length > 65535) errors.add('body: length must be <= 65535');
+if (body.length > 65535) { errors.add('body: length must be <= 65535'); }
 return errors; } 
 GistsUpdateCommentRequest copyWith({String? body}) { return GistsUpdateCommentRequest(
   body: body ?? this.body,

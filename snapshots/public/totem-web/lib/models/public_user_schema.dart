@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('profi
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 255) errors.add('name: length must be <= 255');
+  if (name$.length > 255) { errors.add('name: length must be <= 255'); }
 }
 return errors; } 
 PublicUserSchema copyWith({ProfileAvatarTypeEnum? profileAvatarType, int? Function()? circleCount, String? Function()? name, String? Function()? slug, bool Function()? isStaff, String? Function()? profileAvatarSeed, String? Function()? profileImage, DateTime? dateCreated, }) { return PublicUserSchema(

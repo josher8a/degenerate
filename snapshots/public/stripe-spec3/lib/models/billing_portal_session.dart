@@ -278,21 +278,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('confi
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (customer.length > 5000) errors.add('customer: length must be <= 5000');
+if (customer.length > 5000) { errors.add('customer: length must be <= 5000'); }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final onBehalfOf$ = onBehalfOf;
 if (onBehalfOf$ != null) {
-  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+  if (onBehalfOf$.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 BillingPortalSession copyWith({Configuration? configuration, int? created, String? customer, String? Function()? customerAccount, PortalFlowsFlow? Function()? flow, String? id, bool? livemode, BillingPortalSessionLocale? Function()? locale, BillingPortalSessionObject? object, String? Function()? onBehalfOf, String? Function()? returnUrl, String? url, }) { return BillingPortalSession(
   configuration: configuration ?? this.configuration,

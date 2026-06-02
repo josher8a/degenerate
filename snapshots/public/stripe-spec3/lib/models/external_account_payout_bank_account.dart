@@ -49,13 +49,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 List<String> validate() { final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
-  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+  if (accountHolderName$.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 }
-if (accountNumber.length > 5000) errors.add('accountNumber: length must be <= 5000');
-if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (accountNumber.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
+if (country.length > 5000) { errors.add('country: length must be <= 5000'); }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 return errors; } 
 ExternalAccountPayoutBankAccount copyWith({String? Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccountAccountType? Function()? accountType, String? country, String? Function()? currency, ExternalAccountPayoutBankAccountDocuments? Function()? documents, BankAccountObject? Function()? object, String? Function()? routingNumber, }) { return ExternalAccountPayoutBankAccount(

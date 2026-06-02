@@ -19,8 +19,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('inter
       json.containsKey('limit') && json['limit'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (interval < 50) errors.add('interval: must be >= 50');
-if (limit < 0) errors.add('limit: must be >= 0');
+if (interval < 50) { errors.add('interval: must be >= 50'); }
+if (limit < 0) { errors.add('limit: must be >= 0'); }
 return errors; } 
 ZarazTimerRuleSettings copyWith({int? interval, int? limit, }) { return ZarazTimerRuleSettings(
   interval: interval ?? this.interval,

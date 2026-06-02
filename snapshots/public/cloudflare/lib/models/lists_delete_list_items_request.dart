@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final items$ = items;
 if (items$ != null) {
-  if (items$.isEmpty) errors.add('items: must have >= 1 items');
+  if (items$.isEmpty) { errors.add('items: must have >= 1 items'); }
 }
 return errors; } 
 ListsDeleteListItemsRequest copyWith({List<ListsDeleteListItemsRequestItems>? Function()? items}) { return ListsDeleteListItemsRequest(

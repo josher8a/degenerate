@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
       json.containsKey('enabled') && json['enabled'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (bucketId.length > 32) errors.add('bucketId: length must be <= 32');
+if (bucketId.length > 32) { errors.add('bucketId: length must be <= 32'); }
 return errors; } 
 R2ManagedDomainResponse copyWith({String? bucketId, String? domain, bool? enabled, }) { return R2ManagedDomainResponse(
   bucketId: bucketId ?? this.bucketId,

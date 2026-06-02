@@ -103,10 +103,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_ac
 List<String> validate() { final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
-  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+  if (comments$.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
-if (pattern.isEmpty) errors.add('pattern: length must be >= 1');
-if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
+if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
+if (pattern.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
 EmailSecurityCreateAllowPolicyResponseResult copyWith({String? Function()? comments, bool? isAcceptableSender, bool? isExemptRecipient, bool? Function()? isRecipient, bool? isRegex, bool? Function()? isSender, bool? Function()? isSpoof, bool? isTrustedSender, String? pattern, EmailSecurityPatternType? Function()? patternType, bool? verifySender, DateTime? createdAt, EmailSecurityAllowPolicyId? id, DateTime? lastModified, }) { return EmailSecurityCreateAllowPolicyResponseResult(
   comments: comments != null ? comments() : this.comments,

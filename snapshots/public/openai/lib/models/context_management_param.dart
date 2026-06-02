@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final compactThreshold$ = compactThreshold;
 if (compactThreshold$ != null) {
-  if (compactThreshold$ < 1000) errors.add('compactThreshold: must be >= 1000');
+  if (compactThreshold$ < 1000) { errors.add('compactThreshold: must be >= 1000'); }
 }
 return errors; } 
 ContextManagementParam copyWith({String? type, int? Function()? compactThreshold, }) { return ContextManagementParam(

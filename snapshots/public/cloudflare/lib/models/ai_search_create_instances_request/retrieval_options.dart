@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final boostBy$ = boostBy;
 if (boostBy$ != null) {
-  if (boostBy$.length > 3) errors.add('boostBy: must have <= 3 items');
+  if (boostBy$.length > 3) { errors.add('boostBy: must have <= 3 items'); }
 }
 return errors; } 
 RetrievalOptions copyWith({List<BoostBy>? Function()? boostBy, KeywordMatchMode Function()? keywordMatchMode, }) { return RetrievalOptions(

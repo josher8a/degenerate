@@ -28,9 +28,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
-if (type.length > 5000) errors.add('type: length must be <= 5000');
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
 return errors; } 
 PaymentMethodCustom copyWith({String? Function()? displayName, CustomLogo? Function()? logo, String? type, }) { return PaymentMethodCustom(
   displayName: displayName != null ? displayName() : this.displayName,

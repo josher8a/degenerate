@@ -36,8 +36,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_s
       json.containsKey('state'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge)) errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$');
-if (minSnapshotsToKeep < 1) errors.add('minSnapshotsToKeep: must be >= 1');
+if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge)) { errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$'); }
+if (minSnapshotsToKeep < 1) { errors.add('minSnapshotsToKeep: must be >= 1'); }
 return errors; } 
 R2DataCatalogSnapshotExpirationConfig copyWith({String? maxSnapshotAge, int? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? state, }) { return R2DataCatalogSnapshotExpirationConfig(
   maxSnapshotAge: maxSnapshotAge ?? this.maxSnapshotAge,

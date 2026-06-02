@@ -192,12 +192,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (financialAccount.length > 5000) errors.add('financialAccount: length must be <= 5000');
+if (financialAccount.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 final flow$ = flow;
 if (flow$ != null) {
-  if (flow$.length > 5000) errors.add('flow: length must be <= 5000');
+  if (flow$.length > 5000) { errors.add('flow: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 TreasuryTransactionEntry copyWith({TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, int? effectiveAt, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionEntryObject? object, TreasuryCreditReversalTransaction? transaction, TreasuryTransactionEntryType? type, }) { return TreasuryTransactionEntry(
   balanceImpact: balanceImpact ?? this.balanceImpact,

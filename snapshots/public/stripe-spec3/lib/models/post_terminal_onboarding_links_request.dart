@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('link_
 List<String> validate() { final errors = <String>[];
 final onBehalfOf$ = onBehalfOf;
 if (onBehalfOf$ != null) {
-  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+  if (onBehalfOf$.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 return errors; } 
 PostTerminalOnboardingLinksRequest copyWith({List<String>? Function()? expand, LinkOptions? linkOptions, LinkType? linkType, String? Function()? onBehalfOf, }) { return PostTerminalOnboardingLinksRequest(

@@ -25,7 +25,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_debit') && json['received_debit'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (receivedDebit.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+if (receivedDebit.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 return errors; } 
 PostTreasuryDebitReversalsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? receivedDebit, }) { return PostTreasuryDebitReversalsRequest(
   expand: expand != null ? expand() : this.expand,

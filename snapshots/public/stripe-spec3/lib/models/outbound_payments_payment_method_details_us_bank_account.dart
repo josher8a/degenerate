@@ -53,19 +53,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('netwo
 List<String> validate() { final errors = <String>[];
 final bankName$ = bankName;
 if (bankName$ != null) {
-  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+  if (bankName$.length > 5000) { errors.add('bankName: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 return errors; } 
 OutboundPaymentsPaymentMethodDetailsUsBankAccount copyWith({InboundTransfersPaymentMethodDetailsUsBankAccountAccountHolderType? Function()? accountHolderType, InboundTransfersPaymentMethodDetailsUsBankAccountAccountType? Function()? accountType, String? Function()? bankName, String? Function()? fingerprint, String? Function()? last4, InboundTransfersPaymentMethodDetailsUsBankAccountMandate? Function()? mandate, OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork? network, String? Function()? routingNumber, }) { return OutboundPaymentsPaymentMethodDetailsUsBankAccount(

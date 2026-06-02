@@ -33,11 +33,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final details$ = details;
 if (details$ != null) {
-  if (details$.length > 5000) errors.add('details: length must be <= 5000');
+  if (details$.length > 5000) { errors.add('details: length must be <= 5000'); }
 }
 final detailsCode$ = detailsCode;
 if (detailsCode$ != null) {
-  if (detailsCode$.length > 5000) errors.add('detailsCode: length must be <= 5000');
+  if (detailsCode$.length > 5000) { errors.add('detailsCode: length must be <= 5000'); }
 }
 return errors; } 
 LegalEntityPersonVerificationDocument copyWith({Back? Function()? back, String? Function()? details, String? Function()? detailsCode, Front? Function()? front, }) { return LegalEntityPersonVerificationDocument(

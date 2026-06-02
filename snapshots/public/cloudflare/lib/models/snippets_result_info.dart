@@ -46,9 +46,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('total_pages') && json['total_pages'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (count < 0) errors.add('count: must be >= 0');
-if (totalCount < 0) errors.add('totalCount: must be >= 0');
-if (totalPages < 1) errors.add('totalPages: must be >= 1');
+if (count < 0) { errors.add('count: must be >= 0'); }
+if (totalCount < 0) { errors.add('totalCount: must be >= 0'); }
+if (totalPages < 1) { errors.add('totalPages: must be >= 1'); }
 return errors; } 
 SnippetsResultInfo copyWith({int? count, SnippetsPage? page, SnippetsPerPage? perPage, int? totalCount, int? totalPages, }) { return SnippetsResultInfo(
   count: count ?? this.count,

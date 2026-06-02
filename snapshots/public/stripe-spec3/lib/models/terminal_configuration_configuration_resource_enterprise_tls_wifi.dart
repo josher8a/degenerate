@@ -40,15 +40,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
 List<String> validate() { final errors = <String>[];
 final caCertificateFile$ = caCertificateFile;
 if (caCertificateFile$ != null) {
-  if (caCertificateFile$.length > 5000) errors.add('caCertificateFile: length must be <= 5000');
+  if (caCertificateFile$.length > 5000) { errors.add('caCertificateFile: length must be <= 5000'); }
 }
-if (clientCertificateFile.length > 5000) errors.add('clientCertificateFile: length must be <= 5000');
-if (privateKeyFile.length > 5000) errors.add('privateKeyFile: length must be <= 5000');
+if (clientCertificateFile.length > 5000) { errors.add('clientCertificateFile: length must be <= 5000'); }
+if (privateKeyFile.length > 5000) { errors.add('privateKeyFile: length must be <= 5000'); }
 final privateKeyFilePassword$ = privateKeyFilePassword;
 if (privateKeyFilePassword$ != null) {
-  if (privateKeyFilePassword$.length > 5000) errors.add('privateKeyFilePassword: length must be <= 5000');
+  if (privateKeyFilePassword$.length > 5000) { errors.add('privateKeyFilePassword: length must be <= 5000'); }
 }
-if (ssid.length > 5000) errors.add('ssid: length must be <= 5000');
+if (ssid.length > 5000) { errors.add('ssid: length must be <= 5000'); }
 return errors; } 
 TerminalConfigurationConfigurationResourceEnterpriseTlsWifi copyWith({String? Function()? caCertificateFile, String? clientCertificateFile, String? privateKeyFile, String? Function()? privateKeyFilePassword, String? ssid, }) { return TerminalConfigurationConfigurationResourceEnterpriseTlsWifi(
   caCertificateFile: caCertificateFile != null ? caCertificateFile() : this.caCertificateFile,

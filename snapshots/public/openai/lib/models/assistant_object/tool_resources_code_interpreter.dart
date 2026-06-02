@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file_ids'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (fileIds.length > 20) errors.add('fileIds: must have <= 20 items');
+if (fileIds.length > 20) { errors.add('fileIds: must have <= 20 items'); }
 return errors; } 
 ToolResourcesCodeInterpreter copyWith({List<String> Function()? fileIds}) { return ToolResourcesCodeInterpreter(
   fileIds: fileIds != null ? fileIds() : this.fileIds,

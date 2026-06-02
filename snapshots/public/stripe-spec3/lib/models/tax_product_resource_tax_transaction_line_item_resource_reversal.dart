@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('original_line_item') && json['original_line_item'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (originalLineItem.length > 5000) errors.add('originalLineItem: length must be <= 5000');
+if (originalLineItem.length > 5000) { errors.add('originalLineItem: length must be <= 5000'); }
 return errors; } 
 TaxProductResourceTaxTransactionLineItemResourceReversal copyWith({String? originalLineItem}) { return TaxProductResourceTaxTransactionLineItemResourceReversal(
   originalLineItem: originalLineItem ?? this.originalLineItem,

@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 255) errors.add('description: length must be <= 255');
+  if (description$.length > 255) { errors.add('description: length must be <= 255'); }
 }
 return errors; } 
 AiSearchInstanceCreateJobRequest copyWith({String? Function()? description}) { return AiSearchInstanceCreateJobRequest(

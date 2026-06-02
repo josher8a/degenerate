@@ -25,10 +25,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'space_slug', 'month', 'year'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (month <= 0) errors.add('month: must be > 0');
-if (month >= 13) errors.add('month: must be < 13');
-if (year <= 1000) errors.add('year: must be > 1000');
-if (year >= 3000) errors.add('year: must be < 3000');
+if (month <= 0) { errors.add('month: must be > 0'); }
+if (month >= 13) { errors.add('month: must be < 13'); }
+if (year <= 1000) { errors.add('year: must be > 1000'); }
+if (year >= 3000) { errors.add('year: must be < 3000'); }
 return errors; } 
 EventCalendarFilterSchema copyWith({String Function()? spaceSlug, int Function()? month, int Function()? year, }) { return EventCalendarFilterSchema(
   spaceSlug: spaceSlug != null ? spaceSlug() : this.spaceSlug,

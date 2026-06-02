@@ -57,23 +57,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 50) errors.add('displayName: length must be <= 50');
+  if (displayName$.length > 50) { errors.add('displayName: length must be <= 50'); }
 }
 final jurisdiction$ = jurisdiction;
 if (jurisdiction$ != null) {
-  if (jurisdiction$.length > 50) errors.add('jurisdiction: length must be <= 50');
+  if (jurisdiction$.length > 50) { errors.add('jurisdiction: length must be <= 50'); }
 }
 final state$ = state;
 if (state$ != null) {
-  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+  if (state$.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
 PostTaxRatesTaxRateRequest copyWith({bool? Function()? active, String? Function()? country, String? Function()? description, String? Function()? displayName, List<String>? Function()? expand, String? Function()? jurisdiction, Metadata? Function()? metadata, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return PostTaxRatesTaxRateRequest(

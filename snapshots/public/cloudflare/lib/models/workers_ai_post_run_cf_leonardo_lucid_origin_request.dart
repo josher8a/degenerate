@@ -45,27 +45,27 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (guidance < 0) errors.add('guidance: must be >= 0');
-if (guidance > 10) errors.add('guidance: must be <= 10');
-if (height < 0) errors.add('height: must be >= 0');
-if (height > 2500) errors.add('height: must be <= 2500');
+if (guidance < 0) { errors.add('guidance: must be >= 0'); }
+if (guidance > 10) { errors.add('guidance: must be <= 10'); }
+if (height < 0) { errors.add('height: must be >= 0'); }
+if (height > 2500) { errors.add('height: must be <= 2500'); }
 final numSteps$ = numSteps;
 if (numSteps$ != null) {
-  if (numSteps$ < 1) errors.add('numSteps: must be >= 1');
-  if (numSteps$ > 40) errors.add('numSteps: must be <= 40');
+  if (numSteps$ < 1) { errors.add('numSteps: must be >= 1'); }
+  if (numSteps$ > 40) { errors.add('numSteps: must be <= 40'); }
 }
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < 0) errors.add('seed: must be >= 0');
+  if (seed$ < 0) { errors.add('seed: must be >= 0'); }
 }
 final steps$ = steps;
 if (steps$ != null) {
-  if (steps$ < 1) errors.add('steps: must be >= 1');
-  if (steps$ > 40) errors.add('steps: must be <= 40');
+  if (steps$ < 1) { errors.add('steps: must be >= 1'); }
+  if (steps$ > 40) { errors.add('steps: must be <= 40'); }
 }
-if (width < 0) errors.add('width: must be >= 0');
-if (width > 2500) errors.add('width: must be <= 2500');
+if (width < 0) { errors.add('width: must be >= 0'); }
+if (width > 2500) { errors.add('width: must be <= 2500'); }
 return errors; } 
 WorkersAiPostRunCfLeonardoLucidOriginRequest copyWith({double Function()? guidance, int Function()? height, int? Function()? numSteps, String? prompt, int? Function()? seed, int? Function()? steps, int Function()? width, }) { return WorkersAiPostRunCfLeonardoLucidOriginRequest(
   guidance: guidance != null ? guidance() : this.guidance,

@@ -28,9 +28,9 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'default_weight', 'pool_weights'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (defaultWeight < 0) errors.add('defaultWeight: must be >= 0');
-if (defaultWeight > 1) errors.add('defaultWeight: must be <= 1');
-if (defaultWeight % 0.1 != 0) errors.add('defaultWeight: must be a multiple of 0.1');
+if (defaultWeight < 0) { errors.add('defaultWeight: must be >= 0'); }
+if (defaultWeight > 1) { errors.add('defaultWeight: must be <= 1'); }
+if (defaultWeight % 0.1 != 0) { errors.add('defaultWeight: must be a multiple of 0.1'); }
 return errors; } 
 LoadBalancingRandomSteering copyWith({double Function()? defaultWeight, Map<String, double>? Function()? poolWeights, }) { return LoadBalancingRandomSteering(
   defaultWeight: defaultWeight != null ? defaultWeight() : this.defaultWeight,

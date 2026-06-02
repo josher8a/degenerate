@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('result'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors$ = <String>[];
-if (result.isEmpty) errors$.add('result: must have >= 1 items');
+if (result.isEmpty) { errors$.add('result: must have >= 1 items'); }
 return errors$; } 
 EmailSecurityDeleteDomainsResponse copyWith({List<EmailSecurityMessage>? errors, List<EmailSecurityMessage>? messages, bool? success, List<EmailSecurityDeleteAllowPolicyResponseResult>? result, }) { return EmailSecurityDeleteDomainsResponse(
   errors: errors ?? this.errors,

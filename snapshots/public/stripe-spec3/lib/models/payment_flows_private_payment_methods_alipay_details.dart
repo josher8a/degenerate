@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final buyerId$ = buyerId;
 if (buyerId$ != null) {
-  if (buyerId$.length > 5000) errors.add('buyerId: length must be <= 5000');
+  if (buyerId$.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentFlowsPrivatePaymentMethodsAlipayDetails copyWith({String? Function()? buyerId, String? Function()? fingerprint, String? Function()? transactionId, }) { return PaymentFlowsPrivatePaymentMethodsAlipayDetails(

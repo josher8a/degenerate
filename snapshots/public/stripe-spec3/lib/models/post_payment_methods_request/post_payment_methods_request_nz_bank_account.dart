@@ -39,16 +39,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 List<String> validate() { final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
-  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+  if (accountHolderName$.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 }
-if (accountNumber.length > 5000) errors.add('accountNumber: length must be <= 5000');
-if (bankCode.length > 5000) errors.add('bankCode: length must be <= 5000');
-if (branchCode.length > 5000) errors.add('branchCode: length must be <= 5000');
+if (accountNumber.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
+if (bankCode.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
+if (branchCode.length > 5000) { errors.add('branchCode: length must be <= 5000'); }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 128) errors.add('reference: length must be <= 128');
+  if (reference$.length > 128) { errors.add('reference: length must be <= 128'); }
 }
-if (suffix.length > 5000) errors.add('suffix: length must be <= 5000');
+if (suffix.length > 5000) { errors.add('suffix: length must be <= 5000'); }
 return errors; } 
 PostPaymentMethodsRequestNzBankAccount copyWith({String? Function()? accountHolderName, String? accountNumber, String? bankCode, String? branchCode, String? Function()? reference, String? suffix, }) { return PostPaymentMethodsRequestNzBankAccount(
   accountHolderName: accountHolderName != null ? accountHolderName() : this.accountHolderName,

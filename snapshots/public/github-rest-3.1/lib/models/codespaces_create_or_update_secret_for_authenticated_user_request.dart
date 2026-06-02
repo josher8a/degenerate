@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key_i
 List<String> validate() { final errors = <String>[];
 final encryptedValue$ = encryptedValue;
 if (encryptedValue$ != null) {
-  if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$');
+  if (!RegExp(r'^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$').hasMatch(encryptedValue$)) { errors.add(r'encryptedValue: must match pattern ^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$'); }
 }
 return errors; } 
 CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest copyWith({String? Function()? encryptedValue, String? keyId, List<dynamic>? Function()? selectedRepositoryIds, }) { return CodespacesCreateOrUpdateSecretForAuthenticatedUserRequest(

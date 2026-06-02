@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('input_text') && json['input_text'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (inputText.isEmpty) errors.add('inputText: length must be >= 1');
+if (inputText.isEmpty) { errors.add('inputText: length must be >= 1'); }
 return errors; } 
 Summarization copyWith({String? inputText, int Function()? maxLength, }) { return Summarization(
   inputText: inputText ?? this.inputText,

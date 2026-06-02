@@ -118,11 +118,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 List<String> validate() { final errors = <String>[];
 final actionTimeout$ = actionTimeout;
 if (actionTimeout$ != null) {
-  if (actionTimeout$ > 120000) errors.add('actionTimeout: must be <= 120000');
+  if (actionTimeout$ > 120000) { errors.add('actionTimeout: must be <= 120000'); }
 }
 final waitForTimeout$ = waitForTimeout;
 if (waitForTimeout$ != null) {
-  if (waitForTimeout$ > 120000) errors.add('waitForTimeout: must be <= 120000');
+  if (waitForTimeout$ > 120000) { errors.add('waitForTimeout: must be <= 120000'); }
 }
 return errors; } 
 BrapiPostJsonRequestVariant2 copyWith({double? Function()? actionTimeout, List<AddScriptTag>? Function()? addScriptTag, List<AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<AllowResourceTypes>? Function()? allowResourceTypes, Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<Variant1Cookies>? Function()? cookies, List<CustomAi>? Function()? customAi, String? Function()? emulateMediaType, GotoOptions? Function()? gotoOptions, String? Function()? prompt, List<String>? Function()? rejectRequestPattern, List<RejectResourceTypes>? Function()? rejectResourceTypes, Variant1ResponseFormat? Function()? responseFormat, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, Uri? url, String Function()? userAgent, Viewport? Function()? viewport, WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostJsonRequestVariant2(

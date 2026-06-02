@@ -112,7 +112,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('numbe
 List<String> validate() { final errors = <String>[];
 final dismissedComment$ = dismissedComment;
 if (dismissedComment$ != null) {
-  if (dismissedComment$.length > 280) errors.add('dismissedComment: length must be <= 280');
+  if (dismissedComment$.length > 280) { errors.add('dismissedComment: length must be <= 280'); }
 }
 return errors; } 
 DependabotAlertWithRepository copyWith({AlertNumber? number, DependabotAlertState? state, DependabotAlertDependency? dependency, DependabotAlertSecurityAdvisory? securityAdvisory, DependabotAlertSecurityVulnerability? securityVulnerability, AlertUrl? url, AlertHtmlUrl? htmlUrl, AlertCreatedAt? createdAt, AlertUpdatedAt? updatedAt, AlertDismissedAt? Function()? dismissedAt, SimpleUser? Function()? dismissedBy, DependabotAlertDismissedReason? Function()? dismissedReason, String? Function()? dismissedComment, AlertFixedAt? Function()? fixedAt, AlertAutoDismissedAt? Function()? autoDismissedAt, DependabotAlertDismissalRequestSimple? Function()? dismissalRequest, List<SimpleUser>? Function()? assignees, SimpleRepository? repository, }) { return DependabotAlertWithRepository(

@@ -42,11 +42,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final nickname$ = nickname;
 if (nickname$ != null) {
-  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+  if (nickname$.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 final product$ = product;
 if (product$ != null) {
-  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+  if (product$.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 return errors; } 
 PostPlansPlanRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? nickname, String? Function()? product, int? Function()? trialPeriodDays, }) { return PostPlansPlanRequest(

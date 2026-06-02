@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final headline$ = headline;
 if (headline$ != null) {
-  if (headline$.length > 5000) errors.add('headline: length must be <= 5000');
+  if (headline$.length > 5000) { errors.add('headline: length must be <= 5000'); }
 }
 final privacyPolicyUrl$ = privacyPolicyUrl;
 if (privacyPolicyUrl$ != null) {
-  if (privacyPolicyUrl$.length > 5000) errors.add('privacyPolicyUrl: length must be <= 5000');
+  if (privacyPolicyUrl$.length > 5000) { errors.add('privacyPolicyUrl: length must be <= 5000'); }
 }
 final termsOfServiceUrl$ = termsOfServiceUrl;
 if (termsOfServiceUrl$ != null) {
-  if (termsOfServiceUrl$.length > 5000) errors.add('termsOfServiceUrl: length must be <= 5000');
+  if (termsOfServiceUrl$.length > 5000) { errors.add('termsOfServiceUrl: length must be <= 5000'); }
 }
 return errors; } 
 PortalBusinessProfile copyWith({String? Function()? headline, String? Function()? privacyPolicyUrl, String? Function()? termsOfServiceUrl, }) { return PortalBusinessProfile(

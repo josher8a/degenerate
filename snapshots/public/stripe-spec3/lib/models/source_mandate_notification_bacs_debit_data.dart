@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 SourceMandateNotificationBacsDebitData copyWith({String? Function()? last4}) { return SourceMandateNotificationBacsDebitData(

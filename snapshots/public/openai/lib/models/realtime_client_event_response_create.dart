@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
-  if (eventId$.length > 512) errors.add('eventId: length must be <= 512');
+  if (eventId$.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
 return errors; } 
 RealtimeClientEventResponseCreate copyWith({String? Function()? eventId, String? type, RealtimeResponseCreateParams? Function()? response, }) { return RealtimeClientEventResponseCreate(

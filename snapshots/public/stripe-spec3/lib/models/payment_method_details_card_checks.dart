@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final addressLine1Check$ = addressLine1Check;
 if (addressLine1Check$ != null) {
-  if (addressLine1Check$.length > 5000) errors.add('addressLine1Check: length must be <= 5000');
+  if (addressLine1Check$.length > 5000) { errors.add('addressLine1Check: length must be <= 5000'); }
 }
 final addressPostalCodeCheck$ = addressPostalCodeCheck;
 if (addressPostalCodeCheck$ != null) {
-  if (addressPostalCodeCheck$.length > 5000) errors.add('addressPostalCodeCheck: length must be <= 5000');
+  if (addressPostalCodeCheck$.length > 5000) { errors.add('addressPostalCodeCheck: length must be <= 5000'); }
 }
 final cvcCheck$ = cvcCheck;
 if (cvcCheck$ != null) {
-  if (cvcCheck$.length > 5000) errors.add('cvcCheck: length must be <= 5000');
+  if (cvcCheck$.length > 5000) { errors.add('cvcCheck: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsCardChecks copyWith({String? Function()? addressLine1Check, String? Function()? addressPostalCodeCheck, String? Function()? cvcCheck, }) { return PaymentMethodDetailsCardChecks(

@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('branc
 List<String> validate() { final errors = <String>[];
 final files$ = files;
 if (files$ != null) {
-  if (files$.length > 2) errors.add('files: must have <= 2 items');
+  if (files$.length > 2) { errors.add('files: must have <= 2 items'); }
 }
 return errors; } 
 BuildsBuildSeedRepoInput copyWith({BuildsBranch? branch, List<BuildsBuildSeedRepoInputFile>? Function()? files, String? owner, String? path, BuildsScmProviderType? provider, String? repository, }) { return BuildsBuildSeedRepoInput(

@@ -24,8 +24,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final tokenSources$ = tokenSources;
 if (tokenSources$ != null) {
-  if (tokenSources$.isEmpty) errors.add('tokenSources: must have >= 1 items');
-  if (tokenSources$.length > 4) errors.add('tokenSources: must have <= 4 items');
+  if (tokenSources$.isEmpty) { errors.add('tokenSources: must have >= 1 items'); }
+  if (tokenSources$.length > 4) { errors.add('tokenSources: must have <= 4 items'); }
 }
 return errors; } 
 TokenValidationConfigEditRequest copyWith({ShieldDescription? Function()? description, ShieldTitle? Function()? title, List<ShieldHeader>? Function()? tokenSources, }) { return TokenValidationConfigEditRequest(

@@ -181,14 +181,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final financialAccount$ = financialAccount;
 if (financialAccount$ != null) {
-  if (financialAccount$.length > 5000) errors.add('financialAccount: length must be <= 5000');
+  if (financialAccount$.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 }
 final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
 if (hostedRegulatoryReceiptUrl$ != null) {
-  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+  if (hostedRegulatoryReceiptUrl$.length > 5000) { errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (receivedDebit.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (receivedDebit.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 return errors; } 
 TreasuryDebitReversal copyWith({int? amount, int? created, String? currency, String? Function()? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, TreasuryReceivedDebitsResourceDebitReversalLinkedFlows? Function()? linkedFlows, bool? livemode, Map<String,String>? metadata, TreasuryDebitReversalNetwork? network, TreasuryDebitReversalObject? object, String? receivedDebit, TreasuryDebitReversalStatus? status, TreasuryReceivedDebitsResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryDebitReversal(
   amount: amount ?? this.amount,

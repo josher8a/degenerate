@@ -19,8 +19,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 5000) errors.add('name: length must be <= 5000');
-if (value.length > 5000) errors.add('value: length must be <= 5000');
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
+if (value.length > 5000) { errors.add('value: length must be <= 5000'); }
 return errors; } 
 Headers copyWith({String? name, String? value, }) { return Headers(
   name: name ?? this.name,

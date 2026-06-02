@@ -37,13 +37,13 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final checkPresence$ = checkPresence;
 if (checkPresence$ != null) {
-  if (checkPresence$.isEmpty) errors.add('checkPresence: must have >= 1 items');
-  if (checkPresence$.toSet().length != checkPresence$.length) errors.add('checkPresence: items must be unique');
+  if (checkPresence$.isEmpty) { errors.add('checkPresence: must have >= 1 items'); }
+  if (checkPresence$.toSet().length != checkPresence$.length) { errors.add('checkPresence: items must be unique'); }
 }
 final include$ = include;
 if (include$ != null) {
-  if (include$.isEmpty) errors.add('include: must have >= 1 items');
-  if (include$.toSet().length != include$.length) errors.add('include: items must be unique');
+  if (include$.isEmpty) { errors.add('include: must have >= 1 items'); }
+  if (include$.toSet().length != include$.length) { errors.add('include: items must be unique'); }
 }
 return errors; } 
 RulesetsSetCacheSettingsCustomCacheKeyHeader copyWith({List<String>? Function()? checkPresence, Map<String, List<String>>? Function()? contains, bool? Function()? excludeOrigin, List<String>? Function()? include, }) { return RulesetsSetCacheSettingsCustomCacheKeyHeader(

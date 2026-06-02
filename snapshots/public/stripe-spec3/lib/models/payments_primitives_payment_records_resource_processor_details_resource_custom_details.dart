@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final paymentReference$ = paymentReference;
 if (paymentReference$ != null) {
-  if (paymentReference$.length > 5000) errors.add('paymentReference: length must be <= 5000');
+  if (paymentReference$.length > 5000) { errors.add('paymentReference: length must be <= 5000'); }
 }
 return errors; } 
 PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails copyWith({String? Function()? paymentReference}) { return PaymentsPrimitivesPaymentRecordsResourceProcessorDetailsResourceCustomDetails(

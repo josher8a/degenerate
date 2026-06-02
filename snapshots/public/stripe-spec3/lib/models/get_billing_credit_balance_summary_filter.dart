@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final creditGrant$ = creditGrant;
 if (creditGrant$ != null) {
-  if (creditGrant$.length > 5000) errors.add('creditGrant: length must be <= 5000');
+  if (creditGrant$.length > 5000) { errors.add('creditGrant: length must be <= 5000'); }
 }
 return errors; } 
 GetBillingCreditBalanceSummaryFilter copyWith({ApplicabilityScope? Function()? applicabilityScope, String? Function()? creditGrant, GetBillingCreditBalanceSummaryFilterType? type, }) { return GetBillingCreditBalanceSummaryFilter(

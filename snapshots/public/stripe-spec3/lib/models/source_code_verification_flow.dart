@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('attem
       json.containsKey('status') && json['status'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
 return errors; } 
 SourceCodeVerificationFlow copyWith({int? attemptsRemaining, String? status, }) { return SourceCodeVerificationFlow(
   attemptsRemaining: attemptsRemaining ?? this.attemptsRemaining,

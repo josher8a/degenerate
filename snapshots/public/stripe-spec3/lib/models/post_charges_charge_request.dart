@@ -52,15 +52,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 40000) errors.add('description: length must be <= 40000');
+  if (description$.length > 40000) { errors.add('description: length must be <= 40000'); }
 }
 final receiptEmail$ = receiptEmail;
 if (receiptEmail$ != null) {
-  if (receiptEmail$.length > 5000) errors.add('receiptEmail: length must be <= 5000');
+  if (receiptEmail$.length > 5000) { errors.add('receiptEmail: length must be <= 5000'); }
 }
 return errors; } 
 PostChargesChargeRequest copyWith({String? Function()? customer, String? Function()? description, List<String>? Function()? expand, FraudDetails? Function()? fraudDetails, Metadata? Function()? metadata, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? transferGroup, }) { return PostChargesChargeRequest(

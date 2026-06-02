@@ -38,19 +38,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final data$ = data;
 if (data$ != null) {
-  if (data$.length > 5000) errors.add('data: length must be <= 5000');
+  if (data$.length > 5000) { errors.add('data: length must be <= 5000'); }
 }
 final hostedInstructionsUrl$ = hostedInstructionsUrl;
 if (hostedInstructionsUrl$ != null) {
-  if (hostedInstructionsUrl$.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
+  if (hostedInstructionsUrl$.length > 5000) { errors.add('hostedInstructionsUrl: length must be <= 5000'); }
 }
 final imageUrlPng$ = imageUrlPng;
 if (imageUrlPng$ != null) {
-  if (imageUrlPng$.length > 5000) errors.add('imageUrlPng: length must be <= 5000');
+  if (imageUrlPng$.length > 5000) { errors.add('imageUrlPng: length must be <= 5000'); }
 }
 final imageUrlSvg$ = imageUrlSvg;
 if (imageUrlSvg$ != null) {
-  if (imageUrlSvg$.length > 5000) errors.add('imageUrlSvg: length must be <= 5000');
+  if (imageUrlSvg$.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentNextActionPixDisplayQrCode copyWith({String? Function()? data, int? Function()? expiresAt, String? Function()? hostedInstructionsUrl, String? Function()? imageUrlPng, String? Function()? imageUrlSvg, }) { return PaymentIntentNextActionPixDisplayQrCode(

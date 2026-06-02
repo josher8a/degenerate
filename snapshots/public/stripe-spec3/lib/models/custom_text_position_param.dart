@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('message') && json['message'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (message.length > 1200) errors.add('message: length must be <= 1200');
+if (message.length > 1200) { errors.add('message: length must be <= 1200'); }
 return errors; } 
 CustomTextPositionParam copyWith({String? message}) { return CustomTextPositionParam(
   message: message ?? this.message,

@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('quote') && json['quote'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (quote.length > 5000) errors.add('quote: length must be <= 5000');
+if (quote.length > 5000) { errors.add('quote: length must be <= 5000'); }
 return errors; } 
 BillingBillResourceInvoicingParentsInvoiceQuoteParent copyWith({String? quote}) { return BillingBillResourceInvoicingParentsInvoiceQuoteParent(
   quote: quote ?? this.quote,

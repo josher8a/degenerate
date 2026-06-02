@@ -27,8 +27,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final weight$ = weight;
 if (weight$ != null) {
-  if (weight$ < 0) errors.add('weight: must be >= 0');
-  if (weight$ > 65535) errors.add('weight: must be <= 65535');
+  if (weight$ < 0) { errors.add('weight: must be >= 0'); }
+  if (weight$ > 65535) { errors.add('weight: must be <= 65535'); }
 }
 return errors; } 
 DnsRecordsUriRecordData copyWith({String? Function()? target, double? Function()? weight, }) { return DnsRecordsUriRecordData(

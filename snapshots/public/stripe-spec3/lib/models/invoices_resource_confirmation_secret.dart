@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('type') && json['type'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (clientSecret.length > 5000) errors.add('clientSecret: length must be <= 5000');
-if (type.length > 5000) errors.add('type: length must be <= 5000');
+if (clientSecret.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
 return errors; } 
 InvoicesResourceConfirmationSecret copyWith({String? clientSecret, String? type, }) { return InvoicesResourceConfirmationSecret(
   clientSecret: clientSecret ?? this.clientSecret,

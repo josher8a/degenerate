@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
 List<String> validate() { final errors = <String>[];
 final keys$ = keys;
 if (keys$ != null) {
-  if (keys$.length > 10000) errors.add('keys: must have <= 10000 items');
+  if (keys$.length > 10000) { errors.add('keys: must have <= 10000 items'); }
 }
 return errors; } 
 R2SlurperR2SourceSchema copyWith({String? bucket, R2SlurperJurisdiction? Function()? jurisdiction, List<String>? Function()? keys, String? Function()? pathPrefix, R2SlurperS3LikeCredsSchema? secret, R2SlurperR2SourceSchemaVendor? vendor, }) { return R2SlurperR2SourceSchema(

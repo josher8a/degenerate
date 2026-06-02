@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_rate') && json['tax_rate'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (taxRate.length > 5000) errors.add('taxRate: length must be <= 5000');
+if (taxRate.length > 5000) { errors.add('taxRate: length must be <= 5000'); }
 return errors; } 
 BillingBillResourceInvoicingTaxesTaxRateDetails copyWith({String? taxRate}) { return BillingBillResourceInvoicingTaxesTaxRateDetails(
   taxRate: taxRate ?? this.taxRate,

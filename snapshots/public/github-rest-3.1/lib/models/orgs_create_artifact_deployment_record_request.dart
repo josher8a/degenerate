@@ -77,37 +77,37 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('deployment_name') && json['deployment_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.isEmpty) errors.add('name: length must be >= 1');
-if (name.length > 256) errors.add('name: length must be <= 256');
-if (digest.length < 71) errors.add('digest: length must be >= 71');
-if (digest.length > 71) errors.add('digest: length must be <= 71');
-if (!RegExp(r'^sha256:[a-f0-9]{64}$').hasMatch(digest)) errors.add(r'digest: must match pattern ^sha256:[a-f0-9]{64}$');
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
+if (name.length > 256) { errors.add('name: length must be <= 256'); }
+if (digest.length < 71) { errors.add('digest: length must be >= 71'); }
+if (digest.length > 71) { errors.add('digest: length must be <= 71'); }
+if (!RegExp(r'^sha256:[a-f0-9]{64}$').hasMatch(digest)) { errors.add(r'digest: must match pattern ^sha256:[a-f0-9]{64}$'); }
 final version$ = version;
 if (version$ != null) {
-  if (version$.isEmpty) errors.add('version: length must be >= 1');
-  if (version$.length > 100) errors.add('version: length must be <= 100');
+  if (version$.isEmpty) { errors.add('version: length must be >= 1'); }
+  if (version$.length > 100) { errors.add('version: length must be <= 100'); }
 }
-if (logicalEnvironment.isEmpty) errors.add('logicalEnvironment: length must be >= 1');
-if (logicalEnvironment.length > 128) errors.add('logicalEnvironment: length must be <= 128');
+if (logicalEnvironment.isEmpty) { errors.add('logicalEnvironment: length must be >= 1'); }
+if (logicalEnvironment.length > 128) { errors.add('logicalEnvironment: length must be <= 128'); }
 final physicalEnvironment$ = physicalEnvironment;
 if (physicalEnvironment$ != null) {
-  if (physicalEnvironment$.length > 128) errors.add('physicalEnvironment: length must be <= 128');
+  if (physicalEnvironment$.length > 128) { errors.add('physicalEnvironment: length must be <= 128'); }
 }
 final cluster$ = cluster;
 if (cluster$ != null) {
-  if (cluster$.length > 128) errors.add('cluster: length must be <= 128');
+  if (cluster$.length > 128) { errors.add('cluster: length must be <= 128'); }
 }
-if (deploymentName.length > 256) errors.add('deploymentName: length must be <= 256');
+if (deploymentName.length > 256) { errors.add('deploymentName: length must be <= 256'); }
 final runtimeRisks$ = runtimeRisks;
 if (runtimeRisks$ != null) {
-  if (runtimeRisks$.length > 4) errors.add('runtimeRisks: must have <= 4 items');
-  if (runtimeRisks$.toSet().length != runtimeRisks$.length) errors.add('runtimeRisks: items must be unique');
+  if (runtimeRisks$.length > 4) { errors.add('runtimeRisks: must have <= 4 items'); }
+  if (runtimeRisks$.toSet().length != runtimeRisks$.length) { errors.add('runtimeRisks: items must be unique'); }
 }
 final githubRepository$ = githubRepository;
 if (githubRepository$ != null) {
-  if (githubRepository$.isEmpty) errors.add('githubRepository: length must be >= 1');
-  if (githubRepository$.length > 100) errors.add('githubRepository: length must be <= 100');
-  if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$');
+  if (githubRepository$.isEmpty) { errors.add('githubRepository: length must be >= 1'); }
+  if (githubRepository$.length > 100) { errors.add('githubRepository: length must be <= 100'); }
+  if (!RegExp(r'^[A-Za-z0-9.\-_]+$').hasMatch(githubRepository$)) { errors.add(r'githubRepository: must match pattern ^[A-Za-z0-9.\-_]+$'); }
 }
 return errors; } 
 OrgsCreateArtifactDeploymentRecordRequest copyWith({String? name, String? digest, String? Function()? version, OrgsCreateArtifactDeploymentRecordRequestStatus? status, String? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? githubRepository, }) { return OrgsCreateArtifactDeploymentRecordRequest(

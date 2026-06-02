@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 1024) errors.add('name: length must be <= 1024');
+  if (name$.length > 1024) { errors.add('name: length must be <= 1024'); }
 }
 return errors; } 
 EmailSecurityUpdateDisplayNameRequest copyWith({String? Function()? email, bool? Function()? isEmailRegex, String? Function()? name, }) { return EmailSecurityUpdateDisplayNameRequest(

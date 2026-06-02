@@ -30,8 +30,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('sourc
       json.containsKey('status') && json['status'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (source.length > 5000) errors.add('source: length must be <= 5000');
-if (status.length > 5000) errors.add('status: length must be <= 5000');
+if (source.length > 5000) { errors.add('source: length must be <= 5000'); }
+if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
 return errors; } 
 TaxProductResourceTaxAssociationTransactionAttempts copyWith({TaxProductResourceTaxAssociationTransactionAttemptsResourceCommitted? Function()? committed, TaxProductResourceTaxAssociationTransactionAttemptsResourceErrored? Function()? errored, String? source, String? status, }) { return TaxProductResourceTaxAssociationTransactionAttempts(
   committed: committed != null ? committed() : this.committed,

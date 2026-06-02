@@ -36,27 +36,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final city$ = city;
 if (city$ != null) {
-  if (city$.length > 5000) errors.add('city: length must be <= 5000');
+  if (city$.length > 5000) { errors.add('city: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final line1$ = line1;
 if (line1$ != null) {
-  if (line1$.length > 5000) errors.add('line1: length must be <= 5000');
+  if (line1$.length > 5000) { errors.add('line1: length must be <= 5000'); }
 }
 final line2$ = line2;
 if (line2$ != null) {
-  if (line2$.length > 5000) errors.add('line2: length must be <= 5000');
+  if (line2$.length > 5000) { errors.add('line2: length must be <= 5000'); }
 }
 final postalCode$ = postalCode;
 if (postalCode$ != null) {
-  if (postalCode$.length > 5000) errors.add('postalCode: length must be <= 5000');
+  if (postalCode$.length > 5000) { errors.add('postalCode: length must be <= 5000'); }
 }
 final state$ = state;
 if (state$ != null) {
-  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+  if (state$.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
 BillingDetailsAddress copyWith({String? Function()? city, String? Function()? country, String? Function()? line1, String? Function()? line2, String? Function()? postalCode, String? Function()? state, }) { return BillingDetailsAddress(

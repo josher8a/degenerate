@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final meter$ = meter;
 if (meter$ != null) {
-  if (meter$.length > 5000) errors.add('meter: length must be <= 5000');
+  if (meter$.length > 5000) { errors.add('meter: length must be <= 5000'); }
 }
 return errors; } 
 GetPricesRecurring copyWith({GetPricesRecurringInterval? Function()? interval, String? Function()? meter, UsageType? Function()? usageType, }) { return GetPricesRecurring(

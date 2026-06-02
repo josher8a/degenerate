@@ -93,8 +93,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final limit$ = limit;
 if (limit$ != null) {
-  if (limit$ < 0) errors.add('limit: must be >= 0');
-  if (limit$ > 2000) errors.add('limit: must be <= 2000');
+  if (limit$ < 0) { errors.add('limit: must be >= 0'); }
+  if (limit$ > 2000) { errors.add('limit: must be <= 2000'); }
 }
 return errors; } 
 TelemetryQueryRequestParameters copyWith({List<ParametersCalculations>? Function()? calculations, List<String>? Function()? datasets, FilterCombination? Function()? filterCombination, List<TelemetryKeysListRequestFilters>? Function()? filters, List<GroupBys>? Function()? groupBys, List<Havings>? Function()? havings, int? Function()? limit, Needle? Function()? needle, OrderBy? Function()? orderBy, }) { return TelemetryQueryRequestParameters(

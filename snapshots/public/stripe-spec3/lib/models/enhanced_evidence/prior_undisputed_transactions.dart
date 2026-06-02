@@ -42,7 +42,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('charge') && json['charge'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (charge.length > 5000) errors.add('charge: length must be <= 5000');
+if (charge.length > 5000) { errors.add('charge: length must be <= 5000'); }
 return errors; } 
 PriorUndisputedTransactions copyWith({String? charge, CustomerAccountId? Function()? customerAccountId, CustomerDeviceFingerprint? Function()? customerDeviceFingerprint, CustomerDeviceId? Function()? customerDeviceId, CustomerEmailAddress? Function()? customerEmailAddress, CustomerPurchaseIp? Function()? customerPurchaseIp, DisputedTransactionProductDescription? Function()? productDescription, DisputedTransactionShippingAddress? Function()? shippingAddress, }) { return PriorUndisputedTransactions(
   charge: charge ?? this.charge,

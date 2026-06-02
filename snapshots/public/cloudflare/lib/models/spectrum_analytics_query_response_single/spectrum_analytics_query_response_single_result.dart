@@ -59,8 +59,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('totals'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (dataLag < 0) errors.add('dataLag: must be >= 0');
-if (rows < 0) errors.add('rows: must be >= 0');
+if (dataLag < 0) { errors.add('dataLag: must be >= 0'); }
+if (rows < 0) { errors.add('rows: must be >= 0'); }
 return errors; } 
 SpectrumAnalyticsQueryResponseSingleResult copyWith({List<SpectrumAnalyticsColumn>? data, double? dataLag, Map<String,double>? max, Map<String,double>? min, SpectrumAnalyticsQuery? query, double? rows, List<List<SpectrumAnalyticsTimestamp>>? Function()? timeIntervals, Map<String,double>? totals, }) { return SpectrumAnalyticsQueryResponseSingleResult(
   data: data ?? this.data,

@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('debit
 List<String> validate() { final errors = <String>[];
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 return errors; } 
 AccountPayoutSettings copyWith({bool? debitNegativeBalances, TransferSchedule? schedule, String? Function()? statementDescriptor, }) { return AccountPayoutSettings(

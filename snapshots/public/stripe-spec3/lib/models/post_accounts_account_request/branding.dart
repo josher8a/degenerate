@@ -28,19 +28,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final icon$ = icon;
 if (icon$ != null) {
-  if (icon$.length > 5000) errors.add('icon: length must be <= 5000');
+  if (icon$.length > 5000) { errors.add('icon: length must be <= 5000'); }
 }
 final logo$ = logo;
 if (logo$ != null) {
-  if (logo$.length > 5000) errors.add('logo: length must be <= 5000');
+  if (logo$.length > 5000) { errors.add('logo: length must be <= 5000'); }
 }
 final primaryColor$ = primaryColor;
 if (primaryColor$ != null) {
-  if (primaryColor$.length > 5000) errors.add('primaryColor: length must be <= 5000');
+  if (primaryColor$.length > 5000) { errors.add('primaryColor: length must be <= 5000'); }
 }
 final secondaryColor$ = secondaryColor;
 if (secondaryColor$ != null) {
-  if (secondaryColor$.length > 5000) errors.add('secondaryColor: length must be <= 5000');
+  if (secondaryColor$.length > 5000) { errors.add('secondaryColor: length must be <= 5000'); }
 }
 return errors; } 
 Branding copyWith({String? Function()? icon, String? Function()? logo, String? Function()? primaryColor, String? Function()? secondaryColor, }) { return Branding(

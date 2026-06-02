@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fileIds$ = fileIds;
 if (fileIds$ != null) {
-  if (fileIds$.length > 500) errors.add('fileIds: must have <= 500 items');
+  if (fileIds$.length > 500) { errors.add('fileIds: must have <= 500 items'); }
 }
 return errors; } 
 CreateVectorStoreRequest copyWith({List<String>? Function()? fileIds, String? Function()? name, String? Function()? description, VectorStoreExpirationAfter? Function()? expiresAfter, CreateVectorStoreRequestChunkingStrategy? Function()? chunkingStrategy, Map<String, String>? Function()? metadata, }) { return CreateVectorStoreRequest(

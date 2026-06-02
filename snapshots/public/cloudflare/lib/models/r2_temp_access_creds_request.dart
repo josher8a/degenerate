@@ -92,7 +92,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bucke
       json.containsKey('ttlSeconds') && json['ttlSeconds'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (ttlSeconds > 604800) errors.add('ttlSeconds: must be <= 604800');
+if (ttlSeconds > 604800) { errors.add('ttlSeconds: must be <= 604800'); }
 return errors; } 
 R2TempAccessCredsRequest copyWith({String? bucket, List<String>? Function()? objects, String? parentAccessKeyId, Permission? permission, List<String>? Function()? prefixes, double? ttlSeconds, }) { return R2TempAccessCredsRequest(
   bucket: bucket ?? this.bucket,

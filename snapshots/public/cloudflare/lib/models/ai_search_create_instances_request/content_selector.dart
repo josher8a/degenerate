@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('path'
       json.containsKey('selector') && json['selector'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (path.length > 200) errors.add('path: length must be <= 200');
-if (selector.length > 200) errors.add('selector: length must be <= 200');
+if (path.length > 200) { errors.add('path: length must be <= 200'); }
+if (selector.length > 200) { errors.add('selector: length must be <= 200'); }
 return errors; } 
 ContentSelector copyWith({String? path, String? selector, }) { return ContentSelector(
   path: path ?? this.path,

@@ -40,10 +40,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final industryProductCode$ = industryProductCode;
 if (industryProductCode$ != null) {
-  if (industryProductCode$.length > 5000) errors.add('industryProductCode: length must be <= 5000');
+  if (industryProductCode$.length > 5000) { errors.add('industryProductCode: length must be <= 5000'); }
 }
-if (type.length > 5000) errors.add('type: length must be <= 5000');
-if (unit.length > 5000) errors.add('unit: length must be <= 5000');
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
+if (unit.length > 5000) { errors.add('unit: length must be <= 5000'); }
 return errors; } 
 IssuingTransactionFuelData copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, String? type, String? unit, String? unitCostDecimal, }) { return IssuingTransactionFuelData(
   industryProductCode: industryProductCode != null ? industryProductCode() : this.industryProductCode,

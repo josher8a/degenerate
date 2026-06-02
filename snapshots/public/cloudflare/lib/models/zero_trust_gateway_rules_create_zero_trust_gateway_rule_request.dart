@@ -70,8 +70,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 final filters$ = filters;
 if (filters$ != null) {
-  if (filters$.isEmpty) errors.add('filters: must have >= 1 items');
-  if (filters$.length > 1) errors.add('filters: must have <= 1 items');
+  if (filters$.isEmpty) { errors.add('filters: must have >= 1 items'); }
+  if (filters$.length > 1) { errors.add('filters: must have <= 1 items'); }
 }
 return errors; } 
 ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest copyWith({ZeroTrustGatewayAction? action, ZeroTrustGatewaySchemasDescription? Function()? description, ZeroTrustGatewayDevicePosture? Function()? devicePosture, ZeroTrustGatewayEnabled? Function()? enabled, ZeroTrustGatewayExpiration? Function()? expiration, List<ZeroTrustGatewayFilters2>? Function()? filters, ZeroTrustGatewayIdentity? Function()? identity, ZeroTrustGatewayComponentsSchemasName? name, ZeroTrustGatewayPrecedence? Function()? precedence, ZeroTrustGatewayRuleSettings? Function()? ruleSettings, ZeroTrustGatewaySchedule? Function()? schedule, ZeroTrustGatewayTraffic? Function()? traffic, }) { return ZeroTrustGatewayRulesCreateZeroTrustGatewayRuleRequest(

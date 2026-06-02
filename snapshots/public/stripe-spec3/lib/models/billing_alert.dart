@@ -106,8 +106,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alert
       json.containsKey('title') && json['title'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (title.length > 5000) errors.add('title: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (title.length > 5000) { errors.add('title: length must be <= 5000'); }
 return errors; } 
 BillingAlert copyWith({AlertType? alertType, String? id, bool? livemode, BillingAlertObject? object, BillingAlertStatus? Function()? status, String? title, ThresholdsResourceUsageThresholdConfig? Function()? usageThreshold, }) { return BillingAlert(
   alertType: alertType ?? this.alertType,

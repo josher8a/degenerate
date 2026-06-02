@@ -41,8 +41,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('profi
 List<String> validate() { final errors = <String>[];
 final allowedMatchCount$ = allowedMatchCount;
 if (allowedMatchCount$ != null) {
-  if (allowedMatchCount$ < 0) errors.add('allowedMatchCount: must be >= 0');
-  if (allowedMatchCount$ > 1000) errors.add('allowedMatchCount: must be <= 1000');
+  if (allowedMatchCount$ < 0) { errors.add('allowedMatchCount: must be >= 0'); }
+  if (allowedMatchCount$ > 1000) { errors.add('allowedMatchCount: must be <= 1000'); }
 }
 return errors; } 
 DlpNewPredefinedProfile copyWith({bool Function()? aiContextEnabled, int? Function()? allowedMatchCount, String? Function()? confidenceThreshold, DlpContextAwareness? Function()? contextAwareness, List<DlpPredefinedProfileEntryUpdate>? Function()? entries, bool Function()? ocrEnabled, String? profileId, }) { return DlpNewPredefinedProfile(

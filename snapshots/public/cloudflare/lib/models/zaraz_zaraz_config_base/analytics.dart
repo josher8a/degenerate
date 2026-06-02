@@ -28,8 +28,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final sessionExpTime$ = sessionExpTime;
 if (sessionExpTime$ != null) {
-  if (sessionExpTime$ < 60) errors.add('sessionExpTime: must be >= 60');
-  if (sessionExpTime$ > 86400) errors.add('sessionExpTime: must be <= 86400');
+  if (sessionExpTime$ < 60) { errors.add('sessionExpTime: must be >= 60'); }
+  if (sessionExpTime$ > 86400) { errors.add('sessionExpTime: must be <= 86400'); }
 }
 return errors; } 
 Analytics copyWith({String? Function()? defaultPurpose, bool? Function()? enabled, int? Function()? sessionExpTime, }) { return Analytics(

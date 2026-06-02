@@ -21,10 +21,10 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('subscription') && json['subscription'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (subscription.length > 5000) errors.add('subscription: length must be <= 5000');
+if (subscription.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 final subscriptionItem$ = subscriptionItem;
 if (subscriptionItem$ != null) {
-  if (subscriptionItem$.length > 5000) errors.add('subscriptionItem: length must be <= 5000');
+  if (subscriptionItem$.length > 5000) { errors.add('subscriptionItem: length must be <= 5000'); }
 }
 return errors; } 
 BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent copyWith({String? subscription, String? Function()? subscriptionItem, }) { return BillingBillResourceInvoiceItemParentsInvoiceItemSubscriptionParent(

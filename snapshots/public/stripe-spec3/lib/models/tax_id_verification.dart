@@ -62,11 +62,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final verifiedAddress$ = verifiedAddress;
 if (verifiedAddress$ != null) {
-  if (verifiedAddress$.length > 5000) errors.add('verifiedAddress: length must be <= 5000');
+  if (verifiedAddress$.length > 5000) { errors.add('verifiedAddress: length must be <= 5000'); }
 }
 final verifiedName$ = verifiedName;
 if (verifiedName$ != null) {
-  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+  if (verifiedName$.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 return errors; } 
 TaxIdVerification copyWith({TaxIdVerificationStatus? status, String? Function()? verifiedAddress, String? Function()? verifiedName, }) { return TaxIdVerification(

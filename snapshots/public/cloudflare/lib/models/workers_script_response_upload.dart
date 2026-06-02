@@ -134,7 +134,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('start
 List<String> validate() { final errors = <String>[];
 final tags$ = tags;
 if (tags$ != null) {
-  if (tags$.length > 10) errors.add('tags: must have <= 10 items');
+  if (tags$.length > 10) { errors.add('tags: must have <= 10 items'); }
 }
 return errors; } 
 WorkersScriptResponseUpload copyWith({WorkersCompatibilityDate? Function()? compatibilityDate, List<WorkersCompatibilityFlag>? Function()? compatibilityFlags, WorkersCreatedOn? Function()? createdOn, WorkersEtag? Function()? etag, List<String>? Function()? handlers, WorkersHasAssets? Function()? hasAssets, WorkersHasModules? Function()? hasModules, String? Function()? id, String? Function()? lastDeployedFrom, WorkersLogpush? Function()? logpush, String? Function()? migrationTag, WorkersModifiedOn? Function()? modifiedOn, List<NamedHandlers>? Function()? namedHandlers, WorkersObservability? Function()? observability, WorkersPlacementInfo? Function()? placement, WorkersPlacementMode? Function()? placementMode, WorkersPlacementStatus? Function()? placementStatus, String? Function()? tag, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, WorkersUsageModel? Function()? usageModel, String? Function()? entryPoint, int? startupTimeMs, }) { return WorkersScriptResponseUpload(

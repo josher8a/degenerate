@@ -121,7 +121,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final industryProductCode$ = industryProductCode;
 if (industryProductCode$ != null) {
-  if (industryProductCode$.length > 5000) errors.add('industryProductCode: length must be <= 5000');
+  if (industryProductCode$.length > 5000) { errors.add('industryProductCode: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorizationFuelData copyWith({String? Function()? industryProductCode, String? Function()? quantityDecimal, IssuingAuthorizationFuelDataType? Function()? type, IssuingAuthorizationFuelDataUnit? Function()? unit, String? Function()? unitCostDecimal, }) { return IssuingAuthorizationFuelData(

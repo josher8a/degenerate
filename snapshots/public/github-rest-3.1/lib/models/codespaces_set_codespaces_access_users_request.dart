@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_usernames'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (selectedUsernames.length > 100) errors.add('selectedUsernames: must have <= 100 items');
+if (selectedUsernames.length > 100) { errors.add('selectedUsernames: must have <= 100 items'); }
 return errors; } 
 CodespacesSetCodespacesAccessUsersRequest copyWith({List<String>? selectedUsernames}) { return CodespacesSetCodespacesAccessUsersRequest(
   selectedUsernames: selectedUsernames ?? this.selectedUsernames,

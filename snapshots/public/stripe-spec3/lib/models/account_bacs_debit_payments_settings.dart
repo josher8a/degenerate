@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
 final serviceUserNumber$ = serviceUserNumber;
 if (serviceUserNumber$ != null) {
-  if (serviceUserNumber$.length > 5000) errors.add('serviceUserNumber: length must be <= 5000');
+  if (serviceUserNumber$.length > 5000) { errors.add('serviceUserNumber: length must be <= 5000'); }
 }
 return errors; } 
 AccountBacsDebitPaymentsSettings copyWith({String? Function()? displayName, String? Function()? serviceUserNumber, }) { return AccountBacsDebitPaymentsSettings(

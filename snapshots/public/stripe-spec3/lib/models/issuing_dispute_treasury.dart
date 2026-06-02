@@ -23,9 +23,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('recei
 List<String> validate() { final errors = <String>[];
 final debitReversal$ = debitReversal;
 if (debitReversal$ != null) {
-  if (debitReversal$.length > 5000) errors.add('debitReversal: length must be <= 5000');
+  if (debitReversal$.length > 5000) { errors.add('debitReversal: length must be <= 5000'); }
 }
-if (receivedDebit.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+if (receivedDebit.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 return errors; } 
 IssuingDisputeTreasury copyWith({String? Function()? debitReversal, String? receivedDebit, }) { return IssuingDisputeTreasury(
   debitReversal: debitReversal != null ? debitReversal() : this.debitReversal,

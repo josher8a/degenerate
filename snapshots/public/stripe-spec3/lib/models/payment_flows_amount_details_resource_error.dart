@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final message$ = message;
 if (message$ != null) {
-  if (message$.length > 5000) errors.add('message: length must be <= 5000');
+  if (message$.length > 5000) { errors.add('message: length must be <= 5000'); }
 }
 return errors; } 
 PaymentFlowsAmountDetailsResourceError copyWith({PaymentFlowsAmountDetailsResourceErrorCode? Function()? code, String? Function()? message, }) { return PaymentFlowsAmountDetailsResourceError(

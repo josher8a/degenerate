@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
 List<String> validate() { final errors = <String>[];
 final reason$ = reason;
 if (reason$ != null) {
-  if (reason$.length > 1024) errors.add('reason: length must be <= 1024');
+  if (reason$.length > 1024) { errors.add('reason: length must be <= 1024'); }
 }
 return errors; } 
 OrgsReviewPatGrantRequestRequest copyWith({OrgsReviewPatGrantRequestRequestAction? action, String? Function()? reason, }) { return OrgsReviewPatGrantRequestRequest(

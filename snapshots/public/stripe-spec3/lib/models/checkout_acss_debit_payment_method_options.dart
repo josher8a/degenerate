@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final targetDate$ = targetDate;
 if (targetDate$ != null) {
-  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+  if (targetDate$.length > 5000) { errors.add('targetDate: length must be <= 5000'); }
 }
 return errors; } 
 CheckoutAcssDebitPaymentMethodOptions copyWith({CheckoutAcssDebitPaymentMethodOptionsCurrency? Function()? currency, CheckoutAcssDebitMandateOptions? Function()? mandateOptions, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return CheckoutAcssDebitPaymentMethodOptions(

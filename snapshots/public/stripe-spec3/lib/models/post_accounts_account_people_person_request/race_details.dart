@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final raceOther$ = raceOther;
 if (raceOther$ != null) {
-  if (raceOther$.length > 5000) errors.add('raceOther: length must be <= 5000');
+  if (raceOther$.length > 5000) { errors.add('raceOther: length must be <= 5000'); }
 }
 return errors; } 
 RaceDetails copyWith({List<Race>? Function()? race, String? Function()? raceOther, }) { return RaceDetails(

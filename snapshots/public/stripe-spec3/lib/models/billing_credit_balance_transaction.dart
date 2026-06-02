@@ -119,7 +119,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 BillingCreditBalanceTransaction copyWith({int? created, BillingCreditGrantsResourceBalanceCredit? Function()? credit, CreditGrant? creditGrant, BillingCreditGrantsResourceBalanceDebit? Function()? debit, int? effectiveAt, String? id, bool? livemode, BillingCreditBalanceTransactionObject? object, TestClock? Function()? testClock, BillingCreditBalanceTransactionType? Function()? type, }) { return BillingCreditBalanceTransaction(
   created: created ?? this.created,

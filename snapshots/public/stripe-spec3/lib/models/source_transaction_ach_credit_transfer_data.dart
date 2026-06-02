@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customerData$ = customerData;
 if (customerData$ != null) {
-  if (customerData$.length > 5000) errors.add('customerData: length must be <= 5000');
+  if (customerData$.length > 5000) { errors.add('customerData: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 return errors; } 
 SourceTransactionAchCreditTransferData copyWith({String? Function()? customerData, String? Function()? fingerprint, String? Function()? last4, String? Function()? routingNumber, }) { return SourceTransactionAchCreditTransferData(

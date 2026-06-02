@@ -80,8 +80,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (account.length > 5000) errors.add('account: length must be <= 5000');
-if (clientSecret.length > 5000) errors.add('clientSecret: length must be <= 5000');
+if (account.length > 5000) { errors.add('account: length must be <= 5000'); }
+if (clientSecret.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 return errors; } 
 AccountSession copyWith({String? account, String? clientSecret, ConnectEmbeddedAccountSessionCreateComponents? components, int? expiresAt, bool? livemode, AccountSessionObject? object, }) { return AccountSession(
   account: account ?? this.account,

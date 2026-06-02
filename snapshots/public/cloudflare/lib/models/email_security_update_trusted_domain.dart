@@ -37,12 +37,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
-  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+  if (comments$.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
 final pattern$ = pattern;
 if (pattern$ != null) {
-  if (pattern$.isEmpty) errors.add('pattern: length must be >= 1');
-  if (pattern$.length > 1024) errors.add('pattern: length must be <= 1024');
+  if (pattern$.isEmpty) { errors.add('pattern: length must be >= 1'); }
+  if (pattern$.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 }
 return errors; } 
 EmailSecurityUpdateTrustedDomain copyWith({String? Function()? comments, bool? Function()? isRecent, bool? Function()? isRegex, bool? Function()? isSimilarity, String? Function()? pattern, }) { return EmailSecurityUpdateTrustedDomain(

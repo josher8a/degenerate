@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 128) errors.add('reference: length must be <= 128');
+  if (reference$.length > 128) { errors.add('reference: length must be <= 128'); }
 }
 return errors; } 
 PaymentMethodOptionsParam2 copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? reference, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam2(

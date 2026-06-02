@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsAlma copyWith({AlmaInstallments? Function()? installments, String? Function()? transactionId, }) { return PaymentMethodDetailsAlma(

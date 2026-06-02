@@ -44,8 +44,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('file_
       json.containsKey('content'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (score < 0) errors.add('score: must be >= 0');
-if (score > 1) errors.add('score: must be <= 1');
+if (score < 0) { errors.add('score: must be >= 0'); }
+if (score > 1) { errors.add('score: must be <= 1'); }
 return errors; } 
 VectorStoreSearchResultItem copyWith({String? fileId, String? filename, double? score, Map<String, dynamic>? Function()? attributes, List<VectorStoreSearchResultContentObject>? content, }) { return VectorStoreSearchResultItem(
   fileId: fileId ?? this.fileId,

@@ -43,11 +43,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final hostedInstructionsUrl$ = hostedInstructionsUrl;
 if (hostedInstructionsUrl$ != null) {
-  if (hostedInstructionsUrl$.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
+  if (hostedInstructionsUrl$.length > 5000) { errors.add('hostedInstructionsUrl: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentNextActionDisplayBankTransferInstructions copyWith({int? Function()? amountRemaining, String? Function()? currency, List<FundingInstructionsBankTransferFinancialAddress>? Function()? financialAddresses, String? Function()? hostedInstructionsUrl, String? Function()? reference, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType? type, }) { return PaymentIntentNextActionDisplayBankTransferInstructions(

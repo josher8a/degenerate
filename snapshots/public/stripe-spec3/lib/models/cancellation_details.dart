@@ -105,7 +105,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final comment$ = comment;
 if (comment$ != null) {
-  if (comment$.length > 5000) errors.add('comment: length must be <= 5000');
+  if (comment$.length > 5000) { errors.add('comment: length must be <= 5000'); }
 }
 return errors; } 
 CancellationDetails copyWith({String? Function()? comment, CancellationDetailsFeedback? Function()? feedback, CancellationDetailsReason? Function()? reason, }) { return CancellationDetails(

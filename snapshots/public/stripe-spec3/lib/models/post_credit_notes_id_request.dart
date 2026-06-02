@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final memo$ = memo;
 if (memo$ != null) {
-  if (memo$.length > 5000) errors.add('memo: length must be <= 5000');
+  if (memo$.length > 5000) { errors.add('memo: length must be <= 5000'); }
 }
 return errors; } 
 PostCreditNotesIdRequest copyWith({List<String>? Function()? expand, String? Function()? memo, Map<String, String>? Function()? metadata, }) { return PostCreditNotesIdRequest(

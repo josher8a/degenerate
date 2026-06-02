@@ -86,23 +86,23 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final apiVersion$ = apiVersion;
 if (apiVersion$ != null) {
-  if (apiVersion$.length > 5000) errors.add('apiVersion: length must be <= 5000');
+  if (apiVersion$.length > 5000) { errors.add('apiVersion: length must be <= 5000'); }
 }
 final application$ = application;
 if (application$ != null) {
-  if (application$.length > 5000) errors.add('application: length must be <= 5000');
+  if (application$.length > 5000) { errors.add('application: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final secret$ = secret;
 if (secret$ != null) {
-  if (secret$.length > 5000) errors.add('secret: length must be <= 5000');
+  if (secret$.length > 5000) { errors.add('secret: length must be <= 5000'); }
 }
-if (status.length > 5000) errors.add('status: length must be <= 5000');
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 WebhookEndpoint copyWith({String? Function()? apiVersion, String? Function()? application, int? created, String? Function()? description, List<String>? enabledEvents, String? id, bool? livemode, Map<String,String>? metadata, DeletedWebhookEndpointObject? object, String? Function()? secret, String? status, String? url, }) { return WebhookEndpoint(
   apiVersion: apiVersion != null ? apiVersion() : this.apiVersion,

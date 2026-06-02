@@ -197,23 +197,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 final defaultSource$ = defaultSource;
 if (defaultSource$ != null) {
-  if (defaultSource$.length > 5000) errors.add('defaultSource: length must be <= 5000');
+  if (defaultSource$.length > 5000) { errors.add('defaultSource: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 500) errors.add('description: length must be <= 500');
+  if (description$.length > 500) { errors.add('description: length must be <= 500'); }
 }
 return errors; } 
 PostSubscriptionsRequest copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems>? Function()? addInvoiceItems, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? backdateStartDate, int? Function()? billingCycleAnchor, BillingCycleAnchorConfig? Function()? billingCycleAnchorConfig, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, String? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, PostCustomersCustomerSubscriptionsRequestInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? Function()? items, Metadata? Function()? metadata, bool? Function()? offSession, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PaymentBehavior? Function()? paymentBehavior, PostCustomersCustomerSubscriptionsRequestPaymentSettings? Function()? paymentSettings, PendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, PostCustomersCustomerSubscriptionsRequestTrialEnd? Function()? trialEnd, bool? Function()? trialFromPlan, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostSubscriptionsRequest(

@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('MALIC
       json.containsKey('NOT_MALICIOUS') && json['NOT_MALICIOUS'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(malicious)) errors.add(r'malicious: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(notMalicious)) errors.add(r'notMalicious: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(malicious)) { errors.add(r'malicious: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(notMalicious)) { errors.add(r'notMalicious: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetEmailSecuritySummaryByMaliciousResponseResultSummary0 copyWith({String? malicious, String? notMalicious, }) { return RadarGetEmailSecuritySummaryByMaliciousResponseResultSummary0(
   malicious: malicious ?? this.malicious,

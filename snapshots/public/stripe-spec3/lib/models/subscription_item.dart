@@ -79,8 +79,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('subscription') && json['subscription'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (subscription.length > 5000) errors.add('subscription: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (subscription.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 return errors; } 
 SubscriptionItem copyWith({SubscriptionItemBillingThresholds? Function()? billingThresholds, int? created, int? currentPeriodEnd, int? currentPeriodStart, List<InvoiceitemDiscounts>? discounts, String? id, Map<String,String>? metadata, DeletedSubscriptionItemObject? object, Price? price, int? Function()? quantity, String? subscription, List<TaxRate>? Function()? taxRates, }) { return SubscriptionItem(
   billingThresholds: billingThresholds != null ? billingThresholds() : this.billingThresholds,

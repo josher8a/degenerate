@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_text_format_param/custom_text_format_param_type.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_json_schema/json_schema.dart';import 'package:pub_openai/models/response_format_json_schema/response_format_json_schema_type.dart';import 'package:pub_openai/models/response_format_text.dart';/// An object specifying the format that the model must output.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_json_schema/json_schema.dart';import 'package:pub_openai/models/response_format_json_schema/response_format_json_schema_type.dart';import 'package:pub_openai/models/response_format_text.dart';/// An object specifying the format that the model must output.
 /// 
 /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables
 /// Structured Outputs which ensures the model will match your supplied JSON

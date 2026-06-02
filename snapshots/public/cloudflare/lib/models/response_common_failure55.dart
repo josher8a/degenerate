@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors$ = <String>[];
 final errors$$ = errors;
 if (errors$$ != null) {
-  if (errors$$.isEmpty) errors$.add('errors: must have >= 1 items');
+  if (errors$$.isEmpty) { errors$.add('errors: must have >= 1 items'); }
 }
 return errors$; } 
 ResponseCommonFailure55 copyWith({List<ResponseCommonFailure55Errors>? Function()? errors, List<Map<String, dynamic>>? Function()? messages, bool? Function()? success, }) { return ResponseCommonFailure55(

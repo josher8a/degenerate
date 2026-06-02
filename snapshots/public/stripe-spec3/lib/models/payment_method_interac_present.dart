@@ -81,35 +81,35 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_m
 List<String> validate() { final errors = <String>[];
 final brand$ = brand;
 if (brand$ != null) {
-  if (brand$.length > 5000) errors.add('brand: length must be <= 5000');
+  if (brand$.length > 5000) { errors.add('brand: length must be <= 5000'); }
 }
 final cardholderName$ = cardholderName;
 if (cardholderName$ != null) {
-  if (cardholderName$.length > 5000) errors.add('cardholderName: length must be <= 5000');
+  if (cardholderName$.length > 5000) { errors.add('cardholderName: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final funding$ = funding;
 if (funding$ != null) {
-  if (funding$.length > 5000) errors.add('funding: length must be <= 5000');
+  if (funding$.length > 5000) { errors.add('funding: length must be <= 5000'); }
 }
 final issuer$ = issuer;
 if (issuer$ != null) {
-  if (issuer$.length > 5000) errors.add('issuer: length must be <= 5000');
+  if (issuer$.length > 5000) { errors.add('issuer: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodInteracPresent copyWith({String? Function()? brand, String? Function()? cardholderName, String? Function()? country, String? Function()? description, int? expMonth, int? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? issuer, String? Function()? last4, PaymentMethodCardPresentNetworks? Function()? networks, List<String>? Function()? preferredLocales, ReadMethod? Function()? readMethod, }) { return PaymentMethodInteracPresent(

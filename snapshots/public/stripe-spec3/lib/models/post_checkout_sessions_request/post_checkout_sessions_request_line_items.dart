@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final price$ = price;
 if (price$ != null) {
-  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+  if (price$.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
 return errors; } 
 PostCheckoutSessionsRequestLineItems copyWith({AdjustableQuantity? Function()? adjustableQuantity, List<String>? Function()? dynamicTaxRates, Map<String, String>? Function()? metadata, String? Function()? price, PostCheckoutSessionsRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, List<String>? Function()? taxRates, }) { return PostCheckoutSessionsRequestLineItems(

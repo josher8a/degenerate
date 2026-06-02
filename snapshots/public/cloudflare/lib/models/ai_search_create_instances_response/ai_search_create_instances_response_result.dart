@@ -152,20 +152,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('vectorize_name') && json['vectorize_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (chunkOverlap < 0) errors.add('chunkOverlap: must be >= 0');
-if (chunkOverlap > 30) errors.add('chunkOverlap: must be <= 30');
-if (chunkSize < 64) errors.add('chunkSize: must be >= 64');
+if (chunkOverlap < 0) { errors.add('chunkOverlap: must be >= 0'); }
+if (chunkOverlap > 30) { errors.add('chunkOverlap: must be <= 30'); }
+if (chunkSize < 64) { errors.add('chunkSize: must be >= 64'); }
 final customMetadata$ = customMetadata;
 if (customMetadata$ != null) {
-  if (customMetadata$.length > 5) errors.add('customMetadata: must have <= 5 items');
+  if (customMetadata$.length > 5) { errors.add('customMetadata: must have <= 5 items'); }
 }
-if (id.isEmpty) errors.add('id: length must be >= 1');
-if (id.length > 32) errors.add('id: length must be <= 32');
-if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
-if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
-if (scoreThreshold < 0) errors.add('scoreThreshold: must be >= 0');
-if (scoreThreshold > 1) errors.add('scoreThreshold: must be <= 1');
+if (id.isEmpty) { errors.add('id: length must be >= 1'); }
+if (id.length > 32) { errors.add('id: length must be <= 32'); }
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
+if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
+if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
+if (scoreThreshold < 0) { errors.add('scoreThreshold: must be >= 0'); }
+if (scoreThreshold > 1) { errors.add('scoreThreshold: must be <= 1'); }
 return errors; } 
 AiSearchCreateInstancesResponseResult copyWith({String? Function()? aiGatewayId, AiSearchModel? Function()? aiSearchModel, bool Function()? cache, CacheThreshold Function()? cacheThreshold, int Function()? chunkOverlap, int Function()? chunkSize, DateTime? createdAt, String? Function()? createdBy, List<CustomMetadata>? Function()? customMetadata, EmbeddingModel? Function()? embeddingModel, bool Function()? enable, FusionMethod Function()? fusionMethod, bool Function()? hybridSearchEnabled, String? id, DateTime? Function()? lastActivity, int Function()? maxNumResults, AiSearchCreateInstancesRequestMetadata? Function()? metadata, DateTime? modifiedAt, String? Function()? modifiedBy, bool Function()? paused, String? Function()? publicEndpointId, PublicEndpointParams? Function()? publicEndpointParams, bool Function()? reranking, RerankingModel? Function()? rerankingModel, RetrievalOptions? Function()? retrievalOptions, RewriteModel? Function()? rewriteModel, bool Function()? rewriteQuery, double Function()? scoreThreshold, String? Function()? source, SourceParams? Function()? sourceParams, String Function()? status, String? Function()? tokenId, AiSearchCreateInstancesRequestType? Function()? type, String? vectorizeName, }) { return AiSearchCreateInstancesResponseResult(
   aiGatewayId: aiGatewayId != null ? aiGatewayId() : this.aiGatewayId,

@@ -17,7 +17,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('bandwidth_limit_mbps') && json['bandwidth_limit_mbps'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (bandwidthLimitMbps < 1) errors.add('bandwidthLimitMbps: must be >= 1');
+if (bandwidthLimitMbps < 1) { errors.add('bandwidthLimitMbps: must be >= 1'); }
 return errors; } 
 CcApplicationNetwork copyWith({int? bandwidthLimitMbps}) { return CcApplicationNetwork(
   bandwidthLimitMbps: bandwidthLimitMbps ?? this.bandwidthLimitMbps,

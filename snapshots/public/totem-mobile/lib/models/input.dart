@@ -28,8 +28,12 @@ final class Input {
   /// Constraint violations for this value (empty when valid).
   List<String> validate() {
     final errors = <String>[];
-    if (limit < 1) errors.add('limit: must be >= 1');
-    if (offset < 0) errors.add('offset: must be >= 0');
+    if (limit < 1) {
+      errors.add('limit: must be >= 1');
+    }
+    if (offset < 0) {
+      errors.add('offset: must be >= 0');
+    }
     return errors;
   }
 

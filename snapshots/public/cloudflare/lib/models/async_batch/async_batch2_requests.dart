@@ -66,34 +66,34 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
-  if (frequencyPenalty$ < 0) errors.add('frequencyPenalty: must be >= 0');
-  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+  if (frequencyPenalty$ < 0) { errors.add('frequencyPenalty: must be >= 0'); }
+  if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
 }
 final presencePenalty$ = presencePenalty;
 if (presencePenalty$ != null) {
-  if (presencePenalty$ < 0) errors.add('presencePenalty: must be >= 0');
-  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+  if (presencePenalty$ < 0) { errors.add('presencePenalty: must be >= 0'); }
+  if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
 final prompt$ = prompt;
 if (prompt$ != null) {
-  if (prompt$.isEmpty) errors.add('prompt: length must be >= 1');
+  if (prompt$.isEmpty) { errors.add('prompt: length must be >= 1'); }
 }
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
-  if (repetitionPenalty$ < 0) errors.add('repetitionPenalty: must be >= 0');
-  if (repetitionPenalty$ > 2) errors.add('repetitionPenalty: must be <= 2');
+  if (repetitionPenalty$ < 0) { errors.add('repetitionPenalty: must be >= 0'); }
+  if (repetitionPenalty$ > 2) { errors.add('repetitionPenalty: must be <= 2'); }
 }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < 1) errors.add('seed: must be >= 1');
-  if (seed$ > 9999999999.0) errors.add('seed: must be <= 9999999999.0');
+  if (seed$ < 1) { errors.add('seed: must be >= 1'); }
+  if (seed$ > 9999999999.0) { errors.add('seed: must be <= 9999999999.0'); }
 }
-if (temperature < 0) errors.add('temperature: must be >= 0');
-if (temperature > 5) errors.add('temperature: must be <= 5');
+if (temperature < 0) { errors.add('temperature: must be >= 0'); }
+if (temperature > 5) { errors.add('temperature: must be <= 5'); }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0) errors.add('topP: must be >= 0');
-  if (topP$ > 2) errors.add('topP: must be <= 2');
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 2) { errors.add('topP: must be <= 2'); }
 }
 return errors; } 
 AsyncBatch2Requests copyWith({String? Function()? externalReference, double? Function()? frequencyPenalty, int Function()? maxTokens, double? Function()? presencePenalty, String? Function()? prompt, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, double? Function()? topP, }) { return AsyncBatch2Requests(

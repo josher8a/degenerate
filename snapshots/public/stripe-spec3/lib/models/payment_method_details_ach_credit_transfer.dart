@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final accountNumber$ = accountNumber;
 if (accountNumber$ != null) {
-  if (accountNumber$.length > 5000) errors.add('accountNumber: length must be <= 5000');
+  if (accountNumber$.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
 }
 final bankName$ = bankName;
 if (bankName$ != null) {
-  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+  if (bankName$.length > 5000) { errors.add('bankName: length must be <= 5000'); }
 }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 final swiftCode$ = swiftCode;
 if (swiftCode$ != null) {
-  if (swiftCode$.length > 5000) errors.add('swiftCode: length must be <= 5000');
+  if (swiftCode$.length > 5000) { errors.add('swiftCode: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsAchCreditTransfer copyWith({String? Function()? accountNumber, String? Function()? bankName, String? Function()? routingNumber, String? Function()? swiftCode, }) { return PaymentMethodDetailsAchCreditTransfer(

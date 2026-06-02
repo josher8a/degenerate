@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final skipButton$ = skipButton;
 if (skipButton$ != null) {
-  if (skipButton$.length > 5000) errors.add('skipButton: length must be <= 5000');
+  if (skipButton$.length > 5000) { errors.add('skipButton: length must be <= 5000'); }
 }
 final submitButton$ = submitButton;
 if (submitButton$ != null) {
-  if (submitButton$.length > 5000) errors.add('submitButton: length must be <= 5000');
+  if (submitButton$.length > 5000) { errors.add('submitButton: length must be <= 5000'); }
 }
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 5000) errors.add('title: length must be <= 5000');
+  if (title$.length > 5000) { errors.add('title: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceCustomText copyWith({String? Function()? description, String? Function()? skipButton, String? Function()? submitButton, String? Function()? title, }) { return TerminalReaderReaderResourceCustomText(

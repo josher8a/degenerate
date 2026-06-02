@@ -44,11 +44,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final confirmationNumber$ = confirmationNumber;
 if (confirmationNumber$ != null) {
-  if (confirmationNumber$.length > 5000) errors.add('confirmationNumber: length must be <= 5000');
+  if (confirmationNumber$.length > 5000) { errors.add('confirmationNumber: length must be <= 5000'); }
 }
 final productDescription$ = productDescription;
 if (productDescription$ != null) {
-  if (productDescription$.length > 5000) errors.add('productDescription: length must be <= 5000');
+  if (productDescription$.length > 5000) { errors.add('productDescription: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodOptionsKonbini copyWith({String? Function()? confirmationNumber, int? Function()? expiresAfterDays, int? Function()? expiresAt, String? Function()? productDescription, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsKonbini(

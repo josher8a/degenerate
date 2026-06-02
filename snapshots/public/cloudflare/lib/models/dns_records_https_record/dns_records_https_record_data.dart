@@ -34,8 +34,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final priority$ = priority;
 if (priority$ != null) {
-  if (priority$ < 0) errors.add('priority: must be >= 0');
-  if (priority$ > 65535) errors.add('priority: must be <= 65535');
+  if (priority$ < 0) { errors.add('priority: must be >= 0'); }
+  if (priority$ > 65535) { errors.add('priority: must be <= 65535'); }
 }
 return errors; } 
 DnsRecordsHttpsRecordData copyWith({double? Function()? priority, String? Function()? target, String? Function()? value, }) { return DnsRecordsHttpsRecordData(

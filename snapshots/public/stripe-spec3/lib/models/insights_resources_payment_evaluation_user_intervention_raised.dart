@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (key.length > 5000) errors.add('key: length must be <= 5000');
+if (key.length > 5000) { errors.add('key: length must be <= 5000'); }
 return errors; } 
 InsightsResourcesPaymentEvaluationUserInterventionRaised copyWith({InsightsResourcesPaymentEvaluationUserInterventionRaisedCustom? Function()? custom, String? key, InsightsResourcesPaymentEvaluationUserInterventionRaisedType? type, }) { return InsightsResourcesPaymentEvaluationUserInterventionRaised(
   custom: custom != null ? custom() : this.custom,

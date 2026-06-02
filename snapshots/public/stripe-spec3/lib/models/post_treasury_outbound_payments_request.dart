@@ -74,19 +74,19 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final destinationPaymentMethod$ = destinationPaymentMethod;
 if (destinationPaymentMethod$ != null) {
-  if (destinationPaymentMethod$.length > 5000) errors.add('destinationPaymentMethod: length must be <= 5000');
+  if (destinationPaymentMethod$.length > 5000) { errors.add('destinationPaymentMethod: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 return errors; } 
 PostTreasuryOutboundPaymentsRequest copyWith({int? amount, String? currency, String? Function()? customer, String? Function()? description, String? Function()? destinationPaymentMethod, PostTreasuryOutboundPaymentsRequestDestinationPaymentMethodData? Function()? destinationPaymentMethodData, DestinationPaymentMethodOptions? Function()? destinationPaymentMethodOptions, EndUserDetails? Function()? endUserDetails, List<String>? Function()? expand, String? financialAccount, Map<String, String>? Function()? metadata, String? Function()? statementDescriptor, }) { return PostTreasuryOutboundPaymentsRequest(

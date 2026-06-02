@@ -147,7 +147,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final headers$ = headers;
 if (headers$ != null) {
-  if (headers$.toSet().length != headers$.length) errors.add('headers: items must be unique');
+  if (headers$.toSet().length != headers$.length) { errors.add('headers: items must be unique'); }
 }
 return errors; } 
 LoadBalancingSessionAffinityAttributes copyWith({double? Function()? drainDuration, List<String>? Function()? headers, bool Function()? requireAllHeaders, LoadBalancingSessionAffinityAttributesSamesite Function()? samesite, LoadBalancingSessionAffinityAttributesSecure Function()? secure, ZeroDowntimeFailover Function()? zeroDowntimeFailover, }) { return LoadBalancingSessionAffinityAttributes(

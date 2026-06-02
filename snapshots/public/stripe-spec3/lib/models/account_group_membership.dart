@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final paymentsPricing$ = paymentsPricing;
 if (paymentsPricing$ != null) {
-  if (paymentsPricing$.length > 5000) errors.add('paymentsPricing: length must be <= 5000');
+  if (paymentsPricing$.length > 5000) { errors.add('paymentsPricing: length must be <= 5000'); }
 }
 return errors; } 
 AccountGroupMembership copyWith({String? Function()? paymentsPricing}) { return AccountGroupMembership(

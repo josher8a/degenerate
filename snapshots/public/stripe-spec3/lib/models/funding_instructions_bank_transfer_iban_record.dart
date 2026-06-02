@@ -44,10 +44,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('iban') && json['iban'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (accountHolderName.length > 5000) errors.add('accountHolderName: length must be <= 5000');
-if (bic.length > 5000) errors.add('bic: length must be <= 5000');
-if (country.length > 5000) errors.add('country: length must be <= 5000');
-if (iban.length > 5000) errors.add('iban: length must be <= 5000');
+if (accountHolderName.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
+if (bic.length > 5000) { errors.add('bic: length must be <= 5000'); }
+if (country.length > 5000) { errors.add('country: length must be <= 5000'); }
+if (iban.length > 5000) { errors.add('iban: length must be <= 5000'); }
 return errors; } 
 FundingInstructionsBankTransferIbanRecord copyWith({Address? accountHolderAddress, String? accountHolderName, Address? bankAddress, String? bic, String? country, String? iban, }) { return FundingInstructionsBankTransferIbanRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,

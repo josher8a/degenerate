@@ -138,13 +138,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 Invoiceitem copyWith({int? amount, String? currency, BankAccountCustomer? customer, String? Function()? customerAccount, int? date, String? Function()? description, bool? discountable, List<InvoiceitemDiscounts>? Function()? discounts, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? Function()? invoice, bool? livemode, Map<String, String>? Function()? metadata, int? Function()? netAmount, DeletedInvoiceitemObject? object, BillingBillResourceInvoiceItemParentsInvoiceItemParent? Function()? parent, InvoiceLineItemPeriod? period, BillingBillResourceInvoicingPricingPricing? Function()? pricing, bool? proration, ProrationDetails? Function()? prorationDetails, int? quantity, List<TaxRate>? Function()? taxRates, TestClock? Function()? testClock, }) { return Invoiceitem(
   amount: amount ?? this.amount,

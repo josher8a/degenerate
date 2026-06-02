@@ -52,7 +52,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('author_association'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (body.length > 65535) errors.add('body: length must be <= 65535');
+if (body.length > 65535) { errors.add('body: length must be <= 65535'); }
 return errors; } 
 GistComment copyWith({int? id, String? nodeId, Uri? url, String? body, SimpleUser? Function()? user, DateTime? createdAt, DateTime? updatedAt, AuthorAssociation? authorAssociation, }) { return GistComment(
   id: id ?? this.id,

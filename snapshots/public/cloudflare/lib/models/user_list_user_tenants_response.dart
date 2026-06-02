@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('success') && json['success'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors$ = <String>[];
-if (errors.isNotEmpty) errors$.add('errors: must have <= 0 items');
+if (errors.isNotEmpty) { errors$.add('errors: must have <= 0 items'); }
 return errors$; } 
 UserListUserTenantsResponse copyWith({List<Map<String,dynamic>>? errors, List<Message3>? messages, List<Organization>? result, bool? success, }) { return UserListUserTenantsResponse(
   errors: errors ?? this.errors,

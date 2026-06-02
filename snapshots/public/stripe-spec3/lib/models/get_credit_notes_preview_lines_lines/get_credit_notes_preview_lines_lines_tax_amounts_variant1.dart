@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('taxable_amount') && json['taxable_amount'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (taxRate.length > 5000) errors.add('taxRate: length must be <= 5000');
+if (taxRate.length > 5000) { errors.add('taxRate: length must be <= 5000'); }
 return errors; } 
 GetCreditNotesPreviewLinesLinesTaxAmountsVariant1 copyWith({int? amount, String? taxRate, int? taxableAmount, }) { return GetCreditNotesPreviewLinesLinesTaxAmountsVariant1(
   amount: amount ?? this.amount,

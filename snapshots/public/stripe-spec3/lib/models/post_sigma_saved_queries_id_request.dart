@@ -27,11 +27,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final sql$ = sql;
 if (sql$ != null) {
-  if (sql$.length > 100000) errors.add('sql: length must be <= 100000');
+  if (sql$.length > 100000) { errors.add('sql: length must be <= 100000'); }
 }
 return errors; } 
 PostSigmaSavedQueriesIdRequest copyWith({List<String>? Function()? expand, String? Function()? name, String? Function()? sql, }) { return PostSigmaSavedQueriesIdRequest(

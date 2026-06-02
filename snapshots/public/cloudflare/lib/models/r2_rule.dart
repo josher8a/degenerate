@@ -38,7 +38,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('actions'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (actions.toSet().length != actions.length) errors.add('actions: items must be unique');
+if (actions.toSet().length != actions.length) { errors.add('actions: items must be unique'); }
 return errors; } 
 R2Rule copyWith({List<R2R2Action>? actions, String? Function()? description, String? Function()? prefix, String? Function()? suffix, }) { return R2Rule(
   actions: actions ?? this.actions,

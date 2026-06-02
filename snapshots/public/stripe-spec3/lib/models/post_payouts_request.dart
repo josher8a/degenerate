@@ -91,11 +91,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 return errors; } 
 PostPayoutsRequest copyWith({int? amount, String? currency, String? Function()? description, String? Function()? destination, List<String>? Function()? expand, Map<String, String>? Function()? metadata, Method? Function()? method, String? Function()? payoutMethod, SourceType? Function()? sourceType, String? Function()? statementDescriptor, }) { return PostPayoutsRequest(

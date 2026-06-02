@@ -32,8 +32,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final flags$ = flags;
 if (flags$ != null) {
-  if (flags$ < 0) errors.add('flags: must be >= 0');
-  if (flags$ > 255) errors.add('flags: must be <= 255');
+  if (flags$ < 0) { errors.add('flags: must be >= 0'); }
+  if (flags$ > 255) { errors.add('flags: must be <= 255'); }
 }
 return errors; } 
 DnsRecordsCaaRecordData copyWith({double? Function()? flags, String? Function()? tag, String? Function()? value, }) { return DnsRecordsCaaRecordData(

@@ -48,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final usernameExpressions$ = usernameExpressions;
 if (usernameExpressions$ != null) {
-  if (usernameExpressions$.length > 10) errors.add('usernameExpressions: must have <= 10 items');
+  if (usernameExpressions$.length > 10) { errors.add('usernameExpressions: must have <= 10 items'); }
 }
 return errors; } 
 FraudFraudSettings copyWith({FraudUserProfilesStatus? Function()? userProfiles, List<String>? Function()? usernameExpressions, }) { return FraudFraudSettings(

@@ -101,10 +101,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('title') && json['title'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (sql.length > 100000) errors.add('sql: length must be <= 100000');
-if (status.length > 5000) errors.add('status: length must be <= 5000');
-if (title.length > 5000) errors.add('title: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (sql.length > 100000) { errors.add('sql: length must be <= 100000'); }
+if (status.length > 5000) { errors.add('status: length must be <= 5000'); }
+if (title.length > 5000) { errors.add('title: length must be <= 5000'); }
 return errors; } 
 ScheduledQueryRun copyWith({int? created, int? dataLoadTime, SigmaScheduledQueryRunError? Function()? error, File? Function()? file, String? id, bool? livemode, ScheduledQueryRunObject? object, int? resultAvailableUntil, String? sql, String? status, String? title, }) { return ScheduledQueryRun(
   created: created ?? this.created,

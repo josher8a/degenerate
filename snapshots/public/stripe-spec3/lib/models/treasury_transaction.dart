@@ -151,13 +151,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (description.length > 5000) errors.add('description: length must be <= 5000');
-if (financialAccount.length > 5000) errors.add('financialAccount: length must be <= 5000');
+if (description.length > 5000) { errors.add('description: length must be <= 5000'); }
+if (financialAccount.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 final flow$ = flow;
 if (flow$ != null) {
-  if (flow$.length > 5000) errors.add('flow: length must be <= 5000');
+  if (flow$.length > 5000) { errors.add('flow: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 TreasuryTransaction copyWith({int? amount, TreasuryTransactionsResourceBalanceImpact? balanceImpact, int? created, String? currency, String? description, Entries? Function()? entries, String? financialAccount, String? Function()? flow, TreasuryTransactionsResourceFlowDetails? Function()? flowDetails, FlowType? flowType, String? id, bool? livemode, TreasuryTransactionObject? object, TreasuryTransactionStatus? status, TreasuryTransactionsResourceAbstractTransactionResourceStatusTransitions? statusTransitions, }) { return TreasuryTransaction(
   amount: amount ?? this.amount,

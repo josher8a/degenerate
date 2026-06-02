@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxCompletionsTokens$ = maxCompletionsTokens;
 if (maxCompletionsTokens$ != null) {
-  if (maxCompletionsTokens$ < 1) errors.add('maxCompletionsTokens: must be >= 1');
+  if (maxCompletionsTokens$ < 1) { errors.add('maxCompletionsTokens: must be >= 1'); }
 }
 return errors; } 
 EvalGraderScoreModelSamplingParams copyWith({int? Function()? seed, double? Function()? topP, double? Function()? temperature, int? Function()? maxCompletionsTokens, ReasoningEffort? Function()? reasoningEffort, }) { return EvalGraderScoreModelSamplingParams(

@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('gte')
       json.containsKey('recurrence'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (meter.length > 5000) errors.add('meter: length must be <= 5000');
+if (meter.length > 5000) { errors.add('meter: length must be <= 5000'); }
 return errors; } 
 UsageThreshold copyWith({List<UsageThresholdFilters>? Function()? filters, int? gte, String? meter, Recurrence? recurrence, }) { return UsageThreshold(
   filters: filters != null ? filters() : this.filters,

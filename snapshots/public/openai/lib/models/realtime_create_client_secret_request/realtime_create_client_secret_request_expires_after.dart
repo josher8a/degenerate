@@ -27,8 +27,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'anchor', 'seconds'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (seconds < 10) errors.add('seconds: must be >= 10');
-if (seconds > 7200) errors.add('seconds: must be <= 7200');
+if (seconds < 10) { errors.add('seconds: must be >= 10'); }
+if (seconds > 7200) { errors.add('seconds: must be <= 7200'); }
 return errors; } 
 RealtimeCreateClientSecretRequestExpiresAfter copyWith({BatchFileExpirationAfterAnchor Function()? anchor, int Function()? seconds, }) { return RealtimeCreateClientSecretRequestExpiresAfter(
   anchor: anchor != null ? anchor() : this.anchor,

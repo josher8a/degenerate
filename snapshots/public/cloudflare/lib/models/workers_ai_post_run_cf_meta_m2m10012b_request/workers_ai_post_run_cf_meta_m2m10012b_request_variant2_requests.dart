@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('targe
       json.containsKey('text') && json['text'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (text.isEmpty) errors.add('text: length must be >= 1');
+if (text.isEmpty) { errors.add('text: length must be >= 1'); }
 return errors; } 
 WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests copyWith({String Function()? sourceLang, String? targetLang, String? text, }) { return WorkersAiPostRunCfMetaM2m10012bRequestVariant2Requests(
   sourceLang: sourceLang != null ? sourceLang() : this.sourceLang,

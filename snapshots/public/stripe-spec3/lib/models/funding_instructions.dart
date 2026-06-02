@@ -68,7 +68,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bank_
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 return errors; } 
 FundingInstructions copyWith({FundingInstructionsBankTransfer? bankTransfer, String? currency, FundingInstructionsFundingType? fundingType, bool? livemode, FundingInstructionsObject? object, }) { return FundingInstructions(
   bankTransfer: bankTransfer ?? this.bankTransfer,

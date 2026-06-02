@@ -232,19 +232,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final accountId$ = accountId;
 if (accountId$ != null) {
-  if (accountId$.length > 5000) errors.add('accountId: length must be <= 5000');
+  if (accountId$.length > 5000) { errors.add('accountId: length must be <= 5000'); }
 }
 final cardholderName$ = cardholderName;
 if (cardholderName$ != null) {
-  if (cardholderName$.length > 5000) errors.add('cardholderName: length must be <= 5000');
+  if (cardholderName$.length > 5000) { errors.add('cardholderName: length must be <= 5000'); }
 }
 final hashedAccountEmailAddress$ = hashedAccountEmailAddress;
 if (hashedAccountEmailAddress$ != null) {
-  if (hashedAccountEmailAddress$.length > 5000) errors.add('hashedAccountEmailAddress: length must be <= 5000');
+  if (hashedAccountEmailAddress$.length > 5000) { errors.add('hashedAccountEmailAddress: length must be <= 5000'); }
 }
 final suggestedDecisionVersion$ = suggestedDecisionVersion;
 if (suggestedDecisionVersion$ != null) {
-  if (suggestedDecisionVersion$.length > 5000) errors.add('suggestedDecisionVersion: length must be <= 5000');
+  if (suggestedDecisionVersion$.length > 5000) { errors.add('suggestedDecisionVersion: length must be <= 5000'); }
 }
 return errors; } 
 IssuingNetworkTokenWalletProvider copyWith({String? Function()? accountId, int? Function()? accountTrustScore, CardNumberSource? Function()? cardNumberSource, IssuingNetworkTokenAddress? Function()? cardholderAddress, String? Function()? cardholderName, int? Function()? deviceTrustScore, String? Function()? hashedAccountEmailAddress, List<ReasonCodes>? Function()? reasonCodes, SuggestedDecision? Function()? suggestedDecision, String? Function()? suggestedDecisionVersion, }) { return IssuingNetworkTokenWalletProvider(

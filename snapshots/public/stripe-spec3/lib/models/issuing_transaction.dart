@@ -219,7 +219,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 IssuingTransaction copyWith({int? amount, IssuingTransactionAmountDetails? Function()? amountDetails, Authorization? Function()? authorization, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, IssuingTokenCard? card, Cardholder? Function()? cardholder, int? created, String? currency, IssuingTransactionDispute? Function()? dispute, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingTransactionNetworkData? Function()? networkData, IssuingTransactionObject? object, IssuingTransactionPurchaseDetails? Function()? purchaseDetails, IssuingAuthorizationToken? Function()? token, IssuingTransactionTreasury? Function()? treasury, IssuingTransactionType? type, IssuingTransactionWallet? Function()? wallet, }) { return IssuingTransaction(
   amount: amount ?? this.amount,

@@ -153,10 +153,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final onBehalfOf$ = onBehalfOf;
 if (onBehalfOf$ != null) {
-  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+  if (onBehalfOf$.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 return errors; } 
 Mandate copyWith({CustomerAcceptance? customerAcceptance, String? id, bool? livemode, MandateMultiUse? Function()? multiUse, MandateObject? object, String? Function()? onBehalfOf, InsightsResourcesPaymentEvaluationPaymentMethodDetailsPaymentMethod? paymentMethod, MandatePaymentMethodDetails? paymentMethodDetails, MandateSingleUse? Function()? singleUse, MandateStatus? status, MandateType? type, }) { return Mandate(

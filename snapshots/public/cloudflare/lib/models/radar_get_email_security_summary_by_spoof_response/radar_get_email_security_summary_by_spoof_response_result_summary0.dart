@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_S
       json.containsKey('SPOOF') && json['SPOOF'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(notSpoof)) errors.add(r'notSpoof: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(spoof)) errors.add(r'spoof: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(notSpoof)) { errors.add(r'notSpoof: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(spoof)) { errors.add(r'spoof: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0 copyWith({String? notSpoof, String? spoof, }) { return RadarGetEmailSecuritySummaryBySpoofResponseResultSummary0(
   notSpoof: notSpoof ?? this.notSpoof,

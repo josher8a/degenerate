@@ -36,8 +36,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('alias
       json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (alias.length > 100) errors.add('alias: length must be <= 100');
-if (name.length > 100) errors.add('name: length must be <= 100');
+if (alias.length > 100) { errors.add('alias: length must be <= 100'); }
+if (name.length > 100) { errors.add('name: length must be <= 100'); }
 return errors; } 
 PostRadarValueListsRequest copyWith({String? alias, List<String>? Function()? expand, ItemType? Function()? itemType, Map<String, String>? Function()? metadata, String? name, }) { return PostRadarValueListsRequest(
   alias: alias ?? this.alias,

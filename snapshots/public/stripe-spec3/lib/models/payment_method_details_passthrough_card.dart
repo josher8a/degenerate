@@ -43,19 +43,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final brand$ = brand;
 if (brand$ != null) {
-  if (brand$.length > 5000) errors.add('brand: length must be <= 5000');
+  if (brand$.length > 5000) { errors.add('brand: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final funding$ = funding;
 if (funding$ != null) {
-  if (funding$.length > 5000) errors.add('funding: length must be <= 5000');
+  if (funding$.length > 5000) { errors.add('funding: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsPassthroughCard copyWith({String? Function()? brand, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? funding, String? Function()? last4, }) { return PaymentMethodDetailsPassthroughCard(

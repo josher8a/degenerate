@@ -38,11 +38,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final passengerName$ = passengerName;
 if (passengerName$ != null) {
-  if (passengerName$.length > 5000) errors.add('passengerName: length must be <= 5000');
+  if (passengerName$.length > 5000) { errors.add('passengerName: length must be <= 5000'); }
 }
 final travelAgency$ = travelAgency;
 if (travelAgency$ != null) {
-  if (travelAgency$.length > 5000) errors.add('travelAgency: length must be <= 5000');
+  if (travelAgency$.length > 5000) { errors.add('travelAgency: length must be <= 5000'); }
 }
 return errors; } 
 IssuingTransactionFlightData copyWith({int? Function()? departureAt, String? Function()? passengerName, bool? Function()? refundable, List<IssuingTransactionFlightDataLeg>? Function()? segments, String? Function()? travelAgency, }) { return IssuingTransactionFlightData(

@@ -26,10 +26,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
       json.containsKey('query') && json['query'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (query.isEmpty) errors.add('query: length must be >= 1');
+if (query.isEmpty) { errors.add('query: length must be >= 1'); }
 final topK$ = topK;
 if (topK$ != null) {
-  if (topK$ < 1) errors.add('topK: must be >= 1');
+  if (topK$ < 1) { errors.add('topK: must be >= 1'); }
 }
 return errors; } 
 WorkersAiPostRunCfBaaiBgeRerankerBaseRequest copyWith({List<Contexts>? contexts, String? query, int? Function()? topK, }) { return WorkersAiPostRunCfBaaiBgeRerankerBaseRequest(

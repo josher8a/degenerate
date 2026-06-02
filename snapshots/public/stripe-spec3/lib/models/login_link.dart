@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 LoginLink copyWith({int? created, LoginLinkObject? object, String? url, }) { return LoginLink(
   created: created ?? this.created,

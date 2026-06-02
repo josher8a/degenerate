@@ -72,31 +72,31 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final mcc$ = mcc;
 if (mcc$ != null) {
-  if (mcc$.length > 5000) errors.add('mcc: length must be <= 5000');
+  if (mcc$.length > 5000) { errors.add('mcc: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final productDescription$ = productDescription;
 if (productDescription$ != null) {
-  if (productDescription$.length > 40000) errors.add('productDescription: length must be <= 40000');
+  if (productDescription$.length > 40000) { errors.add('productDescription: length must be <= 40000'); }
 }
 final supportEmail$ = supportEmail;
 if (supportEmail$ != null) {
-  if (supportEmail$.length > 5000) errors.add('supportEmail: length must be <= 5000');
+  if (supportEmail$.length > 5000) { errors.add('supportEmail: length must be <= 5000'); }
 }
 final supportPhone$ = supportPhone;
 if (supportPhone$ != null) {
-  if (supportPhone$.length > 5000) errors.add('supportPhone: length must be <= 5000');
+  if (supportPhone$.length > 5000) { errors.add('supportPhone: length must be <= 5000'); }
 }
 final supportUrl$ = supportUrl;
 if (supportUrl$ != null) {
-  if (supportUrl$.length > 5000) errors.add('supportUrl: length must be <= 5000');
+  if (supportUrl$.length > 5000) { errors.add('supportUrl: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 AccountBusinessProfile copyWith({AccountAnnualRevenue? Function()? annualRevenue, int? Function()? estimatedWorkerCount, String? Function()? mcc, List<MinorityOwnedBusinessDesignation>? Function()? minorityOwnedBusinessDesignation, AccountMonthlyEstimatedRevenue? Function()? monthlyEstimatedRevenue, String? Function()? name, String? Function()? productDescription, Address? Function()? supportAddress, String? Function()? supportEmail, String? Function()? supportPhone, String? Function()? supportUrl, String? Function()? url, }) { return AccountBusinessProfile(

@@ -43,8 +43,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_
       json.containsKey('action'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (callId.isEmpty) errors.add('callId: length must be >= 1');
-if (callId.length > 64) errors.add('callId: length must be <= 64');
+if (callId.isEmpty) { errors.add('callId: length must be >= 1'); }
+if (callId.length > 64) { errors.add('callId: length must be <= 64'); }
 return errors; } 
 FunctionShellCallItemParam copyWith({String? Function()? id, String? callId, String? type, FunctionShellActionParam? action, FunctionShellCallItemStatus? Function()? status, FunctionShellCallItemParamEnvironment? Function()? environment, }) { return FunctionShellCallItemParam(
   id: id != null ? id() : this.id,

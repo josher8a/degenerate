@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('file') && json['file'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (file.length > 5000) errors.add('file: length must be <= 5000');
+if (file.length > 5000) { errors.add('file: length must be <= 5000'); }
 return errors; } 
 PostFileLinksRequest copyWith({List<String>? Function()? expand, int? Function()? expiresAt, String? file, Metadata? Function()? metadata, }) { return PostFileLinksRequest(
   expand: expand != null ? expand() : this.expand,

@@ -164,27 +164,27 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final failureCode$ = failureCode;
 if (failureCode$ != null) {
-  if (failureCode$.length > 5000) errors.add('failureCode: length must be <= 5000');
+  if (failureCode$.length > 5000) { errors.add('failureCode: length must be <= 5000'); }
 }
 final failureMessage$ = failureMessage;
 if (failureMessage$ != null) {
-  if (failureMessage$.length > 5000) errors.add('failureMessage: length must be <= 5000');
+  if (failureMessage$.length > 5000) { errors.add('failureMessage: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 final transferGroup$ = transferGroup;
 if (transferGroup$ != null) {
-  if (transferGroup$.length > 5000) errors.add('transferGroup: length must be <= 5000');
+  if (transferGroup$.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
 return errors; } 
 Topup copyWith({int? amount, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, int? Function()? expectedAvailabilityDate, String? Function()? failureCode, String? Function()? failureMessage, String? id, bool? livemode, Map<String,String>? metadata, TopupObject? object, Source? Function()? source, String? Function()? statementDescriptor, TopupStatus? status, String? Function()? transferGroup, }) { return Topup(

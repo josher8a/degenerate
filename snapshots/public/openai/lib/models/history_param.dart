@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final recentThreads$ = recentThreads;
 if (recentThreads$ != null) {
-  if (recentThreads$ < 1) errors.add('recentThreads: must be >= 1');
+  if (recentThreads$ < 1) { errors.add('recentThreads: must be >= 1'); }
 }
 return errors; } 
 HistoryParam copyWith({bool? Function()? enabled, int? Function()? recentThreads, }) { return HistoryParam(

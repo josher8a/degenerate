@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 List<String> validate() { final errors = <String>[];
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 return errors; } 
 PostFinancialConnectionsSessionsRequest copyWith({AccountHolder? accountHolder, List<String>? Function()? expand, PostFinancialConnectionsSessionsRequestFilters? Function()? filters, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return PostFinancialConnectionsSessionsRequest(

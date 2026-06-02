@@ -57,21 +57,21 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final sid$ = sid;
 if (sid$ != null) {
-  if (sid$.length < 34) errors.add('sid: length must be >= 34');
-  if (sid$.length > 34) errors.add('sid: length must be <= 34');
-  if (!RegExp(r'^IP[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^IP[0-9a-fA-F]{32}$');
+  if (sid$.length < 34) { errors.add('sid: length must be >= 34'); }
+  if (sid$.length > 34) { errors.add('sid: length must be <= 34'); }
+  if (!RegExp(r'^IP[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^IP[0-9a-fA-F]{32}$'); }
 }
 final accountSid$ = accountSid;
 if (accountSid$ != null) {
-  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
-  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
-  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+  if (accountSid$.length < 34) { errors.add('accountSid: length must be >= 34'); }
+  if (accountSid$.length > 34) { errors.add('accountSid: length must be <= 34'); }
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 final ipAccessControlListSid$ = ipAccessControlListSid;
 if (ipAccessControlListSid$ != null) {
-  if (ipAccessControlListSid$.length < 34) errors.add('ipAccessControlListSid: length must be >= 34');
-  if (ipAccessControlListSid$.length > 34) errors.add('ipAccessControlListSid: length must be <= 34');
-  if (!RegExp(r'^AL[0-9a-fA-F]{32}$').hasMatch(ipAccessControlListSid$)) errors.add(r'ipAccessControlListSid: must match pattern ^AL[0-9a-fA-F]{32}$');
+  if (ipAccessControlListSid$.length < 34) { errors.add('ipAccessControlListSid: length must be >= 34'); }
+  if (ipAccessControlListSid$.length > 34) { errors.add('ipAccessControlListSid: length must be <= 34'); }
+  if (!RegExp(r'^AL[0-9a-fA-F]{32}$').hasMatch(ipAccessControlListSid$)) { errors.add(r'ipAccessControlListSid: must match pattern ^AL[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
 AccountSipSipIpAccessControlListSipIpAddress copyWith({String? Function()? sid, String? Function()? accountSid, String? Function()? friendlyName, String? Function()? ipAddress, int Function()? cidrPrefixLength, String? Function()? ipAccessControlListSid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? uri, }) { return AccountSipSipIpAccessControlListSipIpAddress(

@@ -56,7 +56,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final rowGroupBytes$ = rowGroupBytes;
 if (rowGroupBytes$ != null) {
-  if (rowGroupBytes$ < 0) errors.add('rowGroupBytes: must be >= 0');
+  if (rowGroupBytes$ < 0) { errors.add('rowGroupBytes: must be >= 0'); }
 }
 return errors; } 
 CloudflarePipelinesParquetFormat copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesParquetFormat(

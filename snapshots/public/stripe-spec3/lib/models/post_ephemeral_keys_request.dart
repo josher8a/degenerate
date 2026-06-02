@@ -37,19 +37,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final issuingCard$ = issuingCard;
 if (issuingCard$ != null) {
-  if (issuingCard$.length > 5000) errors.add('issuingCard: length must be <= 5000');
+  if (issuingCard$.length > 5000) { errors.add('issuingCard: length must be <= 5000'); }
 }
 final nonce$ = nonce;
 if (nonce$ != null) {
-  if (nonce$.length > 5000) errors.add('nonce: length must be <= 5000');
+  if (nonce$.length > 5000) { errors.add('nonce: length must be <= 5000'); }
 }
 final verificationSession$ = verificationSession;
 if (verificationSession$ != null) {
-  if (verificationSession$.length > 5000) errors.add('verificationSession: length must be <= 5000');
+  if (verificationSession$.length > 5000) { errors.add('verificationSession: length must be <= 5000'); }
 }
 return errors; } 
 PostEphemeralKeysRequest copyWith({String? Function()? customer, List<String>? Function()? expand, String? Function()? issuingCard, String? Function()? nonce, String? Function()? verificationSession, }) { return PostEphemeralKeysRequest(

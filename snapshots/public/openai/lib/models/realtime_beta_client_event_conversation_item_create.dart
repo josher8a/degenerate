@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final eventId$ = eventId;
 if (eventId$ != null) {
-  if (eventId$.length > 512) errors.add('eventId: length must be <= 512');
+  if (eventId$.length > 512) { errors.add('eventId: length must be <= 512'); }
 }
 return errors; } 
 RealtimeBetaClientEventConversationItemCreate copyWith({String? Function()? eventId, RealtimeBetaClientEventConversationItemCreateType? type, String? Function()? previousItemId, RealtimeConversationItem? item, }) { return RealtimeBetaClientEventConversationItemCreate(

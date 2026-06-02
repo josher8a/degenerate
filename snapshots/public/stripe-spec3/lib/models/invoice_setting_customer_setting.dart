@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final footer$ = footer;
 if (footer$ != null) {
-  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+  if (footer$.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
 return errors; } 
 InvoiceSettingCustomerSetting copyWith({List<InvoiceSettingCustomField>? Function()? customFields, DefaultPaymentMethod? Function()? defaultPaymentMethod, String? Function()? footer, InvoiceSettingCustomerRenderingOptions? Function()? renderingOptions, }) { return InvoiceSettingCustomerSetting(

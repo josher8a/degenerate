@@ -86,11 +86,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
 if (statementDescriptorSuffixKana$ != null) {
-  if (statementDescriptorSuffixKana$.length > 5000) errors.add('statementDescriptorSuffixKana: length must be <= 5000');
+  if (statementDescriptorSuffixKana$.length > 5000) { errors.add('statementDescriptorSuffixKana: length must be <= 5000'); }
 }
 final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
 if (statementDescriptorSuffixKanji$ != null) {
-  if (statementDescriptorSuffixKanji$.length > 5000) errors.add('statementDescriptorSuffixKanji: length must be <= 5000');
+  if (statementDescriptorSuffixKanji$.length > 5000) { errors.add('statementDescriptorSuffixKanji: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, PaymentMethodOptionsCardInstallments? Function()? installments, PaymentMethodOptionsCardMandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsCardNetwork? Function()? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, InvoicePaymentMethodOptionsCardRequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, CheckoutAcssDebitPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return PaymentIntentPaymentMethodOptionsCard(

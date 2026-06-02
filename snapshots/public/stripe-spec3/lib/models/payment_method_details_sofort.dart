@@ -60,27 +60,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final bankCode$ = bankCode;
 if (bankCode$ != null) {
-  if (bankCode$.length > 5000) errors.add('bankCode: length must be <= 5000');
+  if (bankCode$.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
 }
 final bankName$ = bankName;
 if (bankName$ != null) {
-  if (bankName$.length > 5000) errors.add('bankName: length must be <= 5000');
+  if (bankName$.length > 5000) { errors.add('bankName: length must be <= 5000'); }
 }
 final bic$ = bic;
 if (bic$ != null) {
-  if (bic$.length > 5000) errors.add('bic: length must be <= 5000');
+  if (bic$.length > 5000) { errors.add('bic: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final ibanLast4$ = ibanLast4;
 if (ibanLast4$ != null) {
-  if (ibanLast4$.length > 5000) errors.add('ibanLast4: length must be <= 5000');
+  if (ibanLast4$.length > 5000) { errors.add('ibanLast4: length must be <= 5000'); }
 }
 final verifiedName$ = verifiedName;
 if (verifiedName$ != null) {
-  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+  if (verifiedName$.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsSofort copyWith({String? Function()? bankCode, String? Function()? bankName, String? Function()? bic, String? Function()? country, GeneratedSepaDebit? Function()? generatedSepaDebit, GeneratedSepaDebitMandate? Function()? generatedSepaDebitMandate, String? Function()? ibanLast4, PaymentMethodDetailsSofortPreferredLanguage? Function()? preferredLanguage, String? Function()? verifiedName, }) { return PaymentMethodDetailsSofort(

@@ -87,8 +87,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
       json.containsKey('verification_fields'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (defaultCurrency.length > 5000) errors.add('defaultCurrency: length must be <= 5000');
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (defaultCurrency.length > 5000) { errors.add('defaultCurrency: length must be <= 5000'); }
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 CountrySpec copyWith({String? defaultCurrency, String? id, CountrySpecObject? object, Map<String,List<String>>? supportedBankAccountCurrencies, List<String>? supportedPaymentCurrencies, List<String>? supportedPaymentMethods, List<String>? supportedTransferCountries, CountrySpecVerificationFields? verificationFields, }) { return CountrySpec(
   defaultCurrency: defaultCurrency ?? this.defaultCurrency,

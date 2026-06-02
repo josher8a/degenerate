@@ -30,11 +30,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxSnapshotAge$ = maxSnapshotAge;
 if (maxSnapshotAge$ != null) {
-  if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge$)) errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$');
+  if (!RegExp(r'^\d+(d|h|m|s)$').hasMatch(maxSnapshotAge$)) { errors.add(r'maxSnapshotAge: must match pattern ^\d+(d|h|m|s)$'); }
 }
 final minSnapshotsToKeep$ = minSnapshotsToKeep;
 if (minSnapshotsToKeep$ != null) {
-  if (minSnapshotsToKeep$ < 1) errors.add('minSnapshotsToKeep: must be >= 1');
+  if (minSnapshotsToKeep$ < 1) { errors.add('minSnapshotsToKeep: must be >= 1'); }
 }
 return errors; } 
 R2DataCatalogSnapshotExpirationUpdateParams copyWith({String? Function()? maxSnapshotAge, int? Function()? minSnapshotsToKeep, R2DataCatalogCatalogMaintenanceState? Function()? state, }) { return R2DataCatalogSnapshotExpirationUpdateParams(

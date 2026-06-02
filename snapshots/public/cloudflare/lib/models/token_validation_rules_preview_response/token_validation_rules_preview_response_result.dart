@@ -54,11 +54,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final availableHosts$ = availableHosts;
 if (availableHosts$ != null) {
-  if (availableHosts$.toSet().length != availableHosts$.length) errors.add('availableHosts: items must be unique');
+  if (availableHosts$.toSet().length != availableHosts$.length) { errors.add('availableHosts: items must be unique'); }
 }
 final selectedHosts$ = selectedHosts;
 if (selectedHosts$ != null) {
-  if (selectedHosts$.toSet().length != selectedHosts$.length) errors.add('selectedHosts: items must be unique');
+  if (selectedHosts$.toSet().length != selectedHosts$.length) { errors.add('selectedHosts: items must be unique'); }
 }
 return errors; } 
 TokenValidationRulesPreviewResponseResult copyWith({List<ShieldHost>? Function()? availableHosts, int? Function()? excluded, int? Function()? ignored, int? Function()? included, List<ResultOperations>? Function()? operations, List<ShieldHost>? Function()? selectedHosts, int? Function()? total, }) { return TokenValidationRulesPreviewResponseResult(

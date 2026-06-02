@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final height$ = height;
 if (height$ != null) {
-  if (height$ < 1) errors.add('height: must be >= 1');
+  if (height$ < 1) { errors.add('height: must be >= 1'); }
 }
 final width$ = width;
 if (width$ != null) {
-  if (width$ < 1) errors.add('width: must be >= 1');
+  if (width$ < 1) { errors.add('width: must be >= 1'); }
 }
 return errors; } 
 WatermarkSize copyWith({int? Function()? height, int? Function()? width, }) { return WatermarkSize(

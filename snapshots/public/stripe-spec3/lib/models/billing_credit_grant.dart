@@ -132,12 +132,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 BillingCreditGrant copyWith({BillingCreditGrantsResourceAmount? amount, BillingCreditGrantsResourceApplicabilityConfig? applicabilityConfig, BillingCreditGrantCategory? category, int? created, BankAccountCustomer? customer, String? Function()? customerAccount, int? Function()? effectiveAt, int? Function()? expiresAt, String? id, bool? livemode, Map<String,String>? metadata, String? Function()? name, BillingCreditGrantObject? object, int? Function()? priority, TestClock? Function()? testClock, int? updated, int? Function()? voidedAt, }) { return BillingCreditGrant(

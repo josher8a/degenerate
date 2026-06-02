@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final ipAddress$ = ipAddress;
 if (ipAddress$ != null) {
-  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+  if (ipAddress$.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
 final userAgent$ = userAgent;
 if (userAgent$ != null) {
-  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+  if (userAgent$.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
 return errors; } 
 ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline copyWith({String? Function()? ipAddress, String? Function()? userAgent, }) { return ConfirmationTokensResourceMandateDataResourceCustomerAcceptanceResourceOnline(

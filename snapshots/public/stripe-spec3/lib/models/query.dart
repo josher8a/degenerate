@@ -71,9 +71,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('sql') && json['sql'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (name.length > 5000) errors.add('name: length must be <= 5000');
-if (sql.length > 5000) errors.add('sql: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
+if (sql.length > 5000) { errors.add('sql: length must be <= 5000'); }
 return errors; } 
 Query copyWith({int? created, String? id, bool? livemode, String? name, QueryObject? object, String? sql, }) { return Query(
   created: created ?? this.created,

@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('iban') && json['iban'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (iban.length > 5000) errors.add('iban: length must be <= 5000');
+if (iban.length > 5000) { errors.add('iban: length must be <= 5000'); }
 return errors; } 
 PostPaymentMethodsRequestSepaDebit copyWith({String? iban}) { return PostPaymentMethodsRequestSepaDebit(
   iban: iban ?? this.iban,

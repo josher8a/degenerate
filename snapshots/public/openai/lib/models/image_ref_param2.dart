@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final imageUrl$ = imageUrl;
 if (imageUrl$ != null) {
-  if (imageUrl$.length > 20971520) errors.add('imageUrl: length must be <= 20971520');
+  if (imageUrl$.length > 20971520) { errors.add('imageUrl: length must be <= 20971520'); }
 }
 return errors; } 
 ImageRefParam2 copyWith({String? Function()? imageUrl, String? Function()? fileId, }) { return ImageRefParam2(

@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final user$ = user;
 if (user$ != null) {
-  if (user$.length > 5000) errors.add('user: length must be <= 5000');
+  if (user$.length > 5000) { errors.add('user: length must be <= 5000'); }
 }
 return errors; } 
 GetAppsSecretsScope copyWith({GetAppsSecretsFindScopeType? type, String? Function()? user, }) { return GetAppsSecretsScope(

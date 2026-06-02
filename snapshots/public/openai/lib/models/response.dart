@@ -310,22 +310,22 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('metad
 List<String> validate() { final errors = <String>[];
 final topLogprobs$ = topLogprobs;
 if (topLogprobs$ != null) {
-  if (topLogprobs$ < 0) errors.add('topLogprobs: must be >= 0');
-  if (topLogprobs$ > 20) errors.add('topLogprobs: must be <= 20');
+  if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
+  if (topLogprobs$ > 20) { errors.add('topLogprobs: must be <= 20'); }
 }
 final temperature$ = temperature;
 if (temperature$ != null) {
-  if (temperature$ < 0) errors.add('temperature: must be >= 0');
-  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+  if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
+  if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
 }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0) errors.add('topP: must be >= 0');
-  if (topP$ > 1) errors.add('topP: must be <= 1');
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 final safetyIdentifier$ = safetyIdentifier;
 if (safetyIdentifier$ != null) {
-  if (safetyIdentifier$.length > 64) errors.add('safetyIdentifier: length must be <= 64');
+  if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
 }
 return errors; } 
 Response copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? id, ResponseObject? object, ResponseStatus? Function()? status, double? createdAt, double? Function()? completedAt, ResponseError? error, ResponseIncompleteDetails? Function()? incompleteDetails, List<OutputItem>? output, Instructions? Function()? instructions, String? Function()? outputText, ResponseUsage? Function()? usage, bool? parallelToolCalls, Conversation2? Function()? conversation, }) { return Response(

@@ -28,11 +28,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fromPostalCode$ = fromPostalCode;
 if (fromPostalCode$ != null) {
-  if (fromPostalCode$.length > 5000) errors.add('fromPostalCode: length must be <= 5000');
+  if (fromPostalCode$.length > 5000) { errors.add('fromPostalCode: length must be <= 5000'); }
 }
 final toPostalCode$ = toPostalCode;
 if (toPostalCode$ != null) {
-  if (toPostalCode$.length > 5000) errors.add('toPostalCode: length must be <= 5000');
+  if (toPostalCode$.length > 5000) { errors.add('toPostalCode: length must be <= 5000'); }
 }
 return errors; } 
 PaymentFlowsAmountDetailsResourceShipping copyWith({int? Function()? amount, String? Function()? fromPostalCode, String? Function()? toPostalCode, }) { return PaymentFlowsAmountDetailsResourceShipping(

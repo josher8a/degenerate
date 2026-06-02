@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('success'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors$ = <String>[];
-if (messages.toSet().length != messages.length) errors$.add('messages: items must be unique');
+if (messages.toSet().length != messages.length) { errors$.add('messages: items must be unique'); }
 return errors$; } 
 ListZoneRulesetVersionsResponse copyWith({dynamic Function()? errors, List<RulesetsMessage>? messages, List<ListAccountEntrypointRulesetVersionsResponseResult>? result, dynamic Function()? success, RulesetsResultInfo? Function()? resultInfo, }) { return ListZoneRulesetVersionsResponse(
   errors: errors != null ? errors() : this.errors,

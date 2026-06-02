@@ -48,11 +48,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final invoiceLineItem$ = invoiceLineItem;
 if (invoiceLineItem$ != null) {
-  if (invoiceLineItem$.length > 5000) errors.add('invoiceLineItem: length must be <= 5000');
+  if (invoiceLineItem$.length > 5000) { errors.add('invoiceLineItem: length must be <= 5000'); }
 }
 return errors; } 
 PostCreditNotesRequestLines copyWith({int? Function()? amount, String? Function()? description, String? Function()? invoiceLineItem, int? Function()? quantity, GetCreditNotesPreviewLinesLinesTaxAmounts? Function()? taxAmounts, TaxRates? Function()? taxRates, CreditNoteLineItemType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostCreditNotesRequestLines(

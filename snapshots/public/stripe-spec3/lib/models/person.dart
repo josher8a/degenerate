@@ -168,47 +168,47 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (account.length > 5000) errors.add('account: length must be <= 5000');
+if (account.length > 5000) { errors.add('account: length must be <= 5000'); }
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 final firstName$ = firstName;
 if (firstName$ != null) {
-  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+  if (firstName$.length > 5000) { errors.add('firstName: length must be <= 5000'); }
 }
 final firstNameKana$ = firstNameKana;
 if (firstNameKana$ != null) {
-  if (firstNameKana$.length > 5000) errors.add('firstNameKana: length must be <= 5000');
+  if (firstNameKana$.length > 5000) { errors.add('firstNameKana: length must be <= 5000'); }
 }
 final firstNameKanji$ = firstNameKanji;
 if (firstNameKanji$ != null) {
-  if (firstNameKanji$.length > 5000) errors.add('firstNameKanji: length must be <= 5000');
+  if (firstNameKanji$.length > 5000) { errors.add('firstNameKanji: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final lastName$ = lastName;
 if (lastName$ != null) {
-  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+  if (lastName$.length > 5000) { errors.add('lastName: length must be <= 5000'); }
 }
 final lastNameKana$ = lastNameKana;
 if (lastNameKana$ != null) {
-  if (lastNameKana$.length > 5000) errors.add('lastNameKana: length must be <= 5000');
+  if (lastNameKana$.length > 5000) { errors.add('lastNameKana: length must be <= 5000'); }
 }
 final lastNameKanji$ = lastNameKanji;
 if (lastNameKanji$ != null) {
-  if (lastNameKanji$.length > 5000) errors.add('lastNameKanji: length must be <= 5000');
+  if (lastNameKanji$.length > 5000) { errors.add('lastNameKanji: length must be <= 5000'); }
 }
 final maidenName$ = maidenName;
 if (maidenName$ != null) {
-  if (maidenName$.length > 5000) errors.add('maidenName: length must be <= 5000');
+  if (maidenName$.length > 5000) { errors.add('maidenName: length must be <= 5000'); }
 }
 final nationality$ = nationality;
 if (nationality$ != null) {
-  if (nationality$.length > 5000) errors.add('nationality: length must be <= 5000');
+  if (nationality$.length > 5000) { errors.add('nationality: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 return errors; } 
 Person copyWith({String? account, PersonAdditionalTosAcceptances? Function()? additionalTosAcceptances, Address? Function()? address, LegalEntityJapanAddress? Function()? addressKana, LegalEntityJapanAddress? Function()? addressKanji, int? created, LegalEntityDob? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, List<String>? Function()? fullNameAliases, PersonFutureRequirements? Function()? futureRequirements, String? Function()? gender, String? id, bool? Function()? idNumberProvided, bool? Function()? idNumberSecondaryProvided, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Map<String, String>? Function()? metadata, String? Function()? nationality, DeletedPersonObject? object, String? Function()? phone, PoliticalExposure? Function()? politicalExposure, Address? Function()? registeredAddress, PersonRelationship? Function()? relationship, PersonRequirements? Function()? requirements, bool? Function()? ssnLast4Provided, PersonUsCfpbData? Function()? usCfpbData, LegalEntityPersonVerification? Function()? verification, }) { return Person(

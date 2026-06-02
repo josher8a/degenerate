@@ -43,27 +43,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final debitReversal$ = debitReversal;
 if (debitReversal$ != null) {
-  if (debitReversal$.length > 5000) errors.add('debitReversal: length must be <= 5000');
+  if (debitReversal$.length > 5000) { errors.add('debitReversal: length must be <= 5000'); }
 }
 final inboundTransfer$ = inboundTransfer;
 if (inboundTransfer$ != null) {
-  if (inboundTransfer$.length > 5000) errors.add('inboundTransfer: length must be <= 5000');
+  if (inboundTransfer$.length > 5000) { errors.add('inboundTransfer: length must be <= 5000'); }
 }
 final issuingAuthorization$ = issuingAuthorization;
 if (issuingAuthorization$ != null) {
-  if (issuingAuthorization$.length > 5000) errors.add('issuingAuthorization: length must be <= 5000');
+  if (issuingAuthorization$.length > 5000) { errors.add('issuingAuthorization: length must be <= 5000'); }
 }
 final issuingTransaction$ = issuingTransaction;
 if (issuingTransaction$ != null) {
-  if (issuingTransaction$.length > 5000) errors.add('issuingTransaction: length must be <= 5000');
+  if (issuingTransaction$.length > 5000) { errors.add('issuingTransaction: length must be <= 5000'); }
 }
 final payout$ = payout;
 if (payout$ != null) {
-  if (payout$.length > 5000) errors.add('payout: length must be <= 5000');
+  if (payout$.length > 5000) { errors.add('payout: length must be <= 5000'); }
 }
 final topup$ = topup;
 if (topup$ != null) {
-  if (topup$.length > 5000) errors.add('topup: length must be <= 5000');
+  if (topup$.length > 5000) { errors.add('topup: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryReceivedDebitsResourceLinkedFlows copyWith({String? Function()? debitReversal, String? Function()? inboundTransfer, String? Function()? issuingAuthorization, String? Function()? issuingTransaction, String? Function()? payout, String? Function()? topup, }) { return TreasuryReceivedDebitsResourceLinkedFlows(

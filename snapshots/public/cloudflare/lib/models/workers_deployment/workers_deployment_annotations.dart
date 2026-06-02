@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final workersMessage$ = workersMessage;
 if (workersMessage$ != null) {
-  if (workersMessage$.length > 100) errors.add('workersMessage: length must be <= 100');
+  if (workersMessage$.length > 100) { errors.add('workersMessage: length must be <= 100'); }
 }
 return errors; } 
 WorkersDeploymentAnnotations copyWith({String? Function()? workersMessage, String? Function()? workersTriggeredBy, }) { return WorkersDeploymentAnnotations(

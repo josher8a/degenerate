@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
-  if (preferredLocale$.length > 30) errors.add('preferredLocale: length must be <= 30');
+  if (preferredLocale$.length > 30) { errors.add('preferredLocale: length must be <= 30'); }
 }
 return errors; } 
 PaymentMethodOptionsParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? preferredLocale, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PaymentMethodOptionsParam(

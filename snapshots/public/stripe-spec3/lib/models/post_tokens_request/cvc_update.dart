@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('cvc') && json['cvc'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (cvc.length > 5000) errors.add('cvc: length must be <= 5000');
+if (cvc.length > 5000) { errors.add('cvc: length must be <= 5000'); }
 return errors; } 
 CvcUpdate copyWith({String? cvc}) { return CvcUpdate(
   cvc: cvc ?? this.cvc,

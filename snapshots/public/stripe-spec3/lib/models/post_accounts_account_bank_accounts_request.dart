@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final externalAccount$ = externalAccount;
 if (externalAccount$ != null) {
-  if (externalAccount$.length > 5000) errors.add('externalAccount: length must be <= 5000');
+  if (externalAccount$.length > 5000) { errors.add('externalAccount: length must be <= 5000'); }
 }
 return errors; } 
 PostAccountsAccountBankAccountsRequest copyWith({PostAccountsAccountBankAccountsRequestBankAccount? Function()? bankAccount, bool? Function()? defaultForCurrency, List<String>? Function()? expand, String? Function()? externalAccount, Map<String, String>? Function()? metadata, }) { return PostAccountsAccountBankAccountsRequest(

@@ -15,8 +15,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('properties'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (properties.isEmpty) errors.add('properties: must have >= 1 items');
-if (properties.length > 100) errors.add('properties: must have <= 100 items');
+if (properties.isEmpty) { errors.add('properties: must have >= 1 items'); }
+if (properties.length > 100) { errors.add('properties: must have <= 100 items'); }
 return errors; } 
 OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest copyWith({List<CustomProperty>? properties}) { return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationDefinitionsRequest(
   properties: properties ?? this.properties,

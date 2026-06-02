@@ -45,23 +45,23 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (guidance < 2) errors.add('guidance: must be >= 2');
-if (guidance > 10) errors.add('guidance: must be <= 10');
-if (height < 0) errors.add('height: must be >= 0');
-if (height > 2048) errors.add('height: must be <= 2048');
+if (guidance < 2) { errors.add('guidance: must be >= 2'); }
+if (guidance > 10) { errors.add('guidance: must be <= 10'); }
+if (height < 0) { errors.add('height: must be >= 0'); }
+if (height > 2048) { errors.add('height: must be <= 2048'); }
 final negativePrompt$ = negativePrompt;
 if (negativePrompt$ != null) {
-  if (negativePrompt$.isEmpty) errors.add('negativePrompt: length must be >= 1');
+  if (negativePrompt$.isEmpty) { errors.add('negativePrompt: length must be >= 1'); }
 }
-if (numSteps < 1) errors.add('numSteps: must be >= 1');
-if (numSteps > 50) errors.add('numSteps: must be <= 50');
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
+if (numSteps < 1) { errors.add('numSteps: must be >= 1'); }
+if (numSteps > 50) { errors.add('numSteps: must be <= 50'); }
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < 0) errors.add('seed: must be >= 0');
+  if (seed$ < 0) { errors.add('seed: must be >= 0'); }
 }
-if (width < 0) errors.add('width: must be >= 0');
-if (width > 2048) errors.add('width: must be <= 2048');
+if (width < 0) { errors.add('width: must be >= 0'); }
+if (width > 2048) { errors.add('width: must be <= 2048'); }
 return errors; } 
 WorkersAiPostRunCfLeonardoPhoenix10Request copyWith({double Function()? guidance, int Function()? height, String? Function()? negativePrompt, int Function()? numSteps, String? prompt, int? Function()? seed, int Function()? width, }) { return WorkersAiPostRunCfLeonardoPhoenix10Request(
   guidance: guidance != null ? guidance() : this.guidance,

@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final footerBody$ = footerBody;
 if (footerBody$ != null) {
-  if (footerBody$.length > 5000) errors.add('footerBody: length must be <= 5000');
+  if (footerBody$.length > 5000) { errors.add('footerBody: length must be <= 5000'); }
 }
 final footerTitle$ = footerTitle;
 if (footerTitle$ != null) {
-  if (footerTitle$.length > 5000) errors.add('footerTitle: length must be <= 5000');
+  if (footerTitle$.length > 5000) { errors.add('footerTitle: length must be <= 5000'); }
 }
 final headerBody$ = headerBody;
 if (headerBody$ != null) {
-  if (headerBody$.length > 5000) errors.add('headerBody: length must be <= 5000');
+  if (headerBody$.length > 5000) { errors.add('headerBody: length must be <= 5000'); }
 }
 final headerTitle$ = headerTitle;
 if (headerTitle$ != null) {
-  if (headerTitle$.length > 5000) errors.add('headerTitle: length must be <= 5000');
+  if (headerTitle$.length > 5000) { errors.add('headerTitle: length must be <= 5000'); }
 }
 return errors; } 
 IssuingPersonalizationDesignCarrierText copyWith({String? Function()? footerBody, String? Function()? footerTitle, String? Function()? headerBody, String? Function()? headerTitle, }) { return IssuingPersonalizationDesignCarrierText(

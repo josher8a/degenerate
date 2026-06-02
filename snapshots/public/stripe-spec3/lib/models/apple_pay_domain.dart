@@ -39,8 +39,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (domainName.length > 5000) errors.add('domainName: length must be <= 5000');
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (domainName.length > 5000) { errors.add('domainName: length must be <= 5000'); }
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 ApplePayDomain copyWith({int? created, String? domainName, String? id, bool? livemode, ApplePayDomainObject? object, }) { return ApplePayDomain(
   created: created ?? this.created,

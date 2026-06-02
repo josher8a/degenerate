@@ -30,7 +30,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final tags$ = tags;
 if (tags$ != null) {
-  if (tags$.length > 10) errors.add('tags: must have <= 10 items');
+  if (tags$.length > 10) { errors.add('tags: must have <= 10 items'); }
 }
 return errors; } 
 WorkersScriptSettingsItem copyWith({WorkersLogpush? Function()? logpush, WorkersObservability? Function()? observability, List<WorkersTag>? Function()? tags, List<WorkersTailConsumersScript>? Function()? tailConsumers, }) { return WorkersScriptSettingsItem(

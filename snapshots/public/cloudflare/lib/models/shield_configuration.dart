@@ -14,8 +14,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_id_characteristics'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (authIdCharacteristics.length > 10) errors.add('authIdCharacteristics: must have <= 10 items');
-if (authIdCharacteristics.toSet().length != authIdCharacteristics.length) errors.add('authIdCharacteristics: items must be unique');
+if (authIdCharacteristics.length > 10) { errors.add('authIdCharacteristics: must have <= 10 items'); }
+if (authIdCharacteristics.toSet().length != authIdCharacteristics.length) { errors.add('authIdCharacteristics: items must be unique'); }
 return errors; } 
 ShieldConfiguration copyWith({List<ShieldAuthIdCharacteristics2>? authIdCharacteristics}) { return ShieldConfiguration(
   authIdCharacteristics: authIdCharacteristics ?? this.authIdCharacteristics,

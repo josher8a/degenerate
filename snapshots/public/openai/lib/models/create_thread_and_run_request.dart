@@ -100,25 +100,25 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('assis
 List<String> validate() { final errors = <String>[];
 final tools$ = tools;
 if (tools$ != null) {
-  if (tools$.length > 20) errors.add('tools: must have <= 20 items');
+  if (tools$.length > 20) { errors.add('tools: must have <= 20 items'); }
 }
 final temperature$ = temperature;
 if (temperature$ != null) {
-  if (temperature$ < 0) errors.add('temperature: must be >= 0');
-  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+  if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
+  if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
 }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0) errors.add('topP: must be >= 0');
-  if (topP$ > 1) errors.add('topP: must be <= 1');
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 final maxPromptTokens$ = maxPromptTokens;
 if (maxPromptTokens$ != null) {
-  if (maxPromptTokens$ < 256) errors.add('maxPromptTokens: must be >= 256');
+  if (maxPromptTokens$ < 256) { errors.add('maxPromptTokens: must be >= 256'); }
 }
 final maxCompletionTokens$ = maxCompletionTokens;
 if (maxCompletionTokens$ != null) {
-  if (maxCompletionTokens$ < 256) errors.add('maxCompletionTokens: must be >= 256');
+  if (maxCompletionTokens$ < 256) { errors.add('maxCompletionTokens: must be >= 256'); }
 }
 return errors; } 
 CreateThreadAndRunRequest copyWith({String? assistantId, CreateThreadRequest? Function()? thread, CreateThreadAndRunRequestModel? Function()? model, String? Function()? instructions, List<AssistantObjectTools>? Function()? tools, AssistantObjectToolResources? Function()? toolResources, Map<String, String>? Function()? metadata, double? Function()? temperature, double? Function()? topP, bool? Function()? stream, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return CreateThreadAndRunRequest(

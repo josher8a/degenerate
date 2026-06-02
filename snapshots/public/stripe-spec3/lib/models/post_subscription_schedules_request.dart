@@ -62,15 +62,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final fromSubscription$ = fromSubscription;
 if (fromSubscription$ != null) {
-  if (fromSubscription$.length > 5000) errors.add('fromSubscription: length must be <= 5000');
+  if (fromSubscription$.length > 5000) { errors.add('fromSubscription: length must be <= 5000'); }
 }
 return errors; } 
 PostSubscriptionSchedulesRequest copyWith({PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, String? Function()? customer, String? Function()? customerAccount, DefaultSettings? Function()? defaultSettings, PostSubscriptionSchedulesRequestEndBehavior? Function()? endBehavior, List<String>? Function()? expand, String? Function()? fromSubscription, Metadata? Function()? metadata, List<PostSubscriptionSchedulesRequestPhases>? Function()? phases, PostSubscriptionSchedulesRequestStartDate? Function()? startDate, }) { return PostSubscriptionSchedulesRequest(

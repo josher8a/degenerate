@@ -47,21 +47,21 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.isEmpty) errors.add('name: length must be >= 1');
-  if (name$.length > 50) errors.add('name: length must be <= 50');
+  if (name$.isEmpty) { errors.add('name: length must be >= 1'); }
+  if (name$.length > 50) { errors.add('name: length must be <= 50'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.isEmpty) errors.add('description: length must be >= 1');
-  if (description$.length > 255) errors.add('description: length must be <= 255');
+  if (description$.isEmpty) { errors.add('description: length must be >= 1'); }
+  if (description$.length > 255) { errors.add('description: length must be <= 255'); }
 }
 final managers$ = managers;
 if (managers$ != null) {
-  if (managers$.length > 10) errors.add('managers: must have <= 10 items');
+  if (managers$.length > 10) { errors.add('managers: must have <= 10 items'); }
 }
 final teamManagers$ = teamManagers;
 if (teamManagers$ != null) {
-  if (teamManagers$.length > 10) errors.add('teamManagers: must have <= 10 items');
+  if (teamManagers$.length > 10) { errors.add('teamManagers: must have <= 10 items'); }
 }
 return errors; } 
 CampaignsUpdateCampaignRequest copyWith({String? Function()? name, String? Function()? description, List<String>? Function()? managers, List<String>? Function()? teamManagers, DateTime? Function()? endsAt, Uri? Function()? contactLink, CampaignState? Function()? state, }) { return CampaignsUpdateCampaignRequest(

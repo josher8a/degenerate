@@ -29,8 +29,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('descr
       json.containsKey('parallelism') && json['parallelism'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (nodeId < 0) errors.add('nodeId: must be >= 0');
-if (parallelism < 0) errors.add('parallelism: must be >= 0');
+if (nodeId < 0) { errors.add('nodeId: must be >= 0'); }
+if (parallelism < 0) { errors.add('parallelism: must be >= 0'); }
 return errors; } 
 CloudflarePipelinesPipelineNode copyWith({String? description, int? nodeId, String? $operator, int? parallelism, }) { return CloudflarePipelinesPipelineNode(
   description: description ?? this.description,

@@ -41,11 +41,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('index
 List<String> validate() { final errors = <String>[];
 final startIndex$ = startIndex;
 if (startIndex$ != null) {
-  if (startIndex$ < 0) errors.add('startIndex: must be >= 0');
+  if (startIndex$ < 0) { errors.add('startIndex: must be >= 0'); }
 }
 final endIndex$ = endIndex;
 if (endIndex$ != null) {
-  if (endIndex$ < 0) errors.add('endIndex: must be >= 0');
+  if (endIndex$ < 0) { errors.add('endIndex: must be >= 0'); }
 }
 return errors; } 
 MessageDeltaContentTextAnnotationsFileCitationObject copyWith({int? index, MessageContentTextAnnotationsFileCitationObjectType? type, String? Function()? text, MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? Function()? fileCitation, int? Function()? startIndex, int? Function()? endIndex, }) { return MessageDeltaContentTextAnnotationsFileCitationObject(

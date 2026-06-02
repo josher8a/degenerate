@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final acquiringInstitutionId$ = acquiringInstitutionId;
 if (acquiringInstitutionId$ != null) {
-  if (acquiringInstitutionId$.length > 5000) errors.add('acquiringInstitutionId: length must be <= 5000');
+  if (acquiringInstitutionId$.length > 5000) { errors.add('acquiringInstitutionId: length must be <= 5000'); }
 }
 final systemTraceAuditNumber$ = systemTraceAuditNumber;
 if (systemTraceAuditNumber$ != null) {
-  if (systemTraceAuditNumber$.length > 5000) errors.add('systemTraceAuditNumber: length must be <= 5000');
+  if (systemTraceAuditNumber$.length > 5000) { errors.add('systemTraceAuditNumber: length must be <= 5000'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorizationNetworkData copyWith({String? Function()? acquiringInstitutionId, String? Function()? systemTraceAuditNumber, String? Function()? transactionId, }) { return IssuingAuthorizationNetworkData(

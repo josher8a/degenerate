@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('allow
 List<String> validate() { final errors = <String>[];
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 PaymentPagesCheckoutSessionAfterExpirationRecovery copyWith({bool? allowPromotionCodes, bool? enabled, int? Function()? expiresAt, String? Function()? url, }) { return PaymentPagesCheckoutSessionAfterExpirationRecovery(

@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'
       json.containsKey('message') && json['message'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (code < 1000) errors.add('code: must be >= 1000');
+if (code < 1000) { errors.add('code: must be >= 1000'); }
 return errors; } 
 ResourceSharingV4error copyWith({int? code, String? message, }) { return ResourceSharingV4error(
   code: code ?? this.code,

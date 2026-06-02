@@ -92,35 +92,35 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final applicationCryptogram$ = applicationCryptogram;
 if (applicationCryptogram$ != null) {
-  if (applicationCryptogram$.length > 5000) errors.add('applicationCryptogram: length must be <= 5000');
+  if (applicationCryptogram$.length > 5000) { errors.add('applicationCryptogram: length must be <= 5000'); }
 }
 final applicationPreferredName$ = applicationPreferredName;
 if (applicationPreferredName$ != null) {
-  if (applicationPreferredName$.length > 5000) errors.add('applicationPreferredName: length must be <= 5000');
+  if (applicationPreferredName$.length > 5000) { errors.add('applicationPreferredName: length must be <= 5000'); }
 }
 final authorizationCode$ = authorizationCode;
 if (authorizationCode$ != null) {
-  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+  if (authorizationCode$.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
 final authorizationResponseCode$ = authorizationResponseCode;
 if (authorizationResponseCode$ != null) {
-  if (authorizationResponseCode$.length > 5000) errors.add('authorizationResponseCode: length must be <= 5000');
+  if (authorizationResponseCode$.length > 5000) { errors.add('authorizationResponseCode: length must be <= 5000'); }
 }
 final cardholderVerificationMethod$ = cardholderVerificationMethod;
 if (cardholderVerificationMethod$ != null) {
-  if (cardholderVerificationMethod$.length > 5000) errors.add('cardholderVerificationMethod: length must be <= 5000');
+  if (cardholderVerificationMethod$.length > 5000) { errors.add('cardholderVerificationMethod: length must be <= 5000'); }
 }
 final dedicatedFileName$ = dedicatedFileName;
 if (dedicatedFileName$ != null) {
-  if (dedicatedFileName$.length > 5000) errors.add('dedicatedFileName: length must be <= 5000');
+  if (dedicatedFileName$.length > 5000) { errors.add('dedicatedFileName: length must be <= 5000'); }
 }
 final terminalVerificationResults$ = terminalVerificationResults;
 if (terminalVerificationResults$ != null) {
-  if (terminalVerificationResults$.length > 5000) errors.add('terminalVerificationResults: length must be <= 5000');
+  if (terminalVerificationResults$.length > 5000) { errors.add('terminalVerificationResults: length must be <= 5000'); }
 }
 final transactionStatusInformation$ = transactionStatusInformation;
 if (transactionStatusInformation$ != null) {
-  if (transactionStatusInformation$.length > 5000) errors.add('transactionStatusInformation: length must be <= 5000');
+  if (transactionStatusInformation$.length > 5000) { errors.add('transactionStatusInformation: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsCardPresentReceipt copyWith({PaymentMethodDetailsCardPresentReceiptAccountType? Function()? accountType, String? Function()? applicationCryptogram, String? Function()? applicationPreferredName, String? Function()? authorizationCode, String? Function()? authorizationResponseCode, String? Function()? cardholderVerificationMethod, String? Function()? dedicatedFileName, String? Function()? terminalVerificationResults, String? Function()? transactionStatusInformation, }) { return PaymentMethodDetailsCardPresentReceipt(

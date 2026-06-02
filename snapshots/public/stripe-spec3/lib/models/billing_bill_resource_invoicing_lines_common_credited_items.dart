@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoi
       json.containsKey('invoice_line_items'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (invoice.length > 5000) errors.add('invoice: length must be <= 5000');
+if (invoice.length > 5000) { errors.add('invoice: length must be <= 5000'); }
 return errors; } 
 BillingBillResourceInvoicingLinesCommonCreditedItems copyWith({String? invoice, List<String>? invoiceLineItems, }) { return BillingBillResourceInvoicingLinesCommonCreditedItems(
   invoice: invoice ?? this.invoice,

@@ -68,9 +68,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 200) errors.add('description: length must be <= 200');
+  if (description$.length > 200) { errors.add('description: length must be <= 200'); }
 }
-if (reference.length > 80) errors.add('reference: length must be <= 80');
+if (reference.length > 80) { errors.add('reference: length must be <= 80'); }
 return errors; } 
 SetupIntentPaymentMethodOptionsCardMandateOptions copyWith({int? amount, MandatePaytoAmountType? amountType, String? currency, String? Function()? description, int? Function()? endDate, PaymentMethodOptionsCardMandateOptionsInterval? interval, int? Function()? intervalCount, String? reference, int? startDate, List<SupportedTypes>? Function()? supportedTypes, }) { return SetupIntentPaymentMethodOptionsCardMandateOptions(
   amount: amount ?? this.amount,

@@ -89,10 +89,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 FileLink copyWith({int? created, bool? expired, int? Function()? expiresAt, FileLinkFile? file, String? id, bool? livemode, Map<String,String>? metadata, FileLinkObject? object, String? Function()? url, }) { return FileLink(

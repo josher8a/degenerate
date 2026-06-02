@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ANDRO
       json.containsKey('IOS') && json['IOS'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(android)) errors.add(r'android: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(ios)) errors.add(r'ios: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(android)) { errors.add(r'android: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(ios)) { errors.add(r'ios: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetHttpSummaryByOperatingSystemResponseResultSummary0 copyWith({String? android, String? ios, }) { return RadarGetHttpSummaryByOperatingSystemResponseResultSummary0(
   android: android ?? this.android,

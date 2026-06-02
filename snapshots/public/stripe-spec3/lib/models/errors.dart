@@ -124,47 +124,47 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final adviceCode$ = adviceCode;
 if (adviceCode$ != null) {
-  if (adviceCode$.length > 5000) errors.add('adviceCode: length must be <= 5000');
+  if (adviceCode$.length > 5000) { errors.add('adviceCode: length must be <= 5000'); }
 }
 final charge$ = charge;
 if (charge$ != null) {
-  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+  if (charge$.length > 5000) { errors.add('charge: length must be <= 5000'); }
 }
 final code$ = code;
 if (code$ != null) {
-  if (code$.length > 5000) errors.add('code: length must be <= 5000');
+  if (code$.length > 5000) { errors.add('code: length must be <= 5000'); }
 }
 final declineCode$ = declineCode;
 if (declineCode$ != null) {
-  if (declineCode$.length > 5000) errors.add('declineCode: length must be <= 5000');
+  if (declineCode$.length > 5000) { errors.add('declineCode: length must be <= 5000'); }
 }
 final docUrl$ = docUrl;
 if (docUrl$ != null) {
-  if (docUrl$.length > 5000) errors.add('docUrl: length must be <= 5000');
+  if (docUrl$.length > 5000) { errors.add('docUrl: length must be <= 5000'); }
 }
 final message$ = message;
 if (message$ != null) {
-  if (message$.length > 40000) errors.add('message: length must be <= 40000');
+  if (message$.length > 40000) { errors.add('message: length must be <= 40000'); }
 }
 final networkAdviceCode$ = networkAdviceCode;
 if (networkAdviceCode$ != null) {
-  if (networkAdviceCode$.length > 5000) errors.add('networkAdviceCode: length must be <= 5000');
+  if (networkAdviceCode$.length > 5000) { errors.add('networkAdviceCode: length must be <= 5000'); }
 }
 final networkDeclineCode$ = networkDeclineCode;
 if (networkDeclineCode$ != null) {
-  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+  if (networkDeclineCode$.length > 5000) { errors.add('networkDeclineCode: length must be <= 5000'); }
 }
 final param$ = param;
 if (param$ != null) {
-  if (param$.length > 5000) errors.add('param: length must be <= 5000');
+  if (param$.length > 5000) { errors.add('param: length must be <= 5000'); }
 }
 final paymentMethodType$ = paymentMethodType;
 if (paymentMethodType$ != null) {
-  if (paymentMethodType$.length > 5000) errors.add('paymentMethodType: length must be <= 5000');
+  if (paymentMethodType$.length > 5000) { errors.add('paymentMethodType: length must be <= 5000'); }
 }
 final requestLogUrl$ = requestLogUrl;
 if (requestLogUrl$ != null) {
-  if (requestLogUrl$.length > 5000) errors.add('requestLogUrl: length must be <= 5000');
+  if (requestLogUrl$.length > 5000) { errors.add('requestLogUrl: length must be <= 5000'); }
 }
 return errors; } 
 Errors copyWith({String? Function()? adviceCode, String? Function()? charge, String? Function()? code, String? Function()? declineCode, String? Function()? docUrl, String? Function()? message, String? Function()? networkAdviceCode, String? Function()? networkDeclineCode, String? Function()? param, PaymentIntent? Function()? paymentIntent, PaymentMethod? Function()? paymentMethod, String? Function()? paymentMethodType, String? Function()? requestLogUrl, SetupIntent? Function()? setupIntent, ErrorsSource? Function()? source, ErrorsType? type, }) { return Errors(

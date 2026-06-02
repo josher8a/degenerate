@@ -61,7 +61,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'
 List<String> validate() { final errors = <String>[];
 final $default$ = $default;
 if ($default$ != null) {
-  if ($default$ < 0) errors.add(r'$default: must be >= 0');
+  if ($default$ < 0) { errors.add(r'$default: must be >= 0'); }
 }
 return errors; } 
 RulesetsSetCacheSettingsBrowserTtl copyWith({int? Function()? $default, RulesetsSetCacheSettingsBrowserTtlMode? mode, }) { return RulesetsSetCacheSettingsBrowserTtl(

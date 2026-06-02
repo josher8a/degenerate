@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('invoi
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 PaymentLinksResourceSubscriptionData copyWith({String? Function()? description, PaymentLinksResourceSubscriptionDataInvoiceSettings? invoiceSettings, Map<String,String>? metadata, int? Function()? trialPeriodDays, SubscriptionsTrialsResourceTrialSettings? Function()? trialSettings, }) { return PaymentLinksResourceSubscriptionData(

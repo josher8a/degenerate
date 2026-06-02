@@ -44,10 +44,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('clabe') && json['clabe'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (accountHolderName.length > 5000) errors.add('accountHolderName: length must be <= 5000');
-if (bankCode.length > 5000) errors.add('bankCode: length must be <= 5000');
-if (bankName.length > 5000) errors.add('bankName: length must be <= 5000');
-if (clabe.length > 5000) errors.add('clabe: length must be <= 5000');
+if (accountHolderName.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
+if (bankCode.length > 5000) { errors.add('bankCode: length must be <= 5000'); }
+if (bankName.length > 5000) { errors.add('bankName: length must be <= 5000'); }
+if (clabe.length > 5000) { errors.add('clabe: length must be <= 5000'); }
 return errors; } 
 FundingInstructionsBankTransferSpeiRecord copyWith({Address? accountHolderAddress, String? accountHolderName, Address? bankAddress, String? bankCode, String? bankName, String? clabe, }) { return FundingInstructionsBankTransferSpeiRecord(
   accountHolderAddress: accountHolderAddress ?? this.accountHolderAddress,

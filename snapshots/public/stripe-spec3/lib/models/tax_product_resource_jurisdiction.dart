@@ -70,11 +70,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('count
       json.containsKey('level'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (country.length > 5000) errors.add('country: length must be <= 5000');
-if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
+if (country.length > 5000) { errors.add('country: length must be <= 5000'); }
+if (displayName.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 final state$ = state;
 if (state$ != null) {
-  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+  if (state$.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
 TaxProductResourceJurisdiction copyWith({String? country, String? displayName, TaxProductResourceJurisdictionLevel? level, String? Function()? state, }) { return TaxProductResourceJurisdiction(

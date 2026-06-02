@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 1500) errors.add('url: length must be <= 1500');
+  if (url$.length > 1500) { errors.add('url: length must be <= 1500'); }
 }
 return errors; } 
 ZonesForwardingUrlValue copyWith({ValueStatusCode? Function()? statusCode, String? Function()? url, }) { return ZonesForwardingUrlValue(

@@ -33,11 +33,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final primaryColor$ = primaryColor;
 if (primaryColor$ != null) {
-  if (primaryColor$.length > 5000) errors.add('primaryColor: length must be <= 5000');
+  if (primaryColor$.length > 5000) { errors.add('primaryColor: length must be <= 5000'); }
 }
 final secondaryColor$ = secondaryColor;
 if (secondaryColor$ != null) {
-  if (secondaryColor$.length > 5000) errors.add('secondaryColor: length must be <= 5000');
+  if (secondaryColor$.length > 5000) { errors.add('secondaryColor: length must be <= 5000'); }
 }
 return errors; } 
 AccountBrandingSettings copyWith({AccountBrandingSettingsIcon? Function()? icon, AccountBrandingSettingsLogo? Function()? logo, String? Function()? primaryColor, String? Function()? secondaryColor, }) { return AccountBrandingSettings(

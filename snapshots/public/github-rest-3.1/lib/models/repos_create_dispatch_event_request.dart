@@ -20,8 +20,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('event_type') && json['event_type'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (eventType.isEmpty) errors.add('eventType: length must be >= 1');
-if (eventType.length > 100) errors.add('eventType: length must be <= 100');
+if (eventType.isEmpty) { errors.add('eventType: length must be >= 1'); }
+if (eventType.length > 100) { errors.add('eventType: length must be <= 100'); }
 return errors; } 
 ReposCreateDispatchEventRequest copyWith({String? eventType, Map<String, dynamic>? Function()? clientPayload, }) { return ReposCreateDispatchEventRequest(
   eventType: eventType ?? this.eventType,

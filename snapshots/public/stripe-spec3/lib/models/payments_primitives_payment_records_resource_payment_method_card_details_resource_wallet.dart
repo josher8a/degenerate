@@ -31,9 +31,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final dynamicLast4$ = dynamicLast4;
 if (dynamicLast4$ != null) {
-  if (dynamicLast4$.length > 5000) errors.add('dynamicLast4: length must be <= 5000');
+  if (dynamicLast4$.length > 5000) { errors.add('dynamicLast4: length must be <= 5000'); }
 }
-if (type.length > 5000) errors.add('type: length must be <= 5000');
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
 return errors; } 
 PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet copyWith({PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceApplePay? Function()? applePay, String? Function()? dynamicLast4, PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWalletResourceGooglePay? Function()? googlePay, String? type, }) { return PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsResourceWallet(
   applePay: applePay != null ? applePay() : this.applePay,

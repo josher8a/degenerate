@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultAsn$ = defaultAsn;
 if (defaultAsn$ != null) {
-  if (defaultAsn$ < 0) errors.add('defaultAsn: must be >= 0');
+  if (defaultAsn$ < 0) { errors.add('defaultAsn: must be >= 0'); }
 }
 return errors; } 
 NscSettingsRequest copyWith({int? Function()? defaultAsn}) { return NscSettingsRequest(

@@ -54,7 +54,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final reason$ = reason;
 if (reason$ != null) {
-  if (reason$.length > 5000) errors.add('reason: length must be <= 5000');
+  if (reason$.length > 5000) { errors.add('reason: length must be <= 5000'); }
 }
 return errors; } 
 GelatoDocumentReportError copyWith({GelatoDocumentReportErrorCode? Function()? code, String? Function()? reason, }) { return GelatoDocumentReportError(

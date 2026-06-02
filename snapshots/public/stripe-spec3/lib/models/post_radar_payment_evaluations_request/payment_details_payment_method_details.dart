@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('payment_method') && json['payment_method'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (paymentMethod.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+if (paymentMethod.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 return errors; } 
 PaymentDetailsPaymentMethodDetails copyWith({PaymentMethodDetailsBillingDetails? Function()? billingDetails, String? paymentMethod, }) { return PaymentDetailsPaymentMethodDetails(
   billingDetails: billingDetails != null ? billingDetails() : this.billingDetails,

@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final postInstructions$ = postInstructions;
 if (postInstructions$ != null) {
-  if (postInstructions$ < 0) errors.add('postInstructions: must be >= 0');
+  if (postInstructions$ < 0) { errors.add('postInstructions: must be >= 0'); }
 }
 return errors; } 
 TokenLimits copyWith({int? Function()? postInstructions}) { return TokenLimits(

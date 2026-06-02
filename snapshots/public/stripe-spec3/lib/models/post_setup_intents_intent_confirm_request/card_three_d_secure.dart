@@ -40,15 +40,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final cryptogram$ = cryptogram;
 if (cryptogram$ != null) {
-  if (cryptogram$.length > 5000) errors.add('cryptogram: length must be <= 5000');
+  if (cryptogram$.length > 5000) { errors.add('cryptogram: length must be <= 5000'); }
 }
 final requestorChallengeIndicator$ = requestorChallengeIndicator;
 if (requestorChallengeIndicator$ != null) {
-  if (requestorChallengeIndicator$.length > 2) errors.add('requestorChallengeIndicator: length must be <= 2');
+  if (requestorChallengeIndicator$.length > 2) { errors.add('requestorChallengeIndicator: length must be <= 2'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 CardThreeDSecure copyWith({AresTransStatus? Function()? aresTransStatus, String? Function()? cryptogram, ThreeDSecureElectronicCommerceIndicator? Function()? electronicCommerceIndicator, NetworkOptions? Function()? networkOptions, String? Function()? requestorChallengeIndicator, String? Function()? transactionId, ThreeDSecureVersion? Function()? version, }) { return CardThreeDSecure(

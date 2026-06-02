@@ -56,9 +56,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('text'
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
-if (text.length > 5000) errors.add('text: length must be <= 5000');
+if (text.length > 5000) { errors.add('text: length must be <= 5000'); }
 return errors; } 
 TerminalReaderReaderResourceChoice copyWith({String? Function()? id, TerminalReaderReaderResourceChoiceStyle? Function()? style, String? text, }) { return TerminalReaderReaderResourceChoice(
   id: id != null ? id() : this.id,

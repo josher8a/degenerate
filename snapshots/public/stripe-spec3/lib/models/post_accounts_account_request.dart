@@ -94,11 +94,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final accountToken$ = accountToken;
 if (accountToken$ != null) {
-  if (accountToken$.length > 5000) errors.add('accountToken: length must be <= 5000');
+  if (accountToken$.length > 5000) { errors.add('accountToken: length must be <= 5000'); }
 }
 final externalAccount$ = externalAccount;
 if (externalAccount$ != null) {
-  if (externalAccount$.length > 5000) errors.add('externalAccount: length must be <= 5000');
+  if (externalAccount$.length > 5000) { errors.add('externalAccount: length must be <= 5000'); }
 }
 return errors; } 
 PostAccountsAccountRequest copyWith({String? Function()? accountToken, PostAccountsAccountRequestBusinessProfile? Function()? businessProfile, PostAccountsAccountRequestBusinessType? Function()? businessType, Capabilities? Function()? capabilities, PostAccountsAccountRequestCompany? Function()? company, String? Function()? defaultCurrency, PostAccountsAccountRequestDocuments? Function()? documents, String? Function()? email, List<String>? Function()? expand, String? Function()? externalAccount, Groups? Function()? groups, PostAccountsAccountRequestIndividual? Function()? individual, Metadata? Function()? metadata, PostAccountsAccountRequestSettings? Function()? settings, PostAccountsAccountRequestTosAcceptance? Function()? tosAcceptance, }) { return PostAccountsAccountRequest(

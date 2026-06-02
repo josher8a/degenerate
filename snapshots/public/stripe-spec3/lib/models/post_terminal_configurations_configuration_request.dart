@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 100) errors.add('name: length must be <= 100');
+  if (name$.length > 100) { errors.add('name: length must be <= 100'); }
 }
 return errors; } 
 PostTerminalConfigurationsConfigurationRequest copyWith({PostTerminalConfigurationsConfigurationRequestBbposWisepad3? Function()? bbposWisepad3, PostTerminalConfigurationsConfigurationRequestBbposWiseposE? Function()? bbposWiseposE, PostTerminalConfigurationsConfigurationRequestCellular? Function()? cellular, List<String>? Function()? expand, String? Function()? name, PostTerminalConfigurationsConfigurationRequestOffline? Function()? offline, PostTerminalConfigurationsConfigurationRequestRebootWindow? Function()? rebootWindow, PostTerminalConfigurationsConfigurationRequestStripeS700? Function()? stripeS700, PostTerminalConfigurationsConfigurationRequestStripeS710? Function()? stripeS710, PostTerminalConfigurationsConfigurationRequestTipping? Function()? tipping, PostTerminalConfigurationsConfigurationRequestVerifoneP400? Function()? verifoneP400, PostTerminalConfigurationsConfigurationRequestWifi? Function()? wifi, }) { return PostTerminalConfigurationsConfigurationRequest(

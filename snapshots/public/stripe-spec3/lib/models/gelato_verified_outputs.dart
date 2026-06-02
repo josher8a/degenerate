@@ -68,31 +68,31 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 final firstName$ = firstName;
 if (firstName$ != null) {
-  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+  if (firstName$.length > 5000) { errors.add('firstName: length must be <= 5000'); }
 }
 final idNumber$ = idNumber;
 if (idNumber$ != null) {
-  if (idNumber$.length > 5000) errors.add('idNumber: length must be <= 5000');
+  if (idNumber$.length > 5000) { errors.add('idNumber: length must be <= 5000'); }
 }
 final lastName$ = lastName;
 if (lastName$ != null) {
-  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+  if (lastName$.length > 5000) { errors.add('lastName: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 final unparsedPlaceOfBirth$ = unparsedPlaceOfBirth;
 if (unparsedPlaceOfBirth$ != null) {
-  if (unparsedPlaceOfBirth$.length > 5000) errors.add('unparsedPlaceOfBirth: length must be <= 5000');
+  if (unparsedPlaceOfBirth$.length > 5000) { errors.add('unparsedPlaceOfBirth: length must be <= 5000'); }
 }
 final unparsedSex$ = unparsedSex;
 if (unparsedSex$ != null) {
-  if (unparsedSex$.length > 5000) errors.add('unparsedSex: length must be <= 5000');
+  if (unparsedSex$.length > 5000) { errors.add('unparsedSex: length must be <= 5000'); }
 }
 return errors; } 
 GelatoVerifiedOutputs copyWith({Address? Function()? address, GelatoDataVerifiedOutputsDate? Function()? dob, String? Function()? email, String? Function()? firstName, String? Function()? idNumber, IdNumberType? Function()? idNumberType, String? Function()? lastName, String? Function()? phone, Sex? Function()? sex, String? Function()? unparsedPlaceOfBirth, String? Function()? unparsedSex, }) { return GelatoVerifiedOutputs(

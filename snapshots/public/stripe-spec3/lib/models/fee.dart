@@ -40,13 +40,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final application$ = application;
 if (application$ != null) {
-  if (application$.length > 5000) errors.add('application: length must be <= 5000');
+  if (application$.length > 5000) { errors.add('application: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (type.length > 5000) errors.add('type: length must be <= 5000');
+if (type.length > 5000) { errors.add('type: length must be <= 5000'); }
 return errors; } 
 Fee copyWith({int? amount, String? Function()? application, String? currency, String? Function()? description, String? type, }) { return Fee(
   amount: amount ?? this.amount,

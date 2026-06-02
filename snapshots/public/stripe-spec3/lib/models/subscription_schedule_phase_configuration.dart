@@ -146,7 +146,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('add_i
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 SubscriptionSchedulePhaseConfiguration copyWith({List<SubscriptionScheduleAddInvoiceItem>? addInvoiceItems, double? Function()? applicationFeePercent, SchedulesPhaseAutomaticTax? Function()? automaticTax, SubscriptionSchedulePhaseConfigurationBillingCycleAnchor? Function()? billingCycleAnchor, SubscriptionBillingThresholds? Function()? billingThresholds, SubscriptionSchedulePhaseConfigurationCollectionMethod? Function()? collectionMethod, String? currency, DefaultPaymentMethod? Function()? defaultPaymentMethod, List<TaxRate>? Function()? defaultTaxRates, String? Function()? description, List<StackableDiscountWithDiscountSettingsAndDiscountEnd>? discounts, int? endDate, InvoiceSettingSubscriptionSchedulePhaseSetting? Function()? invoiceSettings, List<SubscriptionScheduleConfigurationItem>? items, Map<String, String>? Function()? metadata, ChargeOnBehalfOf? Function()? onBehalfOf, DeleteSubscriptionItemsItemRequestProrationBehavior? prorationBehavior, int? startDate, SubscriptionTransferData? Function()? transferData, int? Function()? trialEnd, }) { return SubscriptionSchedulePhaseConfiguration(

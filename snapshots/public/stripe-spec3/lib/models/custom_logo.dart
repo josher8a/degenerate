@@ -23,9 +23,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('url')
 List<String> validate() { final errors = <String>[];
 final contentType$ = contentType;
 if (contentType$ != null) {
-  if (contentType$.length > 5000) errors.add('contentType: length must be <= 5000');
+  if (contentType$.length > 5000) { errors.add('contentType: length must be <= 5000'); }
 }
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 CustomLogo copyWith({String? Function()? contentType, String? url, }) { return CustomLogo(
   contentType: contentType != null ? contentType() : this.contentType,

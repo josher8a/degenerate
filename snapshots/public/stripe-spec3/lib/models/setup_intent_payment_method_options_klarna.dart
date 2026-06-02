@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
-  if (preferredLocale$.length > 5000) errors.add('preferredLocale: length must be <= 5000');
+  if (preferredLocale$.length > 5000) { errors.add('preferredLocale: length must be <= 5000'); }
 }
 return errors; } 
 SetupIntentPaymentMethodOptionsKlarna copyWith({String? Function()? currency, String? Function()? preferredLocale, }) { return SetupIntentPaymentMethodOptionsKlarna(

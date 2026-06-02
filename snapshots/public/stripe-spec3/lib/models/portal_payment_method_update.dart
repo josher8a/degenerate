@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 List<String> validate() { final errors = <String>[];
 final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
-  if (paymentMethodConfiguration$.length > 5000) errors.add('paymentMethodConfiguration: length must be <= 5000');
+  if (paymentMethodConfiguration$.length > 5000) { errors.add('paymentMethodConfiguration: length must be <= 5000'); }
 }
 return errors; } 
 PortalPaymentMethodUpdate copyWith({bool? enabled, String? Function()? paymentMethodConfiguration, }) { return PortalPaymentMethodUpdate(

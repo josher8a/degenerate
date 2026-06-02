@@ -47,15 +47,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final sid$ = sid;
 if (sid$ != null) {
-  if (sid$.length < 34) errors.add('sid: length must be >= 34');
-  if (sid$.length > 34) errors.add('sid: length must be <= 34');
-  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^PN[0-9a-fA-F]{32}$');
+  if (sid$.length < 34) { errors.add('sid: length must be >= 34'); }
+  if (sid$.length > 34) { errors.add('sid: length must be <= 34'); }
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
 final accountSid$ = accountSid;
 if (accountSid$ != null) {
-  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
-  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
-  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+  if (accountSid$.length < 34) { errors.add('accountSid: length must be >= 34'); }
+  if (accountSid$.length > 34) { errors.add('accountSid: length must be <= 34'); }
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
 AccountOutgoingCallerId copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? friendlyName, String? Function()? accountSid, String? Function()? phoneNumber, String? Function()? uri, }) { return AccountOutgoingCallerId(

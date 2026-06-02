@@ -257,8 +257,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length < 36) errors.add('id: length must be >= 36');
-  if (id$.length > 36) errors.add('id: length must be <= 36');
+  if (id$.length < 36) { errors.add('id: length must be >= 36'); }
+  if (id$.length > 36) { errors.add('id: length must be <= 36'); }
 }
 return errors; } 
 TlsCertificatesAndHostnamesSslDv copyWith({BundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, String? Function()? customCertificate, String? Function()? customCsrId, String? Function()? customKey, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? dcvDelegationRecords, DateTime? Function()? expiresOn, List<String>? Function()? hosts, String? Function()? id, String? Function()? issuer, DvMethod? Function()? method, String? Function()? serialNumber, TlsCertificatesAndHostnamesSslsettings? Function()? settings, String? Function()? signature, DvStatus? Function()? status, DvType? Function()? type, DateTime? Function()? uploadedOn, List<ValidationErrors>? Function()? validationErrors, List<TlsCertificatesAndHostnamesValidationRecord>? Function()? validationRecords, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslDv(

@@ -34,13 +34,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('token
 List<String> validate() { final errors = <String>[];
 final cardReferenceId$ = cardReferenceId;
 if (cardReferenceId$ != null) {
-  if (cardReferenceId$.length > 5000) errors.add('cardReferenceId: length must be <= 5000');
+  if (cardReferenceId$.length > 5000) { errors.add('cardReferenceId: length must be <= 5000'); }
 }
-if (tokenReferenceId.length > 5000) errors.add('tokenReferenceId: length must be <= 5000');
-if (tokenRequestorId.length > 5000) errors.add('tokenRequestorId: length must be <= 5000');
+if (tokenReferenceId.length > 5000) { errors.add('tokenReferenceId: length must be <= 5000'); }
+if (tokenRequestorId.length > 5000) { errors.add('tokenRequestorId: length must be <= 5000'); }
 final tokenRequestorName$ = tokenRequestorName;
 if (tokenRequestorName$ != null) {
-  if (tokenRequestorName$.length > 5000) errors.add('tokenRequestorName: length must be <= 5000');
+  if (tokenRequestorName$.length > 5000) { errors.add('tokenRequestorName: length must be <= 5000'); }
 }
 return errors; } 
 IssuingNetworkTokenMastercard copyWith({String? Function()? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRequestorName, }) { return IssuingNetworkTokenMastercard(

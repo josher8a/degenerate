@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('avail
 List<String> validate() { final errors = <String>[];
 final preferred$ = preferred;
 if (preferred$ != null) {
-  if (preferred$.length > 5000) errors.add('preferred: length must be <= 5000');
+  if (preferred$.length > 5000) { errors.add('preferred: length must be <= 5000'); }
 }
 return errors; } 
 Networks copyWith({List<String>? available, String? Function()? preferred, }) { return Networks(

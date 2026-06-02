@@ -704,19 +704,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final clientReferenceId$ = clientReferenceId;
 if (clientReferenceId$ != null) {
-  if (clientReferenceId$.length > 200) errors.add('clientReferenceId: length must be <= 200');
+  if (clientReferenceId$.length > 200) { errors.add('clientReferenceId: length must be <= 200'); }
 }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
-  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+  if (paymentMethodConfiguration$.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
 return errors; } 
 PostCheckoutSessionsRequest copyWith({AdaptivePricing? Function()? adaptivePricing, AfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, PaymentLinkBillingAddressCollection? Function()? billingAddressCollection, BrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, ConsentCollection? Function()? consentCollection, String? Function()? currency, List<PostCheckoutSessionsRequestCustomFields>? Function()? customFields, PostCheckoutSessionsRequestCustomText? Function()? customText, String? Function()? customer, String? Function()? customerAccount, PaymentLinkCustomerCreation? Function()? customerCreation, String? Function()? customerEmail, PostCheckoutSessionsRequestCustomerUpdate? Function()? customerUpdate, List<PostCheckoutSessionsRequestDiscounts>? Function()? discounts, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, int? Function()? expiresAt, PostCheckoutSessionsRequestInvoiceCreation? Function()? invoiceCreation, List<PostCheckoutSessionsRequestLineItems>? Function()? lineItems, PostCheckoutSessionsRequestLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? Function()? mode, PostCheckoutSessionsRequestNameCollection? Function()? nameCollection, List<PostCheckoutSessionsRequestOptionalItems>? Function()? optionalItems, PostCheckoutSessionsRequestOriginContext? Function()? originContext, PostCheckoutSessionsRequestPaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? Function()? paymentMethodCollection, String? Function()? paymentMethodConfiguration, PostCheckoutSessionsRequestPaymentMethodData? Function()? paymentMethodData, PostCheckoutSessionsRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<PostCheckoutSessionsRequestPaymentMethodTypes>? Function()? paymentMethodTypes, PostCheckoutSessionsRequestPermissions? Function()? permissions, PhoneNumberCollection? Function()? phoneNumberCollection, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, SavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, SetupIntentData? Function()? setupIntentData, PostCheckoutSessionsRequestShippingAddressCollection? Function()? shippingAddressCollection, List<PostCheckoutSessionsRequestShippingOptions>? Function()? shippingOptions, PaymentLinkSubmitType? Function()? submitType, PostCheckoutSessionsRequestSubscriptionData? Function()? subscriptionData, String? Function()? successUrl, TaxIdCollection? Function()? taxIdCollection, PostCheckoutSessionsRequestUiMode? Function()? uiMode, WalletOptions? Function()? walletOptions, }) { return PostCheckoutSessionsRequest(

@@ -205,39 +205,39 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 final defaultSource$ = defaultSource;
 if (defaultSource$ != null) {
-  if (defaultSource$.length > 5000) errors.add('defaultSource: length must be <= 5000');
+  if (defaultSource$.length > 5000) { errors.add('defaultSource: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1500) errors.add('description: length must be <= 1500');
+  if (description$.length > 1500) { errors.add('description: length must be <= 1500'); }
 }
 final footer$ = footer;
 if (footer$ != null) {
-  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+  if (footer$.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
 final number$ = number;
 if (number$ != null) {
-  if (number$.length > 26) errors.add('number: length must be <= 26');
+  if (number$.length > 26) { errors.add('number: length must be <= 26'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final subscription$ = subscription;
 if (subscription$ != null) {
-  if (subscription$.length > 5000) errors.add('subscription: length must be <= 5000');
+  if (subscription$.length > 5000) { errors.add('subscription: length must be <= 5000'); }
 }
 return errors; } 
 PostInvoicesRequest copyWith({PostInvoicesInvoiceRequestAccountTaxIds? Function()? accountTaxIds, int? Function()? applicationFeeAmount, bool? Function()? autoAdvance, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? automaticallyFinalizesAt, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? currency, PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? customer, String? Function()? customerAccount, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, String? Function()? defaultSource, List<String>? Function()? defaultTaxRates, String? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, int? Function()? dueDate, int? Function()? effectiveAt, List<String>? Function()? expand, String? Function()? footer, FromInvoice? Function()? fromInvoice, Issuer? Function()? issuer, Metadata? Function()? metadata, String? Function()? number, String? Function()? onBehalfOf, PostInvoicesInvoiceRequestPaymentSettings? Function()? paymentSettings, PendingInvoiceItemsBehavior? Function()? pendingInvoiceItemsBehavior, Rendering? Function()? rendering, ShippingCost? Function()? shippingCost, PostInvoicesRequestShippingDetails? Function()? shippingDetails, String? Function()? statementDescriptor, String? Function()? subscription, PostInvoicesRequestTransferData? Function()? transferData, }) { return PostInvoicesRequest(

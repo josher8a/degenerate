@@ -52,11 +52,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
-  if (lookupKey$.length > 200) errors.add('lookupKey: length must be <= 200');
+  if (lookupKey$.length > 200) { errors.add('lookupKey: length must be <= 200'); }
 }
 final nickname$ = nickname;
 if (nickname$ != null) {
-  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+  if (nickname$.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 return errors; } 
 PostPricesPriceRequest copyWith({bool? Function()? active, CurrencyOptions? Function()? currencyOptions, List<String>? Function()? expand, String? Function()? lookupKey, Metadata? Function()? metadata, String? Function()? nickname, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, bool? Function()? transferLookupKey, }) { return PostPricesPriceRequest(

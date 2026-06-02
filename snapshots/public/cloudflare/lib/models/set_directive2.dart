@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('opera
 List<String> validate() { final errors = <String>[];
 final qualifiers$ = qualifiers;
 if (qualifiers$ != null) {
-  if (qualifiers$.toSet().length != qualifiers$.length) errors.add('qualifiers: items must be unique');
+  if (qualifiers$.toSet().length != qualifiers$.length) { errors.add('qualifiers: items must be unique'); }
 }
 return errors; } 
 SetDirective2 copyWith({RulesetsSetCacheControlCloudflareOnly? Function()? cloudflareOnly, RulesetsSetCacheControlOperation? operation, List<String>? Function()? qualifiers, }) { return SetDirective2(

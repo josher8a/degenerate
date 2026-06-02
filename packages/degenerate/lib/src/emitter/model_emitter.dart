@@ -380,26 +380,29 @@ class ModelEmitter {
     String err(String message) =>
         '$acc.add(${dartStringLiteral('${f.name}: $message')});';
 
+    String check(String cond, String message) =>
+        'if ($cond) { ${err(message)} }';
+
     final out = <String>[];
     if (type is IrPrimitive) {
       if (type.kind == PrimitiveKind.string) {
-        if (c.minLength != null) {
-          final check = c.minLength == 1
+        if (c.minLength != null && c.minLength! > 0) {
+          final cond = c.minLength == 1
               ? '$accessor.isEmpty'
               : '$accessor.length < ${c.minLength}';
-          out.add('if ($check) ${err('length must be >= ${c.minLength}')}');
+          out.add(check(cond, 'length must be >= ${c.minLength}'));
         }
         if (c.maxLength != null) {
-          final check = c.maxLength == 0
+          final cond = c.maxLength == 0
               ? '$accessor.isNotEmpty'
               : '$accessor.length > ${c.maxLength}';
-          out.add('if ($check) ${err('length must be <= ${c.maxLength}')}');
+          out.add(check(cond, 'length must be <= ${c.maxLength}'));
         }
         if (c.pattern != null) {
-          out.add(
-            'if (!RegExp(${dartStringLiteral(c.pattern!)}).hasMatch($accessor)) '
-            '${err('must match pattern ${c.pattern}')}',
-          );
+          out.add(check(
+            '!RegExp(${dartStringLiteral(c.pattern!)}).hasMatch($accessor)',
+            'must match pattern ${c.pattern}',
+          ));
         }
       } else if (const {
         PrimitiveKind.int,
@@ -407,44 +410,39 @@ class ModelEmitter {
         PrimitiveKind.num,
       }.contains(type.kind)) {
         if (c.minimum != null) {
-          out.add('if ($accessor < ${c.minimum}) ${err('must be >= ${c.minimum}')}');
+          out.add(check('$accessor < ${c.minimum}', 'must be >= ${c.minimum}'));
         }
         if (c.maximum != null) {
-          out.add('if ($accessor > ${c.maximum}) ${err('must be <= ${c.maximum}')}');
+          out.add(check('$accessor > ${c.maximum}', 'must be <= ${c.maximum}'));
         }
         if (c.exclusiveMinimum != null) {
-          out.add(
-            'if ($accessor <= ${c.exclusiveMinimum}) ${err('must be > ${c.exclusiveMinimum}')}',
-          );
+          out.add(check('$accessor <= ${c.exclusiveMinimum}', 'must be > ${c.exclusiveMinimum}'));
         }
         if (c.exclusiveMaximum != null) {
-          out.add(
-            'if ($accessor >= ${c.exclusiveMaximum}) ${err('must be < ${c.exclusiveMaximum}')}',
-          );
+          out.add(check('$accessor >= ${c.exclusiveMaximum}', 'must be < ${c.exclusiveMaximum}'));
         }
         if (c.multipleOf != null) {
-          out.add(
-            'if ($accessor % ${c.multipleOf} != 0) ${err('must be a multiple of ${c.multipleOf}')}',
-          );
+          out.add(check('$accessor % ${c.multipleOf} != 0', 'must be a multiple of ${c.multipleOf}'));
         }
       }
     } else if (type is IrList) {
-      if (c.minItems != null) {
-        final check = c.minItems == 1
+      if (c.minItems != null && c.minItems! > 0) {
+        final cond = c.minItems == 1
             ? '$accessor.isEmpty'
             : '$accessor.length < ${c.minItems}';
-        out.add('if ($check) ${err('must have >= ${c.minItems} items')}');
+        out.add(check(cond, 'must have >= ${c.minItems} items'));
       }
       if (c.maxItems != null) {
-        final check = c.maxItems == 0
+        final cond = c.maxItems == 0
             ? '$accessor.isNotEmpty'
             : '$accessor.length > ${c.maxItems}';
-        out.add('if ($check) ${err('must have <= ${c.maxItems} items')}');
+        out.add(check(cond, 'must have <= ${c.maxItems} items'));
       }
       if (c.uniqueItems ?? false) {
-        out.add(
-          'if ($accessor.toSet().length != $accessor.length) ${err('items must be unique')}',
-        );
+        out.add(check(
+          '$accessor.toSet().length != $accessor.length',
+          'items must be unique',
+        ));
       }
     }
     return out;

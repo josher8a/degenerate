@@ -51,8 +51,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'ai_config', 'live_stream_on_start', 'persist_chat', 'record_on_start', 'session_keep_alive_time_in_secs', 'status', 'summarize_on_end', 'title'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (sessionKeepAliveTimeInSecs < 60) errors.add('sessionKeepAliveTimeInSecs: must be >= 60');
-if (sessionKeepAliveTimeInSecs > 600) errors.add('sessionKeepAliveTimeInSecs: must be <= 600');
+if (sessionKeepAliveTimeInSecs < 60) { errors.add('sessionKeepAliveTimeInSecs: must be >= 60'); }
+if (sessionKeepAliveTimeInSecs > 600) { errors.add('sessionKeepAliveTimeInSecs: must be <= 600'); }
 return errors; } 
 UpdateMeetingRequest copyWith({RealtimekitAiConfig? Function()? aiConfig, bool Function()? liveStreamOnStart, bool Function()? persistChat, bool Function()? recordOnStart, double Function()? sessionKeepAliveTimeInSecs, RealtimekitMeetingStatus? Function()? status, bool Function()? summarizeOnEnd, String? Function()? title, }) { return UpdateMeetingRequest(
   aiConfig: aiConfig != null ? aiConfig() : this.aiConfig,

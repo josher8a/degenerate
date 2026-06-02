@@ -158,14 +158,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
-  if (lookupKey$.length > 5000) errors.add('lookupKey: length must be <= 5000');
+  if (lookupKey$.length > 5000) { errors.add('lookupKey: length must be <= 5000'); }
 }
 final nickname$ = nickname;
 if (nickname$ != null) {
-  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+  if (nickname$.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 return errors; } 
 Price copyWith({bool? active, BillingScheme? billingScheme, int? created, String? currency, Map<String, CurrencyOption>? Function()? currencyOptions, CustomUnitAmount? Function()? customUnitAmount, String? id, bool? livemode, String? Function()? lookupKey, Map<String,String>? metadata, String? Function()? nickname, DeletedPriceObject? object, PlanProduct? product, Recurring? Function()? recurring, CurrencyOptionTaxBehavior? Function()? taxBehavior, List<PriceTier>? Function()? tiers, PlanTiersMode? Function()? tiersMode, TransformQuantity? Function()? transformQuantity, PriceType$1? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return Price(

@@ -24,11 +24,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 127) errors.add('description: length must be <= 127');
+  if (description$.length > 127) { errors.add('description: length must be <= 127'); }
 }
 final soldBy$ = soldBy;
 if (soldBy$ != null) {
-  if (soldBy$.length > 127) errors.add('soldBy: length must be <= 127');
+  if (soldBy$.length > 127) { errors.add('soldBy: length must be <= 127'); }
 }
 return errors; } 
 Variant1PaymentMethodOptionsPaypal copyWith({PaymentFlowsPrivatePaymentMethodsPaypalAmountDetailsLineItemPaymentMethodOptionsCategory? Function()? category, String? Function()? description, String? Function()? soldBy, }) { return Variant1PaymentMethodOptionsPaypal(

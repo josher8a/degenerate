@@ -57,13 +57,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('physi
 List<String> validate() { final errors = <String>[];
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
-  if (lookupKey$.length > 200) errors.add('lookupKey: length must be <= 200');
+  if (lookupKey$.length > 200) { errors.add('lookupKey: length must be <= 200'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 200) errors.add('name: length must be <= 200');
+  if (name$.length > 200) { errors.add('name: length must be <= 200'); }
 }
-if (physicalBundle.length > 5000) errors.add('physicalBundle: length must be <= 5000');
+if (physicalBundle.length > 5000) { errors.add('physicalBundle: length must be <= 5000'); }
 return errors; } 
 PostIssuingPersonalizationDesignsRequest copyWith({String? Function()? cardLogo, PostIssuingPersonalizationDesignsRequestCarrierText? Function()? carrierText, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? name, String? physicalBundle, Preferences? Function()? preferences, bool? Function()? transferLookupKey, }) { return PostIssuingPersonalizationDesignsRequest(
   cardLogo: cardLogo != null ? cardLogo() : this.cardLogo,

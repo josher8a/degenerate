@@ -31,8 +31,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('names
       json.containsKey('namespace_uuid') && json['namespace_uuid'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (namespace.isEmpty) errors.add('namespace: must have >= 1 items');
-if (namespace.length > 16) errors.add('namespace: must have <= 16 items');
+if (namespace.isEmpty) { errors.add('namespace: must have >= 1 items'); }
+if (namespace.length > 16) { errors.add('namespace: must have <= 16 items'); }
 return errors; } 
 R2DataCatalogNamespaceDetails copyWith({DateTime? Function()? createdAt, List<String>? namespace, String? namespaceUuid, DateTime? Function()? updatedAt, }) { return R2DataCatalogNamespaceDetails(
   createdAt: createdAt != null ? createdAt() : this.createdAt,

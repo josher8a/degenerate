@@ -167,11 +167,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 final defaultSource$ = defaultSource;
 if (defaultSource$ != null) {
-  if (defaultSource$.length > 5000) errors.add('defaultSource: length must be <= 5000');
+  if (defaultSource$.length > 5000) { errors.add('defaultSource: length must be <= 5000'); }
 }
 return errors; } 
 PostCustomersCustomerSubscriptionsRequest copyWith({List<PostCustomersCustomerSubscriptionsRequestAddInvoiceItems>? Function()? addInvoiceItems, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, int? Function()? backdateStartDate, int? Function()? billingCycleAnchor, PostCustomersCustomerSubscriptionsRequestBillingThresholds? Function()? billingThresholds, PostCustomersCustomerSubscriptionsRequestCancelAt? Function()? cancelAt, bool? Function()? cancelAtPeriodEnd, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? currency, int? Function()? daysUntilDue, String? Function()? defaultPaymentMethod, String? Function()? defaultSource, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, PostCustomersCustomerSubscriptionsRequestInvoiceSettings? Function()? invoiceSettings, List<PostCustomersCustomerSubscriptionsRequestItems>? Function()? items, Metadata? Function()? metadata, bool? Function()? offSession, PaymentBehavior? Function()? paymentBehavior, PostCustomersCustomerSubscriptionsRequestPaymentSettings? Function()? paymentSettings, PendingInvoiceItemInterval? Function()? pendingInvoiceItemInterval, DeleteSubscriptionItemsItemRequestProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, PostCustomersCustomerSubscriptionsRequestTrialEnd? Function()? trialEnd, bool? Function()? trialFromPlan, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostCustomersCustomerSubscriptionsRequest(

@@ -122,7 +122,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('refunds'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 ApplicationFee copyWith({ApplicationFeeAccount? account, int? amount, int? amountRefunded, ApplicationFeeApplication? application, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, ApplicationFeeCharge? charge, int? created, String? currency, PlatformEarningFeeSource? Function()? feeSource, String? id, bool? livemode, ApplicationFeeObject? object, OriginatingTransaction? Function()? originatingTransaction, bool? refunded, ApplicationFeeRefunds? refunds, }) { return ApplicationFee(
   account: account ?? this.account,

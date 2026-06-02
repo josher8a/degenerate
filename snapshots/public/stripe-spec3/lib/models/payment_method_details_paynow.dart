@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final location$ = location;
 if (location$ != null) {
-  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+  if (location$.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
 final reader$ = reader;
 if (reader$ != null) {
-  if (reader$.length > 5000) errors.add('reader: length must be <= 5000');
+  if (reader$.length > 5000) { errors.add('reader: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsPaynow copyWith({String? Function()? location, String? Function()? reader, String? Function()? reference, }) { return PaymentMethodDetailsPaynow(

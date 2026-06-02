@@ -32,11 +32,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
-  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+  if (clientSecret$.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 }
 final descriptorCode$ = descriptorCode;
 if (descriptorCode$ != null) {
-  if (descriptorCode$.length > 5000) errors.add('descriptorCode: length must be <= 5000');
+  if (descriptorCode$.length > 5000) { errors.add('descriptorCode: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentIntentsIntentVerifyMicrodepositsRequest copyWith({List<int>? Function()? amounts, String? Function()? clientSecret, String? Function()? descriptorCode, List<String>? Function()? expand, }) { return PostPaymentIntentsIntentVerifyMicrodepositsRequest(

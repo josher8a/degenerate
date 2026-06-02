@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultMandate$ = defaultMandate;
 if (defaultMandate$ != null) {
-  if (defaultMandate$.length > 5000) errors.add('defaultMandate: length must be <= 5000');
+  if (defaultMandate$.length > 5000) { errors.add('defaultMandate: length must be <= 5000'); }
 }
 return errors; } 
 InvoicesPaymentSettings copyWith({String? Function()? defaultMandate, InvoicesPaymentMethodOptions? Function()? paymentMethodOptions, List<InvoicesPaymentSettingsPaymentMethodTypes>? Function()? paymentMethodTypes, }) { return InvoicesPaymentSettings(

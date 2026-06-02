@@ -36,7 +36,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final originalTransaction$ = originalTransaction;
 if (originalTransaction$ != null) {
-  if (originalTransaction$.length > 5000) errors.add('originalTransaction: length must be <= 5000');
+  if (originalTransaction$.length > 5000) { errors.add('originalTransaction: length must be <= 5000'); }
 }
 return errors; } 
 Duplicate copyWith({CanceledAdditionalDocumentation? Function()? additionalDocumentation, DuplicateCardStatement? Function()? cardStatement, DuplicateCashReceipt? Function()? cashReceipt, DuplicateCheckImage? Function()? checkImage, Explanation? Function()? explanation, String? Function()? originalTransaction, }) { return Duplicate(

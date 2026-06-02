@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('selec
 List<String> validate() { final errors = <String>[];
 final timeout$ = timeout;
 if (timeout$ != null) {
-  if (timeout$ > 120000) errors.add('timeout: must be <= 120000');
+  if (timeout$ > 120000) { errors.add('timeout: must be <= 120000'); }
 }
 return errors; } 
 WaitForSelector copyWith({bool? Function()? hidden, String? selector, double? Function()? timeout, bool? Function()? visible, }) { return WaitForSelector(

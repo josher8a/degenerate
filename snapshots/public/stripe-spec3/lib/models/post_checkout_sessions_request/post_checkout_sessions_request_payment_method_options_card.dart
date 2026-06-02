@@ -56,11 +56,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptorSuffixKana$ = statementDescriptorSuffixKana;
 if (statementDescriptorSuffixKana$ != null) {
-  if (statementDescriptorSuffixKana$.length > 22) errors.add('statementDescriptorSuffixKana: length must be <= 22');
+  if (statementDescriptorSuffixKana$.length > 22) { errors.add('statementDescriptorSuffixKana: length must be <= 22'); }
 }
 final statementDescriptorSuffixKanji$ = statementDescriptorSuffixKanji;
 if (statementDescriptorSuffixKanji$ != null) {
-  if (statementDescriptorSuffixKanji$.length > 17) errors.add('statementDescriptorSuffixKanji: length must be <= 17');
+  if (statementDescriptorSuffixKanji$.length > 17) { errors.add('statementDescriptorSuffixKanji: length must be <= 17'); }
 }
 return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsCard copyWith({CheckoutAffirmPaymentMethodOptionsCaptureMethod? Function()? captureMethod, PostCheckoutSessionsRequestPaymentMethodOptionsCardInstallments? Function()? installments, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, CardRestrictions? Function()? restrictions, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, String? Function()? statementDescriptorSuffixKana, String? Function()? statementDescriptorSuffixKanji, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsCard(

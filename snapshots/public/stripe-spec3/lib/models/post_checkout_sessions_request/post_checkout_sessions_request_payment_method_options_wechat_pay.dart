@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
 List<String> validate() { final errors = <String>[];
 final appId$ = appId;
 if (appId$ != null) {
-  if (appId$.length > 5000) errors.add('appId: length must be <= 5000');
+  if (appId$.length > 5000) { errors.add('appId: length must be <= 5000'); }
 }
 return errors; } 
 PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay copyWith({String? Function()? appId, PaymentMethodOptionsParamClient? client, CheckoutAffirmPaymentMethodOptionsSetupFutureUsage? Function()? setupFutureUsage, }) { return PostCheckoutSessionsRequestPaymentMethodOptionsWechatPay(

@@ -40,11 +40,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final product$ = product;
 if (product$ != null) {
-  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+  if (product$.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 500) errors.add('reference: length must be <= 500');
+  if (reference$.length > 500) { errors.add('reference: length must be <= 500'); }
 }
 return errors; } 
 PostTaxCalculationsRequestLineItems copyWith({int? amount, Map<String, String>? Function()? metadata, String? Function()? product, int? Function()? quantity, String? Function()? reference, BillingBillResourceInvoicingTaxesTaxTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return PostTaxCalculationsRequestLineItems(

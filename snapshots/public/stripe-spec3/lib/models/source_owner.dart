@@ -53,27 +53,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 5000) errors.add('phone: length must be <= 5000');
+  if (phone$.length > 5000) { errors.add('phone: length must be <= 5000'); }
 }
 final verifiedEmail$ = verifiedEmail;
 if (verifiedEmail$ != null) {
-  if (verifiedEmail$.length > 5000) errors.add('verifiedEmail: length must be <= 5000');
+  if (verifiedEmail$.length > 5000) { errors.add('verifiedEmail: length must be <= 5000'); }
 }
 final verifiedName$ = verifiedName;
 if (verifiedName$ != null) {
-  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+  if (verifiedName$.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 final verifiedPhone$ = verifiedPhone;
 if (verifiedPhone$ != null) {
-  if (verifiedPhone$.length > 5000) errors.add('verifiedPhone: length must be <= 5000');
+  if (verifiedPhone$.length > 5000) { errors.add('verifiedPhone: length must be <= 5000'); }
 }
 return errors; } 
 SourceOwner copyWith({Address? Function()? address, String? Function()? email, String? Function()? name, String? Function()? phone, Address? Function()? verifiedAddress, String? Function()? verifiedEmail, String? Function()? verifiedName, String? Function()? verifiedPhone, }) { return SourceOwner(

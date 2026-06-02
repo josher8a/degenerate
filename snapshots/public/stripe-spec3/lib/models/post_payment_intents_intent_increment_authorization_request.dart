@@ -63,11 +63,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 return errors; } 
 PostPaymentIntentsIntentIncrementAuthorizationRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, String? Function()? description, List<String>? Function()? expand, Hooks? Function()? hooks, Map<String, String>? Function()? metadata, PaymentDetails? Function()? paymentDetails, String? Function()? statementDescriptor, PostChargesChargeCaptureRequestTransferData? Function()? transferData, }) { return PostPaymentIntentsIntentIncrementAuthorizationRequest(

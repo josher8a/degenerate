@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('radar_session') && json['radar_session'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (radarSession.length > 5000) errors.add('radarSession: length must be <= 5000');
+if (radarSession.length > 5000) { errors.add('radarSession: length must be <= 5000'); }
 return errors; } 
 ClientDeviceMetadataDetails copyWith({String? radarSession}) { return ClientDeviceMetadataDetails(
   radarSession: radarSession ?? this.radarSession,

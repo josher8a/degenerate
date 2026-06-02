@@ -50,7 +50,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('suppo
 List<String> validate() { final errors = <String>[];
 final preferred$ = preferred;
 if (preferred$ != null) {
-  if (preferred$.length > 5000) errors.add('preferred: length must be <= 5000');
+  if (preferred$.length > 5000) { errors.add('preferred: length must be <= 5000'); }
 }
 return errors; } 
 UsBankAccountNetworks copyWith({String? Function()? preferred, List<Supported>? supported, }) { return UsBankAccountNetworks(

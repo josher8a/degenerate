@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('NOT_S
       json.containsKey('SUPPORTED') && json['SUPPORTED'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(notSupported)) errors.add(r'notSupported: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(supported)) errors.add(r'supported: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(notSupported)) { errors.add(r'notSupported: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(supported)) { errors.add(r'supported: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0 copyWith({String? notSupported, String? supported, }) { return RadarGetDnsAs112TimeseriesByDnssecResponseResultSummary0(
   notSupported: notSupported ?? this.notSupported,

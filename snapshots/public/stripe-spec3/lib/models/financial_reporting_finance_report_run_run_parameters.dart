@@ -53,19 +53,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final connectedAccount$ = connectedAccount;
 if (connectedAccount$ != null) {
-  if (connectedAccount$.length > 5000) errors.add('connectedAccount: length must be <= 5000');
+  if (connectedAccount$.length > 5000) { errors.add('connectedAccount: length must be <= 5000'); }
 }
 final payout$ = payout;
 if (payout$ != null) {
-  if (payout$.length > 5000) errors.add('payout: length must be <= 5000');
+  if (payout$.length > 5000) { errors.add('payout: length must be <= 5000'); }
 }
 final reportingCategory$ = reportingCategory;
 if (reportingCategory$ != null) {
-  if (reportingCategory$.length > 5000) errors.add('reportingCategory: length must be <= 5000');
+  if (reportingCategory$.length > 5000) { errors.add('reportingCategory: length must be <= 5000'); }
 }
 final timezone$ = timezone;
 if (timezone$ != null) {
-  if (timezone$.length > 5000) errors.add('timezone: length must be <= 5000');
+  if (timezone$.length > 5000) { errors.add('timezone: length must be <= 5000'); }
 }
 return errors; } 
 FinancialReportingFinanceReportRunRunParameters copyWith({List<String>? Function()? columns, String? Function()? connectedAccount, String? Function()? currency, int? Function()? intervalEnd, int? Function()? intervalStart, String? Function()? payout, String? Function()? reportingCategory, String? Function()? timezone, }) { return FinancialReportingFinanceReportRunRunParameters(

@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('prese
 List<String> validate() { final errors = <String>[];
 final ipAddress$ = ipAddress;
 if (ipAddress$ != null) {
-  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+  if (ipAddress$.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails copyWith({String? Function()? ipAddress, bool? present, }) { return TreasuryOutboundPaymentsResourceOutboundPaymentResourceEndUserDetails(

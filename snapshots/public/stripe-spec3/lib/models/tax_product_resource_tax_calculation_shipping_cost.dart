@@ -46,9 +46,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final shippingRate$ = shippingRate;
 if (shippingRate$ != null) {
-  if (shippingRate$.length > 5000) errors.add('shippingRate: length must be <= 5000');
+  if (shippingRate$.length > 5000) { errors.add('shippingRate: length must be <= 5000'); }
 }
-if (taxCode.length > 5000) errors.add('taxCode: length must be <= 5000');
+if (taxCode.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 return errors; } 
 TaxProductResourceTaxCalculationShippingCost copyWith({int? amount, int? amountTax, String? Function()? shippingRate, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown>? Function()? taxBreakdown, String? taxCode, }) { return TaxProductResourceTaxCalculationShippingCost(
   amount: amount ?? this.amount,

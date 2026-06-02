@@ -46,17 +46,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 List<String> validate() { final errors = <String>[];
 final accountHolderName$ = accountHolderName;
 if (accountHolderName$ != null) {
-  if (accountHolderName$.length > 5000) errors.add('accountHolderName: length must be <= 5000');
+  if (accountHolderName$.length > 5000) { errors.add('accountHolderName: length must be <= 5000'); }
 }
-if (accountNumber.length > 5000) errors.add('accountNumber: length must be <= 5000');
-if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (accountNumber.length > 5000) { errors.add('accountNumber: length must be <= 5000'); }
+if (country.length > 5000) { errors.add('country: length must be <= 5000'); }
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 final routingNumber$ = routingNumber;
 if (routingNumber$ != null) {
-  if (routingNumber$.length > 5000) errors.add('routingNumber: length must be <= 5000');
+  if (routingNumber$.length > 5000) { errors.add('routingNumber: length must be <= 5000'); }
 }
 return errors; } 
 PostTokensRequestBankAccount copyWith({String? Function()? accountHolderName, CustomerPaymentSourceBankAccountAccountHolderType? Function()? accountHolderType, String? accountNumber, ExternalAccountPayoutBankAccountAccountType? Function()? accountType, String? country, String? Function()? currency, String? Function()? paymentMethod, String? Function()? routingNumber, }) { return PostTokensRequestBankAccount(

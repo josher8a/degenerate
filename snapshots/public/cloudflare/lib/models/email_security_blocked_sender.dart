@@ -57,10 +57,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('is_re
 List<String> validate() { final errors = <String>[];
 final comments$ = comments;
 if (comments$ != null) {
-  if (comments$.length > 1024) errors.add('comments: length must be <= 1024');
+  if (comments$.length > 1024) { errors.add('comments: length must be <= 1024'); }
 }
-if (pattern.isEmpty) errors.add('pattern: length must be >= 1');
-if (pattern.length > 1024) errors.add('pattern: length must be <= 1024');
+if (pattern.isEmpty) { errors.add('pattern: length must be >= 1'); }
+if (pattern.length > 1024) { errors.add('pattern: length must be <= 1024'); }
 return errors; } 
 EmailSecurityBlockedSender copyWith({String? Function()? comments, bool? isRegex, String? pattern, EmailSecurityPatternType? Function()? patternType, DateTime? createdAt, EmailSecurityBlockedSenderId? id, DateTime? lastModified, }) { return EmailSecurityBlockedSender(
   comments: comments != null ? comments() : this.comments,

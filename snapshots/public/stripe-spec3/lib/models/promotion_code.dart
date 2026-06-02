@@ -116,12 +116,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('times_redeemed') && json['times_redeemed'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (code.length > 5000) errors.add('code: length must be <= 5000');
+if (code.length > 5000) { errors.add('code: length must be <= 5000'); }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 PromotionCode copyWith({bool? active, String? code, int? created, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, int? Function()? expiresAt, String? id, bool? livemode, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, PromotionCodeObject? object, PromotionCodesResourcePromotion? promotion, PromotionCodesResourceRestrictions? restrictions, int? timesRedeemed, }) { return PromotionCode(
   active: active ?? this.active,

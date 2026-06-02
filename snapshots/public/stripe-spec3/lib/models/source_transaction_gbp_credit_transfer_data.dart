@@ -48,31 +48,31 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final fundingMethod$ = fundingMethod;
 if (fundingMethod$ != null) {
-  if (fundingMethod$.length > 5000) errors.add('fundingMethod: length must be <= 5000');
+  if (fundingMethod$.length > 5000) { errors.add('fundingMethod: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 final senderAccountNumber$ = senderAccountNumber;
 if (senderAccountNumber$ != null) {
-  if (senderAccountNumber$.length > 5000) errors.add('senderAccountNumber: length must be <= 5000');
+  if (senderAccountNumber$.length > 5000) { errors.add('senderAccountNumber: length must be <= 5000'); }
 }
 final senderName$ = senderName;
 if (senderName$ != null) {
-  if (senderName$.length > 5000) errors.add('senderName: length must be <= 5000');
+  if (senderName$.length > 5000) { errors.add('senderName: length must be <= 5000'); }
 }
 final senderSortCode$ = senderSortCode;
 if (senderSortCode$ != null) {
-  if (senderSortCode$.length > 5000) errors.add('senderSortCode: length must be <= 5000');
+  if (senderSortCode$.length > 5000) { errors.add('senderSortCode: length must be <= 5000'); }
 }
 return errors; } 
 SourceTransactionGbpCreditTransferData copyWith({String? Function()? fingerprint, String? Function()? fundingMethod, String? Function()? last4, String? Function()? reference, String? Function()? senderAccountNumber, String? Function()? senderName, String? Function()? senderSortCode, }) { return SourceTransactionGbpCreditTransferData(

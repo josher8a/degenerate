@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 return errors; } 
 PostTaxCalculationsRequest copyWith({String? currency, String? Function()? customer, PostTaxCalculationsRequestCustomerDetails? Function()? customerDetails, List<String>? Function()? expand, List<PostTaxCalculationsRequestLineItems>? lineItems, ShipFromDetails? Function()? shipFromDetails, PostTaxCalculationsRequestShippingCost? Function()? shippingCost, int? Function()? taxDate, }) { return PostTaxCalculationsRequest(

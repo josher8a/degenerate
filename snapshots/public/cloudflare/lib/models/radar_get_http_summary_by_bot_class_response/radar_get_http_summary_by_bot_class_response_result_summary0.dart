@@ -25,8 +25,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('bot')
       json.containsKey('human') && json['human'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(bot)) errors.add(r'bot: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(human)) errors.add(r'human: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(bot)) { errors.add(r'bot: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(human)) { errors.add(r'human: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetHttpSummaryByBotClassResponseResultSummary0 copyWith({String? bot, String? human, }) { return RadarGetHttpSummaryByBotClassResponseResultSummary0(
   bot: bot ?? this.bot,

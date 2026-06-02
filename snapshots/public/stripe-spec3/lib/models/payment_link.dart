@@ -227,12 +227,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final inactiveMessage$ = inactiveMessage;
 if (inactiveMessage$ != null) {
-  if (inactiveMessage$.length > 5000) errors.add('inactiveMessage: length must be <= 5000');
+  if (inactiveMessage$.length > 5000) { errors.add('inactiveMessage: length must be <= 5000'); }
 }
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 PaymentLink copyWith({bool? active, PaymentLinksResourceAfterCompletion? afterCompletion, bool? allowPromotionCodes, BillingPortalConfigurationApplication? Function()? application, int? Function()? applicationFeeAmount, double? Function()? applicationFeePercent, PaymentLinksResourceAutomaticTax? automaticTax, PaymentLinkBillingAddressCollection? billingAddressCollection, PaymentLinksResourceConsentCollection? Function()? consentCollection, String? currency, List<PaymentLinksResourceCustomFields>? customFields, PaymentLinksResourceCustomText? customText, PaymentLinkCustomerCreation? customerCreation, String? id, String? Function()? inactiveMessage, PaymentLinksResourceInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, Map<String,String>? metadata, PaymentLinksResourceNameCollection? Function()? nameCollection, PaymentLinkObject? object, ChargeOnBehalfOf? Function()? onBehalfOf, List<PaymentLinksResourceOptionalItem>? Function()? optionalItems, PaymentLinksResourcePaymentIntentData? Function()? paymentIntentData, PaymentLinkPaymentMethodCollection? paymentMethodCollection, List<PaymentLinkPaymentMethodTypes>? Function()? paymentMethodTypes, PaymentLinksResourcePhoneNumberCollection? phoneNumberCollection, PaymentLinksResourceRestrictions? Function()? restrictions, PaymentLinksResourceShippingAddressCollection? Function()? shippingAddressCollection, List<PaymentLinksResourceShippingOption>? shippingOptions, PaymentLinkSubmitType? submitType, PaymentLinksResourceSubscriptionData? Function()? subscriptionData, PaymentLinksResourceTaxIdCollection? taxIdCollection, PaymentLinksResourceTransferData? Function()? transferData, String? url, }) { return PaymentLink(
   active: active ?? this.active,

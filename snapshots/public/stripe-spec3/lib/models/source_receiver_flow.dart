@@ -47,10 +47,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final address$ = address;
 if (address$ != null) {
-  if (address$.length > 5000) errors.add('address: length must be <= 5000');
+  if (address$.length > 5000) { errors.add('address: length must be <= 5000'); }
 }
-if (refundAttributesMethod.length > 5000) errors.add('refundAttributesMethod: length must be <= 5000');
-if (refundAttributesStatus.length > 5000) errors.add('refundAttributesStatus: length must be <= 5000');
+if (refundAttributesMethod.length > 5000) { errors.add('refundAttributesMethod: length must be <= 5000'); }
+if (refundAttributesStatus.length > 5000) { errors.add('refundAttributesStatus: length must be <= 5000'); }
 return errors; } 
 SourceReceiverFlow copyWith({String? Function()? address, int? amountCharged, int? amountReceived, int? amountReturned, String? refundAttributesMethod, String? refundAttributesStatus, }) { return SourceReceiverFlow(
   address: address != null ? address() : this.address,

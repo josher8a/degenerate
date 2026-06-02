@@ -19,8 +19,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 40) errors.add('name: length must be <= 40');
-if (value.length > 140) errors.add('value: length must be <= 140');
+if (name.length > 40) { errors.add('name: length must be <= 40'); }
+if (value.length > 140) { errors.add('value: length must be <= 140'); }
 return errors; } 
 PostInvoicesInvoiceRequestCustomFieldsVariant1 copyWith({String? name, String? value, }) { return PostInvoicesInvoiceRequestCustomFieldsVariant1(
   name: name ?? this.name,

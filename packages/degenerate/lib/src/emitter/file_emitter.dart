@@ -741,12 +741,16 @@ class FileEmitter {
             }
             if (resolved is IrObject) {
               for (final f in resolved.fields) {
-                // Skip the discriminator field's type when its default
-                // matches the variant value — the factory omits the arg,
-                // so the type isn't referenced.
-                if (f.originalName == discriminatorProperty &&
-                    f.defaultValue == entry.key) {
-                  continue;
+                // Skip the discriminator field's type when the factory
+                // omits the arg: either the default matches the variant
+                // value, or the variant has no factory (all payload fields
+                // are the discriminator itself).
+                if (f.originalName == discriminatorProperty) {
+                  final nonDiscFields = resolved.fields
+                      .where((g) => g.originalName != discriminatorProperty);
+                  if (f.defaultValue == entry.key || nonDiscFields.isEmpty) {
+                    continue;
+                  }
                 }
                 _collectTopLevelTypeName(f.type, names);
                 if (isBytesType(f.type)) needsTypedData = true;
@@ -881,10 +885,10 @@ class FileEmitter {
       lib.directives.add(
         Directive.import('package:degenerate_runtime/degenerate_runtime.dart'),
       );
-      final relativeImports = <String>[
+      final relativeImports = <String>{
         if (securitySchemes.isNotEmpty) '${packageName}_security.dart',
         for (final api in apis) '../apis/${toSnakeCase(api.name)}.dart',
-      ]..sort();
+      }.toList()..sort();
       for (final path in relativeImports) {
         lib.directives.add(Directive.import(path));
       }

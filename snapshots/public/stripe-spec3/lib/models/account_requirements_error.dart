@@ -338,8 +338,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('code'
       json.containsKey('requirement') && json['requirement'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (reason.length > 5000) errors.add('reason: length must be <= 5000');
-if (requirement.length > 5000) errors.add('requirement: length must be <= 5000');
+if (reason.length > 5000) { errors.add('reason: length must be <= 5000'); }
+if (requirement.length > 5000) { errors.add('requirement: length must be <= 5000'); }
 return errors; } 
 AccountRequirementsError copyWith({AccountRequirementsErrorCode? code, String? reason, String? requirement, }) { return AccountRequirementsError(
   code: code ?? this.code,

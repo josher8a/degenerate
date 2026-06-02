@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('setup
 List<String> validate() { final errors = <String>[];
 final generatedCard$ = generatedCard;
 if (generatedCard$ != null) {
-  if (generatedCard$.length > 5000) errors.add('generatedCard: length must be <= 5000');
+  if (generatedCard$.length > 5000) { errors.add('generatedCard: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceProcessSetupIntentAction copyWith({String? Function()? generatedCard, TerminalReaderReaderResourceProcessSetupConfig? Function()? processConfig, CheckoutSessionSetupIntent? setupIntent, }) { return TerminalReaderReaderResourceProcessSetupIntentAction(

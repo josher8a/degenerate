@@ -37,13 +37,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('regis
 List<String> validate() { final errors = <String>[];
 final label$ = label;
 if (label$ != null) {
-  if (label$.length > 5000) errors.add('label: length must be <= 5000');
+  if (label$.length > 5000) { errors.add('label: length must be <= 5000'); }
 }
 final location$ = location;
 if (location$ != null) {
-  if (location$.length > 5000) errors.add('location: length must be <= 5000');
+  if (location$.length > 5000) { errors.add('location: length must be <= 5000'); }
 }
-if (registrationCode.length > 5000) errors.add('registrationCode: length must be <= 5000');
+if (registrationCode.length > 5000) { errors.add('registrationCode: length must be <= 5000'); }
 return errors; } 
 PostTerminalReadersRequest copyWith({List<String>? Function()? expand, String? Function()? label, String? Function()? location, Metadata? Function()? metadata, String? registrationCode, }) { return PostTerminalReadersRequest(
   expand: expand != null ? expand() : this.expand,

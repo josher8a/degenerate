@@ -45,7 +45,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('key')
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (key.length > 5000) errors.add('key: length must be <= 5000');
+if (key.length > 5000) { errors.add('key: length must be <= 5000'); }
 return errors; } 
 PaymentLinksResourceCustomFields copyWith({PaymentLinksResourceCustomFieldsDropdown? Function()? dropdown, String? key, PaymentLinksResourceCustomFieldsLabel? label, PaymentLinksResourceCustomFieldsNumeric? Function()? numeric, bool? optional, PaymentLinksResourceCustomFieldsText? Function()? text, PaymentLinksResourceCustomFieldsType? type, }) { return PaymentLinksResourceCustomFields(
   dropdown: dropdown != null ? dropdown() : this.dropdown,

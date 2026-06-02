@@ -42,11 +42,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final alipayAccount$ = alipayAccount;
 if (alipayAccount$ != null) {
-  if (alipayAccount$.length > 5000) errors.add('alipayAccount: length must be <= 5000');
+  if (alipayAccount$.length > 5000) { errors.add('alipayAccount: length must be <= 5000'); }
 }
 final source$ = source;
 if (source$ != null) {
-  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+  if (source$.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
 return errors; } 
 PostCustomersCustomerBankAccountsRequest copyWith({String? Function()? alipayAccount, PostCustomersCustomerBankAccountsRequestBankAccount? Function()? bankAccount, PostChargesRequestCard? Function()? card, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? source, }) { return PostCustomersCustomerBankAccountsRequest(

@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('received_debit') && json['received_debit'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (receivedDebit.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+if (receivedDebit.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 return errors; } 
 PostIssuingDisputesRequestTreasury copyWith({String? receivedDebit}) { return PostIssuingDisputesRequestTreasury(
   receivedDebit: receivedDebit ?? this.receivedDebit,

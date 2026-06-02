@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('error_message') && json['error_message'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (errorMessage.length > 5000) errors.add('errorMessage: length must be <= 5000');
+if (errorMessage.length > 5000) { errors.add('errorMessage: length must be <= 5000'); }
 return errors; } 
 PaymentMethodDomainResourcePaymentMethodStatusDetails copyWith({String? errorMessage}) { return PaymentMethodDomainResourcePaymentMethodStatusDetails(
   errorMessage: errorMessage ?? this.errorMessage,

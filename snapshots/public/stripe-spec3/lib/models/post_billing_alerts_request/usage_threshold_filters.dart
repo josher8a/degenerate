@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 return errors; } 
 UsageThresholdFilters copyWith({String? Function()? customer, ThresholdsResourceUsageAlertFilterType? type, }) { return UsageThresholdFilters(

@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('froze
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 300) errors.add('name: length must be <= 300');
+  if (name$.length > 300) { errors.add('name: length must be <= 300'); }
 }
 return errors; } 
 PostTestHelpersTestClocksRequest copyWith({List<String>? Function()? expand, int? frozenTime, String? Function()? name, }) { return PostTestHelpersTestClocksRequest(

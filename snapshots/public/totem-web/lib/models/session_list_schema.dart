@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('space
 List<String> validate() { final errors = <String>[];
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 255) errors.add('title: length must be <= 255');
+  if (title$.length > 255) { errors.add('title: length must be <= 255'); }
 }
 return errors; } 
 SessionListSchema copyWith({SpaceSchema? space, String? url, DateTime? Function()? start, String? Function()? slug, DateTime? dateCreated, DateTime? dateModified, String? Function()? title, }) { return SessionListSchema(

@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('eligi
 List<String> validate() { final errors = <String>[];
 final minimumFileSize$ = minimumFileSize;
 if (minimumFileSize$ != null) {
-  if (minimumFileSize$ < 0) errors.add('minimumFileSize: must be >= 0');
+  if (minimumFileSize$ < 0) { errors.add('minimumFileSize: must be >= 0'); }
 }
 return errors; } 
 RulesetsSetCacheSettingsCacheReserve copyWith({bool? eligible, int? Function()? minimumFileSize, }) { return RulesetsSetCacheSettingsCacheReserve(

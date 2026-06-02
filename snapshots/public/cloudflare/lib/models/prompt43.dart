@@ -149,39 +149,39 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 List<String> validate() { final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
-  if (frequencyPenalty$ < -2) errors.add('frequencyPenalty: must be >= -2');
-  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+  if (frequencyPenalty$ < -2) { errors.add('frequencyPenalty: must be >= -2'); }
+  if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
 }
 final functions$ = functions;
 if (functions$ != null) {
-  if (functions$.isEmpty) errors.add('functions: must have >= 1 items');
-  if (functions$.length > 128) errors.add('functions: must have <= 128 items');
+  if (functions$.isEmpty) { errors.add('functions: must have >= 1 items'); }
+  if (functions$.length > 128) { errors.add('functions: must have <= 128 items'); }
 }
 final n$ = n;
 if (n$ != null) {
-  if (n$ < 1) errors.add('n: must be >= 1');
-  if (n$ > 128) errors.add('n: must be <= 128');
+  if (n$ < 1) { errors.add('n: must be >= 1'); }
+  if (n$ > 128) { errors.add('n: must be <= 128'); }
 }
 final presencePenalty$ = presencePenalty;
 if (presencePenalty$ != null) {
-  if (presencePenalty$ < -2) errors.add('presencePenalty: must be >= -2');
-  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+  if (presencePenalty$ < -2) { errors.add('presencePenalty: must be >= -2'); }
+  if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 final temperature$ = temperature;
 if (temperature$ != null) {
-  if (temperature$ < 0) errors.add('temperature: must be >= 0');
-  if (temperature$ > 2) errors.add('temperature: must be <= 2');
+  if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
+  if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
 }
 final topLogprobs$ = topLogprobs;
 if (topLogprobs$ != null) {
-  if (topLogprobs$ < 0) errors.add('topLogprobs: must be >= 0');
-  if (topLogprobs$ > 20) errors.add('topLogprobs: must be <= 20');
+  if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
+  if (topLogprobs$ > 20) { errors.add('topLogprobs: must be <= 20'); }
 }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0) errors.add('topP: must be >= 0');
-  if (topP$ > 1) errors.add('topP: must be <= 1');
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 return errors; } 
 Prompt43 copyWith({MessagesAudioVariant1? Function()? audio, ChatTemplateKwargs? Function()? chatTemplateKwargs, double? Function()? frequencyPenalty, FunctionCall? Function()? functionCall, List<Messages51Functions>? Function()? functions, Map<String, dynamic>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxCompletionTokens, int? Function()? maxTokens, Map<String, dynamic>? Function()? metadata, List<Modalities>? Function()? modalities, String? Function()? model, int? Function()? n, bool Function()? parallelToolCalls, PredictionContent? Function()? prediction, double? Function()? presencePenalty, String? prompt, ReasoningEffort? Function()? reasoningEffort, ResponseFormatVariant1? Function()? responseFormat, int? Function()? seed, ServiceTier? Function()? serviceTier, Stop? Function()? stop, bool? Function()? store, bool? Function()? stream, StreamOptionsVariant1? Function()? streamOptions, double? Function()? temperature, ToolChoiceVariant1? Function()? toolChoice, List<Messages51Tools>? Function()? tools, int? Function()? topLogprobs, double? Function()? topP, String? Function()? user, WebSearchOptionsVariant1? Function()? webSearchOptions, }) { return Prompt43(

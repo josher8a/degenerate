@@ -112,27 +112,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 500) errors.add('customer: length must be <= 500');
+  if (customer$.length > 500) { errors.add('customer: length must be <= 500'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 40000) errors.add('description: length must be <= 40000');
+  if (description$.length > 40000) { errors.add('description: length must be <= 40000'); }
 }
 final onBehalfOf$ = onBehalfOf;
 if (onBehalfOf$ != null) {
-  if (onBehalfOf$.length > 5000) errors.add('onBehalfOf: length must be <= 5000');
+  if (onBehalfOf$.length > 5000) { errors.add('onBehalfOf: length must be <= 5000'); }
 }
 final source$ = source;
 if (source$ != null) {
-  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+  if (source$.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
-  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+  if (statementDescriptorSuffix$.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
 return errors; } 
 PostChargesRequest copyWith({int? Function()? amount, int? Function()? applicationFee, int? Function()? applicationFeeAmount, bool? Function()? capture, PostChargesRequestCard? Function()? card, String? Function()? currency, String? Function()? customer, String? Function()? description, PostChargesRequestDestination? Function()? destination, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? onBehalfOf, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? source, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostChargesRequest(

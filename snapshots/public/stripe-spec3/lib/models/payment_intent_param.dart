@@ -72,7 +72,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final cvcToken$ = cvcToken;
 if (cvcToken$ != null) {
-  if (cvcToken$.length > 5000) errors.add('cvcToken: length must be <= 5000');
+  if (cvcToken$.length > 5000) { errors.add('cvcToken: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentParam copyWith({PaymentIntentParamCaptureMethod? Function()? captureMethod, String? Function()? cvcToken, InvoicePaymentMethodOptionsParamInstallments? Function()? installments, PaymentIntentParamMandateOptions? Function()? mandateOptions, PaymentIntentParamNetwork? Function()? network, RequestExtendedAuthorization? Function()? requestExtendedAuthorization, RequestIncrementalAuthorization? Function()? requestIncrementalAuthorization, RequestMulticapture? Function()? requestMulticapture, RequestOvercapture? Function()? requestOvercapture, CheckoutCardPaymentMethodOptionsRequestThreeDSecure? Function()? requestThreeDSecure, bool? Function()? requireCvcRecollection, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, StatementDescriptorSuffixKana? Function()? statementDescriptorSuffixKana, StatementDescriptorSuffixKanji? Function()? statementDescriptorSuffixKanji, PaymentIntentParamThreeDSecure? Function()? threeDSecure, }) { return PaymentIntentParam(

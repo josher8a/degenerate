@@ -46,12 +46,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('devic
 List<String> validate() { final errors = <String>[];
 final interruptWindowDurationHours$ = interruptWindowDurationHours;
 if (interruptWindowDurationHours$ != null) {
-  if (interruptWindowDurationHours$ < 1) errors.add('interruptWindowDurationHours: must be >= 1');
-  if (interruptWindowDurationHours$ > 24) errors.add('interruptWindowDurationHours: must be <= 24');
+  if (interruptWindowDurationHours$ < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
+  if (interruptWindowDurationHours$ > 24) { errors.add('interruptWindowDurationHours: must be <= 24'); }
 }
 final interruptWindowEmbargoDates$ = interruptWindowEmbargoDates;
 if (interruptWindowEmbargoDates$ != null) {
-  if (interruptWindowEmbargoDates$.length > 100) errors.add('interruptWindowEmbargoDates: must have <= 100 items');
+  if (interruptWindowEmbargoDates$.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
 }
 return errors; } 
 MconnCustomerConnectorCreateRequest copyWith({bool? Function()? activated, List<MconnDayOfWeek>? Function()? interruptWindowDaysOfWeek, double? Function()? interruptWindowDurationHours, List<MconnEmbargoDate>? Function()? interruptWindowEmbargoDates, double? Function()? interruptWindowHourOfDay, String? Function()? notes, String? Function()? timezone, MconnCustomerDeviceOptions? device, }) { return MconnCustomerConnectorCreateRequest(

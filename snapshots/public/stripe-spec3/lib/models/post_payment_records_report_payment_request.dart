@@ -79,7 +79,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 PostPaymentRecordsReportPaymentRequest copyWith({AmountRequested? amountRequested, PostPaymentRecordsIdReportPaymentAttemptInformationalRequestCustomerDetails? Function()? customerDetails, PostPaymentRecordsReportPaymentRequestCustomerPresence? Function()? customerPresence, String? Function()? description, List<String>? Function()? expand, Failed? Function()? failed, Guaranteed? Function()? guaranteed, int? initiatedAt, Metadata? Function()? metadata, PostPaymentRecordsIdReportPaymentAttemptRequestOutcome? Function()? outcome, PostPaymentRecordsIdReportPaymentAttemptRequestPaymentMethodDetails? paymentMethodDetails, PostPaymentRecordsReportPaymentRequestProcessorDetails? Function()? processorDetails, ShippingDetails? Function()? shippingDetails, }) { return PostPaymentRecordsReportPaymentRequest(

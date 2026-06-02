@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fileSizeBytes$ = fileSizeBytes;
 if (fileSizeBytes$ != null) {
-  if (fileSizeBytes$ < 0) errors.add('fileSizeBytes: must be >= 0');
+  if (fileSizeBytes$ < 0) { errors.add('fileSizeBytes: must be >= 0'); }
 }
 final inactivitySeconds$ = inactivitySeconds;
 if (inactivitySeconds$ != null) {
-  if (inactivitySeconds$ < 1) errors.add('inactivitySeconds: must be >= 1');
+  if (inactivitySeconds$ < 1) { errors.add('inactivitySeconds: must be >= 1'); }
 }
 final intervalSeconds$ = intervalSeconds;
 if (intervalSeconds$ != null) {
-  if (intervalSeconds$ < 1) errors.add('intervalSeconds: must be >= 1');
+  if (intervalSeconds$ < 1) { errors.add('intervalSeconds: must be >= 1'); }
 }
 return errors; } 
 RollingPolicy copyWith({int? Function()? fileSizeBytes, int? Function()? inactivitySeconds, int? Function()? intervalSeconds, }) { return RollingPolicy(

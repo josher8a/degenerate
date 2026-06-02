@@ -233,10 +233,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('verification_data'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final wallet$ = wallet;
 if (wallet$ != null) {
-  if (wallet$.length > 5000) errors.add('wallet: length must be <= 5000');
+  if (wallet$.length > 5000) { errors.add('wallet: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorization copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, AuthorizationMethod? authorizationMethod, List<BalanceTransaction>? balanceTransactions, IssuingCard? card, Cardholder? Function()? cardholder, int? created, String? currency, IssuingAuthorizationFleetData? Function()? fleet, List<IssuingAuthorizationFraudChallenge>? Function()? fraudChallenges, IssuingAuthorizationFuelData? Function()? fuel, String? id, bool? livemode, int? merchantAmount, String? merchantCurrency, IssuingAuthorizationMerchantData? merchantData, Map<String,String>? metadata, IssuingAuthorizationNetworkData? Function()? networkData, IssuingAuthorizationObject? object, IssuingAuthorizationPendingRequest? Function()? pendingRequest, List<IssuingAuthorizationRequest>? requestHistory, IssuingAuthorizationStatus? status, IssuingAuthorizationToken? Function()? token, List<IssuingTransaction>? transactions, IssuingAuthorizationTreasury? Function()? treasury, IssuingAuthorizationVerificationData? verificationData, bool? Function()? verifiedByFraudChallenge, String? Function()? wallet, }) { return IssuingAuthorization(

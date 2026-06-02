@@ -29,15 +29,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final account$ = account;
 if (account$ != null) {
-  if (account$.length > 5000) errors.add('account: length must be <= 5000');
+  if (account$.length > 5000) { errors.add('account: length must be <= 5000'); }
 }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
 AccountHolder copyWith({String? Function()? account, String? Function()? customer, String? Function()? customerAccount, BankConnectionsResourceAccountholderType? type, }) { return AccountHolder(

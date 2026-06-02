@@ -89,20 +89,20 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('displ
 List<String> validate() { final errors = <String>[];
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (displayName.length > 100) errors.add('displayName: length must be <= 100');
+if (displayName.length > 100) { errors.add('displayName: length must be <= 100'); }
 final jurisdiction$ = jurisdiction;
 if (jurisdiction$ != null) {
-  if (jurisdiction$.length > 200) errors.add('jurisdiction: length must be <= 200');
+  if (jurisdiction$.length > 200) { errors.add('jurisdiction: length must be <= 200'); }
 }
 final state$ = state;
 if (state$ != null) {
-  if (state$.length > 5000) errors.add('state: length must be <= 5000');
+  if (state$.length > 5000) { errors.add('state: length must be <= 5000'); }
 }
 return errors; } 
 TaxRateData copyWith({String? Function()? country, String? Function()? description, String? displayName, bool? inclusive, String? Function()? jurisdiction, TaxRateDataJurisdictionLevel? Function()? jurisdictionLevel, double? percentage, String? Function()? state, PostTaxRatesRequestTaxType? Function()? taxType, }) { return TaxRateData(

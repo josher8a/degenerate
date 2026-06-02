@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final index$ = index;
 if (index$ != null) {
-  if (index$ < 1) errors.add('index: must be >= 1');
+  if (index$ < 1) { errors.add('index: must be >= 1'); }
 }
 return errors; } 
 PositionVariant3 copyWith({int? Function()? index}) { return PositionVariant3(

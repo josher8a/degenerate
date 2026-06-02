@@ -48,7 +48,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('organ
 List<String> validate() { final errors = <String>[];
 final enterpriseTeamsProvidingIndirectMembership$ = enterpriseTeamsProvidingIndirectMembership;
 if (enterpriseTeamsProvidingIndirectMembership$ != null) {
-  if (enterpriseTeamsProvidingIndirectMembership$.length > 100) errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items');
+  if (enterpriseTeamsProvidingIndirectMembership$.length > 100) { errors.add('enterpriseTeamsProvidingIndirectMembership: must have <= 100 items'); }
 }
 return errors; } 
 WebhooksMembership copyWith({Uri? organizationUrl, String? role, bool? Function()? directMembership, List<String>? Function()? enterpriseTeamsProvidingIndirectMembership, String? state, Uri? url, DiscussionUser? Function()? user, }) { return WebhooksMembership(

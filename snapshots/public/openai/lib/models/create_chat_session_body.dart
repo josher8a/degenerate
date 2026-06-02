@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('workf
       json.containsKey('user') && json['user'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (user.isEmpty) errors.add('user: length must be >= 1');
+if (user.isEmpty) { errors.add('user: length must be >= 1'); }
 return errors; } 
 CreateChatSessionBody copyWith({WorkflowParam? workflow, String? user, ExpiresAfterParam? Function()? expiresAfter, RateLimitsParam? Function()? rateLimits, ChatkitConfigurationParam? Function()? chatkitConfiguration, }) { return CreateChatSessionBody(
   workflow: workflow ?? this.workflow,

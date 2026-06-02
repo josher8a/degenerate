@@ -82,8 +82,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismi
       json.containsKey('required_review_thread_resolution') && json['required_review_thread_resolution'] is bool; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (requiredApprovingReviewCount < 0) errors.add('requiredApprovingReviewCount: must be >= 0');
-if (requiredApprovingReviewCount > 10) errors.add('requiredApprovingReviewCount: must be <= 10');
+if (requiredApprovingReviewCount < 0) { errors.add('requiredApprovingReviewCount: must be >= 0'); }
+if (requiredApprovingReviewCount > 10) { errors.add('requiredApprovingReviewCount: must be <= 10'); }
 return errors; } 
 RepositoryRulePullRequestParameters copyWith({List<AllowedMergeMethods>? Function()? allowedMergeMethods, bool? dismissStaleReviewsOnPush, bool? requireCodeOwnerReview, bool? requireLastPushApproval, int? requiredApprovingReviewCount, bool? requiredReviewThreadResolution, List<RepositoryRuleParamsRequiredReviewerConfiguration>? Function()? requiredReviewers, }) { return RepositoryRulePullRequestParameters(
   allowedMergeMethods: allowedMergeMethods != null ? allowedMergeMethods() : this.allowedMergeMethods,

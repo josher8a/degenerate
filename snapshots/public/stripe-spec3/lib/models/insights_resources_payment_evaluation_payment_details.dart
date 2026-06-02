@@ -49,11 +49,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 return errors; } 
 InsightsResourcesPaymentEvaluationPaymentDetails copyWith({int? amount, String? currency, String? Function()? description, InsightsResourcesPaymentEvaluationMoneyMovementDetails? Function()? moneyMovementDetails, InsightsResourcesPaymentEvaluationPaymentMethodDetails? Function()? paymentMethodDetails, InsightsResourcesPaymentEvaluationShipping? Function()? shippingDetails, String? Function()? statementDescriptor, }) { return InsightsResourcesPaymentEvaluationPaymentDetails(

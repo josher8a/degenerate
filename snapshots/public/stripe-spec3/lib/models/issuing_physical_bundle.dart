@@ -135,8 +135,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('featu
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
 IssuingPhysicalBundle copyWith({IssuingPhysicalBundleFeatures? features, String? id, bool? livemode, String? name, IssuingPhysicalBundleObject? object, IssuingPhysicalBundleStatus? status, IssuingPhysicalBundleType? type, }) { return IssuingPhysicalBundle(
   features: features ?? this.features,

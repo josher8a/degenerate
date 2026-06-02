@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final networkDeclineCode$ = networkDeclineCode;
 if (networkDeclineCode$ != null) {
-  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+  if (networkDeclineCode$.length > 5000) { errors.add('networkDeclineCode: length must be <= 5000'); }
 }
 return errors; } 
 RefundDestinationDetailsPaypal copyWith({String? Function()? networkDeclineCode}) { return RefundDestinationDetailsPaypal(

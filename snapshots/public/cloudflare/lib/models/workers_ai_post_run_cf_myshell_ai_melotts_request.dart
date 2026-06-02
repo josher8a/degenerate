@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('prompt') && json['prompt'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 return errors; } 
 WorkersAiPostRunCfMyshellAiMelottsRequest copyWith({String Function()? lang, String? prompt, }) { return WorkersAiPostRunCfMyshellAiMelottsRequest(
   lang: lang != null ? lang() : this.lang,

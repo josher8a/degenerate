@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('key') && json['key'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp('^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ').hasMatch(key)) errors.add('key: must match pattern ^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ');
+if (!RegExp('^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) ').hasMatch(key)) { errors.add('key: must match pattern ^ssh-(rsa|dss|ed25519) |^ecdsa-sha2-nistp(256|384|521) '); }
 return errors; } 
 UsersCreatePublicSshKeyForAuthenticatedUserRequest copyWith({String? Function()? title, String? key, }) { return UsersCreatePublicSshKeyForAuthenticatedUserRequest(
   title: title != null ? title() : this.title,

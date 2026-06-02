@@ -20,7 +20,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('entitlement_feature') && json['entitlement_feature'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (entitlementFeature.length > 5000) errors.add('entitlementFeature: length must be <= 5000');
+if (entitlementFeature.length > 5000) { errors.add('entitlementFeature: length must be <= 5000'); }
 return errors; } 
 PostProductsProductFeaturesRequest copyWith({String? entitlementFeature, List<String>? Function()? expand, }) { return PostProductsProductFeaturesRequest(
   entitlementFeature: entitlementFeature ?? this.entitlementFeature,

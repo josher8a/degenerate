@@ -121,43 +121,43 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final firstName$ = firstName;
 if (firstName$ != null) {
-  if (firstName$.length > 5000) errors.add('firstName: length must be <= 5000');
+  if (firstName$.length > 5000) { errors.add('firstName: length must be <= 5000'); }
 }
 final firstNameKana$ = firstNameKana;
 if (firstNameKana$ != null) {
-  if (firstNameKana$.length > 5000) errors.add('firstNameKana: length must be <= 5000');
+  if (firstNameKana$.length > 5000) { errors.add('firstNameKana: length must be <= 5000'); }
 }
 final firstNameKanji$ = firstNameKanji;
 if (firstNameKanji$ != null) {
-  if (firstNameKanji$.length > 5000) errors.add('firstNameKanji: length must be <= 5000');
+  if (firstNameKanji$.length > 5000) { errors.add('firstNameKanji: length must be <= 5000'); }
 }
 final idNumber$ = idNumber;
 if (idNumber$ != null) {
-  if (idNumber$.length > 5000) errors.add('idNumber: length must be <= 5000');
+  if (idNumber$.length > 5000) { errors.add('idNumber: length must be <= 5000'); }
 }
 final idNumberSecondary$ = idNumberSecondary;
 if (idNumberSecondary$ != null) {
-  if (idNumberSecondary$.length > 5000) errors.add('idNumberSecondary: length must be <= 5000');
+  if (idNumberSecondary$.length > 5000) { errors.add('idNumberSecondary: length must be <= 5000'); }
 }
 final lastName$ = lastName;
 if (lastName$ != null) {
-  if (lastName$.length > 5000) errors.add('lastName: length must be <= 5000');
+  if (lastName$.length > 5000) { errors.add('lastName: length must be <= 5000'); }
 }
 final lastNameKana$ = lastNameKana;
 if (lastNameKana$ != null) {
-  if (lastNameKana$.length > 5000) errors.add('lastNameKana: length must be <= 5000');
+  if (lastNameKana$.length > 5000) { errors.add('lastNameKana: length must be <= 5000'); }
 }
 final lastNameKanji$ = lastNameKanji;
 if (lastNameKanji$ != null) {
-  if (lastNameKanji$.length > 5000) errors.add('lastNameKanji: length must be <= 5000');
+  if (lastNameKanji$.length > 5000) { errors.add('lastNameKanji: length must be <= 5000'); }
 }
 final maidenName$ = maidenName;
 if (maidenName$ != null) {
-  if (maidenName$.length > 5000) errors.add('maidenName: length must be <= 5000');
+  if (maidenName$.length > 5000) { errors.add('maidenName: length must be <= 5000'); }
 }
 final nationality$ = nationality;
 if (nationality$ != null) {
-  if (nationality$.length > 5000) errors.add('nationality: length must be <= 5000');
+  if (nationality$.length > 5000) { errors.add('nationality: length must be <= 5000'); }
 }
 return errors; } 
 PostTokensRequestPerson copyWith({AdditionalTosAcceptances? Function()? additionalTosAcceptances, PostAccountsAccountPeoplePersonRequestAddress? Function()? address, AddressKana? Function()? addressKana, AddressKanji? Function()? addressKanji, PostAccountsAccountPeoplePersonRequestDob? Function()? dob, PostAccountsAccountPeoplePersonRequestDocuments? Function()? documents, String? Function()? email, String? Function()? firstName, String? Function()? firstNameKana, String? Function()? firstNameKanji, PostAccountsAccountPeoplePersonRequestFullNameAliases? Function()? fullNameAliases, String? Function()? gender, String? Function()? idNumber, String? Function()? idNumberSecondary, String? Function()? lastName, String? Function()? lastNameKana, String? Function()? lastNameKanji, String? Function()? maidenName, Metadata? Function()? metadata, String? Function()? nationality, String? Function()? phone, PoliticalExposure? Function()? politicalExposure, RegisteredAddress? Function()? registeredAddress, PostAccountsAccountPeoplePersonRequestRelationship? Function()? relationship, String? Function()? ssnLast4, UsCfpbData? Function()? usCfpbData, PostAccountsAccountPeoplePersonRequestVerification? Function()? verification, }) { return PostTokensRequestPerson(

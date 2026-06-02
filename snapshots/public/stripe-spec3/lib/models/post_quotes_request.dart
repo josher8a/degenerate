@@ -117,15 +117,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final testClock$ = testClock;
 if (testClock$ != null) {
-  if (testClock$.length > 5000) errors.add('testClock: length must be <= 5000');
+  if (testClock$.length > 5000) { errors.add('testClock: length must be <= 5000'); }
 }
 return errors; } 
 PostQuotesRequest copyWith({ApplicationFeeAmount? Function()? applicationFeeAmount, ApplicationFeePercent? Function()? applicationFeePercent, PostCheckoutSessionsRequestAutomaticTax? Function()? automaticTax, InvoiceCollectionMethod? Function()? collectionMethod, String? Function()? customer, String? Function()? customerAccount, PostCustomersCustomerSubscriptionsRequestDefaultTaxRates? Function()? defaultTaxRates, PostQuotesQuoteRequestDescription? Function()? description, PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, List<String>? Function()? expand, int? Function()? expiresAt, Footer? Function()? footer, FromQuote? Function()? fromQuote, Header? Function()? header, PostQuotesQuoteRequestInvoiceSettings? Function()? invoiceSettings, List<PostQuotesRequestLineItems>? Function()? lineItems, Map<String, String>? Function()? metadata, PostInvoicesCreatePreviewRequestOnBehalfOf? Function()? onBehalfOf, PostQuotesRequestSubscriptionData? Function()? subscriptionData, String? Function()? testClock, PostQuotesQuoteRequestTransferData? Function()? transferData, }) { return PostQuotesRequest(

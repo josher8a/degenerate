@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'
       json.containsKey('status') && json['status'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (body.length > 5000) errors.add('body: length must be <= 5000');
+if (body.length > 5000) { errors.add('body: length must be <= 5000'); }
 return errors; } 
 ForwardedResponseDetails copyWith({String? body, List<ForwardedRequestHeader>? headers, int? status, }) { return ForwardedResponseDetails(
   body: body ?? this.body,

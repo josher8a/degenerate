@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final chips$ = chips;
 if (chips$ != null) {
-  if (chips$.length > 5000) errors.add('chips: length must be <= 5000');
+  if (chips$.length > 5000) { errors.add('chips: length must be <= 5000'); }
 }
 final imad$ = imad;
 if (imad$ != null) {
-  if (imad$.length > 5000) errors.add('imad: length must be <= 5000');
+  if (imad$.length > 5000) { errors.add('imad: length must be <= 5000'); }
 }
 final omad$ = omad;
 if (omad$ != null) {
-  if (omad$.length > 5000) errors.add('omad: length must be <= 5000');
+  if (omad$.length > 5000) { errors.add('omad: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails copyWith({String? Function()? chips, String? Function()? imad, String? Function()? omad, }) { return TreasuryOutboundPaymentsResourceUsDomesticWireTrackingDetails(

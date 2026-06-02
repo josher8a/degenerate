@@ -42,8 +42,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('payme
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (paymentMethod.length > 5000) errors.add('paymentMethod: length must be <= 5000');
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (paymentMethod.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 PostForwardingRequestsRequest copyWith({List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? paymentMethod, List<Replacements>? replacements, Request? Function()? request, String? url, }) { return PostForwardingRequestsRequest(
   expand: expand != null ? expand() : this.expand,

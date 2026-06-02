@@ -77,15 +77,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final byocTrunkSid$ = byocTrunkSid;
 if (byocTrunkSid$ != null) {
-  if (byocTrunkSid$.length < 34) errors.add('byocTrunkSid: length must be >= 34');
-  if (byocTrunkSid$.length > 34) errors.add('byocTrunkSid: length must be <= 34');
-  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byocTrunkSid$)) errors.add(r'byocTrunkSid: must match pattern ^BY[0-9a-fA-F]{32}$');
+  if (byocTrunkSid$.length < 34) { errors.add('byocTrunkSid: length must be >= 34'); }
+  if (byocTrunkSid$.length > 34) { errors.add('byocTrunkSid: length must be <= 34'); }
+  if (!RegExp(r'^BY[0-9a-fA-F]{32}$').hasMatch(byocTrunkSid$)) { errors.add(r'byocTrunkSid: must match pattern ^BY[0-9a-fA-F]{32}$'); }
 }
 final emergencyCallerSid$ = emergencyCallerSid;
 if (emergencyCallerSid$ != null) {
-  if (emergencyCallerSid$.length < 34) errors.add('emergencyCallerSid: length must be >= 34');
-  if (emergencyCallerSid$.length > 34) errors.add('emergencyCallerSid: length must be <= 34');
-  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$');
+  if (emergencyCallerSid$.length < 34) { errors.add('emergencyCallerSid: length must be >= 34'); }
+  if (emergencyCallerSid$.length > 34) { errors.add('emergencyCallerSid: length must be <= 34'); }
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(emergencyCallerSid$)) { errors.add(r'emergencyCallerSid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
 UpdateSipDomainRequest copyWith({String? Function()? friendlyName, CreateApplicationRequestVoiceFallbackMethod? Function()? voiceFallbackMethod, Uri? Function()? voiceFallbackUrl, CreateApplicationRequestVoiceMethod? Function()? voiceMethod, CreateSipDomainRequestVoiceStatusCallbackMethod? Function()? voiceStatusCallbackMethod, Uri? Function()? voiceStatusCallbackUrl, Uri? Function()? voiceUrl, bool? Function()? sipRegistration, String? Function()? domainName, bool? Function()? emergencyCallingEnabled, bool? Function()? secure, String? Function()? byocTrunkSid, String? Function()? emergencyCallerSid, }) { return UpdateSipDomainRequest(

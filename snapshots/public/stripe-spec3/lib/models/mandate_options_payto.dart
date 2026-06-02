@@ -48,11 +48,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final endDate$ = endDate;
 if (endDate$ != null) {
-  if (endDate$.length > 5000) errors.add('endDate: length must be <= 5000');
+  if (endDate$.length > 5000) { errors.add('endDate: length must be <= 5000'); }
 }
 final startDate$ = startDate;
 if (startDate$ != null) {
-  if (startDate$.length > 5000) errors.add('startDate: length must be <= 5000');
+  if (startDate$.length > 5000) { errors.add('startDate: length must be <= 5000'); }
 }
 return errors; } 
 MandateOptionsPayto copyWith({int? Function()? amount, InvoiceMandateOptionsCardAmountType? Function()? amountType, String? Function()? endDate, MandateOptionsPaytoPaymentSchedule? Function()? paymentSchedule, int? Function()? paymentsPerPeriod, InvoiceMandateOptionsPaytoPurpose? Function()? purpose, String? Function()? startDate, }) { return MandateOptionsPayto(

@@ -38,7 +38,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 5000) errors.add('email: length must be <= 5000');
+  if (email$.length > 5000) { errors.add('email: length must be <= 5000'); }
 }
 return errors; } 
 SourceOrder copyWith({int? amount, String? currency, String? Function()? email, List<SourceOrderItem>? Function()? items, Shipping? Function()? shipping, }) { return SourceOrder(

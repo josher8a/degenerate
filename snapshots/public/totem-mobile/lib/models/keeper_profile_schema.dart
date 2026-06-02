@@ -107,33 +107,48 @@ final class KeeperProfileSchema {
     final errors = <String>[];
     final username$ = username;
     if (username$ != null) {
-      if (username$.length > 30) errors.add('username: length must be <= 30');
+      if (username$.length > 30) {
+        errors.add('username: length must be <= 30');
+      }
     }
-    if (title.length > 255) errors.add('title: length must be <= 255');
+    if (title.length > 255) {
+      errors.add('title: length must be <= 255');
+    }
     final bio$ = bio;
     if (bio$ != null) {
-      if (bio$.length > 10000) errors.add('bio: length must be <= 10000');
+      if (bio$.length > 10000) {
+        errors.add('bio: length must be <= 10000');
+      }
     }
-    if (location.length > 255) errors.add('location: length must be <= 255');
-    if (languages.length > 255) errors.add('languages: length must be <= 255');
+    if (location.length > 255) {
+      errors.add('location: length must be <= 255');
+    }
+    if (languages.length > 255) {
+      errors.add('languages: length must be <= 255');
+    }
     final instagramUsername$ = instagramUsername;
     if (instagramUsername$ != null) {
-      if (instagramUsername$.length > 255)
+      if (instagramUsername$.length > 255) {
         errors.add('instagramUsername: length must be <= 255');
+      }
     }
     final website$ = website;
     if (website$ != null) {
-      if (website$.length > 255) errors.add('website: length must be <= 255');
+      if (website$.length > 255) {
+        errors.add('website: length must be <= 255');
+      }
     }
     final xUsername$ = xUsername;
     if (xUsername$ != null) {
-      if (xUsername$.length > 255)
+      if (xUsername$.length > 255) {
         errors.add('xUsername: length must be <= 255');
+      }
     }
     final blueskyUsername$ = blueskyUsername;
     if (blueskyUsername$ != null) {
-      if (blueskyUsername$.length > 255)
+      if (blueskyUsername$.length > 255) {
         errors.add('blueskyUsername: length must be <= 255');
+      }
     }
     return errors;
   }

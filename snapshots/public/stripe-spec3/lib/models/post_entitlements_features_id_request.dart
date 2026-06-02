@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 80) errors.add('name: length must be <= 80');
+  if (name$.length > 80) { errors.add('name: length must be <= 80'); }
 }
 return errors; } 
 PostEntitlementsFeaturesIdRequest copyWith({bool? Function()? active, List<String>? Function()? expand, Metadata? Function()? metadata, String? Function()? name, }) { return PostEntitlementsFeaturesIdRequest(

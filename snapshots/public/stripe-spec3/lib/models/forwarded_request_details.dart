@@ -53,7 +53,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('body'
       json.containsKey('http_method'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (body.length > 5000) errors.add('body: length must be <= 5000');
+if (body.length > 5000) { errors.add('body: length must be <= 5000'); }
 return errors; } 
 ForwardedRequestDetails copyWith({String? body, List<ForwardedRequestHeader>? headers, HttpMethod? httpMethod, }) { return ForwardedRequestDetails(
   body: body ?? this.body,

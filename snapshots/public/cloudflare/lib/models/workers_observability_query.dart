@@ -74,17 +74,17 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
-if (environmentId.isEmpty) errors.add('environmentId: length must be >= 1');
-if (environmentId.length > 64) errors.add('environmentId: length must be <= 64');
-if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(environmentId)) errors.add(r'environmentId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (id.isEmpty) errors.add('id: length must be >= 1');
-if (id.length > 64) errors.add('id: length must be <= 64');
-if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (workspaceId.isEmpty) errors.add('workspaceId: length must be >= 1');
-if (workspaceId.length > 64) errors.add('workspaceId: length must be <= 64');
-if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(workspaceId)) errors.add(r'workspaceId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
+if (environmentId.isEmpty) { errors.add('environmentId: length must be >= 1'); }
+if (environmentId.length > 64) { errors.add('environmentId: length must be <= 64'); }
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(environmentId)) { errors.add(r'environmentId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
+if (id.isEmpty) { errors.add('id: length must be >= 1'); }
+if (id.length > 64) { errors.add('id: length must be <= 64'); }
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
+if (workspaceId.isEmpty) { errors.add('workspaceId: length must be >= 1'); }
+if (workspaceId.length > 64) { errors.add('workspaceId: length must be <= 64'); }
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(workspaceId)) { errors.add(r'workspaceId: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
 return errors; } 
 WorkersObservabilityQuery copyWith({String? created, String? Function()? description, String? environmentId, bool? Function()? generated, String? id, String? Function()? name, TelemetryQueryRequestParameters? parameters, String? updated, String? userId, String? workspaceId, }) { return WorkersObservabilityQuery(
   created: created ?? this.created,

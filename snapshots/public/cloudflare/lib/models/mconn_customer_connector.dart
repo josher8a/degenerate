@@ -72,9 +72,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('timezone') && json['timezone'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (interruptWindowDurationHours < 1) errors.add('interruptWindowDurationHours: must be >= 1');
-if (interruptWindowDurationHours > 24) errors.add('interruptWindowDurationHours: must be <= 24');
-if (interruptWindowEmbargoDates.length > 100) errors.add('interruptWindowEmbargoDates: must have <= 100 items');
+if (interruptWindowDurationHours < 1) { errors.add('interruptWindowDurationHours: must be >= 1'); }
+if (interruptWindowDurationHours > 24) { errors.add('interruptWindowDurationHours: must be <= 24'); }
+if (interruptWindowEmbargoDates.length > 100) { errors.add('interruptWindowEmbargoDates: must have <= 100 items'); }
 return errors; } 
 MconnCustomerConnector copyWith({bool? activated, MconnCustomerDevice? Function()? device, MconnUuid? id, List<MconnDayOfWeek>? interruptWindowDaysOfWeek, double? interruptWindowDurationHours, List<MconnEmbargoDate>? interruptWindowEmbargoDates, double? interruptWindowHourOfDay, String? Function()? lastHeartbeat, String? Function()? lastSeenVersion, String? lastUpdated, String? Function()? licenseKey, String? notes, String? timezone, }) { return MconnCustomerConnector(
   activated: activated ?? this.activated,

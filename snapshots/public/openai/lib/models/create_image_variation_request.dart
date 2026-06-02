@@ -84,8 +84,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('image
 List<String> validate() { final errors = <String>[];
 final n$ = n;
 if (n$ != null) {
-  if (n$ < 1) errors.add('n: must be >= 1');
-  if (n$ > 10) errors.add('n: must be <= 10');
+  if (n$ < 1) { errors.add('n: must be >= 1'); }
+  if (n$ > 10) { errors.add('n: must be <= 10'); }
 }
 return errors; } 
 CreateImageVariationRequest copyWith({Uint8List? image, CreateImageVariationRequestModel? Function()? model, int? Function()? n, CreateImageEditRequestResponseFormat? Function()? responseFormat, CreateImageVariationRequestSize? Function()? size, String? Function()? user, }) { return CreateImageVariationRequest(

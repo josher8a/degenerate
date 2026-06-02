@@ -33,11 +33,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('statu
 List<String> validate() { final errors = <String>[];
 final document$ = document;
 if (document$ != null) {
-  if (document$.length > 5000) errors.add('document: length must be <= 5000');
+  if (document$.length > 5000) { errors.add('document: length must be <= 5000'); }
 }
 final selfie$ = selfie;
 if (selfie$ != null) {
-  if (selfie$.length > 5000) errors.add('selfie: length must be <= 5000');
+  if (selfie$.length > 5000) { errors.add('selfie: length must be <= 5000'); }
 }
 return errors; } 
 GelatoSelfieReport copyWith({String? Function()? document, GelatoSelfieReportError? Function()? error, String? Function()? selfie, GelatoDocumentReportStatus? status, }) { return GelatoSelfieReport(

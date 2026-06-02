@@ -57,12 +57,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('_1_HO
       json.containsKey('UNDER_10_MINS') && json['UNDER_10_MINS'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch($1HourTo3Hours)) errors.add(r'$1HourTo3Hours: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch($10MinsTo20Mins)) errors.add(r'$10MinsTo20Mins: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch($20MinsTo40Mins)) errors.add(r'$20MinsTo40Mins: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch($40MinsTo1Hour)) errors.add(r'$40MinsTo1Hour: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(over3Hours)) errors.add(r'over3Hours: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(under10Mins)) errors.add(r'under10Mins: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch($1HourTo3Hours)) { errors.add(r'$1HourTo3Hours: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch($10MinsTo20Mins)) { errors.add(r'$10MinsTo20Mins: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch($20MinsTo40Mins)) { errors.add(r'$20MinsTo40Mins: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch($40MinsTo1Hour)) { errors.add(r'$40MinsTo1Hour: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(over3Hours)) { errors.add(r'over3Hours: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(under10Mins)) { errors.add(r'under10Mins: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0 copyWith({String? $1HourTo3Hours, String? $10MinsTo20Mins, String? $20MinsTo40Mins, String? $40MinsTo1Hour, String? over3Hours, String? under10Mins, }) { return RadarGetAttacksLayer3SummaryByDurationResponseResultSummary0(
   $1HourTo3Hours: $1HourTo3Hours ?? this.$1HourTo3Hours,

@@ -25,7 +25,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final verifiedName$ = verifiedName;
 if (verifiedName$ != null) {
-  if (verifiedName$.length > 5000) errors.add('verifiedName: length must be <= 5000');
+  if (verifiedName$.length > 5000) { errors.add('verifiedName: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsEps copyWith({PaymentMethodDetailsEpsBank? Function()? bank, String? Function()? verifiedName, }) { return PaymentMethodDetailsEps(

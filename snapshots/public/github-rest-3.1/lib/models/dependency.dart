@@ -93,7 +93,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final packageUrl$ = packageUrl;
 if (packageUrl$ != null) {
-  if (!RegExp('^pkg').hasMatch(packageUrl$)) errors.add('packageUrl: must match pattern ^pkg');
+  if (!RegExp('^pkg').hasMatch(packageUrl$)) { errors.add('packageUrl: must match pattern ^pkg'); }
 }
 return errors; } 
 Dependency copyWith({String? Function()? packageUrl, Map<String, dynamic>? Function()? metadata, DependencyRelationship? Function()? relationship, DependencyScope? Function()? scope, List<String>? Function()? dependencies, }) { return Dependency(

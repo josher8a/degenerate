@@ -42,7 +42,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final transaction$ = transaction;
 if (transaction$ != null) {
-  if (transaction$.length > 5000) errors.add('transaction: length must be <= 5000');
+  if (transaction$.length > 5000) { errors.add('transaction: length must be <= 5000'); }
 }
 return errors; } 
 PostIssuingDisputesRequest copyWith({int? Function()? amount, PostIssuingDisputesDisputeRequestEvidence? Function()? evidence, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? transaction, PostIssuingDisputesRequestTreasury? Function()? treasury, }) { return PostIssuingDisputesRequest(

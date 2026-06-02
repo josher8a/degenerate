@@ -248,14 +248,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('response_format'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (tools.length > 20) errors.add('tools: must have <= 20 items');
+if (tools.length > 20) { errors.add('tools: must have <= 20 items'); }
 final maxPromptTokens$ = maxPromptTokens;
 if (maxPromptTokens$ != null) {
-  if (maxPromptTokens$ < 256) errors.add('maxPromptTokens: must be >= 256');
+  if (maxPromptTokens$ < 256) { errors.add('maxPromptTokens: must be >= 256'); }
 }
 final maxCompletionTokens$ = maxCompletionTokens;
 if (maxCompletionTokens$ != null) {
-  if (maxCompletionTokens$ < 256) errors.add('maxCompletionTokens: must be >= 256');
+  if (maxCompletionTokens$ < 256) { errors.add('maxCompletionTokens: must be >= 256'); }
 }
 return errors; } 
 RunObject copyWith({String? id, RunObjectObject? object, int? createdAt, String? threadId, String? assistantId, RunObjectStatus? status, RequiredAction? Function()? requiredAction, RunObjectLastError? Function()? lastError, int? Function()? expiresAt, int? Function()? startedAt, int? Function()? cancelledAt, int? Function()? failedAt, int? Function()? completedAt, RunObjectIncompleteDetails? Function()? incompleteDetails, String? model, String? instructions, List<AssistantObjectTools>? tools, Map<String, String>? Function()? metadata, RunCompletionUsage? usage, double? Function()? temperature, double? Function()? topP, int? Function()? maxPromptTokens, int? Function()? maxCompletionTokens, TruncationObject? Function()? truncationStrategy, ToolChoiceOption? Function()? toolChoice, ParallelToolCalls? parallelToolCalls, ResponseFormatOption? Function()? responseFormat, }) { return RunObject(

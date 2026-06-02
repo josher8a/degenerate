@@ -98,11 +98,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final summary$ = summary;
 if (summary$ != null) {
-  if (summary$.length > 1024) errors.add('summary: length must be <= 1024');
+  if (summary$.length > 1024) { errors.add('summary: length must be <= 1024'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 65535) errors.add('description: length must be <= 65535');
+  if (description$.length > 65535) { errors.add('description: length must be <= 65535'); }
 }
 return errors; } 
 RepositoryAdvisoryUpdate copyWith({String? Function()? summary, String? Function()? description, String? Function()? cveId, List<PrivateVulnerabilityReportCreateVulnerabilities>? Function()? vulnerabilities, List<String>? Function()? cweIds, List<RepositoryAdvisoryCreateCredits>? Function()? credits, PrivateVulnerabilityReportCreateSeverity? Function()? severity, String? Function()? cvssVectorString, RepositoryAdvisoryUpdateState? Function()? state, List<String>? Function()? collaboratingUsers, List<String>? Function()? collaboratingTeams, }) { return RepositoryAdvisoryUpdate(

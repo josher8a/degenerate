@@ -33,19 +33,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final nativeData$ = nativeData;
 if (nativeData$ != null) {
-  if (nativeData$.length > 5000) errors.add('nativeData: length must be <= 5000');
+  if (nativeData$.length > 5000) { errors.add('nativeData: length must be <= 5000'); }
 }
 final nativeUrl$ = nativeUrl;
 if (nativeUrl$ != null) {
-  if (nativeUrl$.length > 5000) errors.add('nativeUrl: length must be <= 5000');
+  if (nativeUrl$.length > 5000) { errors.add('nativeUrl: length must be <= 5000'); }
 }
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentNextActionAlipayHandleRedirect copyWith({String? Function()? nativeData, String? Function()? nativeUrl, String? Function()? returnUrl, String? Function()? url, }) { return PaymentIntentNextActionAlipayHandleRedirect(

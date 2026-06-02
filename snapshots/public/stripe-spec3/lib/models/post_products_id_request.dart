@@ -85,15 +85,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultPrice$ = defaultPrice;
 if (defaultPrice$ != null) {
-  if (defaultPrice$.length > 5000) errors.add('defaultPrice: length must be <= 5000');
+  if (defaultPrice$.length > 5000) { errors.add('defaultPrice: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 return errors; } 
 PostProductsIdRequest copyWith({bool? Function()? active, String? Function()? defaultPrice, PostProductsIdRequestDescription? Function()? description, List<String>? Function()? expand, Images? Function()? images, PostProductsIdRequestMarketingFeatures? Function()? marketingFeatures, Metadata? Function()? metadata, String? Function()? name, PostProductsIdRequestPackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, PostInvoiceitemsInvoiceitemRequestTaxCode? Function()? taxCode, UnitLabel? Function()? unitLabel, Url? Function()? url, }) { return PostProductsIdRequest(

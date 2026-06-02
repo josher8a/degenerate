@@ -38,11 +38,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final excludeItems$ = excludeItems;
 if (excludeItems$ != null) {
-  if (excludeItems$.length > 10) errors.add('excludeItems: must have <= 10 items');
+  if (excludeItems$.length > 10) { errors.add('excludeItems: must have <= 10 items'); }
 }
 final includeItems$ = includeItems;
 if (includeItems$ != null) {
-  if (includeItems$.length > 10) errors.add('includeItems: must have <= 10 items');
+  if (includeItems$.length > 10) { errors.add('includeItems: must have <= 10 items'); }
 }
 return errors; } 
 SourceParams copyWith({List<String>? Function()? excludeItems, List<String>? Function()? includeItems, String? Function()? prefix, String Function()? r2Jurisdiction, WebCrawler? Function()? webCrawler, }) { return SourceParams(

@@ -33,9 +33,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('HTTP/
       json.containsKey('HTTP/3') && json['HTTP/3'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(http1X)) errors.add(r'http1X: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(http2)) errors.add(r'http2: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(http3)) errors.add(r'http3: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(http1X)) { errors.add(r'http1X: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(http2)) { errors.add(r'http2: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(http3)) { errors.add(r'http3: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetHttpSummaryByHttpVersionResponseResultSummary0 copyWith({String? http1X, String? http2, String? http3, }) { return RadarGetHttpSummaryByHttpVersionResponseResultSummary0(
   http1X: http1X ?? this.http1X,

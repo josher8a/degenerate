@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final steps$ = steps;
 if (steps$ != null) {
-  if (steps$ < 1) errors.add('steps: must be >= 1');
+  if (steps$ < 1) { errors.add('steps: must be >= 1'); }
 }
 return errors; } 
 WorCreateOrModifyWorkflowRequestLimits copyWith({int? Function()? steps}) { return WorCreateOrModifyWorkflowRequestLimits(

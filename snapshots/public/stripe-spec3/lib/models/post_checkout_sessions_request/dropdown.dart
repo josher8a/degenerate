@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('optio
 List<String> validate() { final errors = <String>[];
 final defaultValue$ = defaultValue;
 if (defaultValue$ != null) {
-  if (defaultValue$.length > 100) errors.add('defaultValue: length must be <= 100');
+  if (defaultValue$.length > 100) { errors.add('defaultValue: length must be <= 100'); }
 }
 return errors; } 
 Dropdown copyWith({String? Function()? defaultValue, List<DropdownOptions>? options, }) { return Dropdown(

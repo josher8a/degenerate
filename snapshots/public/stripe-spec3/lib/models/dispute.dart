@@ -209,8 +209,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (reason.length > 5000) errors.add('reason: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (reason.length > 5000) { errors.add('reason: length must be <= 5000'); }
 return errors; } 
 Dispute copyWith({int? amount, List<BalanceTransaction>? balanceTransactions, ApplicationFeeCharge? charge, int? created, String? currency, List<EnhancedEligibilityTypes>? enhancedEligibilityTypes, DisputeEvidence? evidence, DisputeEvidenceDetails? evidenceDetails, String? id, bool? isChargeRefundable, bool? livemode, Map<String,String>? metadata, DisputeObject? object, ChargePaymentIntent? Function()? paymentIntent, DisputePaymentMethodDetails? Function()? paymentMethodDetails, String? reason, DisputeStatus? status, }) { return Dispute(
   amount: amount ?? this.amount,

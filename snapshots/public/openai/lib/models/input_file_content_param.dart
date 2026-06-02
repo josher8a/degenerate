@@ -95,7 +95,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final fileData$ = fileData;
 if (fileData$ != null) {
-  if (fileData$.length > 33554432) errors.add('fileData: length must be <= 33554432');
+  if (fileData$.length > 33554432) { errors.add('fileData: length must be <= 33554432'); }
 }
 return errors; } 
 InputFileContentParam copyWith({InputFileContentParamType? type, String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return InputFileContentParam(

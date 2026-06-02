@@ -57,8 +57,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ip_re
 List<String> validate() { final errors = <String>[];
 final lookbackHops$ = lookbackHops;
 if (lookbackHops$ != null) {
-  if (lookbackHops$ < 1) errors.add('lookbackHops: must be >= 1');
-  if (lookbackHops$ > 20) errors.add('lookbackHops: must be <= 20');
+  if (lookbackHops$ < 1) { errors.add('lookbackHops: must be >= 1'); }
+  if (lookbackHops$ > 20) { errors.add('lookbackHops: must be <= 20'); }
 }
 return errors; } 
 EmailSecurityUpdateDomainRequest copyWith({List<EmailSecurityDeliveryMode>? Function()? allowedDeliveryModes, String? Function()? domain, List<EmailSecurityDispositionLabel>? Function()? dropDispositions, EmailSecurityScannableFolder? Function()? folder, String? Function()? integrationId, List<String>? ipRestrictions, int? Function()? lookbackHops, List<EmailSecurityDomainRegions>? Function()? regions, bool? Function()? requireTlsInbound, bool? Function()? requireTlsOutbound, String? Function()? transport, }) { return EmailSecurityUpdateDomainRequest(

@@ -21,8 +21,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final mtlsCertificateId$ = mtlsCertificateId;
 if (mtlsCertificateId$ != null) {
-  if (mtlsCertificateId$.length < 36) errors.add('mtlsCertificateId: length must be >= 36');
-  if (mtlsCertificateId$.length > 36) errors.add('mtlsCertificateId: length must be <= 36');
+  if (mtlsCertificateId$.length < 36) { errors.add('mtlsCertificateId: length must be >= 36'); }
+  if (mtlsCertificateId$.length > 36) { errors.add('mtlsCertificateId: length must be <= 36'); }
 }
 return errors; } 
 TlsCertificatesAndHostnamesHostnameAssociation copyWith({List<String>? Function()? hostnames, String? Function()? mtlsCertificateId, }) { return TlsCertificatesAndHostnamesHostnameAssociation(

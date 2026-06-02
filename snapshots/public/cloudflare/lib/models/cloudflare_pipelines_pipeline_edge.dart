@@ -34,8 +34,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dest_
       json.containsKey('value_type') && json['value_type'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (destId < 0) errors.add('destId: must be >= 0');
-if (srcId < 0) errors.add('srcId: must be >= 0');
+if (destId < 0) { errors.add('destId: must be >= 0'); }
+if (srcId < 0) { errors.add('srcId: must be >= 0'); }
 return errors; } 
 CloudflarePipelinesPipelineEdge copyWith({int? destId, String? edgeType, String? keyType, int? srcId, String? valueType, }) { return CloudflarePipelinesPipelineEdge(
   destId: destId ?? this.destId,

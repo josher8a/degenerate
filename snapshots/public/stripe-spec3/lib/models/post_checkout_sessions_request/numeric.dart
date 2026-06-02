@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultValue$ = defaultValue;
 if (defaultValue$ != null) {
-  if (defaultValue$.length > 255) errors.add('defaultValue: length must be <= 255');
+  if (defaultValue$.length > 255) { errors.add('defaultValue: length must be <= 255'); }
 }
 return errors; } 
 Numeric copyWith({String? Function()? defaultValue, int? Function()? maximumLength, int? Function()? minimumLength, }) { return Numeric(

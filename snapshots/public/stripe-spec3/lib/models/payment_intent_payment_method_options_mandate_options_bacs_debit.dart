@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final referencePrefix$ = referencePrefix;
 if (referencePrefix$ != null) {
-  if (referencePrefix$.length > 5000) errors.add('referencePrefix: length must be <= 5000');
+  if (referencePrefix$.length > 5000) { errors.add('referencePrefix: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentPaymentMethodOptionsMandateOptionsBacsDebit copyWith({String? Function()? referencePrefix}) { return PaymentIntentPaymentMethodOptionsMandateOptionsBacsDebit(

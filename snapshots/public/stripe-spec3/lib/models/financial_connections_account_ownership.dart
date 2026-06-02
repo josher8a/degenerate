@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('owners'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 FinancialConnectionsAccountOwnership copyWith({int? created, String? id, FinancialConnectionsAccountOwnershipObject? object, Owners? owners, }) { return FinancialConnectionsAccountOwnership(
   created: created ?? this.created,

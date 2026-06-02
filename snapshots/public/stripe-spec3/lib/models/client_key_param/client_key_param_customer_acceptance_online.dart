@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final userAgent$ = userAgent;
 if (userAgent$ != null) {
-  if (userAgent$.length > 5000) errors.add('userAgent: length must be <= 5000');
+  if (userAgent$.length > 5000) { errors.add('userAgent: length must be <= 5000'); }
 }
 return errors; } 
 ClientKeyParamCustomerAcceptanceOnline copyWith({String? Function()? ipAddress, String? Function()? userAgent, }) { return ClientKeyParamCustomerAcceptanceOnline(

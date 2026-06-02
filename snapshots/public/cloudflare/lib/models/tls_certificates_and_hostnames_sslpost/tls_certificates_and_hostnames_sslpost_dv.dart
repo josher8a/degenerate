@@ -107,8 +107,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customCertBundle$ = customCertBundle;
 if (customCertBundle$ != null) {
-  if (customCertBundle$.isEmpty) errors.add('customCertBundle: must have >= 1 items');
-  if (customCertBundle$.length > 2) errors.add('customCertBundle: must have <= 2 items');
+  if (customCertBundle$.isEmpty) { errors.add('customCertBundle: must have >= 1 items'); }
+  if (customCertBundle$.length > 2) { errors.add('customCertBundle: must have <= 2 items'); }
 }
 return errors; } 
 TlsCertificatesAndHostnamesSslpostDv copyWith({BundleMethod Function()? bundleMethod, TlsCertificatesAndHostnamesCertificateAuthority? Function()? certificateAuthority, bool? Function()? cloudflareBranding, List<TlsCertificatesAndHostnamesCustomCertAndKey>? Function()? customCertBundle, String? Function()? customCertificate, String? Function()? customKey, DvMethod? Function()? method, TlsCertificatesAndHostnamesSslsettings? Function()? settings, DvType? Function()? type, bool? Function()? wildcard, }) { return TlsCertificatesAndHostnamesSslpostDv(

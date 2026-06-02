@@ -32,11 +32,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final alias$ = alias;
 if (alias$ != null) {
-  if (alias$.length > 100) errors.add('alias: length must be <= 100');
+  if (alias$.length > 100) { errors.add('alias: length must be <= 100'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 100) errors.add('name: length must be <= 100');
+  if (name$.length > 100) { errors.add('name: length must be <= 100'); }
 }
 return errors; } 
 PostRadarValueListsValueListRequest copyWith({String? Function()? alias, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? name, }) { return PostRadarValueListsValueListRequest(

@@ -18,7 +18,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.isEmpty) errors.add('name: length must be >= 1');
+if (name.isEmpty) { errors.add('name: length must be >= 1'); }
 return errors; } 
 RulesetsLogCustomFieldTransformedRequestFields2 copyWith({String? name}) { return RulesetsLogCustomFieldTransformedRequestFields2(
   name: name ?? this.name,

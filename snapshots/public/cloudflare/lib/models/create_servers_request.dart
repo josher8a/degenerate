@@ -46,12 +46,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('auth_
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 512) errors.add('description: length must be <= 512');
+  if (description$.length > 512) { errors.add('description: length must be <= 512'); }
 }
-if (id.isEmpty) errors.add('id: length must be >= 1');
-if (id.length > 32) errors.add('id: length must be <= 32');
-if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$');
-if (name.length > 350) errors.add('name: length must be <= 350');
+if (id.isEmpty) { errors.add('id: length must be >= 1'); }
+if (id.length > 32) { errors.add('id: length must be <= 32'); }
+if (!RegExp(r'^[a-z0-9_]+(?:-[a-z0-9_]+)*$').hasMatch(id)) { errors.add(r'id: must match pattern ^[a-z0-9_]+(?:-[a-z0-9_]+)*$'); }
+if (name.length > 350) { errors.add('name: length must be <= 350'); }
 return errors; } 
 CreateServersRequest copyWith({String? Function()? authCredentials, CreateServersRequestAuthType? authType, String? Function()? description, Uri? hostname, String? id, String? name, }) { return CreateServersRequest(
   authCredentials: authCredentials != null ? authCredentials() : this.authCredentials,

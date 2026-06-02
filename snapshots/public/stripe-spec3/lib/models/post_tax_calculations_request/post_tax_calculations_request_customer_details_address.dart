@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('country') && json['country'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (country.length > 5000) errors.add('country: length must be <= 5000');
+if (country.length > 5000) { errors.add('country: length must be <= 5000'); }
 return errors; } 
 PostTaxCalculationsRequestCustomerDetailsAddress copyWith({City? Function()? city, String? country, Line1? Function()? line1, Line2? Function()? line2, PostalCode? Function()? postalCode, AddressState? Function()? state, }) { return PostTaxCalculationsRequestCustomerDetailsAddress(
   city: city != null ? city() : this.city,

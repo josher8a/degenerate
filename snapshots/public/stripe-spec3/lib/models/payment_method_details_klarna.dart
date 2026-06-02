@@ -30,11 +30,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final paymentMethodCategory$ = paymentMethodCategory;
 if (paymentMethodCategory$ != null) {
-  if (paymentMethodCategory$.length > 5000) errors.add('paymentMethodCategory: length must be <= 5000');
+  if (paymentMethodCategory$.length > 5000) { errors.add('paymentMethodCategory: length must be <= 5000'); }
 }
 final preferredLocale$ = preferredLocale;
 if (preferredLocale$ != null) {
-  if (preferredLocale$.length > 5000) errors.add('preferredLocale: length must be <= 5000');
+  if (preferredLocale$.length > 5000) { errors.add('preferredLocale: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsKlarna copyWith({KlarnaPayerDetails? Function()? payerDetails, String? Function()? paymentMethodCategory, String? Function()? preferredLocale, }) { return PaymentMethodDetailsKlarna(

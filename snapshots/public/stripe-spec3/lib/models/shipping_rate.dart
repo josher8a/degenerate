@@ -104,9 +104,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 ShippingRate copyWith({bool? active, int? created, ShippingRateDeliveryEstimate? Function()? deliveryEstimate, String? Function()? displayName, ShippingRateFixedAmount? Function()? fixedAmount, String? id, bool? livemode, Map<String,String>? metadata, ShippingRateObject? object, CurrencyOptionTaxBehavior? Function()? taxBehavior, ProductTaxCode? Function()? taxCode, PostShippingRatesRequestType? type, }) { return ShippingRate(
   active: active ?? this.active,

@@ -21,7 +21,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final coupon$ = coupon;
 if (coupon$ != null) {
-  if (coupon$.length > 5000) errors.add('coupon: length must be <= 5000');
+  if (coupon$.length > 5000) { errors.add('coupon: length must be <= 5000'); }
 }
 return errors; } 
 Promotion copyWith({String? Function()? coupon, DiscountSourceType? type, }) { return Promotion(

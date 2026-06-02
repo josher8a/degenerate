@@ -55,9 +55,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('versi
       json.containsKey('scanned') && json['scanned'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (sha.length < 40) errors.add('sha: length must be >= 40');
-if (sha.length > 40) errors.add('sha: length must be <= 40');
-if (!RegExp('^refs/').hasMatch(ref)) errors.add('ref: must match pattern ^refs/');
+if (sha.length < 40) { errors.add('sha: length must be >= 40'); }
+if (sha.length > 40) { errors.add('sha: length must be <= 40'); }
+if (!RegExp('^refs/').hasMatch(ref)) { errors.add('ref: must match pattern ^refs/'); }
 return errors; } 
 Snapshot copyWith({int? version, SnapshotJob? job, String? sha, String? ref, Detector? detector, Map<String, dynamic>? Function()? metadata, Map<String, Manifest>? Function()? manifests, DateTime? scanned, }) { return Snapshot(
   version: version ?? this.version,

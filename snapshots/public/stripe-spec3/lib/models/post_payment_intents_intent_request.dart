@@ -157,31 +157,31 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
-  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+  if (paymentMethodConfiguration$.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
-  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+  if (statementDescriptorSuffix$.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
 return errors; } 
 PostPaymentIntentsIntentRequest copyWith({int? Function()? amount, PostPaymentIntentsIntentConfirmRequestAmountDetails? Function()? amountDetails, ApplicationFeeAmount? Function()? applicationFeeAmount, PaymentIntentCaptureMethod? Function()? captureMethod, String? Function()? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, PostPaymentIntentsIntentConfirmRequestExcludedPaymentMethodTypes? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, Hooks? Function()? hooks, Metadata? Function()? metadata, PostPaymentIntentsIntentConfirmRequestPaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, ReceiptEmail? Function()? receiptEmail, PostPaymentIntentsIntentConfirmRequestSetupFutureUsage? Function()? setupFutureUsage, PostPaymentIntentsIntentConfirmRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostChargesChargeCaptureRequestTransferData? Function()? transferData, String? Function()? transferGroup, }) { return PostPaymentIntentsIntentRequest(

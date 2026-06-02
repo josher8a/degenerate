@@ -47,7 +47,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
 List<String> validate() { final errors = <String>[];
 final encodingVersion$ = encodingVersion;
 if (encodingVersion$ != null) {
-  if (encodingVersion$ < 0) errors.add('encodingVersion: must be >= 0');
+  if (encodingVersion$ < 0) { errors.add('encodingVersion: must be >= 0'); }
 }
 return errors; } 
 DlpDatasetsCreateRequest copyWith({bool? Function()? caseSensitive, String? Function()? description, int? Function()? encodingVersion, String? name, bool? Function()? secret, }) { return DlpDatasetsCreateRequest(

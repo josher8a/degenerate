@@ -61,8 +61,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxSeconds$ = maxSeconds;
 if (maxSeconds$ != null) {
-  if (maxSeconds$ < 60) errors.add('maxSeconds: must be >= 60');
-  if (maxSeconds$ > 86400) errors.add('maxSeconds: must be <= 86400');
+  if (maxSeconds$ < 60) { errors.add('maxSeconds: must be >= 60'); }
+  if (maxSeconds$ > 86400) { errors.add('maxSeconds: must be <= 86400'); }
 }
 return errors; } 
 StartRecordingRequest copyWith({bool Function()? allowMultipleRecordings, RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitInteractiveConfig? Function()? interactiveConfig, int? Function()? maxSeconds, String? Function()? meetingId, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitLivestreamingConfig? Function()? rtmpOutConfig, RealtimekitStorageConfig? Function()? storageConfig, Uri? Function()? url, RealtimekitVideoConfig? Function()? videoConfig, }) { return StartRecordingRequest(

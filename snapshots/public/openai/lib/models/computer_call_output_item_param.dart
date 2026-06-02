@@ -41,8 +41,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('call_
       json.containsKey('output'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (callId.isEmpty) errors.add('callId: length must be >= 1');
-if (callId.length > 64) errors.add('callId: length must be <= 64');
+if (callId.isEmpty) { errors.add('callId: length must be >= 1'); }
+if (callId.length > 64) { errors.add('callId: length must be <= 64'); }
 return errors; } 
 ComputerCallOutputItemParam copyWith({String? Function()? id, String? callId, String? type, ComputerScreenshotImage? output, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, FunctionCallItemStatus? Function()? status, }) { return ComputerCallOutputItemParam(
   id: id != null ? id() : this.id,

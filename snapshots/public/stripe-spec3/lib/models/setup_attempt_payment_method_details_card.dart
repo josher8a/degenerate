@@ -70,27 +70,27 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final brand$ = brand;
 if (brand$ != null) {
-  if (brand$.length > 5000) errors.add('brand: length must be <= 5000');
+  if (brand$.length > 5000) { errors.add('brand: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final funding$ = funding;
 if (funding$ != null) {
-  if (funding$.length > 5000) errors.add('funding: length must be <= 5000');
+  if (funding$.length > 5000) { errors.add('funding: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final network$ = network;
 if (network$ != null) {
-  if (network$.length > 5000) errors.add('network: length must be <= 5000');
+  if (network$.length > 5000) { errors.add('network: length must be <= 5000'); }
 }
 return errors; } 
 SetupAttemptPaymentMethodDetailsCard copyWith({String? Function()? brand, SetupAttemptPaymentMethodDetailsCardChecks? Function()? checks, String? Function()? country, int? Function()? expMonth, int? Function()? expYear, String? Function()? fingerprint, String? Function()? funding, String? Function()? last4, String? Function()? network, ThreeDSecureDetails? Function()? threeDSecure, SetupAttemptPaymentMethodDetailsCardWallet? Function()? wallet, }) { return SetupAttemptPaymentMethodDetailsCard(

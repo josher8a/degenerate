@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('person') && json['person'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (account.length > 5000) errors.add('account: length must be <= 5000');
-if (person.length > 5000) errors.add('person: length must be <= 5000');
+if (account.length > 5000) { errors.add('account: length must be <= 5000'); }
+if (person.length > 5000) { errors.add('person: length must be <= 5000'); }
 return errors; } 
 GelatoRelatedPerson copyWith({String? account, String? person, }) { return GelatoRelatedPerson(
   account: account ?? this.account,

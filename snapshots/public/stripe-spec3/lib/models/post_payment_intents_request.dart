@@ -222,39 +222,39 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final confirmationToken$ = confirmationToken;
 if (confirmationToken$ != null) {
-  if (confirmationToken$.length > 5000) errors.add('confirmationToken: length must be <= 5000');
+  if (confirmationToken$.length > 5000) { errors.add('confirmationToken: length must be <= 5000'); }
 }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 1000) errors.add('description: length must be <= 1000');
+  if (description$.length > 1000) { errors.add('description: length must be <= 1000'); }
 }
 final mandate$ = mandate;
 if (mandate$ != null) {
-  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+  if (mandate$.length > 5000) { errors.add('mandate: length must be <= 5000'); }
 }
 final paymentMethod$ = paymentMethod;
 if (paymentMethod$ != null) {
-  if (paymentMethod$.length > 5000) errors.add('paymentMethod: length must be <= 5000');
+  if (paymentMethod$.length > 5000) { errors.add('paymentMethod: length must be <= 5000'); }
 }
 final paymentMethodConfiguration$ = paymentMethodConfiguration;
 if (paymentMethodConfiguration$ != null) {
-  if (paymentMethodConfiguration$.length > 100) errors.add('paymentMethodConfiguration: length must be <= 100');
+  if (paymentMethodConfiguration$.length > 100) { errors.add('paymentMethodConfiguration: length must be <= 100'); }
 }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 22) errors.add('statementDescriptor: length must be <= 22');
+  if (statementDescriptor$.length > 22) { errors.add('statementDescriptor: length must be <= 22'); }
 }
 final statementDescriptorSuffix$ = statementDescriptorSuffix;
 if (statementDescriptorSuffix$ != null) {
-  if (statementDescriptorSuffix$.length > 22) errors.add('statementDescriptorSuffix: length must be <= 22');
+  if (statementDescriptorSuffix$.length > 22) { errors.add('statementDescriptorSuffix: length must be <= 22'); }
 }
 return errors; } 
 PostPaymentIntentsRequest copyWith({int? amount, PostPaymentIntentsIntentCaptureRequestAmountDetails? Function()? amountDetails, int? Function()? applicationFeeAmount, AutomaticPaymentMethods? Function()? automaticPaymentMethods, PaymentIntentCaptureMethod? Function()? captureMethod, bool? Function()? confirm, ConfirmationMethod? Function()? confirmationMethod, String? Function()? confirmationToken, String? currency, String? Function()? customer, String? Function()? customerAccount, String? Function()? description, bool? Function()? errorOnRequiresAction, List<PaymentIntentExcludedPaymentMethodTypes>? Function()? excludedPaymentMethodTypes, List<String>? Function()? expand, Hooks? Function()? hooks, String? Function()? mandate, PostPaymentIntentsRequestMandateData? Function()? mandateData, Map<String, String>? Function()? metadata, OffSession? Function()? offSession, String? Function()? onBehalfOf, PaymentDetails? Function()? paymentDetails, String? Function()? paymentMethod, String? Function()? paymentMethodConfiguration, PostPaymentIntentsIntentConfirmRequestPaymentMethodData? Function()? paymentMethodData, PostPaymentIntentsIntentConfirmRequestPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? Function()? paymentMethodTypes, RadarOptions? Function()? radarOptions, String? Function()? receiptEmail, String? Function()? returnUrl, PostPaymentIntentsRequestSetupFutureUsage? Function()? setupFutureUsage, PostChargesChargeRequestShipping? Function()? shipping, String? Function()? statementDescriptor, String? Function()? statementDescriptorSuffix, PostInvoicesRequestTransferData? Function()? transferData, String? Function()? transferGroup, bool? Function()? useStripeSdk, }) { return PostPaymentIntentsRequest(

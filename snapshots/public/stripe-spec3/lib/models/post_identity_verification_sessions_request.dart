@@ -67,19 +67,19 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final clientReferenceId$ = clientReferenceId;
 if (clientReferenceId$ != null) {
-  if (clientReferenceId$.length > 5000) errors.add('clientReferenceId: length must be <= 5000');
+  if (clientReferenceId$.length > 5000) { errors.add('clientReferenceId: length must be <= 5000'); }
 }
 final relatedCustomer$ = relatedCustomer;
 if (relatedCustomer$ != null) {
-  if (relatedCustomer$.length > 5000) errors.add('relatedCustomer: length must be <= 5000');
+  if (relatedCustomer$.length > 5000) { errors.add('relatedCustomer: length must be <= 5000'); }
 }
 final relatedCustomerAccount$ = relatedCustomerAccount;
 if (relatedCustomerAccount$ != null) {
-  if (relatedCustomerAccount$.length > 5000) errors.add('relatedCustomerAccount: length must be <= 5000');
+  if (relatedCustomerAccount$.length > 5000) { errors.add('relatedCustomerAccount: length must be <= 5000'); }
 }
 final verificationFlow$ = verificationFlow;
 if (verificationFlow$ != null) {
-  if (verificationFlow$.length > 5000) errors.add('verificationFlow: length must be <= 5000');
+  if (verificationFlow$.length > 5000) { errors.add('verificationFlow: length must be <= 5000'); }
 }
 return errors; } 
 PostIdentityVerificationSessionsRequest copyWith({String? Function()? clientReferenceId, List<String>? Function()? expand, Map<String, String>? Function()? metadata, PostIdentityVerificationSessionsRequestOptions? Function()? options, ProvidedDetails? Function()? providedDetails, String? Function()? relatedCustomer, String? Function()? relatedCustomerAccount, RelatedPerson? Function()? relatedPerson, String? Function()? returnUrl, PostIdentityVerificationSessionsRequestType? Function()? type, String? Function()? verificationFlow, }) { return PostIdentityVerificationSessionsRequest(

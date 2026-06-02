@@ -51,11 +51,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 50) errors.add('description: length must be <= 50');
+  if (description$.length > 50) { errors.add('description: length must be <= 50'); }
 }
 final title$ = title;
 if (title$ != null) {
-  if (title$.length > 50) errors.add('title: length must be <= 50');
+  if (title$.length > 50) { errors.add('title: length must be <= 50'); }
 }
 return errors; } 
 Toggles copyWith({TogglesDefaultValue? Function()? defaultValue, String? Function()? description, String? Function()? title, }) { return Toggles(

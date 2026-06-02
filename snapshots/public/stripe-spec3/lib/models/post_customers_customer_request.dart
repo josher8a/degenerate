@@ -140,43 +140,43 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultAlipayAccount$ = defaultAlipayAccount;
 if (defaultAlipayAccount$ != null) {
-  if (defaultAlipayAccount$.length > 500) errors.add('defaultAlipayAccount: length must be <= 500');
+  if (defaultAlipayAccount$.length > 500) { errors.add('defaultAlipayAccount: length must be <= 500'); }
 }
 final defaultBankAccount$ = defaultBankAccount;
 if (defaultBankAccount$ != null) {
-  if (defaultBankAccount$.length > 500) errors.add('defaultBankAccount: length must be <= 500');
+  if (defaultBankAccount$.length > 500) { errors.add('defaultBankAccount: length must be <= 500'); }
 }
 final defaultCard$ = defaultCard;
 if (defaultCard$ != null) {
-  if (defaultCard$.length > 500) errors.add('defaultCard: length must be <= 500');
+  if (defaultCard$.length > 500) { errors.add('defaultCard: length must be <= 500'); }
 }
 final defaultSource$ = defaultSource;
 if (defaultSource$ != null) {
-  if (defaultSource$.length > 500) errors.add('defaultSource: length must be <= 500');
+  if (defaultSource$.length > 500) { errors.add('defaultSource: length must be <= 500'); }
 }
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 final email$ = email;
 if (email$ != null) {
-  if (email$.length > 512) errors.add('email: length must be <= 512');
+  if (email$.length > 512) { errors.add('email: length must be <= 512'); }
 }
 final invoicePrefix$ = invoicePrefix;
 if (invoicePrefix$ != null) {
-  if (invoicePrefix$.length > 5000) errors.add('invoicePrefix: length must be <= 5000');
+  if (invoicePrefix$.length > 5000) { errors.add('invoicePrefix: length must be <= 5000'); }
 }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 256) errors.add('name: length must be <= 256');
+  if (name$.length > 256) { errors.add('name: length must be <= 256'); }
 }
 final phone$ = phone;
 if (phone$ != null) {
-  if (phone$.length > 20) errors.add('phone: length must be <= 20');
+  if (phone$.length > 20) { errors.add('phone: length must be <= 20'); }
 }
 final source$ = source;
 if (source$ != null) {
-  if (source$.length > 5000) errors.add('source: length must be <= 5000');
+  if (source$.length > 5000) { errors.add('source: length must be <= 5000'); }
 }
 return errors; } 
 PostCustomersCustomerRequest copyWith({PostCustomersCustomerRequestAddress? Function()? address, int? Function()? balance, PostCustomersCustomerBankAccountsRequestBankAccount? Function()? bankAccount, BusinessName? Function()? businessName, PostChargesRequestCard? Function()? card, PostCustomersCustomerRequestCashBalance? Function()? cashBalance, String? Function()? defaultAlipayAccount, String? Function()? defaultBankAccount, String? Function()? defaultCard, String? Function()? defaultSource, String? Function()? description, String? Function()? email, List<String>? Function()? expand, IndividualName? Function()? individualName, String? Function()? invoicePrefix, PostCustomersCustomerRequestInvoiceSettings? Function()? invoiceSettings, Metadata? Function()? metadata, String? Function()? name, int? Function()? nextInvoiceSequence, String? Function()? phone, List<String>? Function()? preferredLocales, PostCustomersCustomerRequestShipping? Function()? shipping, String? Function()? source, PostCustomersCustomerRequestTax? Function()? tax, PostCustomersCustomerRequestTaxExempt? Function()? taxExempt, }) { return PostCustomersCustomerRequest(

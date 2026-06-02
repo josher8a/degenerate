@@ -34,10 +34,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('image_url_svg') && json['image_url_svg'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (data.length > 5000) errors.add('data: length must be <= 5000');
-if (hostedInstructionsUrl.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
-if (imageUrlPng.length > 5000) errors.add('imageUrlPng: length must be <= 5000');
-if (imageUrlSvg.length > 5000) errors.add('imageUrlSvg: length must be <= 5000');
+if (data.length > 5000) { errors.add('data: length must be <= 5000'); }
+if (hostedInstructionsUrl.length > 5000) { errors.add('hostedInstructionsUrl: length must be <= 5000'); }
+if (imageUrlPng.length > 5000) { errors.add('imageUrlPng: length must be <= 5000'); }
+if (imageUrlSvg.length > 5000) { errors.add('imageUrlSvg: length must be <= 5000'); }
 return errors; } 
 PaymentIntentNextActionPromptpayDisplayQrCode copyWith({String? data, String? hostedInstructionsUrl, String? imageUrlPng, String? imageUrlSvg, }) { return PaymentIntentNextActionPromptpayDisplayQrCode(
   data: data ?? this.data,

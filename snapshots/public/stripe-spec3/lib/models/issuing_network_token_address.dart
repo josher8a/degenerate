@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('line1
       json.containsKey('postal_code') && json['postal_code'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (line1.length > 5000) errors.add('line1: length must be <= 5000');
-if (postalCode.length > 5000) errors.add('postalCode: length must be <= 5000');
+if (line1.length > 5000) { errors.add('line1: length must be <= 5000'); }
+if (postalCode.length > 5000) { errors.add('postalCode: length must be <= 5000'); }
 return errors; } 
 IssuingNetworkTokenAddress copyWith({String? line1, String? postalCode, }) { return IssuingNetworkTokenAddress(
   line1: line1 ?? this.line1,

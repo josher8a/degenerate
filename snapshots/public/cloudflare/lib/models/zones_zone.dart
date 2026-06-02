@@ -207,11 +207,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('plan'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 253) errors.add('name: length must be <= 253');
-if (!RegExp(r'^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$').hasMatch(name)) errors.add(r'name: must match pattern ^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$');
+if (name.length > 253) { errors.add('name: length must be <= 253'); }
+if (!RegExp(r'^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$').hasMatch(name)) { errors.add(r'name: must match pattern ^([a-zA-Z0-9][\-a-zA-Z0-9]*\.)+[\-a-zA-Z0-9]{2,20}$'); }
 final originalDnshost$ = originalDnshost;
 if (originalDnshost$ != null) {
-  if (originalDnshost$.length > 50) errors.add('originalDnshost: length must be <= 50');
+  if (originalDnshost$.length > 50) { errors.add('originalDnshost: length must be <= 50'); }
 }
 return errors; } 
 ZonesZone copyWith({ZonesZoneAccount? account, DateTime? Function()? activatedOn, String? Function()? cnameSuffix, DateTime? createdOn, double? developmentMode, ZonesIdentifier? id, ZonesZoneMeta? meta, DateTime? modifiedOn, String? name, List<String>? nameServers, String? Function()? originalDnshost, List<String>? Function()? originalNameServers, String? Function()? originalRegistrar, ZonesZoneOwner? owner, ZonesPaused? Function()? paused, List<String>? Function()? permissions, ZonesZonePlan? plan, ZonesZoneStatus? Function()? status, ZonesZoneTenant? Function()? tenant, ZonesZoneTenantUnit? Function()? tenantUnit, ZonesType? Function()? type, List<String> Function()? vanityNameServers, String? Function()? verificationKey, }) { return ZonesZone(

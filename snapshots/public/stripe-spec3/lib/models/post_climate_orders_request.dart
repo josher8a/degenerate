@@ -47,9 +47,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('produ
 List<String> validate() { final errors = <String>[];
 final currency$ = currency;
 if (currency$ != null) {
-  if (currency$.length > 5000) errors.add('currency: length must be <= 5000');
+  if (currency$.length > 5000) { errors.add('currency: length must be <= 5000'); }
 }
-if (product.length > 5000) errors.add('product: length must be <= 5000');
+if (product.length > 5000) { errors.add('product: length must be <= 5000'); }
 return errors; } 
 PostClimateOrdersRequest copyWith({int? Function()? amount, PostClimateOrdersRequestBeneficiary? Function()? beneficiary, String? Function()? currency, List<String>? Function()? expand, Map<String, String>? Function()? metadata, String? Function()? metricTons, String? product, }) { return PostClimateOrdersRequest(
   amount: amount != null ? amount() : this.amount,

@@ -42,8 +42,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final callId$ = callId;
 if (callId$ != null) {
-  if (callId$.isEmpty) errors.add('callId: length must be >= 1');
-  if (callId$.length > 64) errors.add('callId: length must be <= 64');
+  if (callId$.isEmpty) { errors.add('callId: length must be >= 1'); }
+  if (callId$.length > 64) { errors.add('callId: length must be <= 64'); }
 }
 return errors; } 
 ToolSearchOutputItemParam copyWith({String? Function()? id, String? Function()? callId, String? type, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, FunctionCallItemStatus? Function()? status, }) { return ToolSearchOutputItemParam(

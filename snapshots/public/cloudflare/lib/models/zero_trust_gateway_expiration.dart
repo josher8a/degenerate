@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('expir
 List<String> validate() { final errors = <String>[];
 final duration$ = duration;
 if (duration$ != null) {
-  if (duration$ < 5) errors.add('duration: must be >= 5');
+  if (duration$ < 5) { errors.add('duration: must be >= 5'); }
 }
 return errors; } 
 ZeroTrustGatewayExpiration copyWith({int? Function()? duration, bool? Function()? expired, ZeroTrustGatewayTimestamp? expiresAt, }) { return ZeroTrustGatewayExpiration(

@@ -83,8 +83,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('desti
       json.containsKey('submitted') && json['submitted'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length < 32) errors.add('id: length must be >= 32');
-if (id.length > 32) errors.add('id: length must be <= 32');
+if (id.length < 32) { errors.add('id: length must be >= 32'); }
+if (id.length > 32) { errors.add('id: length must be <= 32'); }
 return errors; } 
 MagicVisibilityPcapsPcapsOwnershipResponse copyWith({MagicVisibilityPcapsPcapsDestinationConf? destinationConf, MagicVisibilityPcapsPcapsOwnershipChallenge? filename, String? id, MagicVisibilityPcapsPcapsOwnershipResponseStatus? status, String? submitted, String? Function()? validated, }) { return MagicVisibilityPcapsPcapsOwnershipResponse(
   destinationConf: destinationConf ?? this.destinationConf,

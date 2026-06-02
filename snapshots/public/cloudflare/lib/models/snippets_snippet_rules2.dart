@@ -54,8 +54,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('expre
       json.containsKey('snippet_name'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (expression.isEmpty) errors.add('expression: length must be >= 1');
-if (!RegExp(r'^[0-9a-f]{32}$').hasMatch(id)) errors.add(r'id: must match pattern ^[0-9a-f]{32}$');
+if (expression.isEmpty) { errors.add('expression: length must be >= 1'); }
+if (!RegExp(r'^[0-9a-f]{32}$').hasMatch(id)) { errors.add(r'id: must match pattern ^[0-9a-f]{32}$'); }
 return errors; } 
 SnippetsSnippetRules2 copyWith({String Function()? description, bool Function()? enabled, String? expression, String? id, DateTime? lastUpdated, SnippetsSnippetName? snippetName, }) { return SnippetsSnippetRules2(
   description: description != null ? description() : this.description,

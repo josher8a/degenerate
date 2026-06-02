@@ -20,7 +20,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
 List<String> validate() { final errors = <String>[];
 final code$ = code;
 if (code$ != null) {
-  if (code$ < 1000) errors.add('code: must be >= 1000');
+  if (code$ < 1000) { errors.add('code: must be >= 1000'); }
 }
 return errors; } 
 AaaComponentsSchemasMessages2 copyWith({int? Function()? code, String? message, }) { return AaaComponentsSchemasMessages2(

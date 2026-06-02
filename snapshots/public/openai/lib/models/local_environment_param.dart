@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final skills$ = skills;
 if (skills$ != null) {
-  if (skills$.length > 200) errors.add('skills: must have <= 200 items');
+  if (skills$.length > 200) { errors.add('skills: must have <= 200 items'); }
 }
 return errors; } 
 LocalEnvironmentParam copyWith({LocalEnvironmentParamType? type, List<LocalSkillParam>? Function()? skills, }) { return LocalEnvironmentParam(

@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('balan
 List<String> validate() { final errors = <String>[];
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
 BillingCreditBalanceSummary copyWith({List<CreditBalance>? balances, BankAccountCustomer? customer, String? Function()? customerAccount, bool? livemode, BillingCreditBalanceSummaryObject? object, }) { return BillingCreditBalanceSummary(

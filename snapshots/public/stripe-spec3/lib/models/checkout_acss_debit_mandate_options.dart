@@ -38,11 +38,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final customMandateUrl$ = customMandateUrl;
 if (customMandateUrl$ != null) {
-  if (customMandateUrl$.length > 5000) errors.add('customMandateUrl: length must be <= 5000');
+  if (customMandateUrl$.length > 5000) { errors.add('customMandateUrl: length must be <= 5000'); }
 }
 final intervalDescription$ = intervalDescription;
 if (intervalDescription$ != null) {
-  if (intervalDescription$.length > 5000) errors.add('intervalDescription: length must be <= 5000');
+  if (intervalDescription$.length > 5000) { errors.add('intervalDescription: length must be <= 5000'); }
 }
 return errors; } 
 CheckoutAcssDebitMandateOptions copyWith({String? Function()? customMandateUrl, List<DefaultFor>? Function()? defaultFor, String? Function()? intervalDescription, CheckoutAcssDebitMandateOptionsPaymentSchedule? Function()? paymentSchedule, CheckoutAcssDebitMandateOptionsTransactionType? Function()? transactionType, }) { return CheckoutAcssDebitMandateOptions(

@@ -65,13 +65,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('gt_1d
       json.containsKey('lte_1m') && json['lte_1m'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(gt1dLte1w)) errors.add(r'gt1dLte1w: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(gt1hLte1d)) errors.add(r'gt1hLte1d: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(gt1mLte5m)) errors.add(r'gt1mLte5m: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(gt1w)) errors.add(r'gt1w: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(gt5mLte15m)) errors.add(r'gt5mLte15m: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(gt15mLte1h)) errors.add(r'gt15mLte1h: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(lte1m)) errors.add(r'lte1m: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(gt1dLte1w)) { errors.add(r'gt1dLte1w: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(gt1hLte1d)) { errors.add(r'gt1hLte1d: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(gt1mLte5m)) { errors.add(r'gt1mLte5m: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(gt1w)) { errors.add(r'gt1w: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(gt5mLte15m)) { errors.add(r'gt5mLte15m: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(gt15mLte1h)) { errors.add(r'gt15mLte1h: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(lte1m)) { errors.add(r'lte1m: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetDnsSummaryByResponseTtlResponseResultSummary0 copyWith({String? gt1dLte1w, String? gt1hLte1d, String? gt1mLte5m, String? gt1w, String? gt5mLte15m, String? gt15mLte1h, String? lte1m, }) { return RadarGetDnsSummaryByResponseTtlResponseResultSummary0(
   gt1dLte1w: gt1dLte1w ?? this.gt1dLte1w,

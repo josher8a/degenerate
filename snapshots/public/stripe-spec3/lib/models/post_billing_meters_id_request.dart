@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 250) errors.add('displayName: length must be <= 250');
+  if (displayName$.length > 250) { errors.add('displayName: length must be <= 250'); }
 }
 return errors; } 
 PostBillingMetersIdRequest copyWith({String? Function()? displayName, List<String>? Function()? expand, }) { return PostBillingMetersIdRequest(

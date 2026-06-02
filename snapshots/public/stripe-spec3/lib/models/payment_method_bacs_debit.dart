@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final sortCode$ = sortCode;
 if (sortCode$ != null) {
-  if (sortCode$.length > 5000) errors.add('sortCode: length must be <= 5000');
+  if (sortCode$.length > 5000) { errors.add('sortCode: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodBacsDebit copyWith({String? Function()? fingerprint, String? Function()? last4, String? Function()? sortCode, }) { return PaymentMethodBacsDebit(

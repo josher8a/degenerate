@@ -31,8 +31,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('looku
       json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (lookupKey.length > 80) errors.add('lookupKey: length must be <= 80');
-if (name.length > 80) errors.add('name: length must be <= 80');
+if (lookupKey.length > 80) { errors.add('lookupKey: length must be <= 80'); }
+if (name.length > 80) { errors.add('name: length must be <= 80'); }
 return errors; } 
 PostEntitlementsFeaturesRequest copyWith({List<String>? Function()? expand, String? lookupKey, Map<String, String>? Function()? metadata, String? name, }) { return PostEntitlementsFeaturesRequest(
   expand: expand != null ? expand() : this.expand,

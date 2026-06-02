@@ -26,13 +26,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('logic
       json.containsKey('deployments'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (logicalEnvironment.isEmpty) errors.add('logicalEnvironment: length must be >= 1');
-if (logicalEnvironment.length > 128) errors.add('logicalEnvironment: length must be <= 128');
+if (logicalEnvironment.isEmpty) { errors.add('logicalEnvironment: length must be >= 1'); }
+if (logicalEnvironment.length > 128) { errors.add('logicalEnvironment: length must be <= 128'); }
 final physicalEnvironment$ = physicalEnvironment;
 if (physicalEnvironment$ != null) {
-  if (physicalEnvironment$.length > 128) errors.add('physicalEnvironment: length must be <= 128');
+  if (physicalEnvironment$.length > 128) { errors.add('physicalEnvironment: length must be <= 128'); }
 }
-if (deployments.length > 1000) errors.add('deployments: must have <= 1000 items');
+if (deployments.length > 1000) { errors.add('deployments: must have <= 1000 items'); }
 return errors; } 
 OrgsSetClusterDeploymentRecordsRequest copyWith({String? logicalEnvironment, String? Function()? physicalEnvironment, List<OrgsSetClusterDeploymentRecordsRequestDeployments>? deployments, }) { return OrgsSetClusterDeploymentRecordsRequest(
   logicalEnvironment: logicalEnvironment ?? this.logicalEnvironment,

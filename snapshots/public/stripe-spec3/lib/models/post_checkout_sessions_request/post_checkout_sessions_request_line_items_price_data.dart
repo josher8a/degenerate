@@ -40,7 +40,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
 List<String> validate() { final errors = <String>[];
 final product$ = product;
 if (product$ != null) {
-  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+  if (product$.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 return errors; } 
 PostCheckoutSessionsRequestLineItemsPriceData copyWith({String? currency, String? Function()? product, PriceDataProductData? Function()? productData, DefaultPriceDataRecurring? Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostCheckoutSessionsRequestLineItemsPriceData(

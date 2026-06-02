@@ -137,11 +137,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
       json.containsKey('updated') && json['updated'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (account.length > 5000) errors.add('account: length must be <= 5000');
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
-if (description.length > 5000) errors.add('description: length must be <= 5000');
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (transactionRefresh.length > 5000) errors.add('transactionRefresh: length must be <= 5000');
+if (account.length > 5000) { errors.add('account: length must be <= 5000'); }
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
+if (description.length > 5000) { errors.add('description: length must be <= 5000'); }
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (transactionRefresh.length > 5000) { errors.add('transactionRefresh: length must be <= 5000'); }
 return errors; } 
 FinancialConnectionsTransaction copyWith({String? account, int? amount, String? currency, String? description, String? id, bool? livemode, FinancialConnectionsTransactionObject? object, FinancialConnectionsTransactionStatus? status, BankConnectionsResourceTransactionResourceStatusTransitions? statusTransitions, int? transactedAt, String? transactionRefresh, int? updated, }) { return FinancialConnectionsTransaction(
   account: account ?? this.account,

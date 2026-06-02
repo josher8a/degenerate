@@ -59,8 +59,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final runtimeRisks$ = runtimeRisks;
 if (runtimeRisks$ != null) {
-  if (runtimeRisks$.length > 4) errors.add('runtimeRisks: must have <= 4 items');
-  if (runtimeRisks$.toSet().length != runtimeRisks$.length) errors.add('runtimeRisks: items must be unique');
+  if (runtimeRisks$.length > 4) { errors.add('runtimeRisks: must have <= 4 items'); }
+  if (runtimeRisks$.toSet().length != runtimeRisks$.length) { errors.add('runtimeRisks: items must be unique'); }
 }
 return errors; } 
 ArtifactDeploymentRecord copyWith({int? Function()? id, String? Function()? digest, String? Function()? logicalEnvironment, String? Function()? physicalEnvironment, String? Function()? cluster, String? Function()? deploymentName, Map<String, String>? Function()? tags, List<RuntimeRisks>? Function()? runtimeRisks, String? Function()? createdAt, String? Function()? updatedAt, int? Function()? attestationId, }) { return ArtifactDeploymentRecord(

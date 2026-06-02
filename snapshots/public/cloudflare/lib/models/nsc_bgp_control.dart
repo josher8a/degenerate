@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('custo
       json.containsKey('extra_prefixes'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (customerAsn < 0) errors.add('customerAsn: must be >= 0');
+if (customerAsn < 0) { errors.add('customerAsn: must be >= 0'); }
 return errors; } 
 NscBgpControl copyWith({int? customerAsn, List<String>? extraPrefixes, String? Function()? md5Key, }) { return NscBgpControl(
   customerAsn: customerAsn ?? this.customerAsn,

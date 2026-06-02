@@ -47,13 +47,13 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final order$ = order;
 if (order$ != null) {
-  if (order$ < 0) errors.add('order: must be >= 0');
-  if (order$ > 65535) errors.add('order: must be <= 65535');
+  if (order$ < 0) { errors.add('order: must be >= 0'); }
+  if (order$ > 65535) { errors.add('order: must be <= 65535'); }
 }
 final preference$ = preference;
 if (preference$ != null) {
-  if (preference$ < 0) errors.add('preference: must be >= 0');
-  if (preference$ > 65535) errors.add('preference: must be <= 65535');
+  if (preference$ < 0) { errors.add('preference: must be >= 0'); }
+  if (preference$ > 65535) { errors.add('preference: must be <= 65535'); }
 }
 return errors; } 
 DnsRecordsNaptrRecordData copyWith({String? Function()? flags, double? Function()? order, double? Function()? preference, String? Function()? regex, String? Function()? replacement, String? Function()? service, }) { return DnsRecordsNaptrRecordData(

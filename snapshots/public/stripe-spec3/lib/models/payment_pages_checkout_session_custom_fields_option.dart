@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('label
       json.containsKey('value') && json['value'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (label.length > 5000) errors.add('label: length must be <= 5000');
-if (value.length > 5000) errors.add('value: length must be <= 5000');
+if (label.length > 5000) { errors.add('label: length must be <= 5000'); }
+if (value.length > 5000) { errors.add('value: length must be <= 5000'); }
 return errors; } 
 PaymentPagesCheckoutSessionCustomFieldsOption copyWith({String? label, String? value, }) { return PaymentPagesCheckoutSessionCustomFieldsOption(
   label: label ?? this.label,

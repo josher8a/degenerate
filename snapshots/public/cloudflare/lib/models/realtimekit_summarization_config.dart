@@ -103,8 +103,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'summary_type', 'text_format', 'word_limit'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (wordLimit < 150) errors.add('wordLimit: must be >= 150');
-if (wordLimit > 1000) errors.add('wordLimit: must be <= 1000');
+if (wordLimit < 150) { errors.add('wordLimit: must be >= 150'); }
+if (wordLimit > 1000) { errors.add('wordLimit: must be <= 1000'); }
 return errors; } 
 RealtimekitSummarizationConfig copyWith({SummaryType Function()? summaryType, TextFormat Function()? textFormat, int Function()? wordLimit, }) { return RealtimekitSummarizationConfig(
   summaryType: summaryType != null ? summaryType() : this.summaryType,

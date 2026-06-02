@@ -38,11 +38,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final contentSelector$ = contentSelector;
 if (contentSelector$ != null) {
-  if (contentSelector$.length > 10) errors.add('contentSelector: must have <= 10 items');
+  if (contentSelector$.length > 10) { errors.add('contentSelector: must have <= 10 items'); }
 }
 final specificSitemaps$ = specificSitemaps;
 if (specificSitemaps$ != null) {
-  if (specificSitemaps$.length > 10) errors.add('specificSitemaps: must have <= 10 items');
+  if (specificSitemaps$.length > 10) { errors.add('specificSitemaps: must have <= 10 items'); }
 }
 return errors; } 
 ParseOptions copyWith({List<ContentSelector>? Function()? contentSelector, Map<String, String>? Function()? includeHeaders, bool Function()? includeImages, List<Uri>? Function()? specificSitemaps, bool Function()? useBrowserRendering, }) { return ParseOptions(

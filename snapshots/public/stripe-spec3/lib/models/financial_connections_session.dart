@@ -91,12 +91,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('accou
 List<String> validate() { final errors = <String>[];
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
-  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+  if (clientSecret$.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 return errors; } 
 FinancialConnectionsSession copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, Accounts? accounts, String? Function()? clientSecret, BankConnectionsResourceLinkAccountSessionFilters? Function()? filters, String? id, bool? livemode, FinancialConnectionsSessionObject? object, List<FinancialConnectionsAccountPermissions>? permissions, List<Prefetch>? Function()? prefetch, String? Function()? returnUrl, }) { return FinancialConnectionsSession(

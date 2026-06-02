@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_teams'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (selectedTeams.isEmpty) errors.add('selectedTeams: must have >= 1 items');
+if (selectedTeams.isEmpty) { errors.add('selectedTeams: must have >= 1 items'); }
 return errors; } 
 CopilotAddCopilotSeatsForTeamsRequest copyWith({List<String>? selectedTeams}) { return CopilotAddCopilotSeatsForTeamsRequest(
   selectedTeams: selectedTeams ?? this.selectedTeams,

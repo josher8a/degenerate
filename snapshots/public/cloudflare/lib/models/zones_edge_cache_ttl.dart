@@ -50,8 +50,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final value$ = value;
 if (value$ != null) {
-  if (value$ < 1) errors.add('value: must be >= 1');
-  if (value$ > 31536000.0) errors.add('value: must be <= 31536000.0');
+  if (value$ < 1) { errors.add('value: must be >= 1'); }
+  if (value$ > 31536000.0) { errors.add('value: must be <= 31536000.0'); }
 }
 return errors; } 
 ZonesEdgeCacheTtl copyWith({ZonesEdgeCacheTtlId? Function()? id, int? Function()? value, }) { return ZonesEdgeCacheTtl(

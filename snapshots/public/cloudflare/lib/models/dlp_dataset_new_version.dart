@@ -36,8 +36,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('encod
       json.containsKey('version') && json['version'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (encodingVersion < 0) errors.add('encodingVersion: must be >= 0');
-if (maxCells < 0) errors.add('maxCells: must be >= 0');
+if (encodingVersion < 0) { errors.add('encodingVersion: must be >= 0'); }
+if (maxCells < 0) { errors.add('maxCells: must be >= 0'); }
 return errors; } 
 DlpDatasetNewVersion copyWith({bool? Function()? caseSensitive, List<DlpDatasetColumn>? Function()? columns, int? encodingVersion, int? maxCells, String? Function()? secret, int? version, }) { return DlpDatasetNewVersion(
   caseSensitive: caseSensitive != null ? caseSensitive() : this.caseSensitive,

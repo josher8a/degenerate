@@ -197,12 +197,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card'
 List<String> validate() { final errors = <String>[];
 final deviceFingerprint$ = deviceFingerprint;
 if (deviceFingerprint$ != null) {
-  if (deviceFingerprint$.length > 5000) errors.add('deviceFingerprint: length must be <= 5000');
+  if (deviceFingerprint$.length > 5000) { errors.add('deviceFingerprint: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 IssuingToken copyWith({IssuingTokenCard? card, int? created, String? Function()? deviceFingerprint, String? id, String? Function()? last4, bool? livemode, IssuingTokenNetwork? network, IssuingNetworkTokenNetworkData? Function()? networkData, int? networkUpdatedAt, IssuingTokenObject? object, IssuingTokenStatus? status, WalletProvider? Function()? walletProvider, }) { return IssuingToken(

@@ -32,15 +32,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final statementDescriptorPrefix$ = statementDescriptorPrefix;
 if (statementDescriptorPrefix$ != null) {
-  if (statementDescriptorPrefix$.length > 5000) errors.add('statementDescriptorPrefix: length must be <= 5000');
+  if (statementDescriptorPrefix$.length > 5000) { errors.add('statementDescriptorPrefix: length must be <= 5000'); }
 }
 final statementDescriptorPrefixKana$ = statementDescriptorPrefixKana;
 if (statementDescriptorPrefixKana$ != null) {
-  if (statementDescriptorPrefixKana$.length > 5000) errors.add('statementDescriptorPrefixKana: length must be <= 5000');
+  if (statementDescriptorPrefixKana$.length > 5000) { errors.add('statementDescriptorPrefixKana: length must be <= 5000'); }
 }
 final statementDescriptorPrefixKanji$ = statementDescriptorPrefixKanji;
 if (statementDescriptorPrefixKanji$ != null) {
-  if (statementDescriptorPrefixKanji$.length > 5000) errors.add('statementDescriptorPrefixKanji: length must be <= 5000');
+  if (statementDescriptorPrefixKanji$.length > 5000) { errors.add('statementDescriptorPrefixKanji: length must be <= 5000'); }
 }
 return errors; } 
 AccountCardPaymentsSettings copyWith({AccountDeclineChargeOn? Function()? declineOn, String? Function()? statementDescriptorPrefix, String? Function()? statementDescriptorPrefixKana, String? Function()? statementDescriptorPrefixKanji, }) { return AccountCardPaymentsSettings(

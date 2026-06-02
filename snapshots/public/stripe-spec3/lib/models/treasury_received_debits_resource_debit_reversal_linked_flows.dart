@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final issuingDispute$ = issuingDispute;
 if (issuingDispute$ != null) {
-  if (issuingDispute$.length > 5000) errors.add('issuingDispute: length must be <= 5000');
+  if (issuingDispute$.length > 5000) { errors.add('issuingDispute: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryReceivedDebitsResourceDebitReversalLinkedFlows copyWith({String? Function()? issuingDispute}) { return TreasuryReceivedDebitsResourceDebitReversalLinkedFlows(

@@ -33,11 +33,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultValue$ = defaultValue;
 if (defaultValue$ != null) {
-  if (defaultValue$.length > 5000) errors.add('defaultValue: length must be <= 5000');
+  if (defaultValue$.length > 5000) { errors.add('defaultValue: length must be <= 5000'); }
 }
 final value$ = value;
 if (value$ != null) {
-  if (value$.length > 5000) errors.add('value: length must be <= 5000');
+  if (value$.length > 5000) { errors.add('value: length must be <= 5000'); }
 }
 return errors; } 
 PaymentPagesCheckoutSessionCustomFieldsNumeric copyWith({String? Function()? defaultValue, int? Function()? maximumLength, int? Function()? minimumLength, String? Function()? value, }) { return PaymentPagesCheckoutSessionCustomFieldsNumeric(

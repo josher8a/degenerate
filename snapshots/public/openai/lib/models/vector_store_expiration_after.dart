@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ancho
       json.containsKey('days') && json['days'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (days < 1) errors.add('days: must be >= 1');
-if (days > 365) errors.add('days: must be <= 365');
+if (days < 1) { errors.add('days: must be >= 1'); }
+if (days > 365) { errors.add('days: must be <= 365'); }
 return errors; } 
 VectorStoreExpirationAfter copyWith({VectorStoreExpirationAfterAnchor? anchor, int? days, }) { return VectorStoreExpirationAfter(
   anchor: anchor ?? this.anchor,

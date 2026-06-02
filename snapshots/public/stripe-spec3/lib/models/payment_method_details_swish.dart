@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final paymentReference$ = paymentReference;
 if (paymentReference$ != null) {
-  if (paymentReference$.length > 5000) errors.add('paymentReference: length must be <= 5000');
+  if (paymentReference$.length > 5000) { errors.add('paymentReference: length must be <= 5000'); }
 }
 final verifiedPhoneLast4$ = verifiedPhoneLast4;
 if (verifiedPhoneLast4$ != null) {
-  if (verifiedPhoneLast4$.length > 5000) errors.add('verifiedPhoneLast4: length must be <= 5000');
+  if (verifiedPhoneLast4$.length > 5000) { errors.add('verifiedPhoneLast4: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsSwish copyWith({String? Function()? fingerprint, String? Function()? paymentReference, String? Function()? verifiedPhoneLast4, }) { return PaymentMethodDetailsSwish(

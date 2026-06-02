@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('addre
       json.containsKey('name') && json['name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
 PostInvoicesRequestShippingDetails copyWith({CustomerShippingAddress? address, String? name, RecipientShippingWithOptionalFieldsAddressPhone? Function()? phone, }) { return PostInvoicesRequestShippingDetails(
   address: address ?? this.address,

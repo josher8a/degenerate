@@ -34,9 +34,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_m
 List<String> validate() { final errors = <String>[];
 final cvc$ = cvc;
 if (cvc$ != null) {
-  if (cvc$.length > 5000) errors.add('cvc: length must be <= 5000');
+  if (cvc$.length > 5000) { errors.add('cvc: length must be <= 5000'); }
 }
-if (number.length > 5000) errors.add('number: length must be <= 5000');
+if (number.length > 5000) { errors.add('number: length must be <= 5000'); }
 return errors; } 
 CardDetailsParams copyWith({String? Function()? cvc, int? expMonth, int? expYear, CardDetailsParamsNetworks? Function()? networks, String? number, }) { return CardDetailsParams(
   cvc: cvc != null ? cvc() : this.cvc,

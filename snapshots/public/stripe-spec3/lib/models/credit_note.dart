@@ -324,15 +324,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final memo$ = memo;
 if (memo$ != null) {
-  if (memo$.length > 5000) errors.add('memo: length must be <= 5000');
+  if (memo$.length > 5000) { errors.add('memo: length must be <= 5000'); }
 }
-if (number.length > 5000) errors.add('number: length must be <= 5000');
-if (pdf.length > 5000) errors.add('pdf: length must be <= 5000');
+if (number.length > 5000) { errors.add('number: length must be <= 5000'); }
+if (pdf.length > 5000) { errors.add('pdf: length must be <= 5000'); }
 return errors; } 
 CreditNote copyWith({int? amount, int? amountShipping, int? created, String? currency, BankAccountCustomer? customer, String? Function()? customerAccount, CreditNoteCustomerBalanceTransaction? Function()? customerBalanceTransaction, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, int? Function()? effectiveAt, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? invoice, CreditNoteLines? lines, bool? livemode, String? Function()? memo, Map<String, String>? Function()? metadata, String? number, CreditNoteObject? object, int? Function()? outOfBandAmount, String? pdf, int? postPaymentAmount, int? prePaymentAmount, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, CreditNoteReason? Function()? reason, List<CreditNoteRefund>? refunds, InvoicesResourceShippingCost? Function()? shippingCost, CreditNoteStatus? status, int? subtotal, int? Function()? subtotalExcludingTax, int? total, int? Function()? totalExcludingTax, List<BillingBillResourceInvoicingTaxesTax>? Function()? totalTaxes, CreditNoteType? type, int? Function()? voidedAt, }) { return CreditNote(
   amount: amount ?? this.amount,

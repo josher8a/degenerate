@@ -36,23 +36,23 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final arrivalAirportCode$ = arrivalAirportCode;
 if (arrivalAirportCode$ != null) {
-  if (arrivalAirportCode$.length > 3) errors.add('arrivalAirportCode: length must be <= 3');
+  if (arrivalAirportCode$.length > 3) { errors.add('arrivalAirportCode: length must be <= 3'); }
 }
 final carrier$ = carrier;
 if (carrier$ != null) {
-  if (carrier$.length > 5000) errors.add('carrier: length must be <= 5000');
+  if (carrier$.length > 5000) { errors.add('carrier: length must be <= 5000'); }
 }
 final departureAirportCode$ = departureAirportCode;
 if (departureAirportCode$ != null) {
-  if (departureAirportCode$.length > 3) errors.add('departureAirportCode: length must be <= 3');
+  if (departureAirportCode$.length > 3) { errors.add('departureAirportCode: length must be <= 3'); }
 }
 final flightNumber$ = flightNumber;
 if (flightNumber$ != null) {
-  if (flightNumber$.length > 5000) errors.add('flightNumber: length must be <= 5000');
+  if (flightNumber$.length > 5000) { errors.add('flightNumber: length must be <= 5000'); }
 }
 final serviceClass$ = serviceClass;
 if (serviceClass$ != null) {
-  if (serviceClass$.length > 5000) errors.add('serviceClass: length must be <= 5000');
+  if (serviceClass$.length > 5000) { errors.add('serviceClass: length must be <= 5000'); }
 }
 return errors; } 
 Segments copyWith({String? Function()? arrivalAirportCode, String? Function()? carrier, String? Function()? departureAirportCode, String? Function()? flightNumber, String? Function()? serviceClass, bool? Function()? stopoverAllowed, }) { return Segments(

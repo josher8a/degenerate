@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('destination') && json['destination'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (destination.length > 5000) errors.add('destination: length must be <= 5000');
+if (destination.length > 5000) { errors.add('destination: length must be <= 5000'); }
 return errors; } 
 BalanceNetAvailable copyWith({int? amount, String? destination, BalanceAmountBySourceType? Function()? sourceTypes, }) { return BalanceNetAvailable(
   amount: amount ?? this.amount,

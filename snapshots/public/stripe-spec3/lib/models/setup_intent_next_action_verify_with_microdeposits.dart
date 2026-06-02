@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('arriv
       json.containsKey('hosted_verification_url') && json['hosted_verification_url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (hostedVerificationUrl.length > 5000) errors.add('hostedVerificationUrl: length must be <= 5000');
+if (hostedVerificationUrl.length > 5000) { errors.add('hostedVerificationUrl: length must be <= 5000'); }
 return errors; } 
 SetupIntentNextActionVerifyWithMicrodeposits copyWith({int? arrivalDate, String? hostedVerificationUrl, MicrodepositType? Function()? microdepositType, }) { return SetupIntentNextActionVerifyWithMicrodeposits(
   arrivalDate: arrivalDate ?? this.arrivalDate,

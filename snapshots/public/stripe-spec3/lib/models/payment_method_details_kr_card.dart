@@ -33,15 +33,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final buyerId$ = buyerId;
 if (buyerId$ != null) {
-  if (buyerId$.length > 5000) errors.add('buyerId: length must be <= 5000');
+  if (buyerId$.length > 5000) { errors.add('buyerId: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 4) errors.add('last4: length must be <= 4');
+  if (last4$.length > 4) { errors.add('last4: length must be <= 4'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand, String? Function()? buyerId, String? Function()? last4, String? Function()? transactionId, }) { return PaymentMethodDetailsKrCard(

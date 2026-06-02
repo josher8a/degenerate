@@ -52,9 +52,9 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 200) errors.add('name: length must be <= 200');
+  if (name$.length > 200) { errors.add('name: length must be <= 200'); }
 }
-if (priority < 0) errors.add('priority: must be >= 0');
+if (priority < 0) { errors.add('priority: must be >= 0'); }
 return errors; } 
 LoadBalancingRules2 copyWith({String? Function()? condition, bool Function()? disabled, FixedResponse? Function()? fixedResponse, String? Function()? name, Overrides? Function()? overrides, int Function()? priority, bool? Function()? terminates, }) { return LoadBalancingRules2(
   condition: condition != null ? condition() : this.condition,

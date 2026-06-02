@@ -64,15 +64,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promo
 List<String> validate() { final errors = <String>[];
 final code$ = code;
 if (code$ != null) {
-  if (code$.length > 500) errors.add('code: length must be <= 500');
+  if (code$.length > 500) { errors.add('code: length must be <= 500'); }
 }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
 PostPromotionCodesRequest copyWith({bool? Function()? active, String? Function()? code, String? Function()? customer, String? Function()? customerAccount, List<String>? Function()? expand, int? Function()? expiresAt, int? Function()? maxRedemptions, Map<String, String>? Function()? metadata, Promotion? promotion, PostPromotionCodesRequestRestrictions? Function()? restrictions, }) { return PostPromotionCodesRequest(

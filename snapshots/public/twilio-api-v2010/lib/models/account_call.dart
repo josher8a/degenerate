@@ -141,39 +141,39 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final sid$ = sid;
 if (sid$ != null) {
-  if (sid$.length < 34) errors.add('sid: length must be >= 34');
-  if (sid$.length > 34) errors.add('sid: length must be <= 34');
-  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(sid$)) errors.add(r'sid: must match pattern ^CA[0-9a-fA-F]{32}$');
+  if (sid$.length < 34) { errors.add('sid: length must be >= 34'); }
+  if (sid$.length > 34) { errors.add('sid: length must be <= 34'); }
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(sid$)) { errors.add(r'sid: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
 final parentCallSid$ = parentCallSid;
 if (parentCallSid$ != null) {
-  if (parentCallSid$.length < 34) errors.add('parentCallSid: length must be >= 34');
-  if (parentCallSid$.length > 34) errors.add('parentCallSid: length must be <= 34');
-  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(parentCallSid$)) errors.add(r'parentCallSid: must match pattern ^CA[0-9a-fA-F]{32}$');
+  if (parentCallSid$.length < 34) { errors.add('parentCallSid: length must be >= 34'); }
+  if (parentCallSid$.length > 34) { errors.add('parentCallSid: length must be <= 34'); }
+  if (!RegExp(r'^CA[0-9a-fA-F]{32}$').hasMatch(parentCallSid$)) { errors.add(r'parentCallSid: must match pattern ^CA[0-9a-fA-F]{32}$'); }
 }
 final accountSid$ = accountSid;
 if (accountSid$ != null) {
-  if (accountSid$.length < 34) errors.add('accountSid: length must be >= 34');
-  if (accountSid$.length > 34) errors.add('accountSid: length must be <= 34');
-  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$');
+  if (accountSid$.length < 34) { errors.add('accountSid: length must be >= 34'); }
+  if (accountSid$.length > 34) { errors.add('accountSid: length must be <= 34'); }
+  if (!RegExp(r'^AC[0-9a-fA-F]{32}$').hasMatch(accountSid$)) { errors.add(r'accountSid: must match pattern ^AC[0-9a-fA-F]{32}$'); }
 }
 final phoneNumberSid$ = phoneNumberSid;
 if (phoneNumberSid$ != null) {
-  if (phoneNumberSid$.length < 34) errors.add('phoneNumberSid: length must be >= 34');
-  if (phoneNumberSid$.length > 34) errors.add('phoneNumberSid: length must be <= 34');
-  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(phoneNumberSid$)) errors.add(r'phoneNumberSid: must match pattern ^PN[0-9a-fA-F]{32}$');
+  if (phoneNumberSid$.length < 34) { errors.add('phoneNumberSid: length must be >= 34'); }
+  if (phoneNumberSid$.length > 34) { errors.add('phoneNumberSid: length must be <= 34'); }
+  if (!RegExp(r'^PN[0-9a-fA-F]{32}$').hasMatch(phoneNumberSid$)) { errors.add(r'phoneNumberSid: must match pattern ^PN[0-9a-fA-F]{32}$'); }
 }
 final groupSid$ = groupSid;
 if (groupSid$ != null) {
-  if (groupSid$.length < 34) errors.add('groupSid: length must be >= 34');
-  if (groupSid$.length > 34) errors.add('groupSid: length must be <= 34');
-  if (!RegExp(r'^GP[0-9a-fA-F]{32}$').hasMatch(groupSid$)) errors.add(r'groupSid: must match pattern ^GP[0-9a-fA-F]{32}$');
+  if (groupSid$.length < 34) { errors.add('groupSid: length must be >= 34'); }
+  if (groupSid$.length > 34) { errors.add('groupSid: length must be <= 34'); }
+  if (!RegExp(r'^GP[0-9a-fA-F]{32}$').hasMatch(groupSid$)) { errors.add(r'groupSid: must match pattern ^GP[0-9a-fA-F]{32}$'); }
 }
 final trunkSid$ = trunkSid;
 if (trunkSid$ != null) {
-  if (trunkSid$.length < 34) errors.add('trunkSid: length must be >= 34');
-  if (trunkSid$.length > 34) errors.add('trunkSid: length must be <= 34');
-  if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$');
+  if (trunkSid$.length < 34) { errors.add('trunkSid: length must be >= 34'); }
+  if (trunkSid$.length > 34) { errors.add('trunkSid: length must be <= 34'); }
+  if (!RegExp(r'^TK[0-9a-fA-F]{32}$').hasMatch(trunkSid$)) { errors.add(r'trunkSid: must match pattern ^TK[0-9a-fA-F]{32}$'); }
 }
 return errors; } 
 AccountCall copyWith({String? Function()? sid, String? Function()? dateCreated, String? Function()? dateUpdated, String? Function()? parentCallSid, String? Function()? accountSid, String? Function()? to, String? Function()? toFormatted, String? Function()? from, String? Function()? fromFormatted, String? Function()? phoneNumberSid, CallEnumStatus? Function()? status, String? Function()? startTime, String? Function()? endTime, String? Function()? duration, String? Function()? price, String? Function()? priceUnit, String? Function()? direction, String? Function()? answeredBy, String? Function()? apiVersion, String? Function()? forwardedFrom, String? Function()? groupSid, String? Function()? callerName, String? Function()? queueTime, String? Function()? trunkSid, String? Function()? uri, Map<String, dynamic>? Function()? subresourceUris, }) { return AccountCall(

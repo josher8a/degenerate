@@ -33,12 +33,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('card_
       json.containsKey('token_requestor_id') && json['token_requestor_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (cardReferenceId.length > 5000) errors.add('cardReferenceId: length must be <= 5000');
-if (tokenReferenceId.length > 5000) errors.add('tokenReferenceId: length must be <= 5000');
-if (tokenRequestorId.length > 5000) errors.add('tokenRequestorId: length must be <= 5000');
+if (cardReferenceId.length > 5000) { errors.add('cardReferenceId: length must be <= 5000'); }
+if (tokenReferenceId.length > 5000) { errors.add('tokenReferenceId: length must be <= 5000'); }
+if (tokenRequestorId.length > 5000) { errors.add('tokenRequestorId: length must be <= 5000'); }
 final tokenRiskScore$ = tokenRiskScore;
 if (tokenRiskScore$ != null) {
-  if (tokenRiskScore$.length > 5000) errors.add('tokenRiskScore: length must be <= 5000');
+  if (tokenRiskScore$.length > 5000) { errors.add('tokenRiskScore: length must be <= 5000'); }
 }
 return errors; } 
 IssuingNetworkTokenVisa copyWith({String? cardReferenceId, String? tokenReferenceId, String? tokenRequestorId, String? Function()? tokenRiskScore, }) { return IssuingNetworkTokenVisa(

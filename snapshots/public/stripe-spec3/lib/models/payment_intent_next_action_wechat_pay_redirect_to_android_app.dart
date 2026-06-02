@@ -52,13 +52,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('app_i
       json.containsKey('timestamp') && json['timestamp'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (appId.length > 5000) errors.add('appId: length must be <= 5000');
-if (nonceStr.length > 5000) errors.add('nonceStr: length must be <= 5000');
-if (package.length > 5000) errors.add('package: length must be <= 5000');
-if (partnerId.length > 5000) errors.add('partnerId: length must be <= 5000');
-if (prepayId.length > 5000) errors.add('prepayId: length must be <= 5000');
-if (sign.length > 5000) errors.add('sign: length must be <= 5000');
-if (timestamp.length > 5000) errors.add('timestamp: length must be <= 5000');
+if (appId.length > 5000) { errors.add('appId: length must be <= 5000'); }
+if (nonceStr.length > 5000) { errors.add('nonceStr: length must be <= 5000'); }
+if (package.length > 5000) { errors.add('package: length must be <= 5000'); }
+if (partnerId.length > 5000) { errors.add('partnerId: length must be <= 5000'); }
+if (prepayId.length > 5000) { errors.add('prepayId: length must be <= 5000'); }
+if (sign.length > 5000) { errors.add('sign: length must be <= 5000'); }
+if (timestamp.length > 5000) { errors.add('timestamp: length must be <= 5000'); }
 return errors; } 
 PaymentIntentNextActionWechatPayRedirectToAndroidApp copyWith({String? appId, String? nonceStr, String? package, String? partnerId, String? prepayId, String? sign, String? timestamp, }) { return PaymentIntentNextActionWechatPayRedirectToAndroidApp(
   appId: appId ?? this.appId,

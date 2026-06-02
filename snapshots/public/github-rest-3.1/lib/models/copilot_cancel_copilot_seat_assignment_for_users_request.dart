@@ -15,7 +15,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('selected_usernames'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (selectedUsernames.isEmpty) errors.add('selectedUsernames: must have >= 1 items');
+if (selectedUsernames.isEmpty) { errors.add('selectedUsernames: must have >= 1 items'); }
 return errors; } 
 CopilotCancelCopilotSeatAssignmentForUsersRequest copyWith({List<String>? selectedUsernames}) { return CopilotCancelCopilotSeatAssignmentForUsersRequest(
   selectedUsernames: selectedUsernames ?? this.selectedUsernames,

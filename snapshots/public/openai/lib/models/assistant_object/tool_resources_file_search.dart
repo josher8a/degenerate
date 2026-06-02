@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final vectorStoreIds$ = vectorStoreIds;
 if (vectorStoreIds$ != null) {
-  if (vectorStoreIds$.length > 1) errors.add('vectorStoreIds: must have <= 1 items');
+  if (vectorStoreIds$.length > 1) { errors.add('vectorStoreIds: must have <= 1 items'); }
 }
 return errors; } 
 ToolResourcesFileSearch copyWith({List<String>? Function()? vectorStoreIds}) { return ToolResourcesFileSearch(

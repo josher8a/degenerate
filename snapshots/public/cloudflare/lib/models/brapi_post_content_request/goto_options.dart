@@ -27,7 +27,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'referer', 'referrerPolicy', 'timeout', 'waitUntil'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (timeout > 60000) errors.add('timeout: must be <= 60000');
+if (timeout > 60000) { errors.add('timeout: must be <= 60000'); }
 return errors; } 
 GotoOptions copyWith({String? Function()? referer, String? Function()? referrerPolicy, double Function()? timeout, WaitUntil? Function()? waitUntil, }) { return GotoOptions(
   referer: referer != null ? referer() : this.referer,

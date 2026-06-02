@@ -175,13 +175,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('status_transitions'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (financialAccount.length > 5000) errors.add('financialAccount: length must be <= 5000');
+if (financialAccount.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 final hostedRegulatoryReceiptUrl$ = hostedRegulatoryReceiptUrl;
 if (hostedRegulatoryReceiptUrl$ != null) {
-  if (hostedRegulatoryReceiptUrl$.length > 5000) errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000');
+  if (hostedRegulatoryReceiptUrl$.length > 5000) { errors.add('hostedRegulatoryReceiptUrl: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (receivedCredit.length > 5000) errors.add('receivedCredit: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (receivedCredit.length > 5000) { errors.add('receivedCredit: length must be <= 5000'); }
 return errors; } 
 TreasuryCreditReversal copyWith({int? amount, int? created, String? currency, String? financialAccount, String? Function()? hostedRegulatoryReceiptUrl, String? id, bool? livemode, Map<String,String>? metadata, TreasuryCreditReversalNetwork? network, TreasuryCreditReversalObject? object, String? receivedCredit, TreasuryCreditReversalStatus? status, TreasuryReceivedCreditsResourceStatusTransitions? statusTransitions, TreasuryCreditReversalTransaction? Function()? transaction, }) { return TreasuryCreditReversal(
   amount: amount ?? this.amount,

@@ -18,7 +18,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final receivedDebit$ = receivedDebit;
 if (receivedDebit$ != null) {
-  if (receivedDebit$.length > 5000) errors.add('receivedDebit: length must be <= 5000');
+  if (receivedDebit$.length > 5000) { errors.add('receivedDebit: length must be <= 5000'); }
 }
 return errors; } 
 TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows copyWith({String? Function()? receivedDebit}) { return TreasuryInboundTransfersResourceInboundTransferResourceLinkedFlows(

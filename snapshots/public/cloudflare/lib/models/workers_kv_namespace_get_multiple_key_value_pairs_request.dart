@@ -53,7 +53,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('keys'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (keys.length > 100) errors.add('keys: must have <= 100 items');
+if (keys.length > 100) { errors.add('keys: must have <= 100 items'); }
 return errors; } 
 WorkersKvNamespaceGetMultipleKeyValuePairsRequest copyWith({List<WorkersKvKeyNameBulk>? keys, WorkersKvNamespaceGetMultipleKeyValuePairsRequestType Function()? type, bool Function()? withMetadata, }) { return WorkersKvNamespaceGetMultipleKeyValuePairsRequest(
   keys: keys ?? this.keys,

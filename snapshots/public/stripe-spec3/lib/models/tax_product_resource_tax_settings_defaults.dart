@@ -59,7 +59,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('provi
 List<String> validate() { final errors = <String>[];
 final taxCode$ = taxCode;
 if (taxCode$ != null) {
-  if (taxCode$.length > 5000) errors.add('taxCode: length must be <= 5000');
+  if (taxCode$.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 }
 return errors; } 
 TaxProductResourceTaxSettingsDefaults copyWith({Provider? provider, TaxProductResourceTaxSettingsDefaultsTaxBehavior? Function()? taxBehavior, String? Function()? taxCode, }) { return TaxProductResourceTaxSettingsDefaults(

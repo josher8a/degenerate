@@ -95,8 +95,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data_
       json.containsKey('version') && json['version'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
 ReportingReportType copyWith({int? dataAvailableEnd, int? dataAvailableStart, List<String>? Function()? defaultColumns, String? id, bool? livemode, String? name, ReportingReportTypeObject? object, int? updated, int? version, }) { return ReportingReportType(
   dataAvailableEnd: dataAvailableEnd ?? this.dataAvailableEnd,

@@ -85,7 +85,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('certi
       json.containsKey('operating_system'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (certificateId.length > 36) errors.add('certificateId: length must be <= 36');
+if (certificateId.length > 36) { errors.add('certificateId: length must be <= 36'); }
 return errors; } 
 InputRequest copyWith({String? certificateId, bool? checkPrivateKey, String? Function()? cn, List<TeamsDevicesExtendedKeyUsageEnum>? Function()? extendedKeyUsage, InputRequestLocations? Function()? locations, InputRequestOperatingSystem? operatingSystem, List<String>? Function()? subjectAlternativeNames, }) { return InputRequest(
   certificateId: certificateId ?? this.certificateId,

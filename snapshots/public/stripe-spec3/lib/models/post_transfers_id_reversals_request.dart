@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 PostTransfersIdReversalsRequest copyWith({int? Function()? amount, String? Function()? description, List<String>? Function()? expand, Metadata? Function()? metadata, bool? Function()? refundApplicationFee, }) { return PostTransfersIdReversalsRequest(

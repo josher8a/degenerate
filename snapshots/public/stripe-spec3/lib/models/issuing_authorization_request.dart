@@ -161,13 +161,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final authorizationCode$ = authorizationCode;
 if (authorizationCode$ != null) {
-  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+  if (authorizationCode$.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
-if (merchantCurrency.length > 5000) errors.add('merchantCurrency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
+if (merchantCurrency.length > 5000) { errors.add('merchantCurrency: length must be <= 5000'); }
 final reasonMessage$ = reasonMessage;
 if (reasonMessage$ != null) {
-  if (reasonMessage$.length > 5000) errors.add('reasonMessage: length must be <= 5000');
+  if (reasonMessage$.length > 5000) { errors.add('reasonMessage: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorizationRequest copyWith({int? amount, IssuingAuthorizationAmountDetails? Function()? amountDetails, bool? approved, String? Function()? authorizationCode, int? created, String? currency, int? merchantAmount, String? merchantCurrency, int? Function()? networkRiskScore, IssuingAuthorizationRequestReason? reason, String? Function()? reasonMessage, int? Function()? requestedAt, }) { return IssuingAuthorizationRequest(

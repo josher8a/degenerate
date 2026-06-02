@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('ranke
       json.containsKey('score_threshold') && json['score_threshold'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (scoreThreshold < 0) errors.add('scoreThreshold: must be >= 0');
-if (scoreThreshold > 1) errors.add('scoreThreshold: must be <= 1');
+if (scoreThreshold < 0) { errors.add('scoreThreshold: must be >= 0'); }
+if (scoreThreshold > 1) { errors.add('scoreThreshold: must be <= 1'); }
 return errors; } 
 RunStepDetailsToolCallsFileSearchRankingOptionsObject copyWith({FileSearchRanker? ranker, double? scoreThreshold, }) { return RunStepDetailsToolCallsFileSearchRankingOptionsObject(
   ranker: ranker ?? this.ranker,

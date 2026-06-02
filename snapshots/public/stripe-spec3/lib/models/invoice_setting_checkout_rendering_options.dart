@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final amountTaxDisplay$ = amountTaxDisplay;
 if (amountTaxDisplay$ != null) {
-  if (amountTaxDisplay$.length > 5000) errors.add('amountTaxDisplay: length must be <= 5000');
+  if (amountTaxDisplay$.length > 5000) { errors.add('amountTaxDisplay: length must be <= 5000'); }
 }
 final template$ = template;
 if (template$ != null) {
-  if (template$.length > 5000) errors.add('template: length must be <= 5000');
+  if (template$.length > 5000) { errors.add('template: length must be <= 5000'); }
 }
 return errors; } 
 InvoiceSettingCheckoutRenderingOptions copyWith({String? Function()? amountTaxDisplay, String? Function()? template, }) { return InvoiceSettingCheckoutRenderingOptions(

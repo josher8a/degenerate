@@ -93,11 +93,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('scope'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 final payload$ = payload;
 if (payload$ != null) {
-  if (payload$.length > 5000) errors.add('payload: length must be <= 5000');
+  if (payload$.length > 5000) { errors.add('payload: length must be <= 5000'); }
 }
 return errors; } 
 AppsSecret copyWith({int? created, bool? Function()? deleted, int? Function()? expiresAt, String? id, bool? livemode, String? name, AppsSecretObject? object, String? Function()? payload, SecretServiceResourceScope? scope, }) { return AppsSecret(

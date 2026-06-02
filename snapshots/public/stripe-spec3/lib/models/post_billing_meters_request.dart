@@ -75,8 +75,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('defau
       json.containsKey('event_name') && json['event_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (displayName.length > 250) errors.add('displayName: length must be <= 250');
-if (eventName.length > 100) errors.add('eventName: length must be <= 100');
+if (displayName.length > 250) { errors.add('displayName: length must be <= 250'); }
+if (eventName.length > 100) { errors.add('eventName: length must be <= 100'); }
 return errors; } 
 PostBillingMetersRequest copyWith({CustomerMapping? Function()? customerMapping, DefaultAggregation? defaultAggregation, String? displayName, String? eventName, PostBillingMetersRequestEventTimeWindow? Function()? eventTimeWindow, List<String>? Function()? expand, ValueSettings? Function()? valueSettings, }) { return PostBillingMetersRequest(
   customerMapping: customerMapping != null ? customerMapping() : this.customerMapping,

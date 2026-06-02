@@ -114,12 +114,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
 List<String> validate() { final errors = <String>[];
 final defaultReturnUrl$ = defaultReturnUrl;
 if (defaultReturnUrl$ != null) {
-  if (defaultReturnUrl$.length > 5000) errors.add('defaultReturnUrl: length must be <= 5000');
+  if (defaultReturnUrl$.length > 5000) { errors.add('defaultReturnUrl: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 BillingPortalConfiguration copyWith({bool? active, BillingPortalConfigurationApplication? Function()? application, PortalBusinessProfile? businessProfile, int? created, String? Function()? defaultReturnUrl, PortalFeatures? features, String? id, bool? isDefault, bool? livemode, PortalLoginPage? loginPage, Map<String, String>? Function()? metadata, String? Function()? name, BillingPortalConfigurationObject? object, int? updated, }) { return BillingPortalConfiguration(

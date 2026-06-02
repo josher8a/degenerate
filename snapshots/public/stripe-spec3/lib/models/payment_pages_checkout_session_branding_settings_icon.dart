@@ -28,11 +28,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final file$ = file;
 if (file$ != null) {
-  if (file$.length > 5000) errors.add('file: length must be <= 5000');
+  if (file$.length > 5000) { errors.add('file: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 PaymentPagesCheckoutSessionBrandingSettingsIcon copyWith({String? Function()? file, PaymentPagesCheckoutSessionBrandingSettingsIconType? type, String? Function()? url, }) { return PaymentPagesCheckoutSessionBrandingSettingsIcon(

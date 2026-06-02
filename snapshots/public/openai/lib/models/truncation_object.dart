@@ -51,7 +51,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final lastMessages$ = lastMessages;
 if (lastMessages$ != null) {
-  if (lastMessages$ < 1) errors.add('lastMessages: must be >= 1');
+  if (lastMessages$ < 1) { errors.add('lastMessages: must be >= 1'); }
 }
 return errors; } 
 TruncationObject copyWith({TruncationObjectType? type, int? Function()? lastMessages, }) { return TruncationObject(

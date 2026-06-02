@@ -41,7 +41,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('card') && json['card'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (card.length > 5000) errors.add('card: length must be <= 5000');
+if (card.length > 5000) { errors.add('card: length must be <= 5000'); }
 return errors; } 
 PostTestHelpersIssuingTransactionsCreateForceCaptureRequest copyWith({int? amount, String? card, String? Function()? currency, List<String>? Function()? expand, MerchantData? Function()? merchantData, PurchaseDetails? Function()? purchaseDetails, }) { return PostTestHelpersIssuingTransactionsCreateForceCaptureRequest(
   amount: amount ?? this.amount,

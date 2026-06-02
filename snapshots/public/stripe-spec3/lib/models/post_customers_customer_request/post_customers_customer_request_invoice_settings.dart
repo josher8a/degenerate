@@ -29,11 +29,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final defaultPaymentMethod$ = defaultPaymentMethod;
 if (defaultPaymentMethod$ != null) {
-  if (defaultPaymentMethod$.length > 5000) errors.add('defaultPaymentMethod: length must be <= 5000');
+  if (defaultPaymentMethod$.length > 5000) { errors.add('defaultPaymentMethod: length must be <= 5000'); }
 }
 final footer$ = footer;
 if (footer$ != null) {
-  if (footer$.length > 5000) errors.add('footer: length must be <= 5000');
+  if (footer$.length > 5000) { errors.add('footer: length must be <= 5000'); }
 }
 return errors; } 
 PostCustomersCustomerRequestInvoiceSettings copyWith({PostInvoicesInvoiceRequestCustomFields? Function()? customFields, String? Function()? defaultPaymentMethod, String? Function()? footer, InvoiceSettingsRenderingOptions? Function()? renderingOptions, }) { return PostCustomersCustomerRequestInvoiceSettings(

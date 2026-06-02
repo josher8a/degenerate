@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final items$ = items;
 if (items$ != null) {
-  if (items$.length > 20) errors.add('items: must have <= 20 items');
+  if (items$.length > 20) { errors.add('items: must have <= 20 items'); }
 }
 return errors; } 
 CreateConversationBody copyWith({Map<String, String>? Function()? metadata, List<InputItem>? Function()? items, }) { return CreateConversationBody(

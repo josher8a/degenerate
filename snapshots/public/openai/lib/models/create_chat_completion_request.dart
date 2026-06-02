@@ -255,36 +255,36 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
       json.containsKey('model'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (messages.isEmpty) errors.add('messages: must have >= 1 items');
+if (messages.isEmpty) { errors.add('messages: must have >= 1 items'); }
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
-  if (frequencyPenalty$ < -2) errors.add('frequencyPenalty: must be >= -2');
-  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+  if (frequencyPenalty$ < -2) { errors.add('frequencyPenalty: must be >= -2'); }
+  if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
 }
 final presencePenalty$ = presencePenalty;
 if (presencePenalty$ != null) {
-  if (presencePenalty$ < -2) errors.add('presencePenalty: must be >= -2');
-  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+  if (presencePenalty$ < -2) { errors.add('presencePenalty: must be >= -2'); }
+  if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
 final topLogprobs$ = topLogprobs;
 if (topLogprobs$ != null) {
-  if (topLogprobs$ < 0) errors.add('topLogprobs: must be >= 0');
-  if (topLogprobs$ > 20) errors.add('topLogprobs: must be <= 20');
+  if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
+  if (topLogprobs$ > 20) { errors.add('topLogprobs: must be <= 20'); }
 }
 final n$ = n;
 if (n$ != null) {
-  if (n$ < 1) errors.add('n: must be >= 1');
-  if (n$ > 128) errors.add('n: must be <= 128');
+  if (n$ < 1) { errors.add('n: must be >= 1'); }
+  if (n$ > 128) { errors.add('n: must be <= 128'); }
 }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < -9223372036854776000.0) errors.add('seed: must be >= -9223372036854776000.0');
-  if (seed$ > 9223372036854776000.0) errors.add('seed: must be <= 9223372036854776000.0');
+  if (seed$ < -9223372036854776000.0) { errors.add('seed: must be >= -9223372036854776000.0'); }
+  if (seed$ > 9223372036854776000.0) { errors.add('seed: must be <= 9223372036854776000.0'); }
 }
 final functions$ = functions;
 if (functions$ != null) {
-  if (functions$.isEmpty) errors.add('functions: must have >= 1 items');
-  if (functions$.length > 128) errors.add('functions: must have <= 128 items');
+  if (functions$.isEmpty) { errors.add('functions: must have >= 1 items'); }
+  if (functions$.length > 128) { errors.add('functions: must have <= 128 items'); }
 }
 return errors; } 
 CreateChatCompletionRequest copyWith({List<ChatCompletionRequestMessage>? messages, ModelIdsShared? model, List<ResponseModalities2>? Function()? modalities, Verbosity? Function()? verbosity, ReasoningEffort? Function()? reasoningEffort, int? Function()? maxCompletionTokens, double? Function()? frequencyPenalty, double? Function()? presencePenalty, WebSearchOptions? Function()? webSearchOptions, int? Function()? topLogprobs, CreateChatCompletionRequestResponseFormat? Function()? responseFormat, CreateChatCompletionRequestAudio? Function()? audio, bool? Function()? store, bool? Function()? stream, StopConfiguration? Function()? stop, Map<String, int>? Function()? logitBias, bool? Function()? logprobs, int? Function()? maxTokens, int? Function()? n, PredictionContent? Function()? prediction, int? Function()? seed, ChatCompletionStreamOptions? Function()? streamOptions, List<CreateChatCompletionRequestTools>? Function()? tools, ChatCompletionToolChoiceOption? Function()? toolChoice, ParallelToolCalls? Function()? parallelToolCalls, CreateChatCompletionRequestFunctionCall? Function()? functionCall, List<ChatCompletionFunctions>? Function()? functions, }) { return CreateChatCompletionRequest(

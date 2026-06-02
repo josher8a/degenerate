@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final networkDeclineCode$ = networkDeclineCode;
 if (networkDeclineCode$ != null) {
-  if (networkDeclineCode$.length > 5000) errors.add('networkDeclineCode: length must be <= 5000');
+  if (networkDeclineCode$.length > 5000) { errors.add('networkDeclineCode: length must be <= 5000'); }
 }
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 final referenceStatus$ = referenceStatus;
 if (referenceStatus$ != null) {
-  if (referenceStatus$.length > 5000) errors.add('referenceStatus: length must be <= 5000');
+  if (referenceStatus$.length > 5000) { errors.add('referenceStatus: length must be <= 5000'); }
 }
 return errors; } 
 RefundDestinationDetailsBlik copyWith({String? Function()? networkDeclineCode, String? Function()? reference, String? Function()? referenceStatus, }) { return RefundDestinationDetailsBlik(

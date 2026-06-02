@@ -44,8 +44,8 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxSeconds$ = maxSeconds;
 if (maxSeconds$ != null) {
-  if (maxSeconds$ < 60) errors.add('maxSeconds: must be >= 60');
-  if (maxSeconds$ > 86400) errors.add('maxSeconds: must be <= 86400');
+  if (maxSeconds$ < 60) { errors.add('maxSeconds: must be >= 60'); }
+  if (maxSeconds$ > 86400) { errors.add('maxSeconds: must be <= 86400'); }
 }
 return errors; } 
 RealtimekitRecordingConfig copyWith({RealtimekitAudioConfig? Function()? audioConfig, String? Function()? fileNamePrefix, RealtimekitLivestreamingConfig? Function()? liveStreamingConfig, double? Function()? maxSeconds, RealtimekitRealtimekitBucketConfig? Function()? realtimekitBucketConfig, RealtimekitStorageConfig? Function()? storageConfig, RealtimekitVideoConfig? Function()? videoConfig, }) { return RealtimekitRecordingConfig(

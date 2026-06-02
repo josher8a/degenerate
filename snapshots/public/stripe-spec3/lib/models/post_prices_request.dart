@@ -107,15 +107,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
 List<String> validate() { final errors = <String>[];
 final lookupKey$ = lookupKey;
 if (lookupKey$ != null) {
-  if (lookupKey$.length > 200) errors.add('lookupKey: length must be <= 200');
+  if (lookupKey$.length > 200) { errors.add('lookupKey: length must be <= 200'); }
 }
 final nickname$ = nickname;
 if (nickname$ != null) {
-  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+  if (nickname$.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 final product$ = product;
 if (product$ != null) {
-  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+  if (product$.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
 return errors; } 
 PostPricesRequest copyWith({bool? Function()? active, BillingScheme? Function()? billingScheme, String? currency, Map<String, PostPricesRequestCurrencyOptionsValue>? Function()? currencyOptions, PostPricesRequestCustomUnitAmount? Function()? customUnitAmount, List<String>? Function()? expand, String? Function()? lookupKey, Map<String, String>? Function()? metadata, String? Function()? nickname, String? Function()? product, PostPricesRequestProductData? Function()? productData, PostPricesRequestRecurring? Function()? recurring, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, bool? Function()? transferLookupKey, TransformQuantity? Function()? transformQuantity, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostPricesRequest(

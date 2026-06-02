@@ -92,7 +92,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 500) errors.add('description: length must be <= 500');
+  if (description$.length > 500) { errors.add('description: length must be <= 500'); }
 }
 return errors; } 
 PostCheckoutSessionsRequestSubscriptionData copyWith({double? Function()? applicationFeePercent, int? Function()? billingCycleAnchor, PostSubscriptionSchedulesRequestBillingMode? Function()? billingMode, List<String>? Function()? defaultTaxRates, String? Function()? description, SubscriptionDataInvoiceSettings? Function()? invoiceSettings, Map<String, String>? Function()? metadata, String? Function()? onBehalfOf, SubscriptionDataProrationBehavior? Function()? prorationBehavior, PostCustomersCustomerSubscriptionsRequestTransferData? Function()? transferData, int? Function()? trialEnd, int? Function()? trialPeriodDays, PostCustomersCustomerSubscriptionsRequestTrialSettings? Function()? trialSettings, }) { return PostCheckoutSessionsRequestSubscriptionData(

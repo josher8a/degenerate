@@ -71,7 +71,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 ConnectCollectionTransfer copyWith({int? amount, String? currency, ChargeTransferDataDestination? destination, String? id, bool? livemode, ConnectCollectionTransferObject? object, }) { return ConnectCollectionTransfer(
   amount: amount ?? this.amount,

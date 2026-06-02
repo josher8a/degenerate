@@ -80,7 +80,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final action$ = action;
 if (action$ != null) {
-  if (!RegExp(r'^[a-z_]+$').hasMatch(action$)) errors.add(r'action: must match pattern ^[a-z_]+$');
+  if (!RegExp(r'^[a-z_]+$').hasMatch(action$)) { errors.add(r'action: must match pattern ^[a-z_]+$'); }
 }
 return errors; } 
 RequestTracerTrace2 copyWith({String? Function()? action, Map<String, dynamic>? Function()? actionParameters, String? Function()? description, String? Function()? expression, String? Function()? kind, bool? Function()? matched, String? Function()? name, String? Function()? stepName, List<RequestTracerTrace2>? Function()? trace, String? Function()? type, }) { return RequestTracerTrace2(

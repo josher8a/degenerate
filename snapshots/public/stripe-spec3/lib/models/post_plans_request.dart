@@ -102,15 +102,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
 final meter$ = meter;
 if (meter$ != null) {
-  if (meter$.length > 5000) errors.add('meter: length must be <= 5000');
+  if (meter$.length > 5000) { errors.add('meter: length must be <= 5000'); }
 }
 final nickname$ = nickname;
 if (nickname$ != null) {
-  if (nickname$.length > 5000) errors.add('nickname: length must be <= 5000');
+  if (nickname$.length > 5000) { errors.add('nickname: length must be <= 5000'); }
 }
 return errors; } 
 PostPlansRequest copyWith({bool? Function()? active, int? Function()? amount, String? Function()? amountDecimal, BillingScheme? Function()? billingScheme, String? currency, List<String>? Function()? expand, String? Function()? id, GetPricesRecurringInterval? interval, int? Function()? intervalCount, Metadata? Function()? metadata, String? Function()? meter, String? Function()? nickname, PostPlansRequestProduct? Function()? product, List<Tiers>? Function()? tiers, PostPlansRequestTiersMode? Function()? tiersMode, PostPlansRequestTransformUsage? Function()? transformUsage, int? Function()? trialPeriodDays, UsageType? Function()? usageType, }) { return PostPlansRequest(

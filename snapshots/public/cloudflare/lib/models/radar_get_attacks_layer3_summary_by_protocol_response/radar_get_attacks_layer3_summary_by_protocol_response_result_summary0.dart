@@ -41,10 +41,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('GRE')
       json.containsKey('UDP') && json['UDP'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^\d+$').hasMatch(gre)) errors.add(r'gre: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(icmp)) errors.add(r'icmp: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(tcp)) errors.add(r'tcp: must match pattern ^\d+$');
-if (!RegExp(r'^\d+$').hasMatch(udp)) errors.add(r'udp: must match pattern ^\d+$');
+if (!RegExp(r'^\d+$').hasMatch(gre)) { errors.add(r'gre: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(icmp)) { errors.add(r'icmp: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(tcp)) { errors.add(r'tcp: must match pattern ^\d+$'); }
+if (!RegExp(r'^\d+$').hasMatch(udp)) { errors.add(r'udp: must match pattern ^\d+$'); }
 return errors; } 
 RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0 copyWith({String? gre, String? icmp, String? tcp, String? udp, }) { return RadarGetAttacksLayer3SummaryByProtocolResponseResultSummary0(
   gre: gre ?? this.gre,

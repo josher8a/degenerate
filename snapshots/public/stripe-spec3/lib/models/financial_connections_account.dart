@@ -328,13 +328,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('categ
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (institutionName.length > 5000) errors.add('institutionName: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (institutionName.length > 5000) { errors.add('institutionName: length must be <= 5000'); }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 return errors; } 
 FinancialConnectionsAccount copyWith({BankConnectionsResourceAccountholder? Function()? accountHolder, List<BankConnectionsResourceAccountNumberDetails>? Function()? accountNumbers, BankConnectionsResourceBalance? Function()? balance, BankConnectionsResourceBalanceRefresh? Function()? balanceRefresh, FinancialConnectionsAccountCategory? category, int? created, String? Function()? displayName, String? id, String? institutionName, String? Function()? last4, bool? livemode, FinancialConnectionsAccountObject? object, Ownership? Function()? ownership, BankConnectionsResourceOwnershipRefresh? Function()? ownershipRefresh, List<FinancialConnectionsAccountPermissions>? Function()? permissions, FinancialConnectionsAccountStatus? status, Subcategory? subcategory, List<FinancialConnectionsAccountSubscriptions>? Function()? subscriptions, List<SupportedPaymentMethodTypes>? supportedPaymentMethodTypes, BankConnectionsResourceTransactionRefresh? Function()? transactionRefresh, }) { return FinancialConnectionsAccount(

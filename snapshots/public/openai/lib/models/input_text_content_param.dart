@@ -22,7 +22,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
       json.containsKey('text') && json['text'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (text.length > 10485760) errors.add('text: length must be <= 10485760');
+if (text.length > 10485760) { errors.add('text: length must be <= 10485760'); }
 return errors; } 
 InputTextContentParam copyWith({InputTextContentParamType? type, String? text, }) { return InputTextContentParam(
   type: type ?? this.type,

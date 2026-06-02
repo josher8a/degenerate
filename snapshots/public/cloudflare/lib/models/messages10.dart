@@ -80,35 +80,35 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('messa
 List<String> validate() { final errors = <String>[];
 final frequencyPenalty$ = frequencyPenalty;
 if (frequencyPenalty$ != null) {
-  if (frequencyPenalty$ < -2) errors.add('frequencyPenalty: must be >= -2');
-  if (frequencyPenalty$ > 2) errors.add('frequencyPenalty: must be <= 2');
+  if (frequencyPenalty$ < -2) { errors.add('frequencyPenalty: must be >= -2'); }
+  if (frequencyPenalty$ > 2) { errors.add('frequencyPenalty: must be <= 2'); }
 }
 final presencePenalty$ = presencePenalty;
 if (presencePenalty$ != null) {
-  if (presencePenalty$ < -2) errors.add('presencePenalty: must be >= -2');
-  if (presencePenalty$ > 2) errors.add('presencePenalty: must be <= 2');
+  if (presencePenalty$ < -2) { errors.add('presencePenalty: must be >= -2'); }
+  if (presencePenalty$ > 2) { errors.add('presencePenalty: must be <= 2'); }
 }
 final repetitionPenalty$ = repetitionPenalty;
 if (repetitionPenalty$ != null) {
-  if (repetitionPenalty$ < 0) errors.add('repetitionPenalty: must be >= 0');
-  if (repetitionPenalty$ > 2) errors.add('repetitionPenalty: must be <= 2');
+  if (repetitionPenalty$ < 0) { errors.add('repetitionPenalty: must be >= 0'); }
+  if (repetitionPenalty$ > 2) { errors.add('repetitionPenalty: must be <= 2'); }
 }
 final seed$ = seed;
 if (seed$ != null) {
-  if (seed$ < 1) errors.add('seed: must be >= 1');
-  if (seed$ > 9999999999.0) errors.add('seed: must be <= 9999999999.0');
+  if (seed$ < 1) { errors.add('seed: must be >= 1'); }
+  if (seed$ > 9999999999.0) { errors.add('seed: must be <= 9999999999.0'); }
 }
-if (temperature < 0) errors.add('temperature: must be >= 0');
-if (temperature > 5) errors.add('temperature: must be <= 5');
+if (temperature < 0) { errors.add('temperature: must be >= 0'); }
+if (temperature > 5) { errors.add('temperature: must be <= 5'); }
 final topK$ = topK;
 if (topK$ != null) {
-  if (topK$ < 1) errors.add('topK: must be >= 1');
-  if (topK$ > 50) errors.add('topK: must be <= 50');
+  if (topK$ < 1) { errors.add('topK: must be >= 1'); }
+  if (topK$ > 50) { errors.add('topK: must be <= 50'); }
 }
 final topP$ = topP;
 if (topP$ != null) {
-  if (topP$ < 0.001) errors.add('topP: must be >= 0.001');
-  if (topP$ > 1) errors.add('topP: must be <= 1');
+  if (topP$ < 0.001) { errors.add('topP: must be >= 0.001'); }
+  if (topP$ > 1) { errors.add('topP: must be <= 1'); }
 }
 return errors; } 
 Messages10 copyWith({double? Function()? frequencyPenalty, List<Messages10Functions>? Function()? functions, int Function()? maxTokens, List<Messages10Messages>? messages, double? Function()? presencePenalty, bool Function()? raw, double? Function()? repetitionPenalty, MessagesResponseFormat? Function()? responseFormat, int? Function()? seed, bool Function()? stream, double Function()? temperature, List<Messages10Tools>? Function()? tools, int? Function()? topK, double? Function()? topP, }) { return Messages10(

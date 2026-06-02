@@ -44,7 +44,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 100) errors.add('name: length must be <= 100');
+if (name.length > 100) { errors.add('name: length must be <= 100'); }
 return errors; } 
 IamAccount copyWith({DateTime? Function()? createdOn, IamCommonComponentsSchemasIdentifier? id, ManagedBy? Function()? managedBy, String? name, IamAccountSettings? Function()? settings, IamAccountType? Function()? type, }) { return IamAccount(
   createdOn: createdOn != null ? createdOn() : this.createdOn,

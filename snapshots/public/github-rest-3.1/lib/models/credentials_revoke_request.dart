@@ -15,8 +15,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('credentials'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (credentials.isEmpty) errors.add('credentials: must have >= 1 items');
-if (credentials.length > 1000) errors.add('credentials: must have <= 1000 items');
+if (credentials.isEmpty) { errors.add('credentials: must have >= 1 items'); }
+if (credentials.length > 1000) { errors.add('credentials: must have <= 1000 items'); }
 return errors; } 
 CredentialsRevokeRequest copyWith({List<String>? credentials}) { return CredentialsRevokeRequest(
   credentials: credentials ?? this.credentials,

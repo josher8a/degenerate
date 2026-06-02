@@ -94,15 +94,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('unit_cost') && json['unit_cost'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final productCode$ = productCode;
 if (productCode$ != null) {
-  if (productCode$.length > 5000) errors.add('productCode: length must be <= 5000');
+  if (productCode$.length > 5000) { errors.add('productCode: length must be <= 5000'); }
 }
-if (productName.length > 5000) errors.add('productName: length must be <= 5000');
+if (productName.length > 5000) { errors.add('productName: length must be <= 5000'); }
 final unitOfMeasure$ = unitOfMeasure;
 if (unitOfMeasure$ != null) {
-  if (unitOfMeasure$.length > 5000) errors.add('unitOfMeasure: length must be <= 5000');
+  if (unitOfMeasure$.length > 5000) { errors.add('unitOfMeasure: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentAmountDetailsLineItem copyWith({int? Function()? discountAmount, String? id, PaymentIntentAmountDetailsLineItemObject? object, PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourcePaymentMethodOptions? Function()? paymentMethodOptions, String? Function()? productCode, String? productName, int? quantity, PaymentFlowsAmountDetailsResourceLineItemsListResourceLineItemResourceTax? Function()? tax, int? unitCost, String? Function()? unitOfMeasure, }) { return PaymentIntentAmountDetailsLineItem(

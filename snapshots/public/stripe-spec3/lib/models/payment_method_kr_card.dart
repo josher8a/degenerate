@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 4) errors.add('last4: length must be <= 4');
+  if (last4$.length > 4) { errors.add('last4: length must be <= 4'); }
 }
 return errors; } 
 PaymentMethodKrCard copyWith({PaymentMethodDetailsKrCardBrand? Function()? brand, String? Function()? last4, }) { return PaymentMethodKrCard(

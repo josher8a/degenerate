@@ -22,8 +22,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('manag
       json.containsKey('managed_response_headers'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (managedRequestHeaders.toSet().length != managedRequestHeaders.length) errors.add('managedRequestHeaders: items must be unique');
-if (managedResponseHeaders.toSet().length != managedResponseHeaders.length) errors.add('managedResponseHeaders: items must be unique');
+if (managedRequestHeaders.toSet().length != managedRequestHeaders.length) { errors.add('managedRequestHeaders: items must be unique'); }
+if (managedResponseHeaders.toSet().length != managedResponseHeaders.length) { errors.add('managedResponseHeaders: items must be unique'); }
 return errors; } 
 RulesetsManagedTransforms copyWith({List<RulesetsManagedTransform>? managedRequestHeaders, List<RulesetsManagedTransform>? managedResponseHeaders, }) { return RulesetsManagedTransforms(
   managedRequestHeaders: managedRequestHeaders ?? this.managedRequestHeaders,

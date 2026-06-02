@@ -95,10 +95,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('status_details'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final name$ = name;
 if (name$ != null) {
-  if (name$.length > 5000) errors.add('name: length must be <= 5000');
+  if (name$.length > 5000) { errors.add('name: length must be <= 5000'); }
 }
 return errors; } 
 TestHelpersTestClock copyWith({int? created, int? deletesAfter, int? frozenTime, String? id, bool? livemode, String? Function()? name, DeletedTestHelpersTestClockObject? object, TestHelpersTestClockStatus? status, BillingClocksResourceStatusDetailsStatusDetails? statusDetails, }) { return TestHelpersTestClock(

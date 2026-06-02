@@ -56,11 +56,11 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final charge$ = charge;
 if (charge$ != null) {
-  if (charge$.length > 5000) errors.add('charge: length must be <= 5000');
+  if (charge$.length > 5000) { errors.add('charge: length must be <= 5000'); }
 }
 final payout$ = payout;
 if (payout$ != null) {
-  if (payout$.length > 5000) errors.add('payout: length must be <= 5000');
+  if (payout$.length > 5000) { errors.add('payout: length must be <= 5000'); }
 }
 return errors; } 
 PlatformEarningFeeSource copyWith({String? Function()? charge, String? Function()? payout, PlatformEarningFeeSourceType? type, }) { return PlatformEarningFeeSource(

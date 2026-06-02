@@ -132,8 +132,9 @@ final class OnboardSchema {
     final errors = <String>[];
     final referralOther$ = referralOther;
     if (referralOther$ != null) {
-      if (referralOther$.length > 100)
+      if (referralOther$.length > 100) {
         errors.add('referralOther: length must be <= 100');
+      }
     }
     return errors;
   }

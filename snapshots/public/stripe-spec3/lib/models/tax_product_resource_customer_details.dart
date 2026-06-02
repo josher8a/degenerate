@@ -67,7 +67,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('tax_i
 List<String> validate() { final errors = <String>[];
 final ipAddress$ = ipAddress;
 if (ipAddress$ != null) {
-  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+  if (ipAddress$.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
 return errors; } 
 TaxProductResourceCustomerDetails copyWith({TaxProductResourcePostalAddress? Function()? address, TaxProductResourceCustomerDetailsAddressSource? Function()? addressSource, String? Function()? ipAddress, List<TaxProductResourceCustomerDetailsResourceTaxId>? taxIds, TaxabilityOverride? taxabilityOverride, }) { return TaxProductResourceCustomerDetails(

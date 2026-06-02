@@ -78,7 +78,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('input
 List<String> validate() { final errors = <String>[];
 final dimensions$ = dimensions;
 if (dimensions$ != null) {
-  if (dimensions$ < 1) errors.add('dimensions: must be >= 1');
+  if (dimensions$ < 1) { errors.add('dimensions: must be >= 1'); }
 }
 return errors; } 
 CreateEmbeddingRequest copyWith({CreateEmbeddingRequestInput? input, CreateEmbeddingRequestModel? model, EncodingFormat Function()? encodingFormat, int? Function()? dimensions, String? Function()? user, }) { return CreateEmbeddingRequest(

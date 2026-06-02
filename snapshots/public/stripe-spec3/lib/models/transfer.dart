@@ -141,16 +141,16 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final sourceType$ = sourceType;
 if (sourceType$ != null) {
-  if (sourceType$.length > 5000) errors.add('sourceType: length must be <= 5000');
+  if (sourceType$.length > 5000) { errors.add('sourceType: length must be <= 5000'); }
 }
 final transferGroup$ = transferGroup;
 if (transferGroup$ != null) {
-  if (transferGroup$.length > 5000) errors.add('transferGroup: length must be <= 5000');
+  if (transferGroup$.length > 5000) { errors.add('transferGroup: length must be <= 5000'); }
 }
 return errors; } 
 Transfer copyWith({int? amount, int? amountReversed, ApplicationFeeBalanceTransaction? Function()? balanceTransaction, int? created, String? currency, String? Function()? description, ChargeTransferDataDestination? Function()? destination, DestinationPayment? Function()? destinationPayment, String? id, bool? livemode, Map<String,String>? metadata, TransferObject? object, Reversals? reversals, bool? reversed, TransferSourceTransaction? Function()? sourceTransaction, String? Function()? sourceType, String? Function()? transferGroup, }) { return Transfer(

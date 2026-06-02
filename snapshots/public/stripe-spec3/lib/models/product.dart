@@ -119,21 +119,21 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 final statementDescriptor$ = statementDescriptor;
 if (statementDescriptor$ != null) {
-  if (statementDescriptor$.length > 5000) errors.add('statementDescriptor: length must be <= 5000');
+  if (statementDescriptor$.length > 5000) { errors.add('statementDescriptor: length must be <= 5000'); }
 }
 final unitLabel$ = unitLabel;
 if (unitLabel$ != null) {
-  if (unitLabel$.length > 5000) errors.add('unitLabel: length must be <= 5000');
+  if (unitLabel$.length > 5000) { errors.add('unitLabel: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 2048) errors.add('url: length must be <= 2048');
+  if (url$.length > 2048) { errors.add('url: length must be <= 2048'); }
 }
 return errors; } 
 Product copyWith({bool? active, int? created, DefaultPrice? Function()? defaultPrice, String? Function()? description, String? id, List<String>? images, bool? livemode, List<ProductMarketingFeature>? marketingFeatures, Map<String,String>? metadata, String? name, DeletedProductObject? object, PackageDimensions? Function()? packageDimensions, bool? Function()? shippable, String? Function()? statementDescriptor, ProductTaxCode? Function()? taxCode, String? Function()? unitLabel, int? updated, String? Function()? url, }) { return Product(

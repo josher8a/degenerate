@@ -20,8 +20,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('perce
       json.containsKey('version_id') && json['version_id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (percentage < 0.01) errors.add('percentage: must be >= 0.01');
-if (percentage > 100) errors.add('percentage: must be <= 100');
+if (percentage < 0.01) { errors.add('percentage: must be >= 0.01'); }
+if (percentage > 100) { errors.add('percentage: must be <= 100'); }
 return errors; } 
 WorkersDeploymentVersions copyWith({double? percentage, String? versionId, }) { return WorkersDeploymentVersions(
   percentage: percentage ?? this.percentage,

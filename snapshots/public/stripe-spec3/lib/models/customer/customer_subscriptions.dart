@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 CustomerSubscriptions copyWith({List<Subscription>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return CustomerSubscriptions(
   data: data ?? this.data,

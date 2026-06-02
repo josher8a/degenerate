@@ -28,8 +28,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('displ
       json.containsKey('tax_type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
-if (percentageDecimal.length > 5000) errors.add('percentageDecimal: length must be <= 5000');
+if (displayName.length > 5000) { errors.add('displayName: length must be <= 5000'); }
+if (percentageDecimal.length > 5000) { errors.add('percentageDecimal: length must be <= 5000'); }
 return errors; } 
 TaxProductResourceLineItemTaxRateDetails copyWith({String? displayName, String? percentageDecimal, PostTaxRatesRequestTaxType? taxType, }) { return TaxProductResourceLineItemTaxRateDetails(
   displayName: displayName ?? this.displayName,

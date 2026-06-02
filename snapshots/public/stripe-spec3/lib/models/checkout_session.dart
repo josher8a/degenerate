@@ -794,40 +794,40 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('autom
 List<String> validate() { final errors = <String>[];
 final cancelUrl$ = cancelUrl;
 if (cancelUrl$ != null) {
-  if (cancelUrl$.length > 5000) errors.add('cancelUrl: length must be <= 5000');
+  if (cancelUrl$.length > 5000) { errors.add('cancelUrl: length must be <= 5000'); }
 }
 final clientReferenceId$ = clientReferenceId;
 if (clientReferenceId$ != null) {
-  if (clientReferenceId$.length > 5000) errors.add('clientReferenceId: length must be <= 5000');
+  if (clientReferenceId$.length > 5000) { errors.add('clientReferenceId: length must be <= 5000'); }
 }
 final clientSecret$ = clientSecret;
 if (clientSecret$ != null) {
-  if (clientSecret$.length > 5000) errors.add('clientSecret: length must be <= 5000');
+  if (clientSecret$.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 final customerEmail$ = customerEmail;
 if (customerEmail$ != null) {
-  if (customerEmail$.length > 5000) errors.add('customerEmail: length must be <= 5000');
+  if (customerEmail$.length > 5000) { errors.add('customerEmail: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final recoveredFrom$ = recoveredFrom;
 if (recoveredFrom$ != null) {
-  if (recoveredFrom$.length > 5000) errors.add('recoveredFrom: length must be <= 5000');
+  if (recoveredFrom$.length > 5000) { errors.add('recoveredFrom: length must be <= 5000'); }
 }
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 final successUrl$ = successUrl;
 if (successUrl$ != null) {
-  if (successUrl$.length > 5000) errors.add('successUrl: length must be <= 5000');
+  if (successUrl$.length > 5000) { errors.add('successUrl: length must be <= 5000'); }
 }
 final url$ = url;
 if (url$ != null) {
-  if (url$.length > 5000) errors.add('url: length must be <= 5000');
+  if (url$.length > 5000) { errors.add('url: length must be <= 5000'); }
 }
 return errors; } 
 CheckoutSession copyWith({PaymentPagesCheckoutSessionAdaptivePricing? Function()? adaptivePricing, PaymentPagesCheckoutSessionAfterExpiration? Function()? afterExpiration, bool? Function()? allowPromotionCodes, int? Function()? amountSubtotal, int? Function()? amountTotal, PaymentPagesCheckoutSessionAutomaticTax? automaticTax, CheckoutSessionBillingAddressCollection? Function()? billingAddressCollection, PaymentPagesCheckoutSessionBrandingSettings? Function()? brandingSettings, String? Function()? cancelUrl, String? Function()? clientReferenceId, String? Function()? clientSecret, PaymentPagesCheckoutSessionCollectedInformation? Function()? collectedInformation, PaymentPagesCheckoutSessionConsent? Function()? consent, PaymentPagesCheckoutSessionConsentCollection? Function()? consentCollection, int? created, String? Function()? currency, PaymentPagesCheckoutSessionCurrencyConversion? Function()? currencyConversion, List<PaymentPagesCheckoutSessionCustomFields>? customFields, PaymentPagesCheckoutSessionCustomText? customText, BankAccountCustomer? Function()? customer, String? Function()? customerAccount, CheckoutSessionCustomerCreation? Function()? customerCreation, PaymentPagesCheckoutSessionCustomerDetails? Function()? customerDetails, String? Function()? customerEmail, List<PaymentPagesCheckoutSessionDiscount>? Function()? discounts, List<String>? Function()? excludedPaymentMethodTypes, int? expiresAt, String? id, BillingCreditGrantsResourceBalanceCreditsApplicationInvoiceVoidedInvoice? Function()? invoice, PaymentPagesCheckoutSessionInvoiceCreation? Function()? invoiceCreation, CheckoutSessionLineItems? Function()? lineItems, bool? livemode, CheckoutSessionLocale? Function()? locale, Map<String, String>? Function()? metadata, CheckoutSessionMode? mode, PaymentPagesCheckoutSessionNameCollection? Function()? nameCollection, CheckoutSessionObject? object, List<PaymentPagesCheckoutSessionOptionalItem>? Function()? optionalItems, CheckoutSessionOriginContext? Function()? originContext, ChargePaymentIntent? Function()? paymentIntent, CheckoutSessionPaymentLink? Function()? paymentLink, CheckoutSessionPaymentMethodCollection? Function()? paymentMethodCollection, PaymentMethodConfigBizPaymentMethodConfigurationDetails? Function()? paymentMethodConfigurationDetails, CheckoutSessionPaymentMethodOptions? Function()? paymentMethodOptions, List<String>? paymentMethodTypes, PaymentStatus? paymentStatus, PaymentPagesCheckoutSessionPermissions? Function()? permissions, PaymentPagesCheckoutSessionPhoneNumberCollection? Function()? phoneNumberCollection, PaymentFlowsPaymentIntentPresentmentDetails? Function()? presentmentDetails, String? Function()? recoveredFrom, RedirectOnCompletion? Function()? redirectOnCompletion, String? Function()? returnUrl, PaymentPagesCheckoutSessionSavedPaymentMethodOptions? Function()? savedPaymentMethodOptions, CheckoutSessionSetupIntent? Function()? setupIntent, PaymentPagesCheckoutSessionShippingAddressCollection? Function()? shippingAddressCollection, PaymentPagesCheckoutSessionShippingCost? Function()? shippingCost, List<PaymentPagesCheckoutSessionShippingOption>? shippingOptions, CheckoutSessionStatus? Function()? status, CheckoutSessionSubmitType? Function()? submitType, BillingBillResourceInvoicingParentsInvoiceSubscriptionParentSubscription? Function()? subscription, String? Function()? successUrl, PaymentPagesCheckoutSessionTaxIdCollection? Function()? taxIdCollection, PaymentPagesCheckoutSessionTotalDetails? Function()? totalDetails, CheckoutSessionUiMode? Function()? uiMode, String? Function()? url, CheckoutSessionWalletOptions? Function()? walletOptions, }) { return CheckoutSession(

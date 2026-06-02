@@ -28,12 +28,12 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final maxFileSize$ = maxFileSize;
 if (maxFileSize$ != null) {
-  if (maxFileSize$ < 1) errors.add('maxFileSize: must be >= 1');
-  if (maxFileSize$ > 512) errors.add('maxFileSize: must be <= 512');
+  if (maxFileSize$ < 1) { errors.add('maxFileSize: must be >= 1'); }
+  if (maxFileSize$ > 512) { errors.add('maxFileSize: must be <= 512'); }
 }
 final maxFiles$ = maxFiles;
 if (maxFiles$ != null) {
-  if (maxFiles$ < 1) errors.add('maxFiles: must be >= 1');
+  if (maxFiles$ < 1) { errors.add('maxFiles: must be >= 1'); }
 }
 return errors; } 
 FileUploadParam copyWith({bool? Function()? enabled, int? Function()? maxFileSize, int? Function()? maxFiles, }) { return FileUploadParam(

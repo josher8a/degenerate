@@ -67,15 +67,15 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('promp
 List<String> validate() { final errors = <String>[];
 final height$ = height;
 if (height$ != null) {
-  if (height$ < 256) errors.add('height: must be >= 256');
-  if (height$ > 2048) errors.add('height: must be <= 2048');
+  if (height$ < 256) { errors.add('height: must be >= 256'); }
+  if (height$ > 2048) { errors.add('height: must be <= 2048'); }
 }
-if (numSteps > 20) errors.add('numSteps: must be <= 20');
-if (prompt.isEmpty) errors.add('prompt: length must be >= 1');
+if (numSteps > 20) { errors.add('numSteps: must be <= 20'); }
+if (prompt.isEmpty) { errors.add('prompt: length must be >= 1'); }
 final width$ = width;
 if (width$ != null) {
-  if (width$ < 256) errors.add('width: must be >= 256');
-  if (width$ > 2048) errors.add('width: must be <= 2048');
+  if (width$ < 256) { errors.add('width: must be >= 256'); }
+  if (width$ > 2048) { errors.add('width: must be <= 2048'); }
 }
 return errors; } 
 TextToImage copyWith({double Function()? guidance, int? Function()? height, List<double>? Function()? image, String? Function()? imageB64, List<double>? Function()? mask, String? Function()? negativePrompt, int Function()? numSteps, String? prompt, int? Function()? seed, double Function()? strength, int? Function()? width, }) { return TextToImage(

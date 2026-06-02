@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final commodityCode$ = commodityCode;
 if (commodityCode$ != null) {
-  if (commodityCode$.length > 12) errors.add('commodityCode: length must be <= 12');
+  if (commodityCode$.length > 12) { errors.add('commodityCode: length must be <= 12'); }
 }
 return errors; } 
 Variant1PaymentMethodOptionsCard copyWith({String? Function()? commodityCode}) { return Variant1PaymentMethodOptionsCard(

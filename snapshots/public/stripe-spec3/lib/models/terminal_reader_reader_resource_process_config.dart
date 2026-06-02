@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final returnUrl$ = returnUrl;
 if (returnUrl$ != null) {
-  if (returnUrl$.length > 5000) errors.add('returnUrl: length must be <= 5000');
+  if (returnUrl$.length > 5000) { errors.add('returnUrl: length must be <= 5000'); }
 }
 return errors; } 
 TerminalReaderReaderResourceProcessConfig copyWith({bool? Function()? enableCustomerCancellation, String? Function()? returnUrl, bool? Function()? skipTipping, TerminalReaderReaderResourceTippingConfig? Function()? tipping, }) { return TerminalReaderReaderResourceProcessConfig(

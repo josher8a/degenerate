@@ -16,7 +16,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final person$ = person;
 if (person$ != null) {
-  if (person$.length > 5000) errors.add('person: length must be <= 5000');
+  if (person$.length > 5000) { errors.add('person: length must be <= 5000'); }
 }
 return errors; } 
 Signer copyWith({String? Function()? person}) { return Signer(

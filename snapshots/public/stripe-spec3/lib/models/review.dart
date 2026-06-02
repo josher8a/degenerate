@@ -191,14 +191,14 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
 List<String> validate() { final errors = <String>[];
 final billingZip$ = billingZip;
 if (billingZip$ != null) {
-  if (billingZip$.length > 5000) errors.add('billingZip: length must be <= 5000');
+  if (billingZip$.length > 5000) { errors.add('billingZip: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final ipAddress$ = ipAddress;
 if (ipAddress$ != null) {
-  if (ipAddress$.length > 5000) errors.add('ipAddress: length must be <= 5000');
+  if (ipAddress$.length > 5000) { errors.add('ipAddress: length must be <= 5000'); }
 }
-if (reason.length > 5000) errors.add('reason: length must be <= 5000');
+if (reason.length > 5000) { errors.add('reason: length must be <= 5000'); }
 return errors; } 
 Review copyWith({String? Function()? billingZip, ApplicationFeeCharge? Function()? charge, ClosedReason? Function()? closedReason, int? created, String? id, String? Function()? ipAddress, RadarReviewResourceLocation? Function()? ipAddressLocation, bool? livemode, ReviewObject? object, bool? open, OpenedReason? openedReason, ChargePaymentIntent? Function()? paymentIntent, String? reason, RadarReviewResourceSession? Function()? session, }) { return Review(
   billingZip: billingZip != null ? billingZip() : this.billingZip,

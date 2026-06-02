@@ -34,8 +34,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('query') && json['query'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (maxNumResults < 1) errors.add('maxNumResults: must be >= 1');
-if (maxNumResults > 50) errors.add('maxNumResults: must be <= 50');
+if (maxNumResults < 1) { errors.add('maxNumResults: must be >= 1'); }
+if (maxNumResults > 50) { errors.add('maxNumResults: must be <= 50'); }
 return errors; } 
 AutoragConfigSearchRequest copyWith({AutoragConfigAiSearchRequestFilters? Function()? filters, int Function()? maxNumResults, String? query, RankingOptions? Function()? rankingOptions, AutoragConfigAiSearchRequestReranking? Function()? reranking, bool Function()? rewriteQuery, }) { return AutoragConfigSearchRequest(
   filters: filters != null ? filters() : this.filters,

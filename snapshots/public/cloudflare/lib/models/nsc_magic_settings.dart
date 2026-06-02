@@ -24,7 +24,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('condu
       json.containsKey('mtu') && json['mtu'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (mtu < 0) errors.add('mtu: must be >= 0');
+if (mtu < 0) { errors.add('mtu: must be >= 0'); }
 return errors; } 
 NscMagicSettings copyWith({String? conduitName, String? description, int? mtu, }) { return NscMagicSettings(
   conduitName: conduitName ?? this.conduitName,

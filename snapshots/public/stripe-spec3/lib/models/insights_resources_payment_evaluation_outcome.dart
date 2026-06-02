@@ -69,7 +69,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final paymentIntentId$ = paymentIntentId;
 if (paymentIntentId$ != null) {
-  if (paymentIntentId$.length > 5000) errors.add('paymentIntentId: length must be <= 5000');
+  if (paymentIntentId$.length > 5000) { errors.add('paymentIntentId: length must be <= 5000'); }
 }
 return errors; } 
 InsightsResourcesPaymentEvaluationOutcome copyWith({InsightsResourcesPaymentEvaluationMerchantBlocked? Function()? merchantBlocked, String? Function()? paymentIntentId, InsightsResourcesPaymentEvaluationRejected? Function()? rejected, InsightsResourcesPaymentEvaluationSucceeded? Function()? succeeded, InsightsResourcesPaymentEvaluationOutcomeType? type, }) { return InsightsResourcesPaymentEvaluationOutcome(

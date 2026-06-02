@@ -14,7 +14,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('max_dataset_cells') && json['max_dataset_cells'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (maxDatasetCells < 0) errors.add('maxDatasetCells: must be >= 0');
+if (maxDatasetCells < 0) { errors.add('maxDatasetCells: must be >= 0'); }
 return errors; } 
 DlpLimits copyWith({int? maxDatasetCells}) { return DlpLimits(
   maxDatasetCells: maxDatasetCells ?? this.maxDatasetCells,

@@ -34,7 +34,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('source_currency') && json['source_currency'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (sourceCurrency.length > 5000) errors.add('sourceCurrency: length must be <= 5000');
+if (sourceCurrency.length > 5000) { errors.add('sourceCurrency: length must be <= 5000'); }
 return errors; } 
 PaymentPagesCheckoutSessionCurrencyConversion copyWith({int? amountSubtotal, int? amountTotal, String? fxRate, String? sourceCurrency, }) { return PaymentPagesCheckoutSessionCurrencyConversion(
   amountSubtotal: amountSubtotal ?? this.amountSubtotal,

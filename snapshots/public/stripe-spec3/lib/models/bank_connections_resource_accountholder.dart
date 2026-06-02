@@ -32,7 +32,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
 BankConnectionsResourceAccountholder copyWith({ApplicationFeeAccount? Function()? account, BankConnectionsResourceAccountholderCustomer? Function()? customer, String? Function()? customerAccount, BankConnectionsResourceAccountholderType? type, }) { return BankConnectionsResourceAccountholder(

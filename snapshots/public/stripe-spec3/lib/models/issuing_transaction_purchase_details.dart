@@ -43,7 +43,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 IssuingTransactionPurchaseDetails copyWith({IssuingTransactionFleetData? Function()? fleet, IssuingTransactionFlightData? Function()? flight, IssuingTransactionFuelData? Function()? fuel, IssuingTransactionLodgingData? Function()? lodging, List<IssuingTransactionReceiptData>? Function()? receipt, String? Function()? reference, }) { return IssuingTransactionPurchaseDetails(

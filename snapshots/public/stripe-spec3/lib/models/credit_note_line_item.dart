@@ -121,12 +121,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final invoiceLineItem$ = invoiceLineItem;
 if (invoiceLineItem$ != null) {
-  if (invoiceLineItem$.length > 5000) errors.add('invoiceLineItem: length must be <= 5000');
+  if (invoiceLineItem$.length > 5000) { errors.add('invoiceLineItem: length must be <= 5000'); }
 }
 return errors; } 
 CreditNoteLineItem copyWith({int? amount, String? Function()? description, int? discountAmount, List<DiscountsResourceDiscountAmount>? discountAmounts, String? id, String? Function()? invoiceLineItem, bool? livemode, CreditNoteLineItemObject? object, List<CreditNotesPretaxCreditAmount>? pretaxCreditAmounts, int? Function()? quantity, List<TaxRate>? taxRates, List<BillingBillResourceInvoicingTaxesTax>? Function()? taxes, CreditNoteLineItemType? type, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return CreditNoteLineItem(

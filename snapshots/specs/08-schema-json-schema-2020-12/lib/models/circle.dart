@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('kind'
       json.containsKey('radius') && json['radius'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (radius <= 0) errors.add('radius: must be > 0');
+if (radius <= 0) { errors.add('radius: must be > 0'); }
 return errors; } 
 Circle copyWith({dynamic Function()? kind, double? radius, String? Function()? color, }) { return Circle(
   kind: kind != null ? kind() : this.kind,

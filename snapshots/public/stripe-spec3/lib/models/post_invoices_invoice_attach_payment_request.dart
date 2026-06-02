@@ -27,11 +27,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final paymentIntent$ = paymentIntent;
 if (paymentIntent$ != null) {
-  if (paymentIntent$.length > 5000) errors.add('paymentIntent: length must be <= 5000');
+  if (paymentIntent$.length > 5000) { errors.add('paymentIntent: length must be <= 5000'); }
 }
 final paymentRecord$ = paymentRecord;
 if (paymentRecord$ != null) {
-  if (paymentRecord$.length > 5000) errors.add('paymentRecord: length must be <= 5000');
+  if (paymentRecord$.length > 5000) { errors.add('paymentRecord: length must be <= 5000'); }
 }
 return errors; } 
 PostInvoicesInvoiceAttachPaymentRequest copyWith({List<String>? Function()? expand, String? Function()? paymentIntent, String? Function()? paymentRecord, }) { return PostInvoicesInvoiceAttachPaymentRequest(

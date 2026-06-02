@@ -126,13 +126,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customer$ = customer;
 if (customer$ != null) {
-  if (customer$.length > 5000) errors.add('customer: length must be <= 5000');
+  if (customer$.length > 5000) { errors.add('customer: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (reference.length > 5000) errors.add('reference: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (reference.length > 5000) { errors.add('reference: length must be <= 5000'); }
 return errors; } 
 TaxTransaction copyWith({int? created, String? currency, String? Function()? customer, TaxProductResourceCustomerDetails? customerDetails, String? id, TaxTransactionLineItems? Function()? lineItems, bool? livemode, Map<String, String>? Function()? metadata, TaxTransactionObject? object, int? postedAt, String? reference, TaxProductResourceTaxTransactionResourceReversal? Function()? reversal, TaxProductResourceShipFromDetails? Function()? shipFromDetails, TaxProductResourceTaxTransactionShippingCost? Function()? shippingCost, int? taxDate, TaxTransactionLineItemType? type, }) { return TaxTransaction(
   created: created ?? this.created,

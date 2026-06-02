@@ -33,11 +33,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final purchaseType$ = purchaseType;
 if (purchaseType$ != null) {
-  if (purchaseType$.length > 5000) errors.add('purchaseType: length must be <= 5000');
+  if (purchaseType$.length > 5000) { errors.add('purchaseType: length must be <= 5000'); }
 }
 final serviceType$ = serviceType;
 if (serviceType$ != null) {
-  if (serviceType$.length > 5000) errors.add('serviceType: length must be <= 5000');
+  if (serviceType$.length > 5000) { errors.add('serviceType: length must be <= 5000'); }
 }
 return errors; } 
 IssuingTransactionFleetData copyWith({IssuingTransactionFleetCardholderPromptData? Function()? cardholderPromptData, String? Function()? purchaseType, IssuingTransactionFleetReportedBreakdown? Function()? reportedBreakdown, String? Function()? serviceType, }) { return IssuingTransactionFleetData(

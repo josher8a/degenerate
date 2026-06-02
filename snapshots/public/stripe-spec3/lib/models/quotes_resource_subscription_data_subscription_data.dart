@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('billi
 List<String> validate() { final errors = <String>[];
 final description$ = description;
 if (description$ != null) {
-  if (description$.length > 5000) errors.add('description: length must be <= 5000');
+  if (description$.length > 5000) { errors.add('description: length must be <= 5000'); }
 }
 return errors; } 
 QuotesResourceSubscriptionDataSubscriptionData copyWith({QuotesResourceSubscriptionDataBillingMode? billingMode, String? Function()? description, int? Function()? effectiveDate, Map<String, String>? Function()? metadata, int? Function()? trialPeriodDays, }) { return QuotesResourceSubscriptionDataSubscriptionData(

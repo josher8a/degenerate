@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final displayName$ = displayName;
 if (displayName$ != null) {
-  if (displayName$.length > 5000) errors.add('displayName: length must be <= 5000');
+  if (displayName$.length > 5000) { errors.add('displayName: length must be <= 5000'); }
 }
 final timezone$ = timezone;
 if (timezone$ != null) {
-  if (timezone$.length > 5000) errors.add('timezone: length must be <= 5000');
+  if (timezone$.length > 5000) { errors.add('timezone: length must be <= 5000'); }
 }
 return errors; } 
 AccountDashboardSettings copyWith({String? Function()? displayName, String? Function()? timezone, }) { return AccountDashboardSettings(

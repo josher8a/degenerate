@@ -31,7 +31,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('curre
       json.containsKey('product') && json['product'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (product.length > 5000) errors.add('product: length must be <= 5000');
+if (product.length > 5000) { errors.add('product: length must be <= 5000'); }
 return errors; } 
 PostInvoiceitemsInvoiceitemRequestPriceData copyWith({String? currency, String? product, PostInvoiceitemsInvoiceitemRequestTaxBehavior? Function()? taxBehavior, int? Function()? unitAmount, String? Function()? unitAmountDecimal, }) { return PostInvoiceitemsInvoiceitemRequestPriceData(
   currency: currency ?? this.currency,

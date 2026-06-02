@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('conte
 List<String> validate() { final errors = <String>[];
 final query$ = query;
 if (query$ != null) {
-  if (query$.isEmpty) errors.add('query: length must be >= 1');
+  if (query$.isEmpty) { errors.add('query: length must be >= 1'); }
 }
 return errors; } 
 InputQueryAndContexts copyWith({List<Contexts>? contexts, String? Function()? query, bool Function()? truncateInputs, }) { return InputQueryAndContexts(

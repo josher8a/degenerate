@@ -44,8 +44,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('dismi
 List<String> validate() { final errors = <String>[];
 final requiredApprovingReviewCount$ = requiredApprovingReviewCount;
 if (requiredApprovingReviewCount$ != null) {
-  if (requiredApprovingReviewCount$ < 0) errors.add('requiredApprovingReviewCount: must be >= 0');
-  if (requiredApprovingReviewCount$ > 6) errors.add('requiredApprovingReviewCount: must be <= 6');
+  if (requiredApprovingReviewCount$ < 0) { errors.add('requiredApprovingReviewCount: must be >= 0'); }
+  if (requiredApprovingReviewCount$ > 6) { errors.add('requiredApprovingReviewCount: must be <= 6'); }
 }
 return errors; } 
 ProtectedBranchPullRequestReview copyWith({Uri? Function()? url, ProtectedBranchPullRequestReviewDismissalRestrictions? Function()? dismissalRestrictions, ProtectedBranchPullRequestReviewBypassPullRequestAllowances? Function()? bypassPullRequestAllowances, bool? dismissStaleReviews, bool? requireCodeOwnerReviews, int? Function()? requiredApprovingReviewCount, bool Function()? requireLastPushApproval, }) { return ProtectedBranchPullRequestReview(

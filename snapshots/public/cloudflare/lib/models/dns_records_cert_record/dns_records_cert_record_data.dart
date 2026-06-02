@@ -39,18 +39,18 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final algorithm$ = algorithm;
 if (algorithm$ != null) {
-  if (algorithm$ < 0) errors.add('algorithm: must be >= 0');
-  if (algorithm$ > 255) errors.add('algorithm: must be <= 255');
+  if (algorithm$ < 0) { errors.add('algorithm: must be >= 0'); }
+  if (algorithm$ > 255) { errors.add('algorithm: must be <= 255'); }
 }
 final keyTag$ = keyTag;
 if (keyTag$ != null) {
-  if (keyTag$ < 0) errors.add('keyTag: must be >= 0');
-  if (keyTag$ > 65535) errors.add('keyTag: must be <= 65535');
+  if (keyTag$ < 0) { errors.add('keyTag: must be >= 0'); }
+  if (keyTag$ > 65535) { errors.add('keyTag: must be <= 65535'); }
 }
 final type$ = type;
 if (type$ != null) {
-  if (type$ < 0) errors.add('type: must be >= 0');
-  if (type$ > 65535) errors.add('type: must be <= 65535');
+  if (type$ < 0) { errors.add('type: must be >= 0'); }
+  if (type$ > 65535) { errors.add('type: must be <= 65535'); }
 }
 return errors; } 
 DnsRecordsCertRecordData copyWith({double? Function()? algorithm, String? Function()? certificate, double? Function()? keyTag, double? Function()? type, }) { return DnsRecordsCertRecordData(

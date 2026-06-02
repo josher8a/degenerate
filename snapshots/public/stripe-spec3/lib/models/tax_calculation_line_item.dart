@@ -104,13 +104,13 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
       json.containsKey('tax_code') && json['tax_code'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 final product$ = product;
 if (product$ != null) {
-  if (product$.length > 5000) errors.add('product: length must be <= 5000');
+  if (product$.length > 5000) { errors.add('product: length must be <= 5000'); }
 }
-if (reference.length > 5000) errors.add('reference: length must be <= 5000');
-if (taxCode.length > 5000) errors.add('taxCode: length must be <= 5000');
+if (reference.length > 5000) { errors.add('reference: length must be <= 5000'); }
+if (taxCode.length > 5000) { errors.add('taxCode: length must be <= 5000'); }
 return errors; } 
 TaxCalculationLineItem copyWith({int? amount, int? amountTax, String? id, bool? livemode, Map<String, String>? Function()? metadata, TaxCalculationLineItemObject? object, String? Function()? product, int? quantity, String? reference, BillingBillResourceInvoicingTaxesTaxTaxBehavior? taxBehavior, List<TaxProductResourceLineItemTaxBreakdown>? Function()? taxBreakdown, String? taxCode, }) { return TaxCalculationLineItem(
   amount: amount ?? this.amount,

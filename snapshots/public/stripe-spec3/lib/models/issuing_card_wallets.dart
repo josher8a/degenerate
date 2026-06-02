@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('apple
 List<String> validate() { final errors = <String>[];
 final primaryAccountIdentifier$ = primaryAccountIdentifier;
 if (primaryAccountIdentifier$ != null) {
-  if (primaryAccountIdentifier$.length > 5000) errors.add('primaryAccountIdentifier: length must be <= 5000');
+  if (primaryAccountIdentifier$.length > 5000) { errors.add('primaryAccountIdentifier: length must be <= 5000'); }
 }
 return errors; } 
 IssuingCardWallets copyWith({IssuingCardApplePay? applePay, IssuingCardGooglePay? googlePay, String? Function()? primaryAccountIdentifier, }) { return IssuingCardWallets(

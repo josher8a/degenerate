@@ -66,7 +66,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('enabl
 List<String> validate() { final errors = <String>[];
 final provider$ = provider;
 if (provider$ != null) {
-  if (provider$.length > 5000) errors.add('provider: length must be <= 5000');
+  if (provider$.length > 5000) { errors.add('provider: length must be <= 5000'); }
 }
 return errors; } 
 AutomaticTax copyWith({AutomaticTaxDisabledReason? Function()? disabledReason, bool? enabled, ConnectAccountReference? Function()? liability, String? Function()? provider, AutomaticTaxStatus? Function()? status, }) { return AutomaticTax(

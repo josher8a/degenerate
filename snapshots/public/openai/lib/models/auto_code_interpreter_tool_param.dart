@@ -57,7 +57,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final fileIds$ = fileIds;
 if (fileIds$ != null) {
-  if (fileIds$.length > 50) errors.add('fileIds: must have <= 50 items');
+  if (fileIds$.length > 50) { errors.add('fileIds: must have <= 50 items'); }
 }
 return errors; } 
 AutoCodeInterpreterToolParam copyWith({AutoCodeInterpreterToolParamType? type, List<String>? Function()? fileIds, ContainerMemoryLimit? Function()? memoryLimit, AutoCodeInterpreterToolParamNetworkPolicy? Function()? networkPolicy, }) { return AutoCodeInterpreterToolParam(

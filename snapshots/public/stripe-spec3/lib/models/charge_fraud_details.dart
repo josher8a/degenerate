@@ -23,11 +23,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final stripeReport$ = stripeReport;
 if (stripeReport$ != null) {
-  if (stripeReport$.length > 5000) errors.add('stripeReport: length must be <= 5000');
+  if (stripeReport$.length > 5000) { errors.add('stripeReport: length must be <= 5000'); }
 }
 final userReport$ = userReport;
 if (userReport$ != null) {
-  if (userReport$.length > 5000) errors.add('userReport: length must be <= 5000');
+  if (userReport$.length > 5000) { errors.add('userReport: length must be <= 5000'); }
 }
 return errors; } 
 ChargeFraudDetails copyWith({String? Function()? stripeReport, String? Function()? userReport, }) { return ChargeFraudDetails(

@@ -129,39 +129,39 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('exp_m
 List<String> validate() { final errors = <String>[];
 final authorizationCode$ = authorizationCode;
 if (authorizationCode$ != null) {
-  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+  if (authorizationCode$.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
 final brand$ = brand;
 if (brand$ != null) {
-  if (brand$.length > 5000) errors.add('brand: length must be <= 5000');
+  if (brand$.length > 5000) { errors.add('brand: length must be <= 5000'); }
 }
 final country$ = country;
 if (country$ != null) {
-  if (country$.length > 5000) errors.add('country: length must be <= 5000');
+  if (country$.length > 5000) { errors.add('country: length must be <= 5000'); }
 }
 final fingerprint$ = fingerprint;
 if (fingerprint$ != null) {
-  if (fingerprint$.length > 5000) errors.add('fingerprint: length must be <= 5000');
+  if (fingerprint$.length > 5000) { errors.add('fingerprint: length must be <= 5000'); }
 }
 final funding$ = funding;
 if (funding$ != null) {
-  if (funding$.length > 5000) errors.add('funding: length must be <= 5000');
+  if (funding$.length > 5000) { errors.add('funding: length must be <= 5000'); }
 }
 final last4$ = last4;
 if (last4$ != null) {
-  if (last4$.length > 5000) errors.add('last4: length must be <= 5000');
+  if (last4$.length > 5000) { errors.add('last4: length must be <= 5000'); }
 }
 final mandate$ = mandate;
 if (mandate$ != null) {
-  if (mandate$.length > 5000) errors.add('mandate: length must be <= 5000');
+  if (mandate$.length > 5000) { errors.add('mandate: length must be <= 5000'); }
 }
 final network$ = network;
 if (network$ != null) {
-  if (network$.length > 5000) errors.add('network: length must be <= 5000');
+  if (network$.length > 5000) { errors.add('network: length must be <= 5000'); }
 }
 final networkTransactionId$ = networkTransactionId;
 if (networkTransactionId$ != null) {
-  if (networkTransactionId$.length > 5000) errors.add('networkTransactionId: length must be <= 5000');
+  if (networkTransactionId$.length > 5000) { errors.add('networkTransactionId: length must be <= 5000'); }
 }
 return errors; } 
 PaymentMethodDetailsCard copyWith({int? Function()? amountAuthorized, String? Function()? authorizationCode, String? Function()? brand, int? Function()? captureBefore, PaymentMethodDetailsCardChecks? Function()? checks, String? Function()? country, int? expMonth, int? expYear, ResourceEnterpriseFeaturesExtendedAuthorizationExtendedAuthorization? Function()? extendedAuthorization, String? Function()? fingerprint, String? Function()? funding, ResourceEnterpriseFeaturesIncrementalAuthorizationIncrementalAuthorization? Function()? incrementalAuthorization, PaymentMethodDetailsCardInstallments? Function()? installments, String? Function()? last4, String? Function()? mandate, ResourceMulticapture? Function()? multicapture, String? Function()? network, PaymentMethodDetailsCardNetworkToken? Function()? networkToken, String? Function()? networkTransactionId, ResourceEnterpriseFeaturesOvercaptureOvercapture? Function()? overcapture, RegulatedStatus? Function()? regulatedStatus, ThreeDSecureDetailsCharge? Function()? threeDSecure, PaymentMethodDetailsCardWallet? Function()? wallet, }) { return PaymentMethodDetailsCard(

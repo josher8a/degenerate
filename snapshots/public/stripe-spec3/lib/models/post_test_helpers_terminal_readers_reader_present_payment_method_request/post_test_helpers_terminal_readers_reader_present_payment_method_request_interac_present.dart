@@ -17,7 +17,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final number$ = number;
 if (number$ != null) {
-  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+  if (number$.length > 5000) { errors.add('number: length must be <= 5000'); }
 }
 return errors; } 
 PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent copyWith({String? Function()? number}) { return PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestInteracPresent(

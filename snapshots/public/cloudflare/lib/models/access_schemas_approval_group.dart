@@ -30,7 +30,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('approvals_needed') && json['approvals_needed'] is num; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (approvalsNeeded < 0) errors.add('approvalsNeeded: must be >= 0');
+if (approvalsNeeded < 0) { errors.add('approvalsNeeded: must be >= 0'); }
 return errors; } 
 AccessSchemasApprovalGroup copyWith({double? approvalsNeeded, List<dynamic>? Function()? emailAddresses, String? Function()? emailListUuid, }) { return AccessSchemasApprovalGroup(
   approvalsNeeded: approvalsNeeded ?? this.approvalsNeeded,

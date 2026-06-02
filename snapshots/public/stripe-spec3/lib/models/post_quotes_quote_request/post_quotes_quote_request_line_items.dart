@@ -36,11 +36,11 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final id$ = id;
 if (id$ != null) {
-  if (id$.length > 5000) errors.add('id: length must be <= 5000');
+  if (id$.length > 5000) { errors.add('id: length must be <= 5000'); }
 }
 final price$ = price;
 if (price$ != null) {
-  if (price$.length > 5000) errors.add('price: length must be <= 5000');
+  if (price$.length > 5000) { errors.add('price: length must be <= 5000'); }
 }
 return errors; } 
 PostQuotesQuoteRequestLineItems copyWith({PostCustomersCustomerSubscriptionsRequestDiscounts? Function()? discounts, String? Function()? id, String? Function()? price, PostQuotesQuoteRequestLineItemsPriceData? Function()? priceData, int? Function()? quantity, TaxRates? Function()? taxRates, }) { return PostQuotesQuoteRequestLineItems(

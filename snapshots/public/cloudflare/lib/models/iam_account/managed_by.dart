@@ -27,7 +27,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final parentOrgId$ = parentOrgId;
 if (parentOrgId$ != null) {
-  if (parentOrgId$.length > 32) errors.add('parentOrgId: length must be <= 32');
+  if (parentOrgId$.length > 32) { errors.add('parentOrgId: length must be <= 32'); }
 }
 return errors; } 
 ManagedBy copyWith({String? Function()? parentOrgId, String? Function()? parentOrgName, }) { return ManagedBy(

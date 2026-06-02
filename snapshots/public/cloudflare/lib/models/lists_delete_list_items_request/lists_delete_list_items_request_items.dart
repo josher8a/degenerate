@@ -23,8 +23,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') && json['id'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (id.length < 32) errors.add('id: length must be >= 32');
-if (id.length > 32) errors.add('id: length must be <= 32');
+if (id.length < 32) { errors.add('id: length must be >= 32'); }
+if (id.length > 32) { errors.add('id: length must be <= 32'); }
 return errors; } 
 ListsDeleteListItemsRequestItems copyWith({String? id}) { return ListsDeleteListItemsRequestItems(
   id: id ?? this.id,

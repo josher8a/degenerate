@@ -16,7 +16,7 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('public_name') && json['public_name'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (publicName.length > 5000) errors.add('publicName: length must be <= 5000');
+if (publicName.length > 5000) { errors.add('publicName: length must be <= 5000'); }
 return errors; } 
 ClimateRemovalsBeneficiary copyWith({String? publicName}) { return ClimateRemovalsBeneficiary(
   publicName: publicName ?? this.publicName,

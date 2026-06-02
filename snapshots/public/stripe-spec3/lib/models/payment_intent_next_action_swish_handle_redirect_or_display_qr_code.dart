@@ -21,7 +21,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('hoste
       json.containsKey('qr_code'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (hostedInstructionsUrl.length > 5000) errors.add('hostedInstructionsUrl: length must be <= 5000');
+if (hostedInstructionsUrl.length > 5000) { errors.add('hostedInstructionsUrl: length must be <= 5000'); }
 return errors; } 
 PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode copyWith({String? hostedInstructionsUrl, PaymentIntentNextActionSwishQrCode? qrCode, }) { return PaymentIntentNextActionSwishHandleRedirectOrDisplayQrCode(
   hostedInstructionsUrl: hostedInstructionsUrl ?? this.hostedInstructionsUrl,

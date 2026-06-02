@@ -138,9 +138,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('value_settings'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (displayName.length > 5000) errors.add('displayName: length must be <= 5000');
-if (eventName.length > 5000) errors.add('eventName: length must be <= 5000');
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (displayName.length > 5000) { errors.add('displayName: length must be <= 5000'); }
+if (eventName.length > 5000) { errors.add('eventName: length must be <= 5000'); }
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 BillingMeter copyWith({int? created, BillingMeterResourceCustomerMappingSettings? customerMapping, BillingMeterResourceAggregationSettings? defaultAggregation, String? displayName, String? eventName, BillingMeterEventTimeWindow? Function()? eventTimeWindow, String? id, bool? livemode, BillingMeterObject? object, BillingMeterStatus? status, BillingMeterResourceBillingMeterStatusTransitions? statusTransitions, int? updated, BillingMeterResourceBillingMeterValue? valueSettings, }) { return BillingMeter(
   created: created ?? this.created,

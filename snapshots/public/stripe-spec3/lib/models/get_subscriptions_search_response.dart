@@ -42,9 +42,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
 List<String> validate() { final errors = <String>[];
 final nextPage$ = nextPage;
 if (nextPage$ != null) {
-  if (nextPage$.length > 5000) errors.add('nextPage: length must be <= 5000');
+  if (nextPage$.length > 5000) { errors.add('nextPage: length must be <= 5000'); }
 }
-if (url.length > 5000) errors.add('url: length must be <= 5000');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
 return errors; } 
 GetSubscriptionsSearchResponse copyWith({List<Subscription>? data, bool? hasMore, String? Function()? nextPage, GetChargesSearchResponseObject? object, int? Function()? totalCount, String? url, }) { return GetSubscriptionsSearchResponse(
   data: data ?? this.data,

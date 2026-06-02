@@ -110,12 +110,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('html'
 List<String> validate() { final errors = <String>[];
 final actionTimeout$ = actionTimeout;
 if (actionTimeout$ != null) {
-  if (actionTimeout$ > 120000) errors.add('actionTimeout: must be <= 120000');
+  if (actionTimeout$ > 120000) { errors.add('actionTimeout: must be <= 120000'); }
 }
-if (html.isEmpty) errors.add('html: length must be >= 1');
+if (html.isEmpty) { errors.add('html: length must be >= 1'); }
 final waitForTimeout$ = waitForTimeout;
 if (waitForTimeout$ != null) {
-  if (waitForTimeout$ > 120000) errors.add('waitForTimeout: must be <= 120000');
+  if (waitForTimeout$ > 120000) { errors.add('waitForTimeout: must be <= 120000'); }
 }
 return errors; } 
 BrapiPostPdfRequestVariant1 copyWith({double? Function()? actionTimeout, List<AddScriptTag>? Function()? addScriptTag, List<AddStyleTag>? Function()? addStyleTag, List<String>? Function()? allowRequestPattern, List<AllowResourceTypes>? Function()? allowResourceTypes, Authenticate? Function()? authenticate, bool? Function()? bestAttempt, List<Variant1Cookies>? Function()? cookies, String? Function()? emulateMediaType, GotoOptions? Function()? gotoOptions, String? html, PdfOptions? Function()? pdfOptions, List<String>? Function()? rejectRequestPattern, List<RejectResourceTypes>? Function()? rejectResourceTypes, Map<String, String>? Function()? setExtraHttpHeaders, bool? Function()? setJavaScriptEnabled, String Function()? userAgent, Viewport? Function()? viewport, WaitForSelector? Function()? waitForSelector, double? Function()? waitForTimeout, }) { return BrapiPostPdfRequestVariant1(

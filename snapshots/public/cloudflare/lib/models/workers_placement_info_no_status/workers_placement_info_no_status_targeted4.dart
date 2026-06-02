@@ -21,8 +21,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('mode'
       json.containsKey('target'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (target.isEmpty) errors.add('target: must have >= 1 items');
-if (target.length > 1) errors.add('target: must have <= 1 items');
+if (target.isEmpty) { errors.add('target: must have >= 1 items'); }
+if (target.length > 1) { errors.add('target: must have <= 1 items'); }
 return errors; } 
 WorkersPlacementInfoNoStatusTargeted4 copyWith({TargetedMode? mode, List<WorkersPlacementTarget>? target, }) { return WorkersPlacementInfoNoStatusTargeted4(
   mode: mode ?? this.mode,

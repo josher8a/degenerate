@@ -80,8 +80,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('updated_on') && json['updated_on'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^[a-z0-9_][a-z0-9-_]*$').hasMatch(name)) errors.add(r'name: must match pattern ^[a-z0-9_][a-z0-9-_]*$');
-if (tags.length > 8) errors.add('tags: must have <= 8 items');
+if (!RegExp(r'^[a-z0-9_][a-z0-9-_]*$').hasMatch(name)) { errors.add(r'name: must match pattern ^[a-z0-9_][a-z0-9-_]*$'); }
+if (tags.length > 8) { errors.add('tags: must have <= 8 items'); }
 return errors; } 
 WorkersWorker copyWith({DateTime? createdOn, DateTime? Function()? deployedOn, String? id, bool? logpush, String? name, Observability? observability, References? references, Subdomain? subdomain, List<String>? tags, List<TailConsumers>? tailConsumers, DateTime? updatedOn, }) { return WorkersWorker(
   createdOn: createdOn ?? this.createdOn,

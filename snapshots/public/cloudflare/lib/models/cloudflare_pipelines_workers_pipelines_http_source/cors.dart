@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final origins$ = origins;
 if (origins$ != null) {
-  if (origins$.length > 5) errors.add('origins: must have <= 5 items');
+  if (origins$.length > 5) { errors.add('origins: must have <= 5 items'); }
 }
 return errors; } 
 Cors copyWith({List<String>? Function()? origins}) { return Cors(

@@ -26,7 +26,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('name'
       json.containsKey('scope'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (name.length > 5000) errors.add('name: length must be <= 5000');
+if (name.length > 5000) { errors.add('name: length must be <= 5000'); }
 return errors; } 
 PostAppsSecretsDeleteRequest copyWith({List<String>? Function()? expand, String? name, PostAppsSecretsDeleteRequestScope? scope, }) { return PostAppsSecretsDeleteRequest(
   expand: expand != null ? expand() : this.expand,

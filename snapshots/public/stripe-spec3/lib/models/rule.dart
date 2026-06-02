@@ -28,9 +28,9 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('actio
       json.containsKey('predicate') && json['predicate'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (action.length > 5000) errors.add('action: length must be <= 5000');
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (predicate.length > 5000) errors.add('predicate: length must be <= 5000');
+if (action.length > 5000) { errors.add('action: length must be <= 5000'); }
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (predicate.length > 5000) { errors.add('predicate: length must be <= 5000'); }
 return errors; } 
 Rule copyWith({String? action, String? id, String? predicate, }) { return Rule(
   action: action ?? this.action,

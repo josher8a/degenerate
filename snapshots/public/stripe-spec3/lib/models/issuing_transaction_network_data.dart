@@ -28,15 +28,15 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final authorizationCode$ = authorizationCode;
 if (authorizationCode$ != null) {
-  if (authorizationCode$.length > 5000) errors.add('authorizationCode: length must be <= 5000');
+  if (authorizationCode$.length > 5000) { errors.add('authorizationCode: length must be <= 5000'); }
 }
 final processingDate$ = processingDate;
 if (processingDate$ != null) {
-  if (processingDate$.length > 5000) errors.add('processingDate: length must be <= 5000');
+  if (processingDate$.length > 5000) { errors.add('processingDate: length must be <= 5000'); }
 }
 final transactionId$ = transactionId;
 if (transactionId$ != null) {
-  if (transactionId$.length > 5000) errors.add('transactionId: length must be <= 5000');
+  if (transactionId$.length > 5000) { errors.add('transactionId: length must be <= 5000'); }
 }
 return errors; } 
 IssuingTransactionNetworkData copyWith({String? Function()? authorizationCode, String? Function()? processingDate, String? Function()? transactionId, }) { return IssuingTransactionNetworkData(

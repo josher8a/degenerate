@@ -242,24 +242,24 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('brand
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (brand.length > 5000) errors.add('brand: length must be <= 5000');
+if (brand.length > 5000) { errors.add('brand: length must be <= 5000'); }
 final cvc$ = cvc;
 if (cvc$ != null) {
-  if (cvc$.length > 5000) errors.add('cvc: length must be <= 5000');
+  if (cvc$.length > 5000) { errors.add('cvc: length must be <= 5000'); }
 }
 final financialAccount$ = financialAccount;
 if (financialAccount$ != null) {
-  if (financialAccount$.length > 5000) errors.add('financialAccount: length must be <= 5000');
+  if (financialAccount$.length > 5000) { errors.add('financialAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
-if (last4.length > 5000) errors.add('last4: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
+if (last4.length > 5000) { errors.add('last4: length must be <= 5000'); }
 final number$ = number;
 if (number$ != null) {
-  if (number$.length > 5000) errors.add('number: length must be <= 5000');
+  if (number$.length > 5000) { errors.add('number: length must be <= 5000'); }
 }
 final secondLine$ = secondLine;
 if (secondLine$ != null) {
-  if (secondLine$.length > 5000) errors.add('secondLine: length must be <= 5000');
+  if (secondLine$.length > 5000) { errors.add('secondLine: length must be <= 5000'); }
 }
 return errors; } 
 IssuingCard copyWith({String? brand, IssuingCardCancellationReason? Function()? cancellationReason, IssuingCardholder? cardholder, int? created, String? currency, String? Function()? cvc, int? expMonth, int? expYear, String? Function()? financialAccount, String? id, String? last4, IssuingCardFraudWarning? Function()? latestFraudWarning, bool? livemode, Map<String,String>? metadata, String? Function()? number, IssuingCardObject? object, PersonalizationDesign? Function()? personalizationDesign, ReplacedBy? Function()? replacedBy, ReplacementFor? Function()? replacementFor, IssuingCardReplacementReason? Function()? replacementReason, String? Function()? secondLine, IssuingCardShipping? Function()? shipping, IssuingCardAuthorizationControls? spendingControls, IssuingCardStatus? status, IssuingCardType? type, IssuingCardWallets? Function()? wallets, }) { return IssuingCard(

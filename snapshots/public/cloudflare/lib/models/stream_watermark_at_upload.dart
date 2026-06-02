@@ -19,7 +19,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final uid$ = uid;
 if (uid$ != null) {
-  if (uid$.length > 32) errors.add('uid: length must be <= 32');
+  if (uid$.length > 32) { errors.add('uid: length must be <= 32'); }
 }
 return errors; } 
 StreamWatermarkAtUpload copyWith({String? Function()? uid}) { return StreamWatermarkAtUpload(

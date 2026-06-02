@@ -87,10 +87,10 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('clien
       json.containsKey('object'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (clientSecret.length > 5000) errors.add('clientSecret: length must be <= 5000');
+if (clientSecret.length > 5000) { errors.add('clientSecret: length must be <= 5000'); }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
 return errors; } 
 CustomerSession copyWith({String? clientSecret, CustomerSessionResourceComponents? Function()? components, int? created, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? expiresAt, bool? livemode, CustomerSessionObject? object, }) { return CustomerSession(

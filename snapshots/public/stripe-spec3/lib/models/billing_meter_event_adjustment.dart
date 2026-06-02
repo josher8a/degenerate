@@ -70,7 +70,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('event
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (eventName.length > 100) errors.add('eventName: length must be <= 100');
+if (eventName.length > 100) { errors.add('eventName: length must be <= 100'); }
 return errors; } 
 BillingMeterEventAdjustment copyWith({BillingMeterResourceBillingMeterEventAdjustmentCancel? Function()? cancel, String? eventName, bool? livemode, BillingMeterEventAdjustmentObject? object, BillingMeterEventAdjustmentStatus? status, BillingMeterEventAdjustmentType? type, }) { return BillingMeterEventAdjustment(
   cancel: cancel != null ? cancel() : this.cancel,

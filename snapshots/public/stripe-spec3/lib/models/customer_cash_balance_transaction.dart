@@ -170,12 +170,12 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('creat
       json.containsKey('type'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (currency.length > 5000) errors.add('currency: length must be <= 5000');
+if (currency.length > 5000) { errors.add('currency: length must be <= 5000'); }
 final customerAccount$ = customerAccount;
 if (customerAccount$ != null) {
-  if (customerAccount$.length > 5000) errors.add('customerAccount: length must be <= 5000');
+  if (customerAccount$.length > 5000) { errors.add('customerAccount: length must be <= 5000'); }
 }
-if (id.length > 5000) errors.add('id: length must be <= 5000');
+if (id.length > 5000) { errors.add('id: length must be <= 5000'); }
 return errors; } 
 CustomerCashBalanceTransaction copyWith({CustomerBalanceResourceCashBalanceTransactionResourceAdjustedForOverdraft? Function()? adjustedForOverdraft, CustomerBalanceResourceCashBalanceTransactionResourceAppliedToPaymentTransaction? Function()? appliedToPayment, int? created, String? currency, BankConnectionsResourceAccountholderCustomer? customer, String? Function()? customerAccount, int? endingBalance, CustomerBalanceResourceCashBalanceTransactionResourceFundedTransaction? Function()? funded, String? id, bool? livemode, int? netAmount, CustomerCashBalanceTransactionObject? object, CustomerBalanceResourceCashBalanceTransactionResourceRefundedFromPaymentTransaction? Function()? refundedFromPayment, CustomerBalanceResourceCashBalanceTransactionResourceTransferredToBalance? Function()? transferredToBalance, CustomerCashBalanceTransactionType? type, CustomerBalanceResourceCashBalanceTransactionResourceUnappliedFromPaymentTransaction? Function()? unappliedFromPayment, }) { return CustomerCashBalanceTransaction(
   adjustedForOverdraft: adjustedForOverdraft != null ? adjustedForOverdraft() : this.adjustedForOverdraft,

@@ -29,7 +29,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('recei
 List<String> validate() { final errors = <String>[];
 final transaction$ = transaction;
 if (transaction$ != null) {
-  if (transaction$.length > 5000) errors.add('transaction: length must be <= 5000');
+  if (transaction$.length > 5000) { errors.add('transaction: length must be <= 5000'); }
 }
 return errors; } 
 IssuingAuthorizationTreasury copyWith({List<String>? receivedCredits, List<String>? receivedDebits, String? Function()? transaction, }) { return IssuingAuthorizationTreasury(

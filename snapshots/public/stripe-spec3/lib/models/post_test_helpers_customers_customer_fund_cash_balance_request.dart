@@ -33,7 +33,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('amoun
 List<String> validate() { final errors = <String>[];
 final reference$ = reference;
 if (reference$ != null) {
-  if (reference$.length > 5000) errors.add('reference: length must be <= 5000');
+  if (reference$.length > 5000) { errors.add('reference: length must be <= 5000'); }
 }
 return errors; } 
 PostTestHelpersCustomersCustomerFundCashBalanceRequest copyWith({int? amount, String? currency, List<String>? Function()? expand, String? Function()? reference, }) { return PostTestHelpersCustomersCustomerFundCashBalanceRequest(

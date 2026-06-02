@@ -33,8 +33,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('data'
       json.containsKey('url') && json['url'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (url.length > 5000) errors.add('url: length must be <= 5000');
-if (!RegExp('^/v1/subscription_schedules').hasMatch(url)) errors.add('url: must match pattern ^/v1/subscription_schedules');
+if (url.length > 5000) { errors.add('url: length must be <= 5000'); }
+if (!RegExp('^/v1/subscription_schedules').hasMatch(url)) { errors.add('url: must match pattern ^/v1/subscription_schedules'); }
 return errors; } 
 GetSubscriptionSchedulesResponse copyWith({List<SubscriptionSchedule>? data, bool? hasMore, GetAccountsAccountCapabilitiesResponseObject? object, String? url, }) { return GetSubscriptionSchedulesResponse(
   data: data ?? this.data,

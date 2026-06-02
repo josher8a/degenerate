@@ -14,8 +14,8 @@ Map<String, dynamic> toJson() { return {
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('keys'); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (keys.isEmpty) errors.add('keys: must have >= 1 items');
-if (keys.length > 4) errors.add('keys: must have <= 4 items');
+if (keys.isEmpty) { errors.add('keys: must have >= 1 items'); }
+if (keys.length > 4) { errors.add('keys: must have <= 4 items'); }
 return errors; } 
 ShieldCredentials copyWith({List<ShieldCredentialsJwtKey>? keys}) { return ShieldCredentials(
   keys: keys ?? this.keys,

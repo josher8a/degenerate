@@ -87,9 +87,13 @@ final class UserSchema {
     final errors = <String>[];
     final name$ = name;
     if (name$ != null) {
-      if (name$.length > 255) errors.add('name: length must be <= 255');
+      if (name$.length > 255) {
+        errors.add('name: length must be <= 255');
+      }
     }
-    if (email.length > 254) errors.add('email: length must be <= 254');
+    if (email.length > 254) {
+      errors.add('email: length must be <= 254');
+    }
     return errors;
   }
 

@@ -23,7 +23,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('type'
 List<String> validate() { final errors = <String>[];
 final jurisdiction$ = jurisdiction;
 if (jurisdiction$ != null) {
-  if (jurisdiction$.length > 5000) errors.add('jurisdiction: length must be <= 5000');
+  if (jurisdiction$.length > 5000) { errors.add('jurisdiction: length must be <= 5000'); }
 }
 return errors; } 
 TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection copyWith({String? Function()? jurisdiction, TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType? type, }) { return TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection(

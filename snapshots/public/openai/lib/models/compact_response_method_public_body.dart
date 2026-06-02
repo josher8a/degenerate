@@ -37,7 +37,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('model
 List<String> validate() { final errors = <String>[];
 final promptCacheKey$ = promptCacheKey;
 if (promptCacheKey$ != null) {
-  if (promptCacheKey$.length > 64) errors.add('promptCacheKey: length must be <= 64');
+  if (promptCacheKey$.length > 64) { errors.add('promptCacheKey: length must be <= 64'); }
 }
 return errors; } 
 CompactResponseMethodPublicBody copyWith({ModelIdsCompaction? model, CompactResponseMethodPublicBodyInput? Function()? input, String? Function()? previousResponseId, String? Function()? instructions, String? Function()? promptCacheKey, }) { return CompactResponseMethodPublicBody(

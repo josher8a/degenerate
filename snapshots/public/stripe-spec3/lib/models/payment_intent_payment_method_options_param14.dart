@@ -76,7 +76,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final targetDate$ = targetDate;
 if (targetDate$ != null) {
-  if (targetDate$.length > 5000) errors.add('targetDate: length must be <= 5000');
+  if (targetDate$.length > 5000) { errors.add('targetDate: length must be <= 5000'); }
 }
 return errors; } 
 PaymentIntentPaymentMethodOptionsParam14 copyWith({PaymentIntentPaymentMethodOptionsParamFinancialConnections? Function()? financialConnections, PaymentIntentPaymentMethodOptionsParam14MandateOptions? Function()? mandateOptions, PaymentIntentPaymentMethodOptionsParamNetworks? Function()? networks, PaymentIntentParamSetupFutureUsage? Function()? setupFutureUsage, String? Function()? targetDate, PaymentIntentPaymentMethodOptionsParamTransactionPurpose? Function()? transactionPurpose, CheckoutAcssDebitPaymentMethodOptionsVerificationMethod? Function()? verificationMethod, }) { return PaymentIntentPaymentMethodOptionsParam14(

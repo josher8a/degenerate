@@ -104,8 +104,8 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('encod
       json.containsKey('sample_rate') && json['sample_rate'] is String; } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
-if (!RegExp(r'^[0-9]+$').hasMatch(eotTimeoutMs)) errors.add(r'eotTimeoutMs: must match pattern ^[0-9]+$');
-if (!RegExp(r'^[0-9]+$').hasMatch(sampleRate)) errors.add(r'sampleRate: must match pattern ^[0-9]+$');
+if (!RegExp(r'^[0-9]+$').hasMatch(eotTimeoutMs)) { errors.add(r'eotTimeoutMs: must match pattern ^[0-9]+$'); }
+if (!RegExp(r'^[0-9]+$').hasMatch(sampleRate)) { errors.add(r'sampleRate: must match pattern ^[0-9]+$'); }
 return errors; } 
 WorkersAiPostRunCfDeepgramFluxRequest copyWith({String? Function()? eagerEotThreshold, WorkersAiPostRunCfDeepgramFluxRequestEncoding? encoding, String Function()? eotThreshold, String Function()? eotTimeoutMs, String? Function()? keyterm, MipOptOut Function()? mipOptOut, String? sampleRate, String? Function()? tag, }) { return WorkersAiPostRunCfDeepgramFluxRequest(
   eagerEotThreshold: eagerEotThreshold != null ? eagerEotThreshold() : this.eagerEotThreshold,

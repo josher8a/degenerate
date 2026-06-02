@@ -28,7 +28,7 @@ static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => 
 List<String> validate() { final errors = <String>[];
 final selfIdentifiedGender$ = selfIdentifiedGender;
 if (selfIdentifiedGender$ != null) {
-  if (selfIdentifiedGender$.length > 5000) errors.add('selfIdentifiedGender: length must be <= 5000');
+  if (selfIdentifiedGender$.length > 5000) { errors.add('selfIdentifiedGender: length must be <= 5000'); }
 }
 return errors; } 
 PersonUsCfpbData copyWith({PersonEthnicityDetails? Function()? ethnicityDetails, PersonRaceDetails? Function()? raceDetails, String? Function()? selfIdentifiedGender, }) { return PersonUsCfpbData(
